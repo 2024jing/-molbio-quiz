@@ -40,6 +40,8 @@ h1{margin:0;font-size:19px;font-weight:900;text-wrap:balance}
 .bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
 .gridbtn{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:4px 10px;cursor:pointer;min-height:32px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:6px;padding-block:6px 2px;max-height:40vh;overflow-y:auto}
+.grid[hidden]{display:none}
+@media (max-width:600px){.grid{max-height:28vh;gap:5px;grid-template-columns:repeat(auto-fill,minmax(36px,1fr))}.grid button{height:32px;font-size:12px}}
 .grid button{font-family:var(--f-mono);font-size:13px;height:36px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
 .grid button.ok{background:var(--good-soft);border-color:var(--good);color:var(--good)}
 .grid button.no{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
@@ -154,7 +156,7 @@ function stats(){
   const g=$("grid"); g.innerHTML="";
   q.forEach((it,i)=>{const b=document.createElement("button");b.type="button";b.textContent=i+1;
     if(i in ans) b.className=(ans[i]===it.a?"ok":"no"); if(i===cur) b.classList.add("cur");
-    b.setAttribute("aria-label",`第 ${i+1} 題`); b.onclick=()=>{onlyWrong=null;go(i)}; g.appendChild(b);});
+    b.setAttribute("aria-label",`第 ${i+1} 題`); b.onclick=()=>{onlyWrong=null;go(i);g.hidden=true;$("toggleGrid").setAttribute("aria-expanded","false");}; g.appendChild(b);});
   tabs();
 }
 function go(i){cur=i;save();render();window.scrollTo({top:0});}
