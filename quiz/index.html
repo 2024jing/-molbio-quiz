@@ -46,6 +46,29 @@ h1{margin:0;font-size:19px;font-weight:900;text-wrap:balance}
 .grid button.ok{background:var(--good-soft);border-color:var(--good);color:var(--good)}
 .grid button.no{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
 .grid button.cur{outline:2px solid var(--accent);outline-offset:1px}
+.row.top{flex-wrap:nowrap}
+.links{display:flex;gap:12px;font-size:13px;white-space:nowrap}
+.links a{color:var(--accent);text-decoration:none}
+.row h1{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:600px){
+  body{font-size:15px}
+  .head-in{padding:8px 12px;gap:6px}
+  h1{font-size:15px}
+  .stats{font-size:12px}
+  .units button{font-size:12px;padding:3px 9px;min-height:28px}
+  .units button .d{font-size:10px}
+  .bar{height:4px}
+  .gridbtn{font-size:12px;min-height:28px;padding:2px 9px}
+  .wrap{padding:0 10px 40px}
+  main{padding-top:12px;gap:12px}
+  .card{padding:16px 14px;gap:13px}
+  .stem{font-size:15.5px}
+  .opt{font-size:14.5px;padding:10px 12px;gap:10px}
+  .opt .k{flex-basis:24px;height:24px;font-size:12px}
+  .exp{font-size:14.5px}
+  .exp ul{font-size:13.5px}
+  .verdict{font-size:15px}
+}
 main{padding-top:18px;display:grid;gap:16px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 18px;display:grid;gap:16px}
 .qnum{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
@@ -87,19 +110,10 @@ main{padding-top:18px;display:grid;gap:16px}
 <body>
 <header>
   <div class="head-in">
-    <div class="row">
-      <div>
-        <div class="eyebrow">營養分子生物學 · 習作練習（葉景生老師單元 1～10）　<a href="../" style="color:inherit">⌂ 首頁</a>　<a href="../guide/" style="color:inherit">📖 逐講導讀</a></div>
-        <h1 id="utitle">單元 1</h1>
-      </div>
-      <div class="stats" id="stats"></div>
-    </div>
+    <div class="row top"><nav class="links"><a href="../">⌂ 首頁</a><a href="../guide/">📖 逐講導讀</a></nav><div class="stats" id="stats"></div></div>
     <div class="units" id="units" role="tablist" aria-label="選擇單元"></div>
     <div class="bar" aria-hidden="true"><i id="barfill"></i></div>
-    <div class="row">
-      <button class="gridbtn" id="toggleGrid" aria-expanded="false" aria-controls="grid">題號總覽</button>
-      <span class="eyebrow">作答後才會出現解析</span>
-    </div>
+    <div class="row"><h1 id="utitle">單元 1</h1><button class="gridbtn" id="toggleGrid" aria-expanded="false" aria-controls="grid">題號總覽</button></div>
     <div class="grid" id="grid" hidden></div>
   </div>
 </header>
