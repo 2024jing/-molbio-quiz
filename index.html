@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>營養分子生物學 讀書站</title>
+<meta name="description" content="營養分子生物學（葉景生老師講義）逐講導讀與習作練習">
+<style>
+:root{--bg:#f3f6f4;--card:#fff;--ink:#17231f;--muted:#5b6b65;--line:#d6e0db;
+  --teal:#0f766e;--teal-soft:#e3f2ef;--blue:#0f5e8c;--blue-soft:#dcebf5;
+  --f:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1517;--card:#172025;--ink:#e7eef2;--muted:#9fb0b8;--line:#2a3a40;
+  --teal:#5ec9b8;--teal-soft:#15302c;--blue:#6cb8e6;--blue-soft:#18303e;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;min-height:100dvh;background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.6;
+  display:flex;flex-direction:column}
+header{background:linear-gradient(135deg,#0f766e,#1d4ed8);color:#fff;padding:36px 20px 30px}
+.wrap{max-width:560px;margin:0 auto;width:100%}
+.book{font-size:14px;opacity:.9}
+h1{font-size:28px;line-height:1.3;margin:6px 0 6px;letter-spacing:.02em}
+.en{font-size:14px;opacity:.85}
+main{flex:1;padding:22px 16px 32px}
+.pick{font-size:15px;color:var(--muted);margin:0 0 14px}
+a.card{display:flex;gap:16px;align-items:center;text-decoration:none;color:var(--ink);background:var(--card);
+  border:1px solid var(--line);border-radius:18px;padding:20px 18px;margin-bottom:14px;
+  transition:transform .12s ease, box-shadow .12s ease}
+a.card:active{transform:scale(.98)}
+@media (hover:hover){a.card:hover{box-shadow:0 6px 20px rgba(0,0,0,.08);transform:translateY(-2px)}}
+a.card:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.ic{flex:none;width:58px;height:58px;border-radius:16px;display:grid;place-items:center;font-size:30px}
+.guide .ic{background:var(--teal-soft)}
+.quiz .ic{background:var(--blue-soft)}
+.t{font-size:20px;font-weight:700;margin:0}
+.guide .t{color:var(--teal)} .quiz .t{color:var(--blue)}
+.d{font-size:14px;color:var(--muted);margin:2px 0 0}
+.go{margin-left:auto;font-size:22px;color:var(--muted)}
+.tip{font-size:13px;color:var(--muted);background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:12px 14px;margin-top:8px}
+footer{font-size:12px;color:var(--muted);text-align:center;padding:0 16px 20px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="book">營養分子生物學（葉景生老師講義）</div>
+  <h1>讀書站</h1>
+  <div class="en">Nutritional Molecular Biology</div>
+</div></header>
+<main><div class="wrap">
+  <p class="pick">要讀筆記還是練題目？</p>
+  <a class="card guide" href="guide/">
+    <span class="ic" aria-hidden="true">📖</span>
+    <span><p class="t">逐講導讀</p><p class="d">第 1～10 講重點、圖解、易混淆整理</p></span>
+    <span class="go" aria-hidden="true">›</span>
+  </a>
+  <a class="card quiz" href="quiz/">
+    <span class="ic" aria-hidden="true">✎</span>
+    <span><p class="t">習作練習題庫</p><p class="d">單元 1～10 共 539 題，每題附詳解</p></span>
+    <span class="go" aria-hidden="true">›</span>
+  </a>
+  <div class="tip">小提醒：作答進度存在這支手機的瀏覽器裡，換手機或清除瀏覽資料會重新開始。標「⚠ 需確認」的題目請以老師答案為準。</div>
+</div></main>
+<footer>依老師講義與習作整理，講義以外的內容標示「補充」</footer>
+</body>
+</html>

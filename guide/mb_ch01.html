@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>營養分子生物學導讀｜第 1 講 核酸分子的結構</title>
+<link rel="stylesheet" href="mb.css">
+</head>
+<body id="top" data-ch="1">
+<header>
+  <div class="book">營養分子生物學（葉景生老師講義）・逐講導讀</div>
+  <h1>第 1 講　核酸分子的結構</h1>
+  <div class="en">Lecture 1 The Structure of Nucleic Acids（講義 80 頁）</div>
+</header>
+
+<div class="modebar"><span>閱讀模式</span>
+  <button id="mBrief" onclick="setMode('brief')">精簡（核心路線）</button>
+  <button id="mFull" onclick="setMode('full')">完整</button>
+</div>
+<main>
+<div class="briefhint">精簡模式只顯示每段的灰框重點；想看說明、例子與圖，按各節的「展開本節詳細內文」，或切到「完整」。</div>
+<div class="note">內文依老師講義的順序與說法整理，<span class="src">S37</span> 表示講義第 37 張投影片。標 <span class="add">補充</span> 的是一般分子生物學知識，講義沒寫，考試以講義為準。📝 方框是依「習作練習 單元 1」（124 題）整理的出題重點。</div>
+
+<nav class="toc">
+  <b>本講目錄</b>
+  <a href="#s0">本講地圖：這一講在做什麼？</a>
+  <a href="#s1">1-1 分子生物學的里程碑</a>
+  <a class="sub" href="#s1a">達爾文天擇說</a>
+  <a class="sub" href="#s1b">孟德爾兩大定律與遺傳名詞</a>
+  <a class="sub" href="#s1c">格里夫茲實驗：性狀轉變</a>
+  <a class="sub" href="#s1d">赫雪－蔡斯實驗：DNA 是遺傳物質</a>
+  <a href="#s2">1-2 DNA 的結構</a>
+  <a class="sub" href="#s2a">核苷酸：核酸的積木</a>
+  <a class="sub" href="#s2b">DNA 與 RNA 的比較</a>
+  <a class="sub" href="#s2c">雙股螺旋的特徵</a>
+  <a class="sub" href="#s2d">A、B、Z 三種 DNA</a>
+  <a class="sub" href="#s2e">DNA 熔解（變性）與 Tm</a>
+  <a class="sub" href="#s2f">超螺旋與拓樸異構酶</a>
+  <a href="#s3">1-3 RNA 的結構與種類</a>
+  <a href="#s4">1-4 染色質與染色體</a>
+  <a class="sub" href="#s4a">染色體條紋染色</a>
+  <a class="sub" href="#s4b">細胞週期中的染色體</a>
+  <a class="sub" href="#s4c">組蛋白與核小體</a>
+  <a href="#s5">習作出題分析</a>
+  <a href="#s6">本講重點整理</a>
+  <a href="#s7">自我檢測（互動）</a>
+</nav>
+
+<!-- ============ 地圖 ============ -->
+<section class="sec" id="s0">
+  <h2>本講地圖：為什麼這樣排？</h2>
+  <div class="en">Big picture</div>
+  <div class="lead"><b>破題</b>　第 1 講回答整門課的起點：<span class="key">遺傳訊息存在哪裡？長什麼樣子？怎麼收納在細胞裡？</span>答案是 DNA——由核苷酸串成的雙股螺旋，纏在組蛋白上，摺疊成染色體。後面 9 講講的複製、突變、轉錄、轉譯，全都是在「操作」這一講認識的分子。</div>
+  <div class="path">
+    <div class="step"><span class="sn">1-1</span><div><b>科學家怎麼發現遺傳物質是 DNA</b><br><span class="sq">從孟德爾「有遺傳因子」→ 格里夫茲「有某種物質能改變性狀」→ 赫雪－蔡斯「那個物質是 DNA」。</span></div></div>
+    <div class="arr">↓ 知道是 DNA 之後，下一個問題是：它的構造是什麼？</div>
+    <div class="step"><span class="sn">1-2</span><div><b>DNA 的化學構造</b><br><span class="sq">核苷酸 → 單股 → 雙股螺旋 → 加熱會解開（Tm）→ 進一步扭成超螺旋。</span></div></div>
+    <div class="arr">↓ DNA 的訊息要靠另一種核酸帶出來使用</div>
+    <div class="step"><span class="sn">1-3</span><div><b>RNA 的結構與六種 RNA</b><br><span class="sq">mRNA 帶訊息、tRNA 搬胺基酸、rRNA 組核糖體，還有 snRNA、miRNA、siRNA。</span></div></div>
+    <div class="arr">↓ 兩公尺長的 DNA 要塞進細胞核，怎麼收？</div>
+    <div class="step"><span class="sn">1-4</span><div><b>染色質與染色體</b><br><span class="sq">DNA 纏組蛋白成核小體（串珠）→ 一層層摺疊 → 分裂時濃縮成看得見的染色體。</span></div></div>
+  </div>
+</section>
+
+<!-- ============ 1-1 ============ -->
+<section class="sec det" id="s1">
+  <h2><span class="no">1-1</span>分子生物學的里程碑</h2>
+  <div class="en">Milestones of Molecular Biology <span class="src">S3–S30</span></div>
+  <div class="lead"><div><span class="lt">這節要說明什麼？</span>遺傳學從「觀察性狀」走到「找出遺傳物質」的過程，以及以後每一講都會用到的遺傳名詞。</div><div><span class="lt lt2">為什麼放第一節？</span>先知道「DNA 是遺傳物質」是怎麼被證明的，後面講 DNA 的構造與運作才有根據。</div></div>
+  <div class="oneline">孟德爾發現「遺傳因子」成對存在、分離、自由組合；格里夫茲發現「某種物質」能改變細菌性狀；赫雪與蔡斯證明那個物質是 DNA。</div>
+  <div class="think">吃抗生素後，體內細菌產生抗藥性——這是「天擇」還是「人擇」？<span class="src">S9</span></div>
+
+  <h3>遺傳學的兩大領域與發展史</h3>
+  <p class="core">遺傳學＝古典遺傳學（孟德爾遺傳學、計量遺傳學、族群遺傳學）＋分子遺傳學。人類基因組 2003 年 4 月定序完成，講義寫人類約有 <b>30,000–35,000</b> 個基因。</p>
+  <p>遺傳學分成兩大研究領域 <span class="src">S5</span>：</p>
+  <ul class="dots">
+    <li><b>古典遺傳學</b> <i class="en-term">classic genetics</i>：包括傳遞遺傳學 <i class="en-term">transmission genetics</i>（又稱<b>孟德爾遺傳學</b> <i class="en-term">mendelian genetics</i>），以及計量遺傳學 <i class="en-term">quantitative genetics</i> 與族群遺傳學 <i class="en-term">population genetics</i>。它看的是「性狀怎麼傳給下一代」。</li>
+    <li><b>分子遺傳學</b> <i class="en-term">molecular genetics</i>：它看的是「基因在分子層次是什麼、怎麼運作」，也就是這門課。</li>
+  </ul>
+  <p>講義的發展史年表 <span class="src">S4</span>：酵母菌基因組 1996 年、大腸桿菌 1998 年、果蠅 2000 年定序完成，<b>人類基因組 2003 年 4 月</b>完成定序。</p>
+  <div class="exam"><b class="t">考點</b>習作第 1 題問「人類基因組計畫顯示人類約有多少基因」，依講義答 <b>3～3.5 萬個</b>。<span class="add">補充</span> 近年的估計已下修到約 2 萬個蛋白質編碼基因，但考試請依老師講義的數字。</div>
+
+  <div class="bridge">簡報從「生命的共通規律」<span class="src">S3</span> 直接跳到發展史年表，再回頭講達爾文。這樣排的用意是：分子生物學要回答的核心問題——<b>「性狀為什麼會一代傳一代，又為什麼會有變異？」</b>——最早是由演化論提出來的。達爾文看到了「變異會被篩選」，卻說不出「變異是什麼、怎麼遺傳」；接下來的孟德爾、格里夫茲、赫雪－蔡斯，就是一步一步把這個問題從「性狀」層次推到「分子」層次。</div>
+<h3 id="s1a">達爾文的天擇說 Natural Selection</h3>
+  <p class="core">天擇四要點：<b>產生變異 → 過度繁殖 → 生存競爭 → 適者生存</b>。達爾文知道族群有變異，但不知道變異怎麼產生、怎麼遺傳。</p>
+  <p>達爾文 1859 年出版《物種原始》提出演化論 <span class="src">S6</span>。他觀察到族群裡的個體有差異（變異 <i class="en-term">variance</i>），而且這些差異是天擇的基礎；但當時<b>還不知道變異從哪裡來、怎麼一代傳一代</b>——這個空缺要等孟德爾和後來的分子生物學來補。</p>
+  <ol class="steps">
+    <li><b>產生變異</b>：長頸鹿的祖先有長頸也有短頸，且這差異可以遺傳。</li>
+    <li><b>過度繁殖</b>：生下的後代比親代多很多。</li>
+    <li><b>生存競爭</b>：食物、空間有限。低處葉子吃完後，只有長頸的吃得到高處樹葉。</li>
+    <li><b>適者生存</b>：短頸鹿吃不到而被淘汰，長頸鹿留下來繁殖。</li>
+  </ol>
+  <div class="eg"><b class="t">回答「讀前先想」：</b>抗生素是人給的，但「哪些細菌活下來」是由環境（有抗生素）篩選出原本就帶抗藥性變異的細菌，機制上屬於<b>天擇</b>；人只是製造了選擇壓力。人擇則是人「刻意挑選」想要的性狀來配種，例如培育品種。</div>
+
+  <div class="bridge">達爾文留下的空缺是「變異怎麼遺傳」。當時普遍認為父母的特徵會像顏料一樣<b>混合</b>（混合遺傳），但這樣變異會越混越淡、最後消失，天擇就沒有材料可選。孟德爾的豌豆實驗證明遺傳單位是<b>顆粒狀、不會混合</b>的「因子」：隱性性狀在 F1 消失，F2 又原樣出現。這正好補上了達爾文理論缺的那一塊。</div>
+<h3 id="s1b">孟德爾的豌豆實驗與兩大定律</h3>
+  <p class="core">孟德爾（遺傳學之父）用自花授粉、純系的豌豆研究 7 種成對性狀：F1 只出現顯性性狀，F1 自交後 F2 顯性：隱性≈<b>3：1</b>。由此提出<b>分離律</b>（第一定律）與<b>獨立分配律（自由配合律）</b>（第二定律）。</p>
+  <p>奧地利修士孟德爾在 1865–66 年發表豌豆雜交實驗，被尊為<b>遺傳學之父</b> <span class="src">S10</span>。他選豌豆是因為 <span class="src">S11</span>：豌豆是雌雄同體、花瓣把雌雄蕊包住的<b>自花授粉</b> <i class="en-term">self-fertilization</i> 植物，容易得到<b>純系</b>——每對基因都是同型的（homozygous），所以「看外表就等於知道基因型」。</p>
+  <p>他觀察的 7 種性狀 <span class="src">S12, S14</span>：花色（紫／白）、植株高矮、種子顏色（黃／綠）、種子形狀（圓／皺）、豆莢形狀（飽滿／乾癟）、豆莢顏色（綠／黃）、開花位置（莖間／莖頂）。</p>
+  <p>結果有兩個發現 <span class="src">S14</span>：第一，F1 只出現其中一種性狀；第二，F1 自花授粉後，消失的性狀在 F2 <b>又出現</b>，而且兩種性狀的個體數比例接近 <b>3：1</b>，7 種性狀無一例外。</p>
+  <p>孟德爾據此提出假設 <span class="src">S15</span>：每個性狀由<b>一對因子</b>（就是今天的基因）決定；因子可同型或不同型；因子在傳遞中保持獨立不變；在 F1 表現出來的那個叫<b>顯性</b> <i class="en-term">dominant</i>，被蓋住的叫<b>隱性</b> <i class="en-term">recessive</i>。</p>
+
+  <figure class="pic"><svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <text x="240" y="20" font-size="15" text-anchor="middle" font-weight="bold" fill="#0f5e8c">F1（Aa）自交 → F2 棋盤</text>
+    <text x="150" y="58" font-size="14" text-anchor="middle" fill="#374151">配子 A</text><text x="250" y="58" font-size="14" text-anchor="middle" fill="#374151">配子 a</text>
+    <text x="70" y="105" font-size="14" text-anchor="middle" fill="#374151">配子 A</text><text x="70" y="185" font-size="14" text-anchor="middle" fill="#374151">配子 a</text>
+    <rect x="100" y="70" width="100" height="70" fill="#dbeafe" stroke="#1d4ed8"/><text x="150" y="110" font-size="18" text-anchor="middle" font-weight="bold">AA</text>
+    <rect x="200" y="70" width="100" height="70" fill="#dbeafe" stroke="#1d4ed8"/><text x="250" y="110" font-size="18" text-anchor="middle" font-weight="bold">Aa</text>
+    <rect x="100" y="150" width="100" height="70" fill="#dbeafe" stroke="#1d4ed8"/><text x="150" y="190" font-size="18" text-anchor="middle" font-weight="bold">Aa</text>
+    <rect x="200" y="150" width="100" height="70" fill="#fef3c7" stroke="#b45309"/><text x="250" y="190" font-size="18" text-anchor="middle" font-weight="bold">aa</text>
+    <rect x="320" y="80" width="18" height="14" fill="#dbeafe" stroke="#1d4ed8"/><text x="344" y="92" font-size="13">顯性表型 3 份</text>
+    <rect x="320" y="104" width="18" height="14" fill="#fef3c7" stroke="#b45309"/><text x="344" y="116" font-size="13">隱性表型 1 份</text>
+    <text x="320" y="150" font-size="13" fill="#374151">基因型 1 AA：2 Aa：1 aa</text>
+    <text x="320" y="170" font-size="13" fill="#374151">表現型 3：1</text>
+    <text x="240" y="243" font-size="12" text-anchor="middle" fill="#6b7280">分離律：A 與 a 在形成配子時分開，各進入一個配子</text>
+  </svg><figcaption>圖 1-1　單一性狀雜交（monohybrid cross）：F2 出現 3：1 的原因。</figcaption></figure>
+
+  <h4>孟德爾第一定律：分離律 Law of Segregation <span class="src">S17</span></h4>
+  <p class="core">一對等位基因在形成配子時<b>彼此分離</b>，每個配子只帶其中一個。</p>
+  <p>遺傳因子在細胞內成對存在、共同控制性狀；形成生殖細胞時，成對的因子分開，分別進入不同配子，所以每個配子只攜帶一個。</p>
+  <h4>孟德爾第二定律：獨立分配律（自由配合律）Law of Independent Assortment <span class="src">S18</span></h4>
+  <p class="core">兩對以上的基因，形成配子時<b>各自分離、互不影響</b>，再隨機組合。前提是這兩對基因位在<b>不同對（非同源）染色體</b>上。</p>
+  <p>當兩對或更多對基因都是異型合子時，它們形成配子時的分離彼此獨立；受精時配子之間自由組合。例如 AaBb 會產生 AB、Ab、aB、ab 四種配子，機率各 1/4。</p>
+  <div class="warn"><b class="t">易混淆：</b>兩條定律的細胞基礎都是<b>減數分裂</b>（不是有絲分裂）。分離律說的是<b>同一對</b>等位基因（在同源染色體上）會分開；獨立分配律說的是<b>不同對</b>基因（在非同源染色體上）互不干擾。如果兩對基因在<b>同一條染色體</b>上（連鎖），就不遵守獨立分配律。<span class="add">補充</span></div>
+  <div class="eg"><b class="t">生活例子 <span class="src">S16</span>：</b>耳垂與臉頰分離是顯性（AA 或 Aa），不分離是隱性（aa）。兩個耳垂分離的父母（都是 Aa）可能生出耳垂不分離的孩子——這就是 F2 隱性性狀「重新出現」。</div>
+  <div class="warn"><b class="t">考試陷阱：</b>「人類身高適用孟德爾遺傳法則」是<b>錯</b>的——身高由很多基因加上環境共同決定（多基因遺傳），屬於計量遺傳學的範疇，不是單一基因的顯隱性。</div>
+
+  <div class="bridge">孟德爾只說「有因子」，但沒說因子在哪裡。後來的科學家發現因子（基因）位在<b>染色體</b>上：成對的染色體就對應成對的因子，減數分裂時同源染色體分開就對應分離律。所以接下來的名詞（基因座、等位基因、同源染色體）都是在把孟德爾的「因子」放到染色體上來描述。</div>
+<h4>分子生物學最基本的名詞 <span class="src">S19–S21</span></h4>
+  <p class="core">1909 年約翰生（Johannsen）把「遺傳因子」命名為<b>基因 gene</b>。基因座＝位置；等位基因＝同一位置上的不同版本；同型合子 AA／異型合子 Aa。</p>
+  <div class="tblwrap"><table>
+    <tr><th>名詞</th><th>英文</th><th>意思</th></tr>
+    <tr><td>基因座</td><td>locus</td><td>基因在染色體上的<b>位置</b></td></tr>
+    <tr><td>對偶基因（等位基因）</td><td>allele</td><td>同源染色體<b>相同基因座</b>上的不同形式；一對同源染色體上有兩個，可相同或不同</td></tr>
+    <tr><td>同源染色體</td><td>homologous chromosome</td><td>體細胞中成對存在，一條來自精子、一條來自卵子，攜帶決定相同性狀的基因</td></tr>
+    <tr><td>基因型</td><td>genotype</td><td>決定性狀的基因組合，例如 Aa</td></tr>
+    <tr><td>外表型</td><td>phenotype</td><td>基因表現出來的性狀，例如紫花</td></tr>
+    <tr><td>顯性／隱性對偶基因</td><td>dominant / recessive allele</td><td>兩個對偶基因不同時，主導表型的是顯性，被蓋住的是隱性</td></tr>
+    <tr><td>同型合子</td><td>homozygous</td><td>兩個對偶基因相同，如 AA、aa</td></tr>
+    <tr><td>異型合子</td><td>heterozygous</td><td>兩個對偶基因不同，如 Aa</td></tr>
+    <tr><td>半合子</td><td>hemizygous</td><td>只有一個對偶基因，例如男性 X 染色體上的基因 <span class="add">補充</span></td></tr>
+  </table></div>
+  <div class="eg"><b class="t">記法：</b>「兩個外表型相同的個體可以有不同基因型」是<b>對</b>的——AA 和 Aa 外表都是顯性。</div>
+
+  <div class="bridge">知道基因在染色體上之後，下一個問題是：<b>染色體是 DNA 和蛋白質組成的，到底哪一個才是遺傳物質？</b>當時多數科學家押蛋白質——因為蛋白質有 20 種胺基酸，組合變化多；DNA 只有 4 種核苷酸，看起來太單調，不像能攜帶大量訊息。簡報接下來介紹的三個實驗（米歇爾 → 格里夫茲 → 赫雪－蔡斯），就是一步一步排除蛋白質、確認 DNA 的過程。</div>
+<h3 id="s1c">格里夫茲實驗：性狀轉變 Transformation</h3>
+  <p class="core">1869 年米歇爾從膿中分離出「核素」（＝核酸）。1928 年格里夫茲用肺炎鏈球菌證明：<b>熱死的 S 型（有莢膜、致病）＋活的 R 型（無莢膜、不致病）→ 老鼠死亡，並分離出活的 S 型</b>。死菌中有某種物質讓 R 型變成 S 型，稱為<b>性狀轉變</b>。</p>
+  <p><b>1869 年</b>，瑞士科學家米歇爾（Johann Miescher）從病人傷口的膿裡抽出一種酸性黏稠物質，細胞核裡也有很多，當時叫<b>核素</b> <i class="en-term">nuclein</i>，就是今天的核酸 <span class="src">S22</span>。</p>
+  <p><b>1928 年</b>，英國醫生格里夫茲（Frederick Griffith）研究肺炎鏈球菌 <i class="en-term">Streptococcus pneumoniae</i>。它有兩種菌落：<b>光滑型（S 型）</b>有莢膜、會致病；<b>粗糙型（R 型）</b>沒有莢膜、不致病。</p>
+  <figure class="pic"><svg viewBox="0 0 480 230" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="13" text-anchor="middle">
+      <rect x="10" y="20" width="100" height="56" rx="8" fill="#fee2e2" stroke="#dc2626"/><text x="60" y="44" font-weight="bold">活 S 型</text><text x="60" y="64">（有莢膜）</text>
+      <rect x="125" y="20" width="100" height="56" rx="8" fill="#e0f2fe" stroke="#0284c7"/><text x="175" y="44" font-weight="bold">活 R 型</text><text x="175" y="64">（無莢膜）</text>
+      <rect x="240" y="20" width="100" height="56" rx="8" fill="#f3f4f6" stroke="#6b7280"/><text x="290" y="44" font-weight="bold">加熱殺死</text><text x="290" y="64">的 S 型</text>
+      <rect x="355" y="20" width="115" height="56" rx="8" fill="#fef3c7" stroke="#b45309"/><text x="412" y="44" font-weight="bold">死 S 型</text><text x="412" y="64">＋活 R 型</text>
+      <path d="M60 80 v30 M175 80 v30 M290 80 v30 M412 80 v30" stroke="#374151" stroke-width="2" marker-end="url(#ar1)"/>
+      <text x="60" y="135">注射老鼠</text><text x="175" y="135">注射老鼠</text><text x="290" y="135">注射老鼠</text><text x="412" y="135">注射老鼠</text>
+      <text x="60" y="165" fill="#dc2626" font-weight="bold">死亡</text><text x="175" y="165" fill="#15803d" font-weight="bold">存活</text><text x="290" y="165" fill="#15803d" font-weight="bold">存活</text><text x="412" y="165" fill="#dc2626" font-weight="bold">死亡</text>
+      <text x="412" y="188" fill="#b45309">血中找到活 S 型！</text>
+      <text x="240" y="220" fill="#0f5e8c" font-weight="bold">死 S 型的「某種物質」讓 R 型變成 S 型＝性狀轉變</text>
+    </g>
+    <defs><marker id="ar1" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#374151"/></marker></defs>
+  </svg><figcaption>圖 1-2　格里夫茲的四組實驗 <span class="src">S23</span>。</figcaption></figure>
+  <p>推論 <span class="src">S24</span>：死的有莢膜菌裡有某種物質，能讓無莢膜菌產生的子代遺傳性狀改變，變成有莢膜。這種遺傳性狀改變的現象稱為<b>性狀轉變</b> <i class="en-term">transformation</i>。注意：R 型子代是<b>基因型改變，外表型跟著改變</b>，而且能穩定遺傳。</p>
+  <div class="warn"><b class="t">易錯：</b>格里夫茲只證明「有轉化因子」，<b>沒有</b>證明那個物質是 DNA。<span class="add">補充</span> 1944 年艾佛瑞（Avery）等人用酵素逐一破壞萃取物才證明：加<b>DNA 酶</b>後轉化消失，加蛋白酶、RNA 酶、脂肪酶都還能轉化。另外，加熱殺死 S 菌<b>主要破壞蛋白質</b>，DNA 降溫後可復性，所以「加熱破壞 S 菌的 DNA」是錯的敘述。</div>
+  <div class="nut"><b class="t">現代應用：</b>實驗室把<b>質體</b>（細菌染色體外的環狀 DNA）送進大腸桿菌，這個過程也叫 transformation（轉形作用），是基因選殖的基本步驟（第 10 講）。</div>
+
+  <div class="bridge">格里夫茲證明「死菌裡有某種物質能改變活菌的遺傳」，艾佛瑞再用酵素逐一破壞，指出那個物質是 DNA。但仍有人懷疑：會不會是 DNA 萃取物裡殘留的少量蛋白質在作怪？赫雪與蔡斯換了一個完全不同的系統——<b>噬菌體</b>，它的構造只有「DNA 核心＋蛋白質外殼」兩部分，正好可以分開標記，看哪一部分進入細菌。</div>
+<h3 id="s1d">赫雪－蔡斯實驗：DNA 是噬菌體的遺傳物質</h3>
+  <p class="core">1952 年赫雪與蔡斯用 T2 噬菌體＋放射性同位素追蹤：<b>³²P 標記 DNA，³⁵S 標記蛋白質外殼</b>。感染後攪拌、離心：³⁵S 留在<b>上清液</b>（殼沒進去），³²P 在<b>沉澱物</b>（細菌裡）→ 遺傳物質是 DNA。</p>
+  <p>為什麼能分開標記？因為 DNA 含<b>磷</b>不含硫，蛋白質含<b>硫</b>（甲硫胺酸、半胱胺酸）而幾乎不含磷。步驟 <span class="src">S27–S29</span>：</p>
+  <ol class="steps">
+    <li>用含 ³²P 的培養基養大腸桿菌，再讓噬菌體感染 → 新噬菌體的 <b>DNA</b> 帶放射性。另一組用 ³⁵S → 新噬菌體的<b>蛋白質殼</b>帶放射性。</li>
+    <li>兩種噬菌體分別去感染<b>沒有</b>放射性的大腸桿菌。</li>
+    <li>一段時間後用果汁機攪拌，把吸附在細菌表面的蛋白質殼震下來，再離心。細菌較重沉到管底（沉澱物），空殼留在上清液。</li>
+    <li>³⁵S 組：放射性大多在<b>上清液</b>；³²P 組：放射性大多在<b>沉澱物</b>。</li>
+  </ol>
+  <figure class="pic"><svg viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="13" text-anchor="middle">
+      <text x="120" y="20" font-weight="bold" fill="#b45309">³⁵S 標記蛋白質殼</text>
+      <text x="360" y="20" font-weight="bold" fill="#7c3aed">³²P 標記 DNA</text>
+      <path d="M80 40 h80 v120 q0 20 -40 20 q-40 0 -40 -20 z" fill="#fff" stroke="#374151"/>
+      <rect x="81" y="60" width="78" height="70" fill="#fde68a" opacity=".8"/><text x="120" y="100">上清液 ★</text>
+      <ellipse cx="120" cy="165" rx="34" ry="10" fill="#d1d5db"/><text x="120" y="195" font-size="12">沉澱（細菌）</text>
+      <path d="M320 40 h80 v120 q0 20 -40 20 q-40 0 -40 -20 z" fill="#fff" stroke="#374151"/>
+      <rect x="321" y="60" width="78" height="70" fill="#f3f4f6"/><text x="360" y="100">上清液</text>
+      <ellipse cx="360" cy="165" rx="34" ry="10" fill="#c4b5fd"/><text x="360" y="195" font-size="12">沉澱（細菌）★</text>
+      <text x="240" y="105" font-size="12" fill="#374151">★＝放射性所在</text>
+    </g>
+  </svg><figcaption>圖 1-3　離心結果：只有 DNA 進入細菌。</figcaption></figure>
+  <p>推論 <span class="src">S30</span>：噬菌體的蛋白質殼留在細菌外，DNA 注入細菌內；細菌接著依 DNA 的指令製造新的核酸與殼，再組裝成新病毒。所以<b>噬菌體的遺傳物質是 DNA 而非蛋白質</b>。</p>
+  <div class="exam"><b class="t">考點</b>習作問「感染後立即測定放射性在哪」：<b>寄主細胞內有 ³²P，細胞外有 ³⁵S</b>。另外常考「T2 噬菌體的遺傳訊息存在 RNA」是錯的；還有「有些病毒以 RNA 為遺傳物質（如流感、HIV），其他生物都以 DNA」是對的。</div>
+  <details class="stop"><summary>為什麼不用 ¹⁴C 或 ³H 標記？</summary><div>DNA 和蛋白質都含碳、氫，標了也分不出是誰進去細菌。要用「只有一方有」的元素：磷只在 DNA（磷酸骨架），硫只在蛋白質。</div></details>
+
+  <div class="sum"><b class="t">本節重點</b><ul>
+    <li>天擇四點：變異、過度繁殖、生存競爭、適者生存。</li>
+    <li>孟德爾：F2 3：1；分離律（同一對分開）、獨立分配律（不同對自由組合，需在非同源染色體）；細胞基礎是減數分裂。</li>
+    <li>格里夫茲 1928：死 S＋活 R → 致死，性狀轉變。</li>
+    <li>赫雪－蔡斯 1952：³²P（DNA）進入細菌、³⁵S（蛋白質）留在外面 → DNA 是遺傳物質。</li>
+  </ul></div>
+</section>
+
+<!-- ============ 1-2 ============ -->
+<section class="sec det" id="s2">
+  <h2><span class="no">1-2</span>去氧核醣核酸（DNA）的結構</h2>
+  <div class="en">Structure of DNA <span class="src">S31–S54</span></div>
+  <div class="lead"><div><span class="lt">這節要說明什麼？</span>從最小的零件（核苷酸）組起，到雙股螺旋、熔解、超螺旋。</div><div><span class="lt lt2">為什麼重要？</span>這是習作出題最多的部分——鹼基配對計算、Tm、260 nm、A/B/Z DNA 幾乎每次都考。</div></div>
+  <div class="oneline">核苷酸＝五碳糖＋含氮鹼基（接 1′）＋磷酸（接 5′）；核苷酸用 3′,5′-磷酸二酯鍵串成單股，兩股反向平行、靠鹼基間氫鍵（A=T、G≡C）配成右旋雙股螺旋。</div>
+<div class="bridge">1-1 結論是「DNA 是遺傳物質」，所以 1-2 開始拆解 DNA 本身。一個合格的遺傳物質必須做到三件事 <span class="add">補充</span>：<b>① 儲存大量訊息</b>（靠鹼基排列順序）、<b>② 能精確複製</b>（靠鹼基互補配對，第 2 講）、<b>③ 偶爾會改變</b>（突變，第 3 講）。等一下看雙股螺旋的結構時，可以一直檢查：這個結構特徵是怎麼滿足這三點的？簡報的順序是由小到大：單一核苷酸 → DNA 與 RNA 的差別 → 雙股螺旋 → 不同型態 → 解開（熔解）→ 再扭轉（超螺旋）。</div>
+
+  <h3 id="s2a">核苷酸：核酸的積木 Nucleotide</h3>
+  <p class="core">鹼基接五碳糖的 <b>1′</b> 碳，磷酸接 <b>5′</b> 碳。沒有磷酸＝<b>核苷</b> nucleoside；有磷酸＝<b>核苷酸</b> nucleotide。DNA 的糖 2′ 是 –H（去氧），RNA 的糖 2′ 是 –OH。</p>
+  <p>核酸的基本單元是<b>核苷酸</b> <span class="src">S32</span>：以五碳糖 <i class="en-term">pentose</i> 為中心，<b>1′ 位</b>接一個含氮鹼基 <i class="en-term">nitrogen-containing base</i>，<b>5′ 位</b>接磷酸。如果 5′ 沒有接磷酸，就叫<b>核苷</b>。</p>
+  <figure class="pic"><svg viewBox="0 0 480 230" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <polygon points="230,70 285,105 265,165 195,165 175,105" fill="#ecfdf5" stroke="#047857" stroke-width="2"/>
+    <text x="230" y="125" font-size="13" text-anchor="middle" fill="#047857" font-weight="bold">五碳糖</text>
+    <text x="230" y="62" font-size="12" text-anchor="middle" fill="#6b7280">O</text>
+    <text x="296" y="104" font-size="14" font-weight="bold" fill="#047857">1′</text>
+    <text x="270" y="184" font-size="14" font-weight="bold" fill="#047857">2′</text>
+    <text x="178" y="184" font-size="14" font-weight="bold" fill="#047857">3′</text>
+    <text x="150" y="104" font-size="14" font-weight="bold" fill="#047857">4′</text>
+    <line x1="285" y1="105" x2="345" y2="80" stroke="#374151" stroke-width="2"/>
+    <rect x="345" y="50" width="120" height="56" rx="10" fill="#dbeafe" stroke="#1d4ed8"/><text x="405" y="75" font-size="14" text-anchor="middle" font-weight="bold">含氮鹼基</text><text x="405" y="95" font-size="12" text-anchor="middle">A G C T（U）</text>
+    <line x1="175" y1="105" x2="140" y2="70" stroke="#374151" stroke-width="2"/><text x="128" y="64" font-size="13">5′ CH₂</text>
+    <line x1="125" y1="58" x2="85" y2="40" stroke="#374151" stroke-width="2"/>
+    <circle cx="62" cy="38" r="24" fill="#fef3c7" stroke="#b45309"/><text x="62" y="43" font-size="14" text-anchor="middle" font-weight="bold">P</text><text x="62" y="80" font-size="12" text-anchor="middle">磷酸</text>
+    <line x1="265" y1="165" x2="290" y2="200" stroke="#374151"/><text x="292" y="215" font-size="13">2′：DNA 是 H／RNA 是 OH</text>
+    <line x1="195" y1="165" x2="170" y2="200" stroke="#374151"/><text x="110" y="215" font-size="13">3′ OH（接下一個）</text>
+    <rect x="300" y="135" width="170" height="40" rx="6" fill="#fff" stroke="#9ca3af" stroke-dasharray="4"/><text x="385" y="152" font-size="12" text-anchor="middle">糖＋鹼基＝核苷</text><text x="385" y="168" font-size="12" text-anchor="middle">糖＋鹼基＋磷酸＝核苷酸</text>
+  </svg><figcaption>圖 1-4　核苷酸的組成：鹼基在 1′、磷酸在 5′、DNA 與 RNA 差在 2′。</figcaption></figure>
+
+  <h4>嘌呤與嘧啶 Purine & Pyrimidine</h4>
+  <p class="core"><b>嘌呤（雙環、較大）＝A、G</b>；<b>嘧啶（單環、較小）＝C、T、U</b>。T 比 U 多一個甲基（–CH₃）。</p>
+  <p>鹼基分兩類 <span class="src">S31</span>：嘌呤是一個六元環加一個五元環的<b>雙環</b>結構（4 個 N）；嘧啶是單一個六元環（2 個 N）。兩者都含氮，所以叫含氮鹼基。</p>
+  <div class="mn"><b class="t">口訣</b>「<b>嘌呤 AG 兩個圈</b>」（A、G 雙環）；嘧啶 C、T、U 是「<b>CUT</b>（剪一刀）只剩一圈」。</div>
+  <div class="warn"><b class="t">易錯：</b>「嘌呤的環比嘧啶小」是錯的；嘌呤較大。配對一定是一大配一小（嘌呤配嘧啶），所以雙股 DNA 的寬度固定，<b>嘌呤總量＝嘧啶總量</b>。</div>
+
+  <div class="bridge">講義在這裡只介紹鹼基結構就進入 DNA／RNA 比較，但習作單元 1 有好幾題問嘌呤、嘧啶在體內<b>怎麼分解</b>。因為鹼基結構剛學完（嘌呤雙環、嘧啶單環），正好接著說明它們分解後變成什麼——嘌呤環打不開所以留下尿酸，嘧啶環可以打開所以變成水溶性小分子。</div>
+<h4>核酸代謝：嘌呤與嘧啶的分解 <span class="add">補充（習作常考）</span></h4>
+  <p class="core">人體分解嘌呤的終產物是<b>尿酸</b>（不是尿素）；最後一步由<b>黃嘌呤氧化酶</b>進行<b>氧化</b>。嘧啶分解的終產物是<b>水溶性</b>物質（β-丙胺酸、β-胺基異丁酸、CO₂、NH₃）。</p>
+  <p>講義沒有這段，但習作單元 1 有好幾題。嘌呤核苷酸（AMP、GMP）先去磷酸變成核苷，腺苷經<b>腺苷脫胺酶</b>（ADA）去胺成肌苷，再由<b>嘌呤核苷磷酸酶</b>（PNP）切成鹼基，次黃嘌呤 → 黃嘌呤 → 尿酸，最後兩步都靠黃嘌呤氧化酶。人類缺乏尿酸氧化酶，所以不會再轉成尿囊素 <i class="en-term">allantoin</i>。</p>
+  <ul class="dots">
+    <li>ADA 或 PNP 缺乏 → 嚴重的<b>免疫缺陷</b>（影響 T 細胞），不是貧血。</li>
+    <li>二氫嘧啶去氫酶（DPD）缺乏 → 使用抗癌藥 5-FU 時毒性大增。</li>
+    <li>嘌呤合成環上的碳，部分來自 <b>N¹⁰-甲醯四氫葉酸</b>（葉酸衍生物）。</li>
+  </ul>
+  <div class="nut"><b class="t">營養連結：</b>痛風就是尿酸過多。治療藥 allopurinol 抑制黃嘌呤氧化酶；飲食上要限制高嘌呤食物（內臟、濃肉湯、部分海鮮）。葉酸不足會影響嘌呤與胸腺嘧啶的合成，所以細胞分裂快的組織（如紅血球前驅細胞）最先受影響，造成巨球性貧血。</div>
+
+  <div class="bridge">同樣是核苷酸串成的長鏈，細胞為什麼要分成 DNA 和 RNA 兩種？可以把 DNA 想成「長期保存的原版」，RNA 是「用完即丟的工作副本」。DNA 的去氧核糖（2′ 沒有 –OH）和雙股結構讓它<b>化學上比較穩定</b>；RNA 的 2′–OH 讓它容易水解，反而適合短期使用、用完就分解。下面的比較表，每一格差異都可以從這個分工去理解。</div>
+<h3 id="s2b">DNA 與 RNA 的比較 <span class="src">S33–S35</span></h3>
+  <p class="core">DNA：去氧核糖、A G C <b>T</b>、雙股、主要在細胞核。RNA：核糖、A G C <b>U</b>、單股、主要在細胞質。合成原料是三磷酸核苷（DNA 用 dNTP，RNA 用 NTP）。</p>
+  <p>表格最後兩列「功能」與「分布」其實就是中心法則：DNA 留在細胞核當原版，轉錄出的 RNA 帶到細胞質、在核糖體上轉譯成蛋白質。RNA 用 U 而不用 T，是因為 U 合成起來比較省能量（少一個甲基）；DNA 改用 T，則和修補有關——第 3 講會說明，C 很容易自然變成 U，DNA 用 T 才能讓修補系統一眼看出「DNA 裡的 U 一定是壞掉的 C」<span class="add">補充</span>。</p>
+  <div class="tblwrap"><table>
+    <tr><th>項目</th><th>DNA 去氧核糖核酸</th><th>RNA 核糖核酸</th></tr>
+    <tr><td>五碳糖</td><td>去氧核糖（2′–H）</td><td>核糖（2′–OH）</td></tr>
+    <tr><td>鹼基</td><td>A、G、C、<b>T</b></td><td>A、G、C、<b>U</b></td></tr>
+    <tr><td>核苷酸</td><td>dAMP、dTMP、dCMP、dGMP</td><td>AMP、UMP、CMP、GMP</td></tr>
+    <tr><td>合成原料</td><td>dATP、dTTP、dCTP、dGTP</td><td>ATP、UTP、CTP、GTP</td></tr>
+    <tr><td>結構</td><td>雙股螺旋</td><td>單股（可局部摺成雙股）</td></tr>
+    <tr><td>功能</td><td>轉錄 → 合成 RNA</td><td>轉譯 → 合成蛋白質</td></tr>
+    <tr><td>分布</td><td>染色體、粒線體、葉綠體（主要在核）</td><td>核糖體、核仁（主要在細胞質）</td></tr>
+  </table></div>
+  <div class="warn"><b class="t">易錯：</b>(1)「DNA 的糖比 RNA 多一個氧」是錯的，DNA <b>少</b>一個氧。(2)「ATP、CTP、GTP、UTP 都可作為合成 DNA 的原料」錯，DNA 要用 dNTP。(3) RNA 分子內 A 與 U、G 與 C 的量<b>不一定</b>相等，因為 RNA 是單股。(4) DNA 和 RNA 的嘌呤相同（A、G），嘧啶不同（T↔U）。(5) RNA 在強鹼下<b>容易</b>水解（2′–OH 會攻擊磷酸鍵），DNA 較耐鹼。<span class="add">補充</span></div>
+
+  <div class="bridge">單一核苷酸怎麼串成長鏈？前一個核苷酸糖上的 <b>3′–OH</b> 和下一個核苷酸的 <b>5′ 磷酸</b>形成<b>磷酸二酯鍵</b>，所以每一股都有方向：一端是 5′（游離磷酸）、另一端是 3′（游離 –OH）。接下來的問題是：兩條這樣的長鏈怎麼結合在一起？答案就是華生與克里克的雙股螺旋。</div>
+<h3 id="s2c">雙股螺旋的結構特徵 <span class="src">S37</span></h3>
+  <p class="core">糖－磷酸骨架在<b>外側</b>、鹼基在<b>內側</b>；兩股<b>反向平行</b>（5′→3′ 對 3′→5′）；<b>右旋</b>；直徑 <b>2 nm</b>；每對鹼基間距 <b>0.34 nm</b>；每圈 <b>3.4 nm、約 10 bp</b>；有大凹槽與小凹槽。</p>
+  <p>1953 年華生（Watson）與克里克（Crick）參考<b>富蘭克林</b>（Rosalind Franklin）拍的 DNA X 光繞射圖，加上查加夫法則（Chargaff's rule：A＝T、G＝C），提出雙股螺旋模型。X 光繞射能看出螺旋的<b>直徑</b>、間距等幾何特徵，但看不出鹼基序列。</p>
+  <figure class="pic"><svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <text x="105" y="22" font-size="14" text-anchor="middle" fill="#1d4ed8" font-weight="bold">5′</text><text x="105" y="262" font-size="14" text-anchor="middle" fill="#1d4ed8" font-weight="bold">3′</text>
+    <text x="305" y="22" font-size="14" text-anchor="middle" fill="#b91c1c" font-weight="bold">3′</text><text x="305" y="262" font-size="14" text-anchor="middle" fill="#b91c1c" font-weight="bold">5′</text>
+    <line x1="105" y1="30" x2="105" y2="245" stroke="#1d4ed8" stroke-width="6"/><line x1="305" y1="30" x2="305" y2="245" stroke="#b91c1c" stroke-width="6"/>
+    <g font-size="15" font-weight="bold" text-anchor="middle">
+      <rect x="110" y="45" width="80" height="26" fill="#dbeafe"/><text x="150" y="63">A</text><rect x="220" y="45" width="80" height="26" fill="#fee2e2"/><text x="260" y="63">T</text><text x="205" y="63" fill="#6b7280" font-size="13">══</text>
+      <rect x="110" y="90" width="80" height="26" fill="#dbeafe"/><text x="150" y="108">G</text><rect x="220" y="90" width="80" height="26" fill="#fee2e2"/><text x="260" y="108">C</text><text x="205" y="108" fill="#6b7280" font-size="13">≡≡</text>
+      <rect x="110" y="135" width="80" height="26" fill="#dbeafe"/><text x="150" y="153">T</text><rect x="220" y="135" width="80" height="26" fill="#fee2e2"/><text x="260" y="153">A</text><text x="205" y="153" fill="#6b7280" font-size="13">══</text>
+      <rect x="110" y="180" width="80" height="26" fill="#dbeafe"/><text x="150" y="198">C</text><rect x="220" y="180" width="80" height="26" fill="#fee2e2"/><text x="260" y="198">G</text><text x="205" y="198" fill="#6b7280" font-size="13">≡≡</text>
+    </g>
+    <path d="M85 40 v200" stroke="#1d4ed8" stroke-width="2" marker-end="url(#ar2)"/><path d="M325 240 v-200" stroke="#b91c1c" stroke-width="2" marker-end="url(#ar3)"/>
+    <defs><marker id="ar2" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1d4ed8"/></marker><marker id="ar3" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b91c1c"/></marker></defs>
+    <g font-size="13" fill="#374151"><text x="345" y="60">A＝T：2 個氫鍵</text><text x="345" y="105">G≡C：3 個氫鍵</text><text x="345" y="150">骨架（糖－磷酸）</text><text x="345" y="168">在外側</text><text x="345" y="205">兩股反向平行</text><text x="20" y="140" font-size="12" fill="#6b7280">骨架</text></g>
+  </svg><figcaption>圖 1-5　把螺旋「拉直」看：一大（嘌呤）配一小（嘧啶），兩股方向相反。</figcaption></figure>
+  <p>維持雙股螺旋穩定的力量：<b>鹼基對之間的氫鍵</b>加上<b>上下相鄰鹼基的堆積力</b>（stacking，包括凡得瓦力、疏水作用）。單股內部相鄰核苷酸則是以<b>3′,5′-磷酸二酯鍵</b>（共價鍵）相連。磷酸根帶負電，所以 DNA、RNA 在生理狀況下都帶<b>負電</b>。</p>
+<p>這個結構怎麼滿足遺傳物質的三個條件？<b>儲存訊息</b>：骨架完全規律，變化只在內側鹼基的排列，所以訊息就寫在鹼基序列裡；一段 10 個鹼基就有 4¹⁰ 種組合。<b>精確複製</b>：一股決定另一股（A 一定配 T、G 一定配 C），拆開後每一股都能當模板——華生與克里克在 1953 年的論文裡就點出這一點，也就是第 2 講的半保留複製。<b>可以改變</b>：鹼基若配錯或被化學修飾，序列就變了（第 3 講）。疏水的鹼基藏在內側、親水帶負電的骨架朝外接觸水，也讓這個結構在細胞的水環境中最穩定。</p>
+  <div class="warn"><b class="t">易錯：</b>「雙股之間靠磷酸二酯鍵／共價鍵／雙硫鍵相連」都是錯的；兩股之間是<b>氫鍵</b>，同一股內才是磷酸二酯鍵。「磷酸根與鹼基間的離子作用維持雙股」也是錯的。</div>
+
+  <h4>鹼基配對的計算（每次必考）</h4>
+  <p class="core">雙股 DNA：A＝T、G＝C、嘌呤＝嘧啶；A＋G＝T＋C＝50%。核苷酸數＝去氧核糖數＝磷酸數＝鹼基數（1：1：1）。氫鍵數＝2×(A–T 對數)＋3×(G–C 對數)。</p>
+  <div class="calc"><b>例 1</b>：A 佔 20% → T＝20%，G＋C＝60% → <b>G＝30%</b>。<br>
+  <b>例 2</b>：100 個去氧核糖、24 個 A → 共 100 個鹼基；T＝24，C＋G＝52 → <b>C＝26</b>。<br>
+  <b>例 3</b>：磷酸 100 個、G＝20 → C＝20，A＋T＝60 → A＝T＝30；氫鍵＝30×2＋20×3＝<b>120</b>；去氧核糖也是 100 個（不是 50）。<br>
+  <b>例 4</b>：一股 A 24.5%、T 26.5%、C 25.8%、G 23.2% → 互補股 A＝26.5%、T＝24.5%、G＝25.8%、C＝23.2%（A↔T、G↔C 對調）。<br>
+  <b>例 5</b>：DNA 中 A＋T 佔 40% → 每一股的 G＋C 都是 60%；轉錄出的 RNA 只對應一股，所以 RNA 的 C＋G 也是 <b>60%</b>。<span class="add">注意：習作某題解析寫 30%，是把兩股的量除以二，但百分比本來就是同一股內的比例，不必再除。若老師上課公布的答案不同，以老師為準。</span></div>
+  <div class="calc"><b>寫互補股</b>：5′-AATTGC-3′ 的互補股是 3′-TTAACG-5′，<b>依 5′→3′ 寫</b>則是 5′-GCAATT-3′。選項若沒標方向，通常就是逐字對應的「TTAACG」。<br>
+  <b>迴文序列</b> palindrome：兩股都依 5′→3′ 讀起來一樣，例如 5′-GGATCC-3′／3′-CCTAGG-5′（限制酶 BamHI 的切位，第 10 講）。</div>
+
+  <div class="bridge">華生與克里克描述的是含水量高的 DNA 鈉鹽結晶。後來發現 DNA 的螺旋並不是一成不變：環境的<b>水分、鹽濃度</b>或序列本身（如 GC 重複）改變時，螺旋的鬆緊和方向都會跟著變。所以簡報在講完標準結構後，接著比較三種型態。</div>
+<h3 id="s2d">A、B、Z 三種 DNA <span class="src">S38–S41</span></h3>
+  <p class="core"><b>B-DNA</b>：華生與克里克描述的、細胞內最主要的形式；右旋、每圈 10 bp、3.4 nm、高水分低鹽。<b>A-DNA</b>：右旋、每圈 11 bp、較粗短；低水分高鹽、DNA–RNA 雜合體與 RNA 雙股。<b>Z-DNA</b>：<b>左旋</b>、鋸齒狀、每圈 12 bp、較細長；出現在 (GC)ₙ 重複序列。</p>
+  <p>為什麼會有不同型態？DNA 的骨架有一定的彈性，糖環可以扭成不同角度。水分多時（細胞內），DNA 被水分子包圍，呈較細長、標準的 B 型；脫水或高鹽時，糖環構形改變，螺旋變得較粗短、鹼基傾斜，成為 A 型——RNA 的雙股區、DNA–RNA 雜合體因為有 2′–OH，也偏好 A 型。Z 型則出現在 GC 交替重複的序列，骨架呈鋸齒狀並改成左旋；細胞內有少量 Z-DNA，可能與基因調控有關 <span class="add">補充</span>。</p>
+  <div class="tblwrap"><table>
+    <tr><th>類型</th><th>A-DNA</th><th>B-DNA</th><th>Z-DNA</th></tr>
+    <tr><td>螺旋方向</td><td>右旋</td><td>右旋</td><td><b>左旋</b></td></tr>
+    <tr><td>每圈鹼基數</td><td>約 11</td><td>約 10</td><td>12</td></tr>
+    <tr><td>每圈高度</td><td>24.6 Å（最短）</td><td>33.2≒34 Å</td><td>45.6 Å（最長）</td></tr>
+    <tr><td>半徑</td><td>25.5 Å（最粗）</td><td>23.7 Å</td><td>18.4 Å（最細）</td></tr>
+    <tr><td>鹼基對與軸</td><td>傾斜約 20°</td><td>幾乎垂直</td><td>—</td></tr>
+    <tr><td>形成條件</td><td>低水分、高鹽；DNA–RNA 雜合體、RNA–RNA 雙股</td><td>高水分、低鹽；大部分活細胞 DNA</td><td>d(GC)ₙ 序列</td></tr>
+  </table></div>
+  <div class="mn"><b class="t">記法</b>A 最「矮胖」（Aㄞˇ）、Z 最「瘦長」又反著轉（Z 字鋸齒）、B 是中間標準型（Basic）。</div>
+
+  <div class="bridge">前面說兩股之間只靠氫鍵和堆積力這些<b>較弱的作用力</b>結合。那麼把能量加進去（加熱），兩股就會分開——這就是熔解。這個特性非常重要：細胞複製、轉錄時都要局部打開雙股；實驗室的 PCR、墨點法、基因晶片（第 10 講）也都靠「加熱分開、降溫配對」。</div>
+<h3 id="s2e">DNA 熔解（變性）與熔解溫度 Tm <span class="src">S42–S45</span></h3>
+  <p class="core">加熱（或極端 pH、尿素、甲醯胺、乙醇）使鹼基間<b>氫鍵斷裂</b>、堆積力破壞 → 雙股變單股＝<b>變性</b>（一級結構、磷酸二酯鍵不變）。變性後 <b>OD260 上升（增色效應）</b>、<b>黏度下降</b>、旋光性改變。一半 DNA 解開時的溫度＝<b>Tm</b>。慢慢降溫兩股重新配對＝<b>復性</b>。</p>
+  <p>DNA 吸收 <b>260 nm</b> 紫外光（吸光的是<b>鹼基</b>的共軛雙鍵環）。雙股時鹼基疊在一起、互相遮蔽，吸光較少；變成單股後鹼基露出，吸光值增加，這叫<b>增色效應</b> <i class="en-term">hyperchromic effect</i>。把溫度和 OD260 畫成圖，會得到 S 形曲線，50% 熔解時對應的溫度就是 <b>Tm</b> <i class="en-term">melting temperature</i>。</p>
+  <figure class="pic"><svg viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <line x1="60" y1="200" x2="440" y2="200" stroke="#374151"/><line x1="60" y1="200" x2="60" y2="20" stroke="#374151"/>
+    <text x="250" y="230" font-size="13" text-anchor="middle">溫度 →</text><text x="20" y="110" font-size="13" transform="rotate(-90 20 110)" text-anchor="middle">OD260（吸光）→</text>
+    <path d="M60 170 C 170 170, 180 168, 210 150 S 250 60, 290 52 S 360 50, 440 50" fill="none" stroke="#1d4ed8" stroke-width="3"/>
+    <path d="M60 170 C 130 170, 170 168, 230 150 S 300 60, 340 52 S 400 50, 440 50" fill="none" stroke="#dc2626" stroke-width="3" stroke-dasharray="6 4"/>
+    <line x1="60" y1="110" x2="250" y2="110" stroke="#9ca3af" stroke-dasharray="4"/><line x1="250" y1="110" x2="250" y2="200" stroke="#9ca3af" stroke-dasharray="4"/>
+    <text x="250" y="216" font-size="13" text-anchor="middle" fill="#1d4ed8" font-weight="bold">Tm</text>
+    <text x="66" y="105" font-size="12" fill="#6b7280">50%</text>
+    <text x="80" y="160" font-size="12">雙股</text><text x="370" y="42" font-size="12">單股</text>
+    <text x="300" y="150" font-size="12" fill="#dc2626">GC 較多 → 曲線右移</text><text x="300" y="166" font-size="12" fill="#dc2626">（Tm 較高）</text>
+  </svg><figcaption>圖 1-6　DNA 熔解曲線（增色轉換 hyperchromic shift）。</figcaption></figure>
+  <h4>影響 Tm 的因素</h4>
+  <ul class="dots">
+    <li><b>G＋C 含量</b>：越高 Tm 越高（G≡C 有 3 個氫鍵、堆積力也較強）。講義表 <span class="src">S45</span>：大腸桿菌 90.5 ℃、牛胸腺 86.5 ℃、酵母菌 84 ℃。</li>
+    <li><b>離子強度與 pH</b>：都會影響 Tm <span class="src">S44</span>。鹽類（Na⁺）中和磷酸骨架的負電斥力，鹽濃度越高 Tm 越高 <span class="add">補充</span>。所以「Tm 和 pH 無關」是錯的。</li>
+    <li><b>DNA 長度</b>：較短的片段 Tm 較低。</li>
+  </ul>
+  <div class="calc"><b>判斷哪條 Tm 最高</b>：只要看<b>G＋C 百分比</b>。例：已知一股 A 23.2、T 24.5、C 26.5、G 25.8 → G＋C＝52.3%，比其他選項（49%、47.7%）高 → Tm 最高。</div>
+  <div class="exam"><b class="t">考點</b><b>260 nm</b> 測核酸（吸光來自<b>鹼基</b>），<b>280 nm</b> 測蛋白質（芳香族胺基酸：色胺酸、酪胺酸、苯丙胺酸），<b>230 nm</b> 反映鹽類、有機物汙染。A260/A280 ≈ 1.8（DNA）～2.0（RNA）代表純度好 <span class="add">補充</span>。穩定度：RNA–RNA ＞ DNA–RNA ＞ DNA–DNA。</div>
+  <div class="warn"><b class="t">易錯：</b>變性時「OD260 下降」錯（是上升）；「磷酸二酯鍵斷裂」「糖苷鍵斷裂」「嘌呤環破裂」都錯（只斷氫鍵）。<b>復性</b>的標誌是紫外吸收<b>降低</b>。</div>
+  <div class="nut"><b class="t">和蛋白質變性對照：</b>生化課學過蛋白質變性是破壞二、三級結構但胜肽鍵不斷；DNA 變性同樣是破壞高級結構（氫鍵）而一級序列不變。差別是 DNA 降溫後容易復性，這正是 PCR（第 10 講）能一再「加熱解開、降溫配對」的原理。</div>
+
+  <div class="bridge">熔解是把雙股「拆開」；超螺旋則相反，是把雙股螺旋再「扭得更緊或更鬆」，屬於 DNA 的<b>三級結構</b>。為什麼要放在這裡講？因為只要把雙股局部拆開（像複製或轉錄時），前方剩下的部分就會被迫扭得更緊；細胞必須有酵素專門處理這種扭力，否則 DNA 會卡死。這個酵素就是拓樸異構酶，也是第 2 講複製叉前方的重要角色。</div>
+<h3 id="s2f">超螺旋與拓樸異構酶 Supercoiling & Topoisomerase <span class="src">S46–S54</span></h3>
+  <p class="core">雙股螺旋再進一步扭轉＝<b>超螺旋</b>（三級結構），細胞內 DNA 大多是<b>負超螺旋</b>（解旋不足 underwound）。<b>拓樸異構酶</b>改變連接數 Lk：<b>第 I 型切一股、Lk 改變 1</b>；<b>第 II 型切兩股、Lk 改變 2</b>。</p>
+  <p>想像電話線：本來就是螺旋，再多扭幾圈就會盤成一團，這就是超螺旋 <span class="src">S48</span>。沒有斷口的環狀 DNA（質體、病毒 DNA）稱<b>閉鎖環狀 DNA</b> <span class="src">S46</span>。鬆弛的 B-DNA 每圈約 10.5 bp；純化出來的閉鎖環狀 DNA 很少是鬆弛的，細胞會調控它的超螺旋程度 <span class="src">S49</span>。</p>
+  <p>複製或轉錄時要把雙股打開，前方就會越扭越緊。<b>拓樸異構酶</b>負責消除或引入超螺旋 <span class="src">S50</span>：</p>
+  <ul class="dots">
+    <li><b>第 I 型</b>：暫時切斷<b>一股</b>，讓另一股穿過，再接回 → Lk 改變 <b>1</b>。不需 ATP <span class="add">補充</span>。</li>
+    <li><b>第 II 型</b>：切斷<b>兩股</b>，讓另一段雙股穿過，再接回 → Lk 改變 <b>2</b>。需要 ATP。細菌的 <b>DNA 解旋酶（gyrase）</b>就是第 II 型，能引入負超螺旋。</li>
+  </ul>
+  <h4>拓樸異構酶與藥物（講義表格整理）</h4>
+  <div class="tblwrap"><table>
+    <tr><th>對象</th><th>藥物</th><th>作用</th></tr>
+    <tr><td>細菌第 II 型（gyrase、Topo IV）</td><td>香豆精類：新生黴素 novobiocin、香豆黴素 A1</td><td>抑制 ATP 結合活性</td></tr>
+    <tr><td>細菌 gyrase、Topo IV</td><td>喹諾酮類：萘啶酸 nalidixic acid、環丙沙星 ciprofloxacin</td><td>阻斷最後的「重新接合」步驟</td></tr>
+    <tr><td>人類<b>第 I 型</b></td><td><b>喜樹鹼</b> camptothecin 及其衍生物：抗癌妥 irinotecan（大腸癌）、癌康定 topotecan（卵巢癌）</td><td>把 Topo I–DNA 斷裂複合物卡住，無法接回</td></tr>
+    <tr><td>人類<b>第 II 型</b></td><td><b>小紅莓</b> doxorubicin (Adriamycin)、依托泊苷 etoposide、玫瑰樹鹼 ellipticine</td><td>穩定 Topo II–DNA 共價複合物</td></tr>
+  </table></div>
+  <div class="mn"><b class="t">口訣</b>「<b>喜</b>歡<b>一</b>個人」：喜樹鹼家族（camptothecin、irinotecan、topotecan，名字都有 -tecan）→ Topo <b>I</b>；「小紅莓配<b>兩</b>個」：doxorubicin、etoposide → Topo <b>II</b>。</div>
+
+  <div class="sum"><b class="t">本節重點</b><ul>
+    <li>核苷酸：鹼基 1′、磷酸 5′、2′ 決定 DNA／RNA；嘌呤 AG 雙環、嘧啶 CTU 單環。</li>
+    <li>雙股：骨架在外、反向平行、右旋、2 nm、0.34 nm／bp、每圈 10 bp；兩股間靠氫鍵（A=T 2、G≡C 3）。</li>
+    <li>B-DNA 最常見；A 粗短右旋；Z 左旋細長。</li>
+    <li>變性：斷氫鍵、OD260↑、黏度↓；Tm 隨 GC、鹽濃度、長度上升。</li>
+    <li>Topo I 切一股 Lk±1（喜樹鹼）；Topo II 切兩股 Lk±2（小紅莓、喹諾酮）。</li>
+  </ul></div>
+  <details class="terms"><summary>本節名詞中英對照</summary><div class="tblwrap"><table>
+    <tr><td>核苷酸</td><td>nucleotide</td><td>核苷</td><td>nucleoside</td></tr>
+    <tr><td>嘌呤</td><td>purine</td><td>嘧啶</td><td>pyrimidine</td></tr>
+    <tr><td>磷酸二酯鍵</td><td>phosphodiester bond</td><td>反向平行</td><td>antiparallel</td></tr>
+    <tr><td>大／小凹槽</td><td>major / minor groove</td><td>增色效應</td><td>hyperchromic effect</td></tr>
+    <tr><td>變性／復性</td><td>denaturation / renaturation</td><td>熔解溫度</td><td>melting temperature (Tm)</td></tr>
+    <tr><td>超螺旋</td><td>supercoiling</td><td>拓樸異構酶</td><td>topoisomerase</td></tr>
+    <tr><td>連接數</td><td>linking number (Lk)</td><td>DNA 解旋酶（旋轉酶）</td><td>gyrase</td></tr>
+  </table></div></details>
+</section>
+
+<!-- ============ 1-3 ============ -->
+<section class="sec det" id="s3">
+  <h2><span class="no">1-3</span>核醣核酸（RNA）的結構與種類</h2>
+  <div class="en">Structure and Kinds of RNA <span class="src">S55–S68</span></div>
+  <div class="lead"><div><span class="lt">這節要說明什麼？</span>細胞裡的六種主要 RNA 各做什麼。</div><div><span class="lt lt2">和後面的關係</span>mRNA 的加工在第 7 講、tRNA 與 rRNA 的工作在第 8 講、miRNA／siRNA 的基因調控在第 6、10 講會再出現。</div></div>
+  <div class="oneline">mRNA 帶訊息、tRNA 搬胺基酸、rRNA 組成核糖體並催化胜肽鍵；snRNA 剪接 mRNA；miRNA 與 siRNA 讓 mRNA 被切掉或不能轉譯（RNA 干擾）。</div>
+<div class="bridge">DNA 在細胞核裡、不能出來；蛋白質卻在細胞質的核糖體上製造。中間的訊息傳遞就靠 RNA：DNA <b>轉錄</b>成 RNA，RNA 再<b>轉譯</b>成蛋白質，這條路線叫<b>中心法則</b>（central dogma）<span class="src">S57</span>。簡報接著列出六種 RNA，可以用「在中心法則裡扮演什麼角色」來歸類：直接參與蛋白質製造的三種（mRNA、tRNA、rRNA），以及負責加工與調控的三種（snRNA、miRNA、siRNA）。<span class="add">補充</span> 少數病毒（如 HIV）可以把 RNA 反轉錄回 DNA，是中心法則的例外。</div>
+  <p>RNA 可分成會轉譯成蛋白質的 <b>mRNA</b>（protein-coding RNA），和不轉譯、但有結構或催化功能的<b>非編碼 RNA</b>（ncRNA，包括 tRNA、rRNA、snRNA、snoRNA、miRNA、siRNA 等）<span class="src">S56</span>。細胞中含量最多的三種是 mRNA、tRNA、rRNA <span class="src">S58</span>。</p>
+  <div class="tblwrap"><table>
+    <tr><th>RNA</th><th>大小</th><th>功能</th><th>補充重點</th></tr>
+    <tr><td><b>tRNA</b> 轉送 RNA</td><td>小</td><td>把胺基酸帶到核糖體，讀 mRNA 密碼子</td><td>每種胺基酸有一種以上 tRNA，但每種 tRNA 只對應一種胺基酸，所以 tRNA 種類 ＞20 <span class="src">S59–60</span></td></tr>
+    <tr><td><b>rRNA</b> 核糖體 RNA</td><td>多種大小</td><td>與蛋白質組成核糖體</td><td>是有催化能力的<b>核糖酶</b>：23S（原核）／28S（真核）rRNA 作為<b>胜肽醯轉移酶</b>催化胜肽鍵形成 <span class="src">S61</span></td></tr>
+    <tr><td><b>mRNA</b> 傳訊 RNA</td><td>大小不一</td><td>決定蛋白質的胺基酸序列</td><td>由 <b>RNA 聚合酶 II</b> 轉錄出前驅物 pre-mRNA（hnRNA），加工後才成熟 <span class="src">S63</span>；種類最多、半衰期最短 <span class="add">補充</span></td></tr>
+    <tr><td><b>snRNA</b> 小核 RNA</td><td>小</td><td>真核細胞核內，把 pre-mRNA 加工成成熟 mRNA</td><td>是剪接體的成分（第 7 講）<span class="src">S65</span></td></tr>
+    <tr><td><b>miRNA</b> 微小 RNA</td><td>小（21–22 nt）</td><td>引發 RNA 干擾，影響生長發育的基因表現</td><td>與酵素複合體結合，切碎 mRNA、阻止轉譯或加速降解 <span class="src">S66</span></td></tr>
+    <tr><td><b>siRNA</b> 小干擾 RNA</td><td>小（20–25 nt）</td><td>RNA 干擾；科學家用來做基因剔除（knock-down）研究</td><td>通常來自分解病毒 RNA，也有內源性的 <span class="src">S67</span></td></tr>
+  </table></div>
+  <h4>rRNA 的種類 <span class="src">S62</span></h4>
+  <p class="core">原核：<b>5S、16S、23S</b>（三種）。真核：<b>5S、5.8S、18S、28S</b>（四種）。</p>
+  <div class="mn"><b class="t">記法</b>真核多一個「5.8S」；小次單元的 rRNA：原核 16S、真核 18S（真核都「大 2 號」：16→18、23→28）。</div>
+  <div class="eg"><b class="t">比喻 <span class="src">S64</span>：</b>DNA 是圖書館裡不外借的原版食譜；mRNA 是影印本，帶到廚房（核糖體）；蛋白質是照影本做出的菜；tRNA 是負責把食材（胺基酸）送到灶台的助手。</div>
+  <details class="stop"><summary>哪一種 RNA 的 5′ 端和 3′ 端「最可能同時」有游離 –OH？</summary><div>真核 mRNA 的 5′ 端有 7-甲基鳥苷帽子（以三磷酸橋相連），等於多了一個帽子核苷；帽子核糖的 2′、3′–OH 是游離的，加上 3′ 端本來就是游離 –OH，所以習作答<b>真核細胞 mRNA</b>。（細節第 7 講）</div></details>
+  <div class="sum"><b class="t">本節重點</b><ul>
+    <li>三大 RNA：mRNA（訊息）、tRNA（搬運）、rRNA（核糖體、催化胜肽鍵）。</li>
+    <li>snRNA 剪接；miRNA、siRNA 做 RNA 干擾。</li>
+    <li>rRNA：原核 5S／16S／23S；真核 5S／5.8S／18S／28S。</li>
+  </ul></div>
+</section>
+
+<!-- ============ 1-4 ============ -->
+<section class="sec det" id="s4">
+  <h2><span class="no">1-4</span>染色質與染色體的結構</h2>
+  <div class="en">Chromatin and Chromosome Structure <span class="src">S69–S79</span></div>
+  <div class="lead"><div><span class="lt">這節要說明什麼？</span>DNA 怎麼和蛋白質一起收納在細胞核裡，以及在細胞週期中的樣子。</div><div><span class="lt lt2">為什麼重要？</span>第 6 講的基因調控（組蛋白乙醯化、甲基化）就是在改這一節講的構造；唐氏症這類染色體異常也從這裡切入。</div></div>
+  <div class="oneline">DNA 纏在 8 個組蛋白（H2A、H2B、H3、H4 各 2）上形成核小體，像「串珠」；再一層層摺疊，分裂時濃縮成光學顯微鏡看得見的染色體。</div>
+<div class="bridge">1-2、1-3 講的是單一分子；1-4 把尺度拉大到整個細胞核。人類一個細胞的 DNA 拉直約 2 公尺，要塞進直徑不到 10 μm 的細胞核，等於把 40 公里長的細線塞進網球裡。所以 DNA 一定要和蛋白質一起有系統地纏繞摺疊——而且纏得多緊，會直接影響基因能不能被讀取（第 5、6 講）。簡報先講臨床上看得到的「染色體」，再往下講到分子層次的組蛋白與核小體。</div>
+
+  <h3 id="s4a">染色體與條紋染色 Chromosome Banding <span class="src">S69–S71</span></h3>
+  <p class="core">G-band（胰蛋白酶處理＋Giemsa 染色）是臨床細胞遺傳學的<b>標準技術</b>，可辨認每條染色體與特定區段。C-band 染<b>基本異染色質</b>（著絲點附近、末端），可快速鑑別 Y 染色體。另有 Q-band、R-band。</p>
+  <p>「染色體」原意是染色後在細胞核中看得到的濃密小體 <span class="src">S69</span>。把染色體玻片用胰蛋白酶處理後以 Giemsa 染色，每條染色體會出現特有的帶狀條紋（G-banding），因此能排出<b>核型</b> <i class="en-term">karyotype</i>，並定位到某一區段。染色體分短臂（p）與長臂（q），每臂再依條紋分區編號。醫院常用 G-band 檢查遺傳疾病 <span class="src">S71</span>。</p>
+  <div class="exam"><b class="t">考點（習作）</b><b>唐氏症</b>＝多一條<b>第 21 號染色體</b>（三染色體）；最能確診胎兒唐氏症的是<b>染色體檢驗</b>；高齡產婦比例較高；與阿茲海默症有關聯；「四肢關節肌肉發展良好」是錯的（實際上肌張力低）。</div>
+
+  <div class="bridge">講義在染色體與組蛋白之間插入一段細胞週期，乍看有點跳。用意是：染色質的樣子<b>隨細胞週期改變</b>——平常（間期）是鬆散、看不清楚的染色質，方便讀取基因；S 期複製後變成兩份；要分裂時才濃縮成看得見的染色體，方便平均分給兩個子細胞。所以 G-band 核型分析一定要用分裂中期的細胞。理解這個變化，才知道為什麼同一團 DNA 有時叫「染色質」、有時叫「染色體」。</div>
+<h3 id="s4b">細胞週期中的染色體 <span class="src">S72–S74</span></h3>
+  <p class="core">間期 G1 → <b>S（DNA 複製）</b> → G2 → M（有絲分裂：前、前中、中、後、末期）。間期時是鬆散的<b>染色質</b>；S 期複製後形成兩條相連的<b>姊妹染色分體</b>；前期開始濃縮成染色體。</p>
+  <p>間期約佔細胞週期的 90% 以上時間，這段期間細胞照常生長、表現基因，所以染色質要保持鬆散。S 期把每條 DNA 複製一份，兩份由著絲點連在一起，稱為姊妹染色分體。進入 M 期後，染色質一路濃縮到最緊，才能在紡錘絲拉扯時不纏在一起、平均分到兩個子細胞；分裂完成後再解開，回到間期 <span class="src">S72–S74</span>。</p>
+  <figure class="pic"><svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <circle cx="150" cy="110" r="80" fill="none" stroke="#e5e7eb" stroke-width="26"/>
+    <path d="M150 30 A80 80 0 0 1 228 95" fill="none" stroke="#93c5fd" stroke-width="26"/>
+    <path d="M228 95 A80 80 0 0 1 150 190" fill="none" stroke="#1d4ed8" stroke-width="26"/>
+    <path d="M150 190 A80 80 0 0 1 80 150" fill="none" stroke="#a5b4fc" stroke-width="26"/>
+    <path d="M80 150 A80 80 0 0 1 150 30" fill="none" stroke="#f472b6" stroke-width="26"/>
+    <g font-size="14" font-weight="bold" fill="#fff" text-anchor="middle"><text x="205" y="60">G1</text><text x="210" y="160">S</text><text x="105" y="180">G2</text><text x="90" y="80">M</text></g>
+    <text x="150" y="105" font-size="13" text-anchor="middle">細胞週期</text><text x="150" y="122" font-size="12" text-anchor="middle" fill="#6b7280">cell cycle</text>
+    <g font-size="13" fill="#374151"><text x="260" y="45">G1：細胞生長；限制點在 G1／S 之間</text><text x="260" y="80">S：<tspan font-weight="bold" fill="#1d4ed8">DNA 複製</tspan></text><text x="260" y="115">G2：準備分裂</text><text x="260" y="150">M：有絲分裂＋細胞質分裂</text><text x="260" y="185">G0：不分裂（高度分化細胞）</text></g>
+  </svg><figcaption>圖 1-7　細胞週期 <span class="add">補充示意</span>。</figcaption></figure>
+  <ul class="dots">
+    <li>不分裂（G0）或間期的細胞，染色質無定形地散在核中 <span class="src">S73</span>。</li>
+    <li>S 期複製後，每條染色體變成兩條姊妹染色分體，由著絲點相連。</li>
+    <li>前期 DNA 濃縮；中期染色體排在赤道板；後期姊妹染色分體被紡錘絲拉開；末期完成分裂，染色體解濃縮 <span class="src">S72</span>。</li>
+  </ul>
+  <div class="exam"><b class="t">考點（習作）</b>DNA 複製在 <b>S 期</b>；「大部分高度分化的細胞處在 S 期」錯（多在 G0）；「所有細胞 G1 長度都相同」錯；限制點在 <b>G1 與 S 之間</b>；細胞週期中有檢查點監控 DNA 是否受損；細胞凋亡 apoptosis＝細胞可精確控制自己的死亡時間，DNA 斷成片段、細胞皺縮、形成凋亡小體（blebs）被吞噬，不會像壞死（necrosis）那樣腫脹破裂。</div>
+
+  <div class="bridge">看完染色質在細胞週期中的「外觀」，接下來看它的「內部構造」：DNA 到底是怎麼和蛋白質纏在一起的？關鍵是電荷——DNA 帶負電，所以纏它的蛋白一定帶正電。</div>
+<h3 id="s4c">組蛋白與核小體 Histones & Nucleosomes <span class="src">S75–S79</span></h3>
+  <p class="core">染色質≈等量的 DNA＋蛋白質（加少量 RNA）。<b>組蛋白</b>是富含<b>離胺酸 Lys、精胺酸 Arg</b>（約佔 1/4）的<b>鹼性、帶正電</b>小蛋白，有 H1、H2A、H2B、H3、H4 五種，吸住帶負電的 DNA。<b>核小體</b>＝8 個組蛋白（H2A、H2B、H3、H4 各 2）＋纏繞的 <b>146 bp</b> DNA；重複單位約 <b>200 bp</b>，其餘是連接者 DNA。</p>
+  <p>DNA 的磷酸骨架帶負電，組蛋白的 Lys、Arg 帶正電，兩者靠靜電緊緊結合 <span class="src">S76</span>。染色質裡還有許多<b>非組蛋白</b>，幫忙維持結構或調控特定基因 <span class="src">S75</span>。</p>
+  <p>真核細胞要把約 10⁵ μm（約 10 公分）長的 DNA 分子塞進直徑 5–10 μm 的細胞核，所以要高度壓縮 <span class="src">S78</span>。</p>
+  <figure class="pic"><svg viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" fill="#374151">
+      <text x="10" y="30" font-weight="bold">① 雙股 DNA（2 nm）</text>
+      <path d="M180 25 q10 -10 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+      <text x="10" y="85" font-weight="bold">② 核小體「串珠」（11 nm）</text>
+      <line x1="180" y1="80" x2="465" y2="80" stroke="#1d4ed8" stroke-width="2"/>
+      <g fill="#fbcfe8" stroke="#be185d"><circle cx="205" cy="80" r="13"/><circle cx="265" cy="80" r="13"/><circle cx="325" cy="80" r="13"/><circle cx="385" cy="80" r="13"/><circle cx="445" cy="80" r="13"/></g>
+      <text x="235" y="108" font-size="11">連接者 DNA</text><text x="370" y="108" font-size="11">組蛋白八聚體</text>
+      <text x="10" y="145" font-weight="bold">③ 30 nm 纖維（螺線管）<tspan class="add" fill="#b45309"> 補充</tspan></text>
+      <g fill="#fbcfe8" stroke="#be185d"><circle cx="200" cy="140" r="9"/><circle cx="215" cy="128" r="9"/><circle cx="232" cy="140" r="9"/><circle cx="247" cy="128" r="9"/><circle cx="264" cy="140" r="9"/><circle cx="279" cy="128" r="9"/><circle cx="296" cy="140" r="9"/><circle cx="311" cy="128" r="9"/></g>
+      <text x="10" y="195" font-weight="bold">④ 環圈 → ⑤ 中期染色體（約 1400 nm）</text>
+      <path d="M300 170 q-20 25 0 50 M300 170 q20 25 0 50" fill="none" stroke="#7c3aed" stroke-width="10" stroke-linecap="round"/>
+      <path d="M340 170 q-20 25 0 50 M340 170 q20 25 0 50" fill="none" stroke="#7c3aed" stroke-width="10" stroke-linecap="round"/>
+      <circle cx="320" cy="195" r="6" fill="#111827"/><text x="372" y="200">姊妹染色分體</text><text x="372" y="216">中間是著絲點</text>
+    </g>
+  </svg><figcaption>圖 1-8　DNA 的包裝層次：DNA → 核小體 → 更高層摺疊 → 染色體 <span class="src">S77, S79</span>（各層尺寸為一般教科書數值）。</figcaption></figure>
+  <div class="warn"><b class="t">易錯：</b>(1) 核小體核心是<b>八聚體</b>，<b>H1 不在八個裡面</b>，H1 結合在連接者 DNA 上 <span class="add">補充</span>。(2) 組蛋白是<b>鹼性</b>蛋白（Lys、Arg、His 是鹼性胺基酸；Asp、Glu 是酸性）。(3) 常染色質 euchromatin 鬆散、可轉錄；<b>異染色質</b> heterochromatin 緊密、在光學顯微鏡下染色較深、基因通常<b>不轉錄</b>，多在著絲點與端粒附近 <span class="add">補充</span>。</div>
+  <div class="mn"><b class="t">數字口訣</b>「8 個蛋白、纏 146、每 200 重複」——<b>8、146、200</b>。</div>
+  <div class="nut"><b class="t">營養連結（預告第 6 講）：</b>組蛋白尾巴上的 Lys 可被<b>乙醯化</b>（中和正電 → DNA 纏得較鬆 → 較易轉錄）或<b>甲基化</b>。葉酸、維生素 B12、膽鹼、甜菜鹼提供甲基，所以營養素能透過表觀遺傳影響基因表現——但<b>營養素不會直接改變 DNA 序列</b>（習作考題）。</div>
+  <div class="sum"><b class="t">本節重點</b><ul>
+    <li>G-band 是臨床核型標準；C-band 染基本異染色質、可鑑別 Y。</li>
+    <li>DNA 複製在 S 期；複製後為姊妹染色分體。</li>
+    <li>組蛋白富含 Lys、Arg，帶正電；核小體＝組蛋白八聚體＋146 bp，約 200 bp 重複。</li>
+  </ul></div>
+</section>
+
+<!-- ============ 習作分析 ============ -->
+<section class="sec" id="s5">
+  <h2>習作出題分析（單元 1，共 124 題）</h2>
+  <div class="en">Where the questions come from</div>
+  <p>依習作題目逐題歸類（同一題可能跨兩類，數字為約略題數），<span class="stars">★</span> 越多代表越常出：</p>
+  <div class="tblwrap"><table class="freq">
+    <tr><th>主題</th><th>約題數</th><th>常考的說法</th></tr>
+    <tr><td>核苷酸組成、DNA／RNA 比較、嘌呤嘧啶</td><td><span class="stars">★★★★★</span> 約 30</td><td>鹼基接 1′；DNA 無 U；DNA 糖少一個氧；核苷 vs 核苷酸；組成比 1：1：1</td></tr>
+    <tr><td>鹼基配對與計算、互補股、迴文</td><td><span class="stars">★★★★</span> 約 15</td><td>A 20% → G 30%；氫鍵數；互補股百分比；cDNA 由反轉錄酶以 mRNA 為模板</td></tr>
+    <tr><td>變性、Tm、260 nm、增色效應</td><td><span class="stars">★★★★</span> 約 15</td><td>OD260 上升；黏度下降；GC 越多 Tm 越高；280 nm 是蛋白質</td></tr>
+    <tr><td>遺傳學史（孟德爾、格里夫茲、赫雪－蔡斯、富蘭克林）</td><td><span class="stars">★★★</span> 約 15</td><td>³²P 在細胞內、³⁵S 在外；分離律／獨立分配律的條件</td></tr>
+    <tr><td>A／B／Z DNA、雙股螺旋特徵</td><td><span class="stars">★★★</span> 約 10</td><td>細胞內主要 B-form；Z 左旋；右旋、反向平行</td></tr>
+    <tr><td>RNA 種類</td><td><span class="stars">★★</span> 約 6</td><td>mRNA 種類最多半衰期最短；snRNA 加工 pre-mRNA；rRNA 在核仁合成</td></tr>
+    <tr><td>染色質、組蛋白、細胞週期、凋亡、唐氏症</td><td><span class="stars">★★★</span> 約 15</td><td>S 期複製；組蛋白鹼性；唐氏症 21 號三體</td></tr>
+    <tr><td>嘌呤嘧啶代謝、營養基因體學</td><td><span class="stars">★★</span> 約 8</td><td>終產物尿酸；咖啡因耐受度是 CYP1A2（不是 ALDH／ADH）；MTHFR 與葉酸；HLA 與麩質</td></tr>
+    <tr><td>拓樸異構酶</td><td><span class="stars">★</span> 約 3</td><td>Type II 改變 Lk 2；小紅莓穩定 Topo II–DNA 複合物</td></tr>
+  </table></div>
+  <div class="nut"><b class="t">營養基因體學一覽（習作題）：</b>乳糖酶 <b>LCT</b> → 乳製品耐受；<b>ALDH、ADH</b> → <b>酒精</b>耐受（喝酒臉紅）；<b>CYP1A2</b> → 咖啡因代謝；<b>MTHFR</b> → 葉酸需要量；<b>HLA-DQ2／DQ8</b> → 麩質（乳糜瀉）。</div>
+</section>
+
+<!-- ============ 重點整理 ============ -->
+<section class="sec" id="s6">
+  <h2>本講重點整理</h2>
+  <div class="en">Summary</div>
+  <div class="tblwrap"><table>
+    <tr><th>主題</th><th>一定要記</th></tr>
+    <tr><td>孟德爾</td><td>F2 3：1；分離律（同對分離）；獨立分配律（不同對、非同源染色體）；細胞基礎：減數分裂</td></tr>
+    <tr><td>格里夫茲 1928</td><td>死 S＋活 R → 老鼠死；性狀轉變 transformation</td></tr>
+    <tr><td>赫雪－蔡斯 1952</td><td>³²P→DNA 進入細菌（沉澱）；³⁵S→蛋白質留外面（上清）</td></tr>
+    <tr><td>核苷酸</td><td>鹼基 1′、磷酸 5′；DNA 2′–H、RNA 2′–OH；嘌呤 AG 雙環、嘧啶 CTU 單環</td></tr>
+    <tr><td>雙股螺旋</td><td>骨架外、鹼基內；反向平行；右旋；2 nm、0.34 nm、3.4 nm／10 bp；A=T（2）、G≡C（3）</td></tr>
+    <tr><td>三型 DNA</td><td>B 最常見；A 11 bp／圈、粗短；Z 左旋、12 bp、(GC)ₙ</td></tr>
+    <tr><td>變性</td><td>斷氫鍵；OD260↑（增色）；黏度↓；Tm 隨 GC、鹽、長度↑</td></tr>
+    <tr><td>拓樸異構酶</td><td>I：切一股、Lk 1、喜樹鹼；II：切兩股、Lk 2、小紅莓、etoposide；細菌 gyrase：喹諾酮</td></tr>
+    <tr><td>RNA</td><td>mRNA、tRNA、rRNA、snRNA、miRNA、siRNA；rRNA 原核 5／16／23S，真核 5／5.8／18／28S</td></tr>
+    <tr><td>染色質</td><td>組蛋白 Lys、Arg、鹼性；核小體八聚體＋146 bp、約 200 bp 重複；G-band 標準</td></tr>
+  </table></div>
+  <h3>讀完請自我檢查：我能不能……</h3>
+  <ul class="dots">
+    <li>□ 說出赫雪－蔡斯實驗為什麼用 ³²P 和 ³⁵S，以及放射性各出現在哪？</li>
+    <li>□ 畫出核苷酸，標出鹼基、磷酸接在幾號碳，以及 DNA／RNA 差在哪？</li>
+    <li>□ 給一個 A 的百分比，算出 G；給磷酸數與 G 數，算出氫鍵數？</li>
+    <li>□ 說出 DNA 變性後 OD260、黏度怎麼變，Tm 受哪些因素影響？</li>
+    <li>□ 比較 A、B、Z DNA 的螺旋方向和每圈鹼基數？</li>
+    <li>□ 說出 Topo I、Topo II 的差別與各自的抑制藥？</li>
+    <li>□ 說出核小體由哪些組蛋白組成、纏多少 bp？</li>
+  </ul>
+</section>
+
+<!-- ============ 自我檢測 ============ -->
+<section class="sec" id="s7">
+  <h2>自我檢測</h2>
+  <div class="en">Self-check — 題目選自習作單元 1，先選答案再看解析</div>
+  <div id="quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+
+</main>
+<a class="top" href="#top" aria-label="回到頂端">↑</a>
+<footer>營養分子生物學 第 1 講導讀｜依葉景生老師講義整理，標「補充」者為一般知識；如有出入以講義與老師上課內容為準</footer>
+
+<script>
+const Q = [
+ {q:"根據講義，人類基因組計畫顯示人類約有多少基因？",o:["0.5～1 萬個","1～2 萬個","3～3.5 萬個","9 萬個以上"],a:2,
+  e:"講義 S4 寫人類約有 <b>30,000–35,000</b> 個基因。近年估計約 2 萬個蛋白質編碼基因，但考試依講義。"},
+ {q:"在下列何種狀況下，基因會遵守「自由分配（獨立分配）」？",o:["基因位在同源染色體上","基因位在姊妹染色分體上","基因位在同一條染色體上","基因位在非同源染色體上"],a:3,
+  e:"獨立分配律要求兩對基因位在<b>不同對（非同源）染色體</b>，減數分裂時才會各自分配。在同一條染色體上是連鎖，不遵守此律。"},
+ {q:"以 ³²P 標記噬菌體核酸、³⁵S 標記蛋白質外殼，感染寄主後立即測定，放射性會在哪裡？",o:["寄主細胞內有 ³²P，細胞外有 ³⁵S","寄主細胞內有 ³⁵S，細胞外有 ³²P","寄主細胞內外都有","寄主細胞內外都沒有"],a:0,
+  e:"只有 <b>DNA（³²P）</b>注入細菌，<b>蛋白質殼（³⁵S）</b>留在外面。"},
+ {q:"核苷酸的鹼基接在五碳糖的哪一個碳上？",o:["1′","2′","3′","5′"],a:0,
+  e:"鹼基接 <b>1′</b>，磷酸接 <b>5′</b>，3′–OH 用來接下一個核苷酸，2′ 決定是 DNA（H）或 RNA（OH）。"},
+ {q:"某生物基因體的 adenine 約 20%，則 guanine 約為多少？",o:["10%","20%","30%","40%"],a:2,
+  e:"A＝T＝20%，合計 40%；G＋C＝60%，G＝C＝<b>30%</b>。"},
+ {q:"一段雙股 DNA 共有磷酸 100 個、鳥糞嘌呤 20 個，下列何者正確？",o:["胸腺嘧啶 20 個","胞嘧啶 30 個","去氧核糖 50 個","氫鍵 120 個"],a:3,
+  e:"100 個核苷酸：G＝C＝20，A＋T＝60 → A＝T＝30。去氧核糖＝100。氫鍵＝30×2＋20×3＝<b>120</b>。"},
+ {q:"已知各雙股 DNA 其中一股的組成如下，何者 Tm 最高？",o:["A 26.5%、T 24.5%、C 23.2%、G 25.8%","A 25.8%、T 26.5%、C 23.2%、G 24.5%","A 23.2%、T 24.5%、C 26.5%、G 25.8%","A 24.5%、T 26.5%、C 25.8%、G 23.2%"],a:2,
+  e:"比較 G＋C：(A) 49%、(B) 47.7%、(C) <b>52.3%</b>、(D) 49%。G＋C 最高者 Tm 最高。"},
+ {q:"DNA 變性（denaturation）後，下列哪一項變化正確？",o:["對 260 nm 吸收減少","溶液黏度下降","磷酸二酯鍵斷裂","嘌呤環破裂"],a:1,
+  e:"變性只斷氫鍵、破壞堆積力：OD260 <b>上升</b>（增色效應）、剛硬的雙股變成柔軟單股使<b>黏度下降</b>；一級結構不變。"},
+ {q:"雙股 DNA 在中性 pH 下加熱，下列何種變化<b>不會</b>發生？",o:["雙股螺旋鬆開","UV 260 nm 吸光值增加","鹼基間的氫鍵被破壞","鹼基與五碳糖間的糖苷鍵被打斷"],a:3,
+  e:"加熱變性不會切斷共價鍵（糖苷鍵、磷酸二酯鍵）。"},
+ {q:"人體內的 DNA 大部分以哪一種型式存在？",o:["A-form","B-form","Z-form","H-form"],a:1,
+  e:"<b>B-DNA</b>：右旋、每圈約 10 bp，就是華生與克里克描述的結構。Z 為左旋，A 出現在低水分或 RNA 雜合體。"},
+ {q:"可打斷並重新接合 DNA 雙股、每次改變兩個連接數（Lk）的拓樸異構酶是？",o:["第一型","第二型","兩型皆會","兩型都只切一股"],a:1,
+  e:"Type I 切一股、Lk 改變 1；<b>Type II 切兩股、Lk 改變 2</b>（需 ATP）。"},
+ {q:"可穩定拓樸異構酶 II–DNA 共價複合物的抗癌藥是？",o:["喜樹鹼 camptothecin","小紅莓 adriamycin","抗癌妥 irinotecan","癌康定 topotecan"],a:1,
+  e:"喜樹鹼家族（-tecan）作用在 <b>Topo I</b>；<b>小紅莓（doxorubicin／adriamycin）</b>、etoposide 作用在 Topo II。"},
+ {q:"細胞中種類最多、半衰期最短的 RNA 是？",o:["tRNA","rRNA","snRNA","mRNA"],a:3,
+  e:"每個表現中的基因都有自己的 <b>mRNA</b>，所以種類最多；它是暫時的訊息，很快被分解。rRNA 則是含量最多。"},
+ {q:"真核細胞中，可將原始型 mRNA 加工為成熟型的是？",o:["miRNA","snRNA","siRNA","rRNA"],a:1,
+  e:"<b>snRNA</b> 是剪接體的成分，負責切除內含子。"},
+ {q:"組蛋白（histone）的特性，何者正確？",o:["富含天門冬胺酸與麩胺酸的酸性蛋白","富含離胺酸與精胺酸的鹼性蛋白","核小體核心由 H1 與 H2A 各 4 個組成","帶負電，與 DNA 的鹼基形成氫鍵"],a:1,
+  e:"組蛋白富含 <b>Lys、Arg</b>，帶正電，吸住 DNA 帶負電的磷酸骨架；核心是 H2A、H2B、H3、H4 各 2 個，H1 在外。"},
+ {q:"基因變異可能影響對食物的耐受度，下列敘述何者<b>錯誤</b>？",o:["LCT 基因變異與乳製品耐受度有關","ALDH 與 ADH 基因變異與咖啡因耐受度有關","MTHFR 基因變異與葉酸需要量有關","HLA 基因變異與麩質耐受度有關"],a:1,
+  e:"ALDH、ADH 與<b>酒精</b>代謝有關；咖啡因主要由 <b>CYP1A2</b> 代謝。"},
+ {q:"人體分解嘌呤的最終產物為？",o:["尿素 urea","尿囊素 allantoin","尿酸 uric acid","β-丙胺酸"],a:2,
+  e:"人類缺乏尿酸氧化酶，終產物是<b>尿酸</b>，最後一步由黃嘌呤氧化酶氧化。尿素來自胺基酸；β-丙胺酸是嘧啶分解產物。"},
+ {q:"唐氏症的發病原因是？",o:["多了一條第 21 號染色體","單一顯性基因突變","染色體末端缺失","性聯遺傳基因突變"],a:0,
+  e:"唐氏症多為<b>21 號三染色體</b>（染色體數目異常），確診用染色體檢驗。"}
+];
+</script>
+<script src="mb_core.js"></script>
+</body>
+</html>

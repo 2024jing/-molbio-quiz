@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>營養分子生物學導讀｜第 6 講 真核細胞基因轉錄的調控</title>
+<link rel="stylesheet" href="mb.css">
+</head>
+<body id="top" data-ch="6">
+<header>
+  <div class="book">營養分子生物學（葉景生老師講義）・逐講導讀</div>
+  <h1>第 6 講　真核細胞基因轉錄的調控</h1>
+  <div class="en">Lecture 6 Regulation of Eukaryotic Transcription（講義 55 頁）</div>
+</header>
+<div class="modebar"><span>閱讀模式</span>
+  <button id="mBrief" onclick="setMode('brief')">精簡（核心路線）</button>
+  <button id="mFull" onclick="setMode('full')">完整</button>
+</div>
+<main>
+<div class="briefhint">精簡模式只顯示每段的灰框重點；想看說明、例子與圖，按各節的「展開本節詳細內文」，或切到「完整」。</div>
+<div class="note"><span class="src">S20</span> 表示講義第 20 張投影片；<span class="add">補充</span> 是一般知識。這一講和營養最貼近（PPAR、表觀遺傳）。📝 方框依「習作練習 單元 6」（30 題）整理。</div>
+<nav class="toc">
+  <b>本講目錄</b>
+  <a href="#s0">本講地圖</a>
+  <a href="#s1">一、轉錄因子</a>
+  <a class="sub" href="#s1a">三個功能區</a>
+  <a class="sub" href="#s1b">四種 DNA 接合模組：HTH、鋅指、白胺酸拉鍊、HLH</a>
+  <a class="sub" href="#s1c">細胞核受體與 PPAR</a>
+  <a href="#s2">二、組蛋白乙醯化</a>
+  <a href="#s3">三、DNA 甲基化與基因調控</a>
+  <a class="sub" href="#s3a">CpG 與 CpG 島</a>
+  <a class="sub" href="#s3b">X 染色體去活化與巴爾氏體</a>
+  <a class="sub" href="#s3c">基因體印記</a>
+  <a class="sub" href="#s3d">DNMT 與甲基化 CpG 接合蛋白</a>
+  <a href="#s4">四、RNA 干擾</a>
+  <a href="#s5">習作出題分析</a>
+  <a href="#s6">本講重點整理</a>
+  <a href="#s7">自我檢測（互動）</a>
+</nav>
+
+<section class="sec" id="s0">
+  <h2>本講地圖：為什麼這樣排？</h2>
+  <div class="en">Big picture</div>
+  <div class="lead"><b>破題</b>　每個細胞的 DNA 都一樣，肝細胞和肌肉細胞卻做不同的蛋白質——差別在<b>哪些基因被打開</b>。這一講是四種「調音量」的方法：<span class="key">轉錄因子（按開關）、組蛋白乙醯化（把纏線放鬆）、DNA 甲基化（貼封條）、RNA 干擾（把成品攔截銷毀）。</span></div>
+  <div class="path">
+    <div class="step"><span class="sn">一</span><div><b>轉錄因子</b><br><span class="sq">用 HTH、鋅指、白胺酸拉鍊、HLH 抓住 DNA；類固醇受體、PPAR 把營養與荷爾蒙訊號直接帶進細胞核。</span></div></div>
+    <div class="arr">↓ DNA 纏在組蛋白上，轉錄因子要碰得到</div>
+    <div class="step"><span class="sn">二</span><div><b>組蛋白乙醯化（開）／去乙醯化（關）</b></div></div>
+    <div class="arr">↓ 更長期的開關，還能遺傳給子細胞</div>
+    <div class="step"><span class="sn">三</span><div><b>DNA 甲基化</b><br><span class="sq">CpG 島、X 染色體去活化、印記——都是表觀遺傳。</span></div></div>
+    <div class="arr">↓ 轉錄出來之後，還能再攔一次</div>
+    <div class="step"><span class="sn">四</span><div><b>RNA 干擾</b><br><span class="sq">Dicer 切出 siRNA／miRNA，RISC 帶著去切或抑制 mRNA。</span></div></div>
+  </div>
+</section>
+
+<!-- ============ 一 ============ -->
+<section class="sec det" id="s1">
+  <h2><span class="no">一</span>轉錄因子</h2>
+  <div class="en">Transcription Factors <span class="src">S3–S22</span></div>
+  <div class="lead"><div><span class="lt">這節要說明什麼？</span>轉錄因子的結構分區，以及抓 DNA 的四種常見「手型」。</div><div><span class="lt lt2">營養連結</span>PPARα、γ 是脂肪酸、降血糖藥的作用標的；鋅指需要鋅。</div></div>
+  <div class="oneline">轉錄因子有三區：活化區（促進轉錄）、DNA 接合區（認順向元素）、蛋白質交互作用區（組成雙體）。DNA 接合模組常見四種：螺旋－彎摺－螺旋、鋅指、白胺酸拉鍊（bZIP）、螺旋－套環－螺旋。</div>
+
+  <div class="bridge">第 5 講學到：啟動子、增強子、靜止子都只是 DNA 上的序列，而一般性轉錄因子只負責讓聚合酶坐上啟動子，所有基因都一樣。那麼「肝細胞開肝的基因、肌肉細胞開肌肉的基因」是誰決定的？答案是<b>專一性的轉錄因子</b>——它們認得特定的增強子序列，決定哪些基因要多轉錄。第 6 講就從這些蛋白質的結構開始。</div>
+<h3 id="s1a">三個功能區 <span class="src">S3</span></h3>
+  <ul class="dots">
+    <li><b>活化區</b> activation domain：直接或間接與轉錄複合體作用，促進轉錄。</li>
+    <li><b>DNA 接合區</b> DNA-binding domain：辨識並結合順向調控元素。</li>
+    <li><b>蛋白質交互作用區</b>：讓次單元結合成雙倍體或多倍體。</li>
+  </ul>
+
+  <div class="bridge">轉錄因子最關鍵的能力是「找到正確的 DNA 序列」。它是怎麼「讀」DNA 的？蛋白質的某個部位（通常是 α 螺旋）伸進 DNA 的<b>大凹溝</b>，用胺基酸側鏈和鹼基的邊緣形成氫鍵——不用打開雙股就能認出序列 <span class="add">補充</span>。演化出來的幾種「手型」就是下面四種模組。</div>
+<h3 id="s1b">四種 DNA 接合模組 DNA-binding Motifs <span class="src">S4–S15</span></h3>
+  <p class="core"><b>HTH</b>：三個 α 螺旋，第三個（辨識螺旋）插進 DNA <b>大凹溝</b>；同質功能區 homeodomain（60 個胺基酸）屬之。<b>鋅指</b>：約 30 個胺基酸的環，用 4 個 Cys 或 2 Cys＋2 His 夾住 <b>Zn²⁺</b>；哺乳類最大的蛋白質超家族。<b>白胺酸拉鍊 bZIP</b>：每 7 個胺基酸一個 Leu，兩條螺旋像拉鍊纏繞成雙體，旁邊的<b>鹼性區</b>（正電）抓 DNA。<b>HLH</b>：辨認 <b>E 盒</b>（CANNTG）。</p>
+  <figure class="pic"><svg viewBox="0 0 480 230" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <!-- HTH -->
+      <rect x="10" y="10" width="105" height="160" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+      <rect x="25" y="40" width="70" height="18" rx="9" fill="#93c5fd"/><rect x="35" y="75" width="60" height="18" rx="9" fill="#93c5fd" transform="rotate(25 65 84)"/>
+      <rect x="30" y="115" width="70" height="20" rx="10" fill="#1d4ed8"/><text x="65" y="129" fill="#fff" font-size="11">辨識螺旋</text>
+      <text x="62" y="160">大凹溝</text><text x="62" y="28" font-weight="bold">HTH</text>
+      <!-- zinc finger -->
+      <rect x="125" y="10" width="105" height="160" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+      <path d="M150 140 L150 70 Q177 30 205 70 L205 140" fill="none" stroke="#7c3aed" stroke-width="5"/>
+      <circle cx="177" cy="105" r="13" fill="#94a3b8"/><text x="177" y="109" fill="#fff" font-weight="bold">Zn</text>
+      <text x="150" y="155" fill="#7c3aed">Cys</text><text x="205" y="155" fill="#7c3aed">His</text><text x="177" y="28" font-weight="bold">鋅指</text>
+      <!-- bZIP -->
+      <rect x="240" y="10" width="105" height="160" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+      <path d="M270 40 q6 15 0 30 t0 30 t0 30" fill="none" stroke="#16a34a" stroke-width="6"/><path d="M315 40 q-6 15 0 30 t0 30 t0 30" fill="none" stroke="#f59e0b" stroke-width="6"/>
+      <g fill="#111827" font-size="10"><text x="292" y="50">L</text><text x="292" y="72">L</text><text x="292" y="94">L</text></g>
+      <path d="M270 130 L255 160 M315 130 L330 160" stroke="#dc2626" stroke-width="6"/><text x="292" y="165" fill="#dc2626">鹼性區＋</text><text x="292" y="28" font-weight="bold">bZIP</text>
+      <!-- HLH -->
+      <rect x="355" y="10" width="115" height="160" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+      <rect x="370" y="60" width="18" height="70" rx="9" fill="#f472b6"/><path d="M379 60 q20 -25 38 0" fill="none" stroke="#be185d" stroke-width="3"/><rect x="408" y="60" width="18" height="70" rx="9" fill="#f472b6"/>
+      <text x="398" y="40" font-size="11">套環 loop</text><text x="412" y="155">E 盒 CANNTG</text><text x="412" y="28" font-weight="bold">HLH</text>
+      <line x1="10" y1="190" x2="470" y2="190" stroke="#374151" stroke-width="5"/><text x="240" y="215" fill="#374151">DNA</text>
+    </g>
+  </svg><figcaption>圖 6-1　四種 DNA 接合模組示意。</figcaption></figure>
+  <h4>1. 螺旋－彎摺－螺旋 HTH <span class="src">S4–S6</span></h4>
+  <p>1984 年在果蠅<b>同質基因</b>（homeotic genes，決定身體部位）發現 180 bp 的<b>同質盒</b>（homeobox），編碼的蛋白區段＝<b>同質功能區</b>（homeodomain），60 個胺基酸、3 個螺旋，螺旋 III 與 DNA 大凹溝結合。同質蛋白家族超過 300 種，演化上極度保守：果蠅 Antp 與人類 Hox B7 的同質功能區 61 個胺基酸只差 1 個。原核的 lac 抑制子、λ 抑制子也有類似結構。</p>
+  <h4>2. 鋅指 Zinc Finger <span class="src">S7–S9</span></h4>
+  <p>兩個 Cys 在反平行 β 摺板上、兩個 His 在 α 螺旋上，一起夾住鋅離子形成疏水核心（C2H2 型）。例子：<b>Sp1</b>（辨認 GC 盒、CACCC 元素）；<b>類固醇荷爾蒙受體</b>（<b>C4 型</b>，4 個 Cys）；<b>RING-H2 家族</b>（夾 2 個鋅，促成 H3／H4 乙醯化）。第 5 講的 TFIIIA 有 9 個 C2H2 鋅指、第 4 講的 BRCA1 也含鋅指。</p>
+  <div class="nut"><b class="t">營養連結：</b>鋅指蛋白需要鋅才能維持形狀。鋅缺乏時，許多轉錄因子（包括類固醇受體）功能受影響，這是鋅缺乏會造成生長遲緩、免疫低下、傷口癒合慢的分子原因之一 <span class="add">補充</span>。</div>
+  <h4>3. 白胺酸拉鍊 Leucine Zipper（bZIP）<span class="src">S10–S12</span></h4>
+  <p>最早在 CCAAT 接合蛋白 <b>C/EBP</b> 發現：一段 35 個胺基酸，每 7 個出現一個白胺酸，形成長 α 螺旋。螺旋一面是突出的 Leu 側鏈（疏水），另一面是酸、鹼性胺基酸（親水）。兩條螺旋的 Leu 面互相咬合纏繞（coiled-coil），把兩個<b>鹼性區</b>（富含 Lys、Arg、His，帶正電）拉近，去抓帶負電的 DNA，常辨認<b>反序對稱（迴文）</b>序列。bZIP 全長 60–80 個胺基酸。</p>
+  <div class="warn"><b class="t">易錯：</b>白胺酸拉鍊本身是<b>協助組成雙體</b>的區段，真正接 DNA 的是旁邊的<b>鹼性區</b>（正電），不是「酸性區」。習作題「含有負電荷胺基酸的酸性區」是錯的敘述。</div>
+  <h4>4. 螺旋－套環－螺旋 HLH <span class="src">S13–S15</span></h4>
+  <p>在多種組織發育中扮演關鍵角色，辨認 <b>E 盒</b> 5′-CANNTG-3′。套環（loop）比 HTH 的彎摺（turn）長。講義分五類：</p>
+  <div class="tblwrap"><table>
+    <tr><th>類別</th><th>成員</th><th>特點</th></tr>
+    <tr><td>第一類</td><td>E47、E12</td><td>B 淋巴球；可同質或異質雙體</td></tr>
+    <tr><td>第二類</td><td><b>MyoD</b>、myogenin、NeuroD</td><td>肌肉、神經發育；不能自己形成同質雙體</td></tr>
+    <tr><td>第三類</td><td><b>Myc</b> 家族</td><td>bHLH-LZ（HLH 旁再接白胺酸拉鍊），更穩</td></tr>
+    <tr><td>第四類</td><td>Mad、Max、Mxi</td><td>常與 Myc 組成異質雙體；腫瘤轉型、凋亡、分化</td></tr>
+    <tr><td>第五類</td><td><b>Id</b> 家族</td><td>沒有鹼性區、接不上 E 盒；與第一、二類結合來<b>干擾</b>它們</td></tr>
+  </table></div>
+  <div class="exam"><b class="t">考點</b>四種 DNA 接合模組：HTH（含 homeodomain）、鋅指、bZIP、HLH——<b>都是</b>；「六合體 hexamer」「TATA box」<b>不是</b>（TATA box 是 DNA 序列，不在蛋白質上）。注意題目可能把名稱和中文故意對錯，例如「白胺酸拉鍊結構（zinc finger）」。</div>
+
+  <div class="bridge">上面介紹的轉錄因子平時就在細胞裡；但有一類轉錄因子平常是「關著的」，要等到某個分子（荷爾蒙、脂肪酸、維生素 A、D）結合上來才會啟動——細胞核受體。它們用的 DNA 接合手型正是剛學過的<b>鋅指</b>，等於把「外界訊號」直接接到「基因開關」上，這也是營養素能直接調控基因表現最清楚的例子。</div>
+<h3 id="s1c">細胞核受體與 PPAR <span class="src">S16–S22</span></h3>
+  <p class="core"><b>細胞核類固醇荷爾蒙受體（NR）</b>＝受體兼<b>轉錄因子</b>，約 50 種，DNA 接合區有 <b>2 個 C4 鋅指</b>。結構：A/B 區（AF-1 活化功能）→ DNA 接合區 → 絞鏈區（D）→ E/F 區（配體結合、AF-2）。第一、二類（如 <b>PPAR</b>）不論有無配體都坐在反應元素上：沒配體時接抑制因子，有配體時換成活化因子。第三類（如<b>糖皮質固醇受體 GR</b>）平時在細胞質與<b>熱休克蛋白</b>結合，接上荷爾蒙後才進核。</p>
+  <p>它們如何「開關」基因？以 PPAR 為例：沒有配體時，受體已經坐在目標基因的反應元素上，但結合的是<b>協同抑制因子</b>（會招來去乙醯酶，把染色質纏緊），所以基因關著；當脂肪酸或藥物這類配體進來結合在 E/F 區，受體形狀改變，抑制因子掉下來、換上<b>協同活化因子</b>（帶有乙醯轉移酶），染色質鬆開，基因開始轉錄 <span class="src">S19</span>。第三類的 GR 則多了一個「搬家」步驟：平時被熱休克蛋白留在細胞質，荷爾蒙來了才進核。</p>
+  <figure class="pic"><svg viewBox="0 0 480 120" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <text x="15" y="55" text-anchor="start">N</text>
+      <rect x="30" y="35" width="90" height="34" fill="#fde68a" stroke="#b45309"/><text x="75" y="50">A/B</text><text x="75" y="64" font-size="11">AF-1 活化</text>
+      <rect x="120" y="35" width="90" height="34" fill="#c4b5fd" stroke="#7c3aed"/><text x="165" y="50">C：DNA 接合</text><text x="165" y="64" font-size="11">2 個 C4 鋅指</text>
+      <rect x="210" y="35" width="60" height="34" fill="#e5e7eb" stroke="#6b7280"/><text x="240" y="56">D 絞鏈</text>
+      <rect x="270" y="35" width="150" height="34" fill="#bbf7d0" stroke="#15803d"/><text x="345" y="50">E/F：配體結合</text><text x="345" y="64" font-size="11">AF-2 活化</text>
+      <text x="435" y="55" text-anchor="start">C</text>
+      <text x="240" y="100" fill="#374151">配體（荷爾蒙、脂肪酸、藥物）接上 E/F 區 → 換上活化因子 → 打開目標基因</text>
+    </g>
+  </svg><figcaption>圖 6-2　細胞核受體的分區結構 <span class="src">S17</span>。</figcaption></figure>
+  <h4>PPAR：過氧化體增殖物活化受體 <span class="src">S18–S21</span></h4>
+  <p>屬第二型核受體，是<b>配體調控的轉錄因子</b>，與 RXR 結合後坐上目標基因的反應元素 <span class="add">RXR 為補充</span>。三種亞型：</p>
+  <div class="tblwrap"><table>
+    <tr><th>亞型</th><th>主要組織</th><th>功能</th><th>營養／藥物連結 <span class="add">補充</span></th></tr>
+    <tr><td><b>PPAR-α</b></td><td>肝臟</td><td>啟動脂肪酸 <b>β 氧化</b>（過氧化體 ACO 等酵素）及<b>禁食時生酮</b>相關基因</td><td>Fibrate 類降血脂藥；ω-3 脂肪酸是天然配體</td></tr>
+    <tr><td><b>PPAR-β/δ</b></td><td>骨骼肌、棕色脂肪</td><td>控制脂肪酸代謝</td><td>運動耐力相關</td></tr>
+    <tr><td><b>PPAR-γ</b></td><td>脂肪組織</td><td><b>脂肪細胞分化</b>的主要調節者；內臟脂肪調節性 T 細胞</td><td><b>TZD</b>（thiazolidinediones）降血糖藥，提高胰島素敏感性</td></tr>
+  </table></div>
+  <div class="mn"><b class="t">記法</b>α＝<b>A</b>fter fasting 燒脂肪（肝）、γ＝<b>G</b>row fat 長脂肪細胞、β/δ＝肌肉。</div>
+  <div class="eg"><b class="t">GR 的例子 <span class="src">S22</span>：</b>壓力時腎上腺分泌皮質醇 → 擴散進細胞 → 和細胞質中的 GR 結合、熱休克蛋白離開 → GR 進核，結合<b>糖皮質固醇反應元素</b>（GRE，GGTACANNNTGTTCT）→ 打開糖質新生等基因。</div>
+  <div class="exam"><b class="t">考點</b>類固醇荷爾蒙受體可接上啟動子影響基因表現，屬於<b>轉錄因子</b>；受體與分子結合後<b>進入細胞核</b>活化轉錄的是<b>類固醇激素</b>（胰島素、升糖素、兒茶酚胺的受體都在細胞膜上，經第二傳訊者作用）。</div>
+  <div class="sum"><b class="t">本節重點</b><ul>
+    <li>三區：活化區、DNA 接合區、蛋白質交互作用區。</li>
+    <li>HTH（homeodomain、螺旋 III 進大凹溝）；鋅指（C2H2、C4；Sp1、類固醇受體）；bZIP（每 7 個一個 Leu，鹼性區接 DNA）；HLH（E 盒；MyoD、Myc、Id）。</li>
+    <li>NR：2 個 C4 鋅指；PPARα 肝 β 氧化、生酮；PPARγ 脂肪分化、TZD；GR 在細胞質與熱休克蛋白結合。</li>
+  </ul></div>
+</section>
+
+<!-- ============ 二 ============ -->
+<section class="sec det" id="s2">
+  <h2><span class="no">二</span>組蛋白乙醯化與基因調控</h2>
+  <div class="en">Histone Acetylation <span class="src">S23–S26</span></div>
+  <div class="oneline">HAT 把乙醯基加到組蛋白 N 端尾巴的離胺酸上，中和正電 → 組蛋白抓 DNA 的力量變弱 → 染色質鬆開、基因打開；HDAC 拿掉乙醯基 → 纏緊、基因關閉。</div>
+<div class="bridge">轉錄因子要結合 DNA，前提是 DNA 碰得到。第 1 講說 DNA 纏在組蛋白上，第 5 講也提到轉錄前要先「染色質重整」。這一節正式說明：細胞怎麼用化學修飾控制組蛋白抓 DNA 的鬆緊，進而決定一整片區域的基因能不能被讀取。可以把它想成「轉錄因子開燈之前，要先把燈罩打開」。</div>
+  <p class="core"><b>組蛋白乙醯轉移酶 HAT</b>：乙醯化組蛋白 N 端的 <b>Lys</b>（主要 H3、H4）→ 正電被中和 → 與帶負電的 DNA 吸力變弱 → 核小體鬆開 → 轉錄因子接得上。<b>組蛋白去乙醯酶 HDAC</b>：反之，增加包裹、關閉基因；常與<b>甲基化 CpG 接合蛋白 MeCP</b> 和協同抑制因子組成複合體。</p>
+  <figure class="pic"><svg viewBox="0 0 480 160" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <circle cx="90" cy="75" r="32" fill="#fbcfe8" stroke="#be185d"/><text x="90" y="80">組蛋白</text>
+      <path d="M40 60 Q90 15 140 60 Q160 95 120 110 Q90 120 60 110 Q20 95 40 60" fill="none" stroke="#1d4ed8" stroke-width="4"/>
+      <text x="58" y="45" fill="#dc2626" font-weight="bold">＋</text><text x="125" y="45" fill="#dc2626" font-weight="bold">＋</text><text x="45" y="130" fill="#1d4ed8">－－</text>
+      <text x="90" y="150" font-weight="bold">緊（關）異染色質</text>
+      <text x="240" y="60" fill="#15803d" font-weight="bold">HAT 加乙醯基 →</text>
+      <text x="240" y="100" fill="#b91c1c" font-weight="bold">← HDAC 去乙醯基</text>
+      <circle cx="390" cy="75" r="32" fill="#fbcfe8" stroke="#be185d"/><text x="390" y="80">組蛋白</text>
+      <path d="M320 40 Q350 15 380 30 M400 30 Q440 15 465 50 Q475 110 440 125" fill="none" stroke="#1d4ed8" stroke-width="4"/>
+      <text x="360" y="45" font-size="10" fill="#15803d">Ac</text><text x="420" y="45" font-size="10" fill="#15803d">Ac</text>
+      <text x="390" y="150" font-weight="bold">鬆（開）常染色質</text>
+    </g>
+  </svg><figcaption>圖 6-3　乙醯化與去乙醯化：開關染色質。</figcaption></figure>
+  <div class="warn"><b class="t">講義用詞提醒：</b><span class="src">S24</span> 寫「尾巴帶電性由正變負」，比較精確的說法是乙醯基把 Lys 的<b>正電中和</b>（變成不帶電），不是變成負電。<span class="src">S25</span> 寫 HDAC「去除正電荷」，實際上去乙醯化是<b>恢復</b>正電。考試記結論即可：<b>乙醯化→鬆→表現；去乙醯化→緊→不表現</b>。</div>
+  <div class="exam"><b class="t">考點</b>10 nm、30 nm 纖維要解開以進行表現，組蛋白要進行<b>乙醯化與磷酸化</b>。因 DNA–組蛋白複合物改變而增加轉錄＝<b>染色質重塑</b>。正確配對：<b>DNA 去甲基化＋組蛋白乙醯化 → DNA 鬆散，利於表現</b>；反之 DNA 甲基化＋組蛋白去乙醯化 → 濃縮、不利表現。蛋白質磷酸化發生在 <b>Ser、Thr、Tyr</b>。</div>
+  <div class="nut"><b class="t">營養連結 <span class="add">補充</span>：</b>膳食纖維經腸道細菌發酵產生的<b>丁酸</b>是天然的 HDAC 抑制劑；蘿蔔硫素（十字花科）、薑黃素也被研究具有影響組蛋白修飾的作用。乙醯基的來源是乙醯輔酶 A，所以細胞的能量代謝狀態也會影響組蛋白乙醯化。</div>
+</section>
+
+<!-- ============ 三 ============ -->
+<section class="sec det" id="s3">
+  <h2><span class="no">三</span>DNA 甲基化與基因調控</h2>
+  <div class="en">DNA Methylation <span class="src">S27–S40</span></div>
+  <div class="lead"><div><span class="lt">這節要說明什麼？</span>不改 DNA 序列、卻能關掉基因並傳給子細胞的「表觀遺傳」。</div><div><span class="lt lt2">營養連結最強的一節</span>甲基來自 SAM，而 SAM 的製造需要葉酸、B12、B6、膽鹼、甜菜鹼。</div></div>
+  <div class="oneline">DNA 甲基化＝在 CpG 的胞嘧啶第 5 號碳上加甲基（5mC），不改序列卻能關閉基因，屬於表觀遺傳（epigenetic）。啟動子上的 CpG 島平常沒甲基化（基因開），一旦被甲基化就關閉。X 染色體去活化、基因體印記都靠它。</div>
+<div class="bridge">組蛋白乙醯化是可快速開關的「短期調控」；DNA 甲基化則是較<b>長期、可遺傳給子細胞</b>的關閉方式。兩者常一起作用：DNA 被甲基化後，會招來去乙醯酶把組蛋白纏緊（本節最後的 MeCP 會說明）。簡報接下來用三個生物現象來說明甲基化的威力：CpG 島、X 染色體去活化、印記。</div>
+
+  <h3 id="s3a">CpG 與 CpG 島 <span class="src">S27–S30</span></h3>
+  <p class="core">脊椎動物 DNA 甲基化發生在<b>胞嘧啶第 5 號碳（5mC）</b>，成熟體細胞主要在 <b>CpG</b> 雙核苷酸（C 後面接 G，p 是兩者間的磷酸）；人類約 1% 鹼基被甲基化。散在的 CpG 70–90% 有甲基化；<b>CpG 島</b>（300–3,000 bp 的 CpG 密集區）通常<b>沒有</b>甲基化，常位於啟動子附近（人類約 70% 啟動子有）。</p>
+  <p>為什麼基因體大部分地方的 CpG 很稀少、只有 CpG 島保留很多？因為甲基化的 C（5mC）去胺後會直接變成 T，修補系統分不出來，長期演化下來大多數被甲基化的 CpG 就慢慢變成 TpG 消失了；只有平常保持<b>不甲基化</b>的區域（CpG 島）能保留大量 CpG <span class="add">補充</span>。所以 CpG 島通常就是「常常要用的基因」的啟動子——它們一直保持開放。</p>
+  <div class="eg"><b class="t">比喻：</b>CpG 島像門口的開關面板，平常保持乾淨（未甲基化），燈就能開；如果被貼上封條（甲基化），甲基化 CpG 接合蛋白就會過來，帶著 HDAC 把附近染色質纏緊，燈打不開。很多癌症就是抑癌基因的 CpG 島被異常甲基化而關閉 <span class="add">補充</span>。</div>
+  <div class="exam"><b class="t">考點</b>啟動子上的 CpG 島因受到<b>甲基化</b>修飾而改變基因表現；造成 DNA 緊纏組蛋白、避免轉錄的修飾是<b>甲基化</b>。</div>
+
+  <div class="bridge">CpG 島的甲基化關掉的是「一個基因」；X 染色體去活化則是把<b>整條染色體</b>幾乎所有基因一次關掉，是甲基化最大規模的例子。</div>
+<h3 id="s3b">X 染色體去活化與巴爾氏體 <span class="src">S31–S33</span></h3>
+  <p class="core">雌性哺乳類有兩條 X，為避免基因劑量是雄性的兩倍，胚胎早期每個細胞<b>隨機</b>關掉一條 X。由 <b>Xist</b> 基因轉錄出<b>不轉譯的 RNA</b> 包覆該條 X，使它高度甲基化、低度乙醯化，濃縮成<b>巴爾氏體</b>（Barr body，在細胞<b>核</b>內）。除了偽體染色體區，其上基因都被沉默。每個細胞關的 X 不同 → 雌性是<b>鑲嵌體</b>。</p>
+  <p>流程：胚胎早期，每個細胞隨機選一條 X 啟動 <b>Xist</b> 基因。Xist 做出的長鏈 RNA 不轉譯成蛋白，而是沿著<b>同一條</b> X 染色體一路包覆，招來各種抑制機制：組蛋白去乙醯化、DNA 甲基化、特殊組蛋白 macroH2A 加入，整條染色體濃縮成異染色質，也就是巴爾氏體。之後這個選擇會由 DNMT1（後面介紹）一代代傳下去，所以由同一個早期細胞分裂來的一群細胞，關的都是同一條 X。</p>
+  <figure class="pic"><svg viewBox="0 0 480 175" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <circle cx="60" cy="80" r="40" fill="#fff" stroke="#374151" stroke-width="2"/><rect x="45" y="60" width="8" height="40" fill="#f97316"/><rect x="65" y="60" width="8" height="40" fill="#1d4ed8"/>
+      <text x="60" y="145">胚胎早期</text><text x="60" y="160" font-size="11">兩條 X 都活化</text>
+      <path d="M110 80 L160 45 M110 80 L160 120" stroke="#374151" stroke-width="2"/>
+      <text x="140" y="35" font-size="11">隨機</text>
+      <circle cx="210" cy="45" r="32" fill="#fff" stroke="#374151" stroke-width="2"/><rect x="195" y="28" width="8" height="34" fill="#f97316"/><circle cx="222" cy="58" r="8" fill="#1d4ed8"/>
+      <circle cx="210" cy="120" r="32" fill="#fff" stroke="#374151" stroke-width="2"/><circle cx="198" cy="133" r="8" fill="#f97316"/><rect x="215" y="103" width="8" height="34" fill="#1d4ed8"/>
+      <text x="255" y="50" text-anchor="start">橘色 X 表現（藍 X＝巴爾氏體）</text>
+      <text x="255" y="125" text-anchor="start">藍色 X 表現（橘 X＝巴爾氏體）</text>
+      <text x="250" y="152" text-anchor="start" fill="#7c3aed">→ 各自分裂成片：鑲嵌體</text><text x="250" y="168" text-anchor="start" fill="#7c3aed">（如三花貓毛色）</text>
+    </g>
+  </svg><figcaption>圖 6-4　X 染色體隨機去活化造成鑲嵌現象。</figcaption></figure>
+  <div class="calc"><b>巴爾氏體數目＝X 的條數 − 1</b>：正常女性 46,XX → 1 個；正常男性 → 0 個；<b>47,XXY 男性 → 1 個</b>；47,XXX → 2 個；45,X（透納）→ 0 個。</div>
+  <div class="warn"><b class="t">易錯：</b>(1) 巴爾氏體在<b>細胞核</b>內，不是細胞質。(2) 巴爾氏體上的基因<b>不表現</b>（不是強化表現）。(3) 每個雌性細胞只有<b>一個</b>巴爾氏體。(4) 講義 <span class="src">S32</span> 寫「父系 X 染色體關閉成為巴爾氏體」，這只在有袋類或小鼠胎盤組織如此；人類體細胞是<b>隨機</b>選擇（講義 <span class="src">S31、S33</span> 也寫隨機）<span class="add">補充說明</span>。(5) 若控制體色的基因在 X 上，雌性可能出現<b>深淺不均</b>的鑲嵌毛色（三花貓）。</div>
+
+  <div class="bridge">X 去活化是「隨機」關掉一條；印記則是<b>依來源</b>關掉——某些基因固定只用父親的、或只用母親的副本。兩者都靠甲基化，差別在「怎麼選」。</div>
+<h3 id="s3c">基因體印記 Genomic Imprinting <span class="src">S34–S35</span></h3>
+  <p class="core">某些基因只表現<b>來自父親或母親其中一方</b>的副本，另一方被關閉。機制：生殖細胞發育早期<b>抹除</b>原本所有甲基化，再依精子或卵子的身分<b>重建</b>新的甲基化模式並傳給下一代。</p>
+  <p>為什麼叫「印記」？因為某個基因要不要開，取決於它<b>經過誰的生殖細胞</b>：在精子形成過程中被蓋上的甲基化模式，和在卵子形成中蓋上的不同，受精後這些記號保留在胚胎的每個細胞裡。下一代形成自己的生殖細胞時，再把舊記號全部擦掉，依自己的性別重新蓋章 <span class="src">S35</span>。所以若只有一份有功能的副本（另一份本來就被印記關掉），那一份壞掉就會生病。</p>
+  <div class="nut"><b class="t">例子 <span class="add">補充</span>：</b>15 號染色體同一區域，若父源副本缺失 → <b>小胖威利症</b>（Prader-Willi，嬰兒期餵食困難、之後食慾難以控制，營養照護重點）；若母源副本缺失 → 安格曼症候群（Angelman）。</div>
+
+  <div class="bridge">講完甲基化「做什麼」，最後回答兩個機制問題：甲基是誰加上去的？為什麼細胞分裂後甲基化模式還能保留？以及，一個小小的甲基怎麼讓基因關閉？</div>
+<h3 id="s3d">DNMT 與甲基化 CpG 接合蛋白 <span class="src">S36–S40</span></h3>
+  <p class="core"><b>DNMT3A、DNMT3B</b>：胚胎早期的<b>新生甲基化</b>（de novo，從無到有）；DNMT3B 突變 → 著絲點周邊重複序列與失活 X 無法正常甲基化。<b>DNMT1</b>：<b>維持甲基化</b>——複製後的 DNA 是半甲基化（舊股有、新股沒有），DNMT1 認得並把新股補上甲基，讓甲基化模式傳給子細胞。</p>
+  <figure class="pic"><svg viewBox="0 0 480 140" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle" font-family="monospace,Noto Sans TC">
+      <text x="70" y="30">5′-C G-3′</text><text x="70" y="55">3′-G C-5′</text><text x="52" y="15" fill="#dc2626">CH₃</text><text x="88" y="72" fill="#dc2626">CH₃</text>
+      <text x="70" y="100" font-family="Noto Sans TC">全甲基化</text>
+      <text x="160" y="45" font-family="Noto Sans TC">複製 →</text>
+      <text x="250" y="30">5′-C G-3′</text><text x="250" y="55" fill="#16a34a">3′-G C-5′</text><text x="232" y="15" fill="#dc2626">CH₃</text>
+      <text x="250" y="100" font-family="Noto Sans TC">半甲基化（新股沒有）</text>
+      <text x="345" y="45" font-family="Noto Sans TC">DNMT1 →</text>
+      <text x="420" y="30">5′-C G-3′</text><text x="420" y="55" fill="#16a34a">3′-G C-5′</text><text x="402" y="15" fill="#dc2626">CH₃</text><text x="438" y="72" fill="#dc2626">CH₃</text>
+      <text x="420" y="100" font-family="Noto Sans TC">恢復全甲基化</text>
+      <text x="240" y="130" font-family="Noto Sans TC" fill="#6b7280">CpG 是迴文，兩股各有一個 C 可被甲基化</text>
+    </g>
+  </svg><figcaption>圖 6-5　DNMT1 的維持甲基化 <span class="src">S37</span>。</figcaption></figure>
+  <p><b>甲基化 CpG 接合蛋白 MeCP</b>（帶有 MBD 區）是甲基化與基因關閉之間的橋樑：第一類辨認對稱的甲基化 CpG（MBD1、MBD2、MBD4、<b>MeCP2</b>；MeCP1＝MBD2＋NuRD，NuRD 含 MBD3 與多種 HDAC）；第二類是 <b>Kaiso</b>，辨認 m5CGm5CG。它們徵召 <b>HDAC／mSin3</b> 使組蛋白去乙醯化 → 基因關閉。</p>
+  <div class="mn"><b class="t">串起來</b>DNA 甲基化（封條）→ MeCP 讀到封條 → 叫來 HDAC → 組蛋白去乙醯化（纏緊）→ 基因關閉。這就是「DNA 甲基化＋組蛋白去乙醯化」兩者常一起出現的原因。</div>
+  <div class="exam"><b class="t">考點（表觀遺傳 4 題）</b>基因體印記、DNA 甲基化、組蛋白乙醯化、X 染色體去活化 → 都屬於<b>表觀遺傳</b>（epigenetic），不是突變或染色體重組。與 DNA 甲基化有關的是<b>印記與 X 去活化</b>（不是染色體轉位）。表觀遺傳機制包括 DNA 甲基化、組蛋白修飾、miRNA；「<b>RNA 乙醯化</b>」<b>不是</b>。</div>
+  <div class="nut"><b class="t">營養連結：一碳代謝 <span class="add">補充</span></b>甲基的直接供體是 <b>S-腺苷甲硫胺酸（SAM）</b>，由甲硫胺酸製造；甲硫胺酸的再生需要<b>葉酸</b>（5-甲基四氫葉酸）、<b>維生素 B12</b>，另一條路靠<b>膽鹼、甜菜鹼</b>；B6 參與同半胱胺酸代謝。因此孕期葉酸、膽鹼攝取會影響胎兒的 DNA 甲基化（如刺鼠 agouti 小鼠實驗：母鼠補充甲基供體，子代毛色與肥胖傾向改變）。MTHFR 基因變異（第 1 講）會影響這條路。</div>
+</section>
+
+<!-- ============ 四 ============ -->
+<section class="sec det" id="s4">
+  <h2><span class="no">四</span>RNA 干擾機制</h2>
+  <div class="en">RNA Interference <span class="src">S41–S54</span></div>
+  <div class="oneline">雙股 RNA 在細胞質被 Dicer 切成約 21–25 nt 的小片段（siRNA 或 miRNA），其中一股裝進 RISC；RISC 依互補找到目標 mRNA，完全互補就切斷分解，不完全互補就抑制轉譯——屬於轉錄後基因靜止。</div>
+  <div class="bridge">前三種調控（轉錄因子、組蛋白、甲基化）都發生在<b>細胞核、轉錄這一關</b>。RNA 干擾則是在<b>轉錄之後、細胞質裡</b>再攔一次：mRNA 已經做出來了，還是可以被銷毀或阻止轉譯。這也呼應第 1 講列過的 miRNA、siRNA——到這裡才真正說明它們怎麼運作。</div>
+<h3>發現經過 <span class="src">S41–S43</span></h3>
+  <p>兩個實驗的共同點是：<b>加入和某基因序列相同的 RNA，反而讓這個基因被關掉</b>。矮牽牛的實驗當時看不懂原因；線蟲實驗則把三種 RNA 分開比較，發現單獨的正義或反義 RNA 效果都很弱，只有兩者配成的雙股 RNA 效果強烈——雙股 RNA 才是觸發機制的關鍵。</p>
+  <ul class="dots">
+    <li><b>1990 年矮牽牛</b>：想讓紫花更紫而多轉入色素基因，結果花反而變白——外來與原有基因同時被抑制，稱為<b>協同抑制</b>（co-suppression），後來統稱<b>轉錄後基因靜止 PTGS</b>。</li>
+    <li><b>1998 年線蟲</b>（<i>C. elegans</i>）：把 unc-22 基因的正義 RNA、反義 RNA、正義＋反義（<b>雙股 RNA</b>）分別注入，只有<b>雙股 RNA</b> 組出現抽搐（unc-22 肌絲蛋白缺乏），而且效果會傳給子代 → 證明是雙股 RNA 引發干擾（2006 年諾貝爾獎 <span class="add">補充</span>）。</li>
+  </ul>
+  <div class="bridge">實驗發現「雙股 RNA」是關鍵，但細胞是怎麼把雙股 RNA 變成精準關閉某個基因的工具？需要兩個角色：一把把雙股 RNA 切成小段的剪刀（Dicer），和一個拿著小段 RNA 去找目標的執行者（RISC）。</div>
+<h3>機制 <span class="src">S44–S50</span></h3>
+  <p class="core"><b>Dicer</b>（RNase III 家族，位在細胞質）：N 端 RNA 解旋酶區＋兩個 RNase III 區＋C 端 <b>PAZ 區</b>；把 dsRNA 或 pre-miRNA 切成 20–25 bp、3′ 端突出 2 個鹼基的小雙股，解開後得到單股 siRNA。<b>RISC</b>（RNA 誘導沉默複合體）：帶著反義股找互補 mRNA，<b>PIWI 區</b>（RNase H 家族）負責切割；PAZ 區抓住 siRNA 的 3′ 端。</p>
+  <p>具體步驟：① 雙股 RNA（來自病毒，或基因體轉錄出的髮夾狀 pre-miRNA）進入細胞質；② Dicer 用兩個 RNase III 區把它切成 20–25 bp 的小雙股，兩端各突出 2 個鹼基；③ 小雙股被裝進 RISC，其中一股被丟掉，留下的那一股（引導股）負責「認人」；④ RISC 帶著引導股掃描細胞質中的 mRNA，找到互補的就結合：完全互補時 PIWI 區把 mRNA 切斷分解；只有部分互補（動物 miRNA 常見）時則卡住 mRNA 不讓核糖體轉譯 <span class="src">S48–S50</span>。</p>
+  <figure class="pic"><svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12">
+      <text x="10" y="20" font-weight="bold">來源</text>
+      <path d="M20 40 h120 M20 48 h120" stroke="#dc2626" stroke-width="4"/><text x="80" y="70" text-anchor="middle">病毒、外來 dsRNA → siRNA</text>
+      <path d="M180 44 h70 q25 0 25 -14 q0 -14 -25 -14 h-0 M180 52 h70 q25 0 25 14" fill="none" stroke="#7c3aed" stroke-width="4"/>
+      <text x="230" y="90" text-anchor="middle">基因體髮夾 RNA → miRNA</text>
+      <rect x="320" y="25" width="90" height="34" rx="10" fill="#fde68a" stroke="#b45309"/><text x="365" y="47" text-anchor="middle" font-weight="bold">Dicer 切</text>
+      <path d="M160 44 L310 44" stroke="#9ca3af" stroke-dasharray="4" stroke-width="1.5"/>
+      <path d="M365 60 v30" stroke="#374151" stroke-width="2"/>
+      <path d="M335 105 h60 M337 113 h60" stroke="#16a34a" stroke-width="4"/><text x="430" y="113" text-anchor="middle">21–25 nt</text>
+      <path d="M365 122 v20" stroke="#374151" stroke-width="2"/>
+      <ellipse cx="365" cy="165" rx="55" ry="22" fill="#bfdbfe" stroke="#1d4ed8"/><text x="365" y="162" text-anchor="middle" font-weight="bold">RISC</text><text x="365" y="178" text-anchor="middle" font-size="11">帶一股</text>
+      <path d="M20 170 h250" stroke="#1d4ed8" stroke-width="4"/><text x="40" y="160">mRNA</text>
+      <text x="20" y="200" fill="#dc2626">完全互補 → 切斷、降解（多為 siRNA）</text>
+      <text x="20" y="216" fill="#b45309">部分互補 → 抑制轉譯（多為動物 miRNA）</text>
+    </g>
+  </svg><figcaption>圖 6-6　RNA 干擾流程。</figcaption></figure>
+  <div class="tblwrap"><table>
+    <tr><th></th><th>miRNA</th><th>siRNA</th></tr>
+    <tr><td>結構</td><td>髮夾環（hairpin-loop）</td><td>平行雙股</td></tr>
+    <tr><td>來源</td><td>基因體的 pre-miRNA，經 Dicer</td><td>dsRNA（常來自病毒），經 Dicer</td></tr>
+    <tr><td>功能</td><td>基因表現調控、生命過程（生長發育）</td><td>基因表現調控、<b>免疫反應</b>（植物抗病毒）；實驗做基因剔除</td></tr>
+  </table></div>
+  <div class="eg"><b class="t">植物的免疫 <span class="src">S45</span>：</b>病毒 dsRNA 被切成 21–27 nt 的 siRNA，能在細胞間傳遞、佈滿整株；同一病毒再來時，馬上被認出並干擾——像疫苗一樣。</div>
+  <div class="bridge">既然只要設計一段和目標 mRNA 互補的 siRNA 就能關掉那個基因，RNAi 自然成為研究工具（基因剔除）和治療策略（關掉病毒或致病基因）。簡報最後用兩種病毒感染舉例。</div>
+<h3>應用 <span class="src">S52–S54</span></h3>
+  <ul class="dots">
+    <li><b>愛滋病</b>：針對病毒的 Rev、gag 基因；但 HIV 突變快（每 1,000 個核苷酸約 1 個變異）會產生逃脫株，所以改針對較穩定的<b>人體</b>蛋白 <b>CD4</b>（輔助 T 細胞受器）與 <b>CCR5</b>（共受器）。</li>
+    <li><b>B 型肝炎</b>：用不會複製的<b>腺病毒</b>當載體把 siRNA 送進肝細胞，小鼠實驗抑制約 90% 病毒複製。</li>
+  </ul>
+  <div class="exam"><b class="t">考點</b>RNAi 在<b>細胞質</b>進行；通常造成 <b>RNA 降解</b>（不是抑制轉錄、不影響複製引子）；miRNA 與 mRNA <b>完全互補</b>時 → <b>促進 mRNA 降解</b>；Dicer 切割<b>雙股 RNA</b>；最具發展潛力的應用是<b>抑制病毒基因表現</b>以治療疾病。</div>
+  <div class="sum"><b class="t">本節重點</b><ul>
+    <li>1990 矮牽牛協同抑制（PTGS）；1998 線蟲 dsRNA。</li>
+    <li>Dicer（細胞質、RNase III、PAZ）切 dsRNA → 21–25 nt；RISC（PIWI 切割）找互補 mRNA。</li>
+    <li>完全互補 → 降解；部分互補 → 抑制轉譯。</li>
+    <li>應用：HIV（CD4、CCR5）、HBV（腺病毒載體）。</li>
+  </ul></div>
+  <details class="terms"><summary>本講名詞中英對照</summary><div class="tblwrap"><table>
+    <tr><td>螺旋－彎摺－螺旋</td><td>helix-turn-helix (HTH)</td><td>同質功能區</td><td>homeodomain</td></tr>
+    <tr><td>鋅指</td><td>zinc finger</td><td>白胺酸拉鍊</td><td>leucine zipper (bZIP)</td></tr>
+    <tr><td>螺旋－套環－螺旋</td><td>helix-loop-helix (HLH)</td><td>細胞核受體</td><td>nuclear receptor (NR)</td></tr>
+    <tr><td>過氧化體增殖物活化受體</td><td>PPAR</td><td>熱休克蛋白</td><td>heat shock protein</td></tr>
+    <tr><td>組蛋白乙醯轉移酶／去乙醯酶</td><td>HAT / HDAC</td><td>表觀遺傳</td><td>epigenetics</td></tr>
+    <tr><td>CpG 島</td><td>CpG island</td><td>DNA 甲基轉移酶</td><td>DNMT</td></tr>
+    <tr><td>巴爾氏體</td><td>Barr body</td><td>基因體印記</td><td>genomic imprinting</td></tr>
+    <tr><td>RNA 干擾</td><td>RNA interference (RNAi)</td><td>RNA 誘導沉默複合體</td><td>RISC</td></tr>
+  </table></div></details>
+</section>
+
+<section class="sec" id="s5">
+  <h2>習作出題分析（單元 6，共 30 題）</h2>
+  <div class="en">Where the questions come from</div>
+  <div class="tblwrap"><table class="freq">
+    <tr><th>主題</th><th>約題數</th><th>常考的說法</th></tr>
+    <tr><td>表觀遺傳、甲基化、乙醯化</td><td><span class="stars">★★★★★</span> 約 10</td><td>印記、甲基化、乙醯化、X 去活化＝表觀遺傳；DNA 去甲基化＋組蛋白乙醯化 → 表現</td></tr>
+    <tr><td>DNA 接合模組</td><td><span class="stars">★★★★</span> 約 8</td><td>HTH、鋅指、bZIP、HLH；hexamer、TATA box 不是</td></tr>
+    <tr><td>RNA 干擾</td><td><span class="stars">★★★</span> 5</td><td>細胞質；造成 RNA 降解；Dicer 切 dsRNA</td></tr>
+    <tr><td>巴爾氏體</td><td><span class="stars">★★</span> 2</td><td>在核內；XXY 有一個；鑲嵌毛色</td></tr>
+    <tr><td>核受體、PPAR</td><td><span class="stars">★★</span> 2</td><td>類固醇受體進核；TZD 作用在 PPARγ</td></tr>
+  </table></div>
+</section>
+
+<section class="sec" id="s6">
+  <h2>本講重點整理</h2>
+  <div class="en">Summary</div>
+  <div class="tblwrap"><table>
+    <tr><th>主題</th><th>一定要記</th></tr>
+    <tr><td>轉錄因子三區</td><td>活化區、DNA 接合區、蛋白質交互作用區</td></tr>
+    <tr><td>接合模組</td><td>HTH（homeodomain 60 aa，螺旋 III 進大凹溝）；鋅指（C2H2、C4，Sp1、NR）；bZIP（每 7 個 Leu，鹼性區接 DNA，C/EBP）；HLH（E 盒 CANNTG；MyoD、Myc、Id）</td></tr>
+    <tr><td>核受體</td><td>2 個 C4 鋅指；PPARα 肝 β 氧化與生酮、PPARγ 脂肪分化（TZD）；GR 在細胞質與熱休克蛋白結合</td></tr>
+    <tr><td>乙醯化</td><td>HAT 中和 Lys 正電（H3、H4）→ 鬆 → 表現；HDAC 反之</td></tr>
+    <tr><td>甲基化</td><td>5mC、CpG；CpG 島平常未甲基化；DNMT3A/3B 新生、DNMT1 維持；MeCP2、Kaiso 招 HDAC</td></tr>
+    <tr><td>X 去活化</td><td>Xist RNA；巴爾氏體＝X 數 −1；鑲嵌體</td></tr>
+    <tr><td>RNAi</td><td>Dicer（RNase III、PAZ）→ 21–25 nt；RISC（PIWI 切）；miRNA 髮夾、siRNA 雙股</td></tr>
+  </table></div>
+  <h3>讀完請自我檢查：我能不能……</h3>
+  <ul class="dots">
+    <li>□ 說出四種 DNA 接合模組的結構特徵，各舉一個轉錄因子？</li>
+    <li>□ 比較 PPARα 與 PPARγ 的組織與功能？</li>
+    <li>□ 用電荷解釋組蛋白乙醯化為什麼會打開基因？</li>
+    <li>□ 解釋 DNMT1 與 DNMT3 的差別？</li>
+    <li>□ 算出 XXY、XXX 的巴爾氏體數目？</li>
+    <li>□ 說出 Dicer 與 RISC 的工作，以及 miRNA 和 siRNA 的差別？</li>
+    <li>□ 說明葉酸、B12 與 DNA 甲基化的關係？</li>
+  </ul>
+</section>
+
+<section class="sec" id="s7">
+  <h2>自我檢測</h2>
+  <div class="en">Self-check — 題目選自習作單元 6</div>
+  <div id="quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+</main>
+<a class="top" href="#top" aria-label="回到頂端">↑</a>
+<footer>營養分子生物學 第 6 講導讀｜依葉景生老師講義整理，標「補充」者為一般知識；如有出入以講義與老師上課內容為準</footer>
+<script>
+const Q = [
+ {q:"下列何者<b>不是</b>轉錄因子的 DNA 結合區？",o:["鋅指 zinc finger","六合體 hexamer","白胺酸拉鍊 leucine zipper","螺旋迴轉螺旋 helix-turn-helix"],a:1,
+  e:"常見 DNA 接合模組是 HTH、鋅指、bZIP、HLH；<b>hexamer</b> 不是。"},
+ {q:"有關白胺酸拉鍊的敘述，何者錯誤？",o:["協助組合 DNA 接合區的鄰近區段","週期性出現白胺酸","含有負電荷胺基酸的酸性區負責接 DNA","α 螺旋一面有白胺酸側鏈突出、相對疏水"],a:2,
+  e:"bZIP 接 DNA 的是帶<b>正電</b>的<b>鹼性區</b>，DNA 帶負電。"},
+ {q:"下列哪一種分子的受體與之結合後會進入核內活化特定基因轉錄？",o:["胰島素","類固醇激素","升糖素","兒茶酚胺"],a:1,
+  e:"<b>類固醇</b>是脂溶性，穿過細胞膜與核受體（轉錄因子）結合；其他三者受體在細胞膜。"},
+ {q:"下列有關組蛋白、DNA 的化學修飾與基因表現的配對，何者正確？",o:["DNA 甲基化、組蛋白去乙醯化，DNA 濃縮，利於表現","DNA 去甲基化、組蛋白乙醯化，DNA 鬆散，利於表現","組蛋白甲基化、DNA 去乙醯化，不利表現","組蛋白去甲基化、DNA 乙醯化，利於表現"],a:1,
+  e:"<b>去甲基化＋乙醯化 → 鬆 → 表現</b>。注意 DNA 會被甲基化，但「DNA 乙醯化」不是常見的調控方式。"},
+ {q:"啟動子上的 CpG 島，常因受到何種修飾而使同一基因表現不同？",o:["乙醯化","甲基化","磷酸化","羧化"],a:1,
+  e:"CpG 島的胞嘧啶<b>甲基化</b>會關閉基因。"},
+ {q:"基因體印記、DNA 甲基化與組蛋白乙醯化屬於下列何者的例子？",o:["基因突變","染色體重組","核型","表觀（附基因）遺傳"],a:3,
+  e:"不改變 DNA 序列卻改變表現且可傳遞＝<b>表觀遺傳</b> epigenetic。"},
+ {q:"下列何者<b>不屬於</b>已知的表觀遺傳機制？",o:["DNA 甲基化","組蛋白尾端修飾","微小 RNA","RNA 乙醯化"],a:3,
+  e:"表觀遺傳三大機制：DNA 甲基化、組蛋白修飾、非編碼 RNA（miRNA）。"},
+ {q:"下列哪些現象與 DNA 甲基化有關？甲：基因體印記　乙：染色體轉位　丙：X 染色體不活化",o:["只有丙","甲和乙","甲和丙","乙和丙"],a:2,
+  e:"印記與 X 去活化都靠甲基化；轉位是染色體結構改變（第 3 講）。"},
+ {q:"下列有關巴爾氏體的敘述，何者<b>不正確</b>？",o:["其上基因不表現","存在於細胞質中的深染小點","正常女性有一個","有一個巴爾氏體的男子可能是 XXY"],a:1,
+  e:"巴爾氏體是濃縮的 X 染色體，在<b>細胞核</b>內。"},
+ {q:"RNAi（RNA 干擾）在何處進行？",o:["細胞核","細胞質","高基氏體","核糖體"],a:1,
+  e:"Dicer 與 RISC 都在<b>細胞質</b>作用，攔截 mRNA。"},
+ {q:"miRNA 與 mRNA 完全互補時，會發生？",o:["增加 mRNA 穩定性","促進 mRNA 降解","降低轉譯速率","加速轉譯"],a:1,
+  e:"完全互補 → RISC 切斷 → <b>降解</b>；部分互補才是抑制轉譯。"},
+ {q:"對於 Dicer 的敘述，何者正確？",o:["切割單股 DNA","切割雙股 RNA 產生小片段干擾轉譯","切割沒有 poly(A) 的 mRNA","切割單股 mRNA"],a:1,
+  e:"Dicer 屬 RNase III，切<b>雙股 RNA</b>（或 pre-miRNA）成 20–25 bp。"},
+ {q:"PPAR-α 在肝臟主要啟動哪類基因？",o:["脂肪細胞分化","脂肪酸 β 氧化與禁食時生酮","糖解作用","膽固醇合成"],a:1,
+  e:"講義 S18、S21：PPARα 啟動<b>β 氧化</b>與<b>生酮</b>相關基因；脂肪細胞分化是 PPARγ。"}
+];
+</script>
+<script src="mb_core.js"></script>
+</body>
+</html>

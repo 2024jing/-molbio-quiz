@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>營養分子生物學導讀｜第 10 講 分子生物學技術</title>
+<link rel="stylesheet" href="mb.css">
+</head>
+<body id="top" data-ch="10">
+<header>
+  <div class="book">營養分子生物學（葉景生老師講義）・逐講導讀</div>
+  <h1>第 10 講　分子生物學技術</h1>
+  <div class="en">Lecture 10 Techniques in Molecular Biology（講義 57 頁）</div>
+</header>
+<div class="modebar"><span>閱讀模式</span>
+  <button id="mBrief" onclick="setMode('brief')">精簡（核心路線）</button>
+  <button id="mFull" onclick="setMode('full')">完整</button>
+</div>
+<main>
+<div class="briefhint">精簡模式只顯示每段的灰框重點；想看說明、例子與圖，按各節的「展開本節詳細內文」，或切到「完整」。</div>
+<div class="note"><span class="src">S5</span> 表示講義第 5 張投影片；<span class="add">補充</span> 是一般知識。🔗 方框說明簡報前後段落怎麼接起來。本講習作題最多（99 題），而且每個技術都是用前面九講學過的分子原理做成的——讀的時候可以一直問自己：「這一步用到哪一講的觀念？」</div>
+<nav class="toc">
+  <b>本講目錄</b>
+  <a href="#s0">本講地圖：技術背後的原理</a>
+  <a href="#s1">前言：分子生物學與生物技術</a>
+  <a href="#s2">(1) 聚合酶鏈鎖反應 PCR</a>
+  <a class="sub" href="#s2a">三個步驟與溫度</a>
+  <a class="sub" href="#s2b">需要哪些材料</a>
+  <a class="sub" href="#s2c">指數放大與計算</a>
+  <a class="sub" href="#s2d">電泳看結果</a>
+  <a href="#s3">(2) 即時定量 PCR（Real-time PCR）</a>
+  <a class="sub" href="#s3a">SYBR Green 與 TaqMan</a>
+  <a class="sub" href="#s3b">Ct 值與新冠病毒檢驗</a>
+  <a href="#s4">(3) 核酸定序</a>
+  <a class="sub" href="#s4a">Maxam–Gilbert 化學斷裂法</a>
+  <a class="sub" href="#s4b">Sanger 鏈終止法</a>
+  <a class="sub" href="#s4c">次世代定序 NGS</a>
+  <a href="#s5a">(4) 墨點法：南方、北方、西方</a>
+  <a href="#s6a">(5) 基因晶片</a>
+  <a href="#s7a">(6) 重組 DNA 技術與基因改造</a>
+  <a class="sub" href="#s7b">限制酶、載體與重組 DNA</a>
+  <a class="sub" href="#s7c">基因改造作物：Bt 玉米、黃金米</a>
+  <a class="sub" href="#s7d">植物基因轉殖方法：農桿菌</a>
+  <a class="sub" href="#s7e">篩選標記基因</a>
+  <a href="#s8">補充：蛋白質分析技術（習作常考）</a>
+  <a href="#s5">習作出題分析</a>
+  <a href="#s6">本講重點整理</a>
+  <a href="#s7">自我檢測（互動）</a>
+</nav>
+
+<section class="sec" id="s0">
+  <h2>本講地圖：技術背後的原理</h2>
+  <div class="en">Big picture</div>
+  <div class="lead"><b>破題</b>　前九講學的是細胞「自己怎麼做」：複製、轉錄、轉譯。這一講是把這些天然工具搬到試管裡用。<span class="key">每一種技術都只是在「放大」「辨認」或「搬移」核酸與蛋白質。</span>老師的簡報依序介紹六種技術，看起來各自獨立，但可以用下面這條線串起來：</div>
+  <div class="path">
+    <div class="step"><span class="sn">放大</span><div><b>(1) PCR → (2) Real-time PCR</b><br><span class="sq">借用第 2 講的 DNA 複製（引子、聚合酶、半保留）和第 1 講的變性／復性，把一小段 DNA 複製成幾億份；再加上螢光，邊複製邊計量。</span></div></div>
+    <div class="arr">↓ 放大之後，下一個問題是：這段 DNA 的序列到底是什麼？</div>
+    <div class="step"><span class="sn">讀取</span><div><b>(3) 定序</b><br><span class="sq">Sanger 法利用「少了 3′–OH 就不能再接」（第 2 講）讓合成停在每一個位置，再依長度排序讀出序列。</span></div></div>
+    <div class="arr">↓ 不需要讀完整序列，只想知道「某段 DNA／RNA／蛋白在不在、有多少」</div>
+    <div class="step"><span class="sn">辨認</span><div><b>(4) 墨點法 → (5) 基因晶片</b><br><span class="sq">利用鹼基互補配對（第 1 講）或抗體辨認：墨點法一次看一個目標，晶片一次看幾萬個基因。</span></div></div>
+    <div class="arr">↓ 不只看，還要把基因搬進別的生物裡</div>
+    <div class="step"><span class="sn">搬移</span><div><b>(6) 重組 DNA 技術</b><br><span class="sq">限制酶剪、連接酶貼（第 2 講）、質體當載體（第 1 講格里夫茲的轉形作用）、農桿菌送進植物（第 4 講位置專一性重組的概念）。</span></div></div>
+  </div>
+</section>
+
+<!-- ============ 前言 ============ -->
+<section class="sec det" id="s1">
+  <h2>前言：分子生物學與生物技術</h2>
+  <div class="en">Molecular biology and biotechnology <span class="src">S3–S4</span></div>
+  <div class="oneline">分子生物學從分子層次研究生物大分子的結構與功能；生物技術則是把這些知識拿來解決問題、製造產品。</div>
+  <p class="core">分子生物學：從分子層次研究生命活動主要物質（核酸、蛋白質）的結構與功能，以闡明生命現象。生物技術：利用生物製程或分子、細胞層次的方法，研發、製造有用的物質與產品（基因重組、細胞融合、細胞培養、發酵工程、酵素轉化）。</p>
+  <p>講義引用兩個定義 <span class="src">S4</span>：美國生技產業協會強調「利用生物製程或分子與細胞層次來解決問題、製造產品」；經濟部工業局則列出方法——基因重組、細胞融合、細胞培養、發酵工程、酵素轉化。</p>
+  <p>生物技術其實不新。<b>傳統生物技術</b>如醬油、啤酒發酵，是利用微生物本身的代謝；<b>現代生物技術</b>則是直接操作 DNA，例如抗生素與疫苗的量產、作物的基因改良。差別在於：傳統方法只能挑選自然出現的性狀，現代方法可以把特定基因精準地放進去。</p>
+  <div class="nut"><b class="t">營養系的關聯：</b>食品產業每天都在用這些技術——發酵食品（傳統）、基因改造原料（現代）、用 PCR 驗食品是否含基改成分或過敏原、用 DNA 條碼辨別食材真偽（例如魚種、燕窩）。</div>
+  <div class="exam"><b class="t">考點</b>分子條碼（molecular barcodes）的主要用途是<b>以基因序列做為生物分類或鑑定的依據</b>。講義 <span class="src">S28</span> 的案例就是比對不同來源（屏東、鳳山、日本、大賣場）的同一種食材品系。</div>
+</section>
+
+<!-- ============ PCR ============ -->
+<section class="sec det" id="s2">
+  <h2><span class="no">(1)</span>聚合酶鏈鎖反應 PCR</h2>
+  <div class="en">Polymerase Chain Reaction <span class="src">S5–S11</span></div>
+  <div class="lead"><div><span class="lt">這節要說明什麼？</span>如何在試管裡把一段 DNA 大量複製。</div><div><span class="lt lt2">為什麼放第一個？</span>後面的 Real-time PCR、定序、選殖，幾乎都要先用 PCR 取得足夠的 DNA。它是整個分子技術的起點。</div></div>
+  <div class="oneline">PCR 模仿細胞的 DNA 複製：加熱（約 94 ℃）把雙股拆開 → 降溫（50–58 ℃）讓兩個引子黏到目標兩端 → 72 ℃ 由耐熱的 Taq 聚合酶延伸。一個循環數量加倍，30 個循環就能放大約 10 億倍。</div>
+
+  <p>PCR 由<b>凱利·穆利斯</b>（Kary Mullis）發明（1993 年諾貝爾化學獎 <span class="add">補充</span>）。它的想法很簡單：細胞複製 DNA 需要解旋酶打開雙股、引子酶做引子、聚合酶延伸（第 2 講）。在試管裡，我們用<b>溫度</b>取代解旋酶，用<b>人工合成的 DNA 引子</b>取代引子酶，再用不怕高溫的聚合酶，就能讓機器自動重複複製。</p>
+
+  <h3 id="s2a">三個步驟與溫度 <span class="src">S5–S8</span></h3>
+  <p class="core">① <b>變性 denaturation</b>：<b>90–95 ℃</b>，打斷氫鍵，雙股變單股。② <b>黏合 annealing</b>（煉合）：<b>50–58 ℃</b>，兩個引子以氫鍵與單股模板上的互補序列配對。③ <b>延伸 extension</b>：<b>72–74 ℃</b>，Taq 聚合酶從引子 3′ 端往後接 dNTP。三步合稱一個<b>循環</b>，重複 25–35 次。</p>
+  <figure class="pic"><svg viewBox="0 0 480 230" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <line x1="30" y1="190" x2="460" y2="190" stroke="#9ca3af"/><line x1="30" y1="20" x2="30" y2="190" stroke="#9ca3af"/>
+      <text x="16" y="105" transform="rotate(-90 16 105)">溫度</text>
+      <path d="M30 150 L60 40 L150 40 L170 130 L260 130 L275 85 L360 85 L375 40 L460 40" fill="none" stroke="#dc2626" stroke-width="3"/>
+      <text x="105" y="32" font-weight="bold" fill="#dc2626">① 變性 94 ℃</text>
+      <text x="215" y="122" font-weight="bold" fill="#1d4ed8">② 黏合 50–58 ℃</text>
+      <text x="318" y="77" font-weight="bold" fill="#15803d">③ 延伸 72 ℃</text>
+      <text x="420" y="32" fill="#dc2626">下一循環…</text>
+      <g>
+        <line x1="70" y1="60" x2="140" y2="60" stroke="#1d4ed8" stroke-width="3"/><line x1="70" y1="70" x2="140" y2="70" stroke="#b91c1c" stroke-width="3"/>
+        <text x="105" y="88" font-size="11">雙股拆開</text>
+        <line x1="180" y1="150" x2="250" y2="150" stroke="#1d4ed8" stroke-width="3"/><line x1="180" y1="165" x2="250" y2="165" stroke="#b91c1c" stroke-width="3"/>
+        <rect x="180" y="153" width="18" height="6" fill="#f97316"/><rect x="232" y="158" width="18" height="6" fill="#f97316"/>
+        <text x="215" y="182" font-size="11">引子（橘）黏上兩端</text>
+        <line x1="285" y1="100" x2="355" y2="100" stroke="#1d4ed8" stroke-width="3"/><line x1="285" y1="108" x2="355" y2="108" stroke="#16a34a" stroke-width="3"/>
+        <line x1="285" y1="118" x2="355" y2="118" stroke="#16a34a" stroke-width="3"/><line x1="285" y1="126" x2="355" y2="126" stroke="#b91c1c" stroke-width="3"/>
+        <text x="320" y="145" font-size="11">各自補成雙股 → 2 份</text>
+      </g>
+      <text x="245" y="215" fill="#374151">一個循環約 1–3 分鐘；變性溫度最高、黏合最低</text>
+    </g>
+  </svg><figcaption>圖 10-1　PCR 一個循環的溫度變化 <span class="src">S5–S8</span>。</figcaption></figure>
+  <div class="bridge">每一步都對應前面學過的觀念：<b>變性</b>就是第 1 講的「DNA 熔解」（加熱斷氫鍵、一級結構不變）；<b>黏合</b>是第 1 講的「復性」——只是我們加入大量引子，讓單股優先和短短的引子配對，而不是和原本那條長股重新黏回去；<b>延伸</b>是第 2 講的聚合酶只能從 3′–OH 往後接、方向 5′→3′。</div>
+  <h4>黏合溫度怎麼決定？</h4>
+  <p>黏合溫度通常設在引子 Tm 值以下約 3–5 ℃ <span class="add">補充</span>。溫度太高，引子黏不上；太低，引子會黏到不完全互補的地方，產生非專一性產物。所以影響最適黏合溫度的因素就是影響 Tm 的因素（第 1 講）：<b>引子的 GC 含量</b>與長度、<b>緩衝液的鹽類濃度</b>。和 PCR 產物多長則<b>無關</b>。</p>
+
+  <h3 id="s2b">需要哪些材料 <span class="src">S5–S6</span></h3>
+  <p class="core">模板 DNA（極少量即可）、<b>兩條 DNA 引子</b>、<b>四種 dNTP</b>、<b>耐熱 DNA 聚合酶（Taq）</b>、<b>Mg²⁺</b>（MgCl₂）、緩衝液，以及控溫循環儀。</p>
+  <div class="tblwrap"><table>
+    <tr><th>成分</th><th>作用</th><th>對照細胞內的複製（第 2 講）</th></tr>
+    <tr><td>模板 DNA</td><td>要放大的目標；不到 1 μg、甚至單一細胞都可以</td><td>親代 DNA</td></tr>
+    <tr><td>兩條引子（primer）</td><td>人工合成的<b>單股 DNA</b>，各約 18–25 nt，夾住目標的兩端，決定放大哪一段</td><td>細胞用的是 <b>RNA</b> 引子（引子酶合成）</td></tr>
+    <tr><td>dNTP（dATP、dTTP、dCTP、dGTP）</td><td>原料</td><td>相同</td></tr>
+    <tr><td>Taq DNA 聚合酶</td><td>來自溫泉嗜熱菌 <i>Thermus aquaticus</i>，94 ℃ 不會失活，負責<b>合成 DNA 鏈</b></td><td>Pol III／Pol δ、ε</td></tr>
+    <tr><td>Mg²⁺</td><td>聚合酶的輔因子；太少 → 產物變少；太多 → 非專一性產物增加</td><td>—</td></tr>
+  </table></div>
+  <div class="eg"><b class="t">為什麼要「耐熱」聚合酶？</b>每個循環都要加熱到 94 ℃。早期用大腸桿菌的聚合酶，每個循環都會被燙壞，要重新加一次酵素。改用溫泉細菌的 Taq 之後，整個反應可以一次加好、放進機器自動跑完——這是 PCR 能普及的關鍵。</div>
+  <div class="warn"><b class="t">易錯：</b>(1) 雙股是靠<b>加熱</b>分開，不是電流、也不是解旋酶。(2) PCR 引子是 <b>DNA</b>（不是 RNA）。(3) <b>不需要</b>大量純化的 DNA、肝素（heparin 反而會抑制 PCR）。(4) PCR 不是 Nirenberg 發明的（他是破解密碼子的人）。(5) PCR 只能放大核酸，所以<b>普利昂（prion，只有蛋白質）不能用 PCR 複製</b>；化石、病毒、細菌的 DNA 都可以。(6) RNA 不能直接放大，要先用反轉錄酶做成 cDNA（RT-PCR）。</div>
+
+  <h3 id="s2c">指數放大與計算 <span class="src">S9</span></h3>
+  <p class="core">每個循環數量<b>加倍</b>：n 個循環後＝起始量 × <b>2ⁿ</b>。30 個循環 ≈ 2³⁰ ≈ 10⁹（約 10 億倍）。</p>
+  <div class="calc"><b>例 1</b>：10 個目標分子要放大到 10,000 個 → 需要放大 1,000 倍 → 2ⁿ＝1,000 → 2¹⁰＝1,024 → 約 <b>10 個循環</b>。<br>
+  <b>例 2</b>：記住 2¹⁰ ≈ 10³（1,024 ≈ 1,000），所以每 10 個循環約放大 1,000 倍；每 <b>3.3</b> 個循環約放大 10 倍（2³·³ ≈ 10）——這個數字在 Real-time PCR 會再用到。</div>
+  <div class="eg"><b class="t">實際上不會無限加倍：</b>做到後期，引子、dNTP 用完、聚合酶效率下降，產物量會進入「高原期」不再增加 <span class="add">補充</span>。這就是為什麼傳統 PCR 做完後跑電泳只能看「有沒有」，不太能準確看「原本有多少」——這個缺點正好由下一節的 Real-time PCR 解決。</div>
+
+  <h3 id="s2d">電泳看結果 <span class="src">S10</span></h3>
+  <p class="core">PCR 產物放進<b>瓊脂糖（洋菜）凝膠</b>電泳：DNA 帶負電（磷酸骨架），從<b>負極往正極</b>移動；<b>片段越小跑越快、越遠</b>。用<b>溴化乙錠（EtBr）</b>嵌入 DNA，在紫外線下發出螢光。</p>
+  <figure class="pic"><svg viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <rect x="100" y="20" width="260" height="160" fill="#1e293b" rx="6"/>
+      <text x="80" y="35" fill="#374151">負極 −</text><text x="80" y="178" fill="#374151">正極 ＋</text>
+      <g fill="#64748b"><rect x="125" y="28" width="40" height="6"/><rect x="190" y="28" width="40" height="6"/><rect x="255" y="28" width="40" height="6"/><rect x="320" y="28" width="30" height="6"/></g>
+      <g fill="#fbbf24"><rect x="125" y="60" width="40" height="4"/><rect x="125" y="85" width="40" height="4"/><rect x="125" y="110" width="40" height="4"/><rect x="125" y="140" width="40" height="4"/><rect x="125" y="160" width="40" height="4"/></g>
+      <g fill="#fbbf24" fill-opacity=".9"><rect x="190" y="110" width="40" height="5"/><rect x="255" y="85" width="40" height="5"/></g>
+      <text x="145" y="195" fill="#374151">標準分子量</text><text x="210" y="195" fill="#374151">樣品 1</text><text x="275" y="195" fill="#374151">樣品 2</text>
+      <text x="400" y="62" text-anchor="start" fill="#374151">1000 bp</text><text x="400" y="87" text-anchor="start" fill="#374151">500 bp</text><text x="400" y="112" text-anchor="start" fill="#374151">250 bp</text><text x="400" y="162" text-anchor="start" fill="#374151">100 bp（最遠）</text>
+      <path d="M380 40 v120" stroke="#374151" stroke-width="2"/><path d="M375 152 l5 10 l5 -10" fill="#374151"/>
+    </g>
+  </svg><figcaption>圖 10-2　瓊脂糖凝膠電泳：小片段跑得遠，和標準分子量比對推算大小。</figcaption></figure>
+  <div class="warn"><b class="t">易錯：</b>「低濃度瓊脂適合分離小分子」是<b>錯</b>的——凝膠濃度越低、孔洞越大，適合分離<b>大</b>片段；小片段要用高濃度瓊脂或聚丙烯醯胺凝膠（PAGE）<span class="add">補充</span>。電泳的主要用途是<b>分離</b> DNA 片段（不是複製或定序）。</div>
+  <h4>PCR 的優勢與應用 <span class="src">S11</span></h4>
+  <ul class="dots">
+    <li>需要的 DNA 量極少（講義寫不到 1 μg 的基因組 DNA 就夠），比傳統選殖快得多。</li>
+    <li><b>原位 PCR</b>（in situ PCR，1990 年後）：在細胞或組織切片上直接放大，可定位單一拷貝的 DNA 或 RNA。</li>
+    <li>應用：疾病基因、細菌、病毒檢測；刑事 DNA 指紋比對；產前診斷（單一胚胎細胞）；偵測 HIV 病毒基因；擴增產物還可以拿去選殖或定序。</li>
+  </ul>
+  <div class="exam"><b class="t">考點（PCR 約 30 題！）</b>步驟順序：<b>變性 → 黏合 → 延伸</b>；溫度最高的是<b>變性</b>（94 ℃）；冷卻的目的是讓引子以<b>氫鍵</b>和目標 DNA 結合；Taq 的目的是<b>合成 DNA 鏈</b>；需要 <b>Mg²⁺</b>；Mg²⁺ 太低 → 產物量<b>減少</b>；「染色體倍增的新品種作物」<b>不是</b> PCR 的應用。</div>
+  <div class="sum"><b class="t">本節重點</b><ul>
+    <li>變性 90–95 ℃ → 黏合 50–58 ℃ → 延伸 72 ℃；每循環加倍（2ⁿ）。</li>
+    <li>材料：模板、兩條 DNA 引子、四種 dNTP、Taq、Mg²⁺。</li>
+    <li>電泳：負極 → 正極；小片段跑得遠；EtBr 在 UV 下發光。</li>
+  </ul></div>
+</section>
+
+<!-- ============ Real-time PCR ============ -->
+<section class="sec det" id="s3">
+  <h2><span class="no">(2)</span>即時定量 PCR</h2>
+  <div class="en">Real-time PCR / Quantitative PCR <span class="src">S12–S18</span></div>
+  <div class="bridge">傳統 PCR 跑完要再做電泳，而且後期進入高原期，只能看「有沒有」，看不準「原本有多少」。Real-time PCR 在反應管裡加入<b>螢光物質</b>，機器每個循環都量一次螢光，直接畫出放大曲線——<b>不用跑膠就能定量</b>。所以它不是新原理，而是在 PCR 上加了「即時計量」。</div>
+  <div class="oneline">Real-time PCR 邊放大邊測螢光。樣本裡目標越多，螢光越早達到門檻，Ct 值就越小。偵測方式分「非探針型」（SYBR Green 嵌入雙股 DNA）與「探針型」（TaqMan 探針被聚合酶切開才發光，專一性較高）。</div>
+  <p class="core">又稱 Q-PCR，可定量 DNA，或先反轉錄再定量 RNA（RT-qPCR）。偵測靠<b>螢光分子</b>的強度，產物不必電泳。分兩型：<b>非探針型</b>（<b>SYBR Green I</b>，嵌入雙股 DNA 的<b>小凹槽</b>發光，產物越多越亮）；<b>探針型</b>（多了一條專一探針，專一性較高：<b>TaqMan 水解探針</b>、分子信標 Molecular Beacon）。</p>
+
+  <h3 id="s3a">SYBR Green 與 TaqMan <span class="src">S13–S15</span></h3>
+  <figure class="pic"><svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <text x="110" y="20" font-weight="bold">非探針型：SYBR Green</text>
+      <line x1="20" y1="60" x2="200" y2="60" stroke="#1d4ed8" stroke-width="4"/><line x1="20" y1="72" x2="200" y2="72" stroke="#16a34a" stroke-width="4"/>
+      <g fill="#22c55e"><circle cx="50" cy="66" r="5"/><circle cx="90" cy="66" r="5"/><circle cx="130" cy="66" r="5"/><circle cx="170" cy="66" r="5"/></g>
+      <text x="110" y="100">只要是雙股就嵌入發光</text><text x="110" y="118" fill="#b45309">便宜，但非專一產物也會亮</text>
+      <text x="350" y="20" font-weight="bold">探針型：TaqMan</text>
+      <line x1="250" y1="70" x2="460" y2="70" stroke="#1d4ed8" stroke-width="4"/>
+      <line x1="330" y1="60" x2="400" y2="60" stroke="#7c3aed" stroke-width="3"/>
+      <circle cx="330" cy="60" r="7" fill="#22c55e"/><text x="330" y="48" font-size="10">R</text>
+      <circle cx="400" cy="60" r="7" fill="#374151"/><text x="400" y="48" font-size="10">Q</text>
+      <path d="M260 60 h40" stroke="#16a34a" stroke-width="4"/><ellipse cx="305" cy="60" rx="12" ry="9" fill="#fde68a" stroke="#b45309"/><text x="305" y="64" font-size="9">Taq</text>
+      <text x="355" y="100">完整時 R 的螢光被 Q 吸收</text>
+      <text x="355" y="118">Taq 延伸時用 5′→3′ 外切酶切斷探針</text>
+      <text x="355" y="136" fill="#15803d" font-weight="bold">R 被放出 → 發光（專一）</text>
+      <text x="240" y="175" fill="#374151">R＝報告螢光基團（reporter）；Q＝淬滅基團（quencher）</text>
+      <text x="240" y="200" fill="#6b7280">兩種方法都是：產物越多 → 螢光越強，每個循環量一次</text>
+    </g>
+  </svg><figcaption>圖 10-3　Real-time PCR 兩種偵測方式 <span class="src">S13</span>。</figcaption></figure>
+  <div class="bridge">TaqMan 為什麼能被切開？因為 Taq 聚合酶和第 2 講大腸桿菌的 <b>DNA 聚合酶 I</b> 一樣，帶有 <b>5′→3′ 外切酶</b>活性——Pol I 用它「邊走邊吃掉前方的 RNA 引子」，Taq 則是邊延伸邊吃掉擋在前面的探針。學過的酵素特性，在這裡直接變成偵測原理。</div>
+
+  <h3 id="s3b">Ct 值與新冠病毒檢驗 <span class="src">S16–S18</span></h3>
+  <p class="core"><b>Ct 值</b>（cycle threshold）：螢光強度達到設定門檻所需的循環數。<b>Ct 越低 → 起始量越多</b>（病毒量越高）；Ct 越高 → 起始量越少。起始濃度差 10 倍，Ct 約差 <b>3.3</b>。</p>
+  <figure class="pic"><svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <line x1="50" y1="185" x2="460" y2="185" stroke="#374151"/><line x1="50" y1="20" x2="50" y2="185" stroke="#374151"/>
+      <text x="255" y="210">循環數 →</text><text x="22" y="105" transform="rotate(-90 22 105)">螢光 →</text>
+      <line x1="50" y1="120" x2="460" y2="120" stroke="#dc2626" stroke-dasharray="5 4"/><text x="430" y="113" fill="#dc2626">門檻</text>
+      <path d="M50 180 C150 180 170 175 190 140 S 230 50 280 40 S 400 35 460 35" fill="none" stroke="#1d4ed8" stroke-width="3"/>
+      <path d="M50 180 C210 180 250 175 270 140 S 310 50 360 40 S 430 38 460 38" fill="none" stroke="#7c3aed" stroke-width="3"/>
+      <line x1="200" y1="120" x2="200" y2="185" stroke="#1d4ed8" stroke-dasharray="3"/><text x="200" y="200" fill="#1d4ed8">Ct 20</text>
+      <line x1="282" y1="120" x2="282" y2="185" stroke="#7c3aed" stroke-dasharray="3"/><text x="282" y="200" fill="#7c3aed">Ct 30</text>
+      <text x="145" y="60" fill="#1d4ed8">病毒量多</text><text x="390" y="70" fill="#7c3aed">病毒量少</text>
+    </g>
+  </svg><figcaption>圖 10-4　Ct 值：越早過門檻，表示起始量越多。</figcaption></figure>
+  <div class="calc"><b>為什麼 10 倍差 3.3 個循環？</b>每個循環加倍，2³·³ ≈ 10。樣本 A 比 B 多 10 倍 → A 只要少跑 3.3 個循環就能達到同樣的量 → Ct 少 3.3。<br>例：Ct 20 和 Ct 30 相差 10 個循環 → 起始量相差約 2¹⁰ ≈ 1,000 倍。</div>
+  <p>新冠病毒是 RNA 病毒，檢驗流程 <span class="src">S17</span>：採檢 → 加熱或清潔劑使病毒失活 → 萃取 RNA（或直接檢測省略萃取）→ <b>反轉錄成 cDNA</b> → qPCR 偵測。講義 <span class="src">S16</span> 舉例：Ct 38 表示要放大 38 回合才達門檻，病毒 RNA 濃度很低；Ct 低則只要十幾回合就測得到。PCR 用螢光偵測，<b>敏感度遠高於</b>以肉眼判讀的抗原快篩。</p>
+  <div class="exam"><b class="t">考點</b>Real-time PCR 偵測的是<b>螢光分子</b>的強度；TaqMan 探針靠聚合酶的 <b>5′→3′ 外切酶</b>分解而發光；濃度差 10 倍 → Ct 差 <b>3.3</b>；最正確敘述：「<b>PCR 產物不需電泳即可定量</b>」。TaqMan、高解析熔解曲線（HRM）、SSCP、定序都能偵測 SNP；單純的 RT-PCR（只看有沒有產物）最不適合。</div>
+</section>
+
+<!-- ============ 定序 ============ -->
+<section class="sec det" id="s4">
+  <h2><span class="no">(3)</span>核酸定序</h2>
+  <div class="en">DNA Sequencing <span class="src">S19–S30</span></div>
+  <div class="bridge">PCR 解決了「DNA 太少」的問題，但放大出來的只是一管看不見的 DNA。要知道它的鹼基排列，就要定序。兩種經典方法的共同點都是：<b>做出一組「長度剛好差一個鹼基」的片段，再用電泳依長度排隊</b>——排隊的順序就是序列。</div>
+  <div class="oneline">Maxam–Gilbert 法用化學藥劑在特定鹼基處把 DNA 切斷；Sanger 法用聚合酶合成，摻入少量缺少 3′–OH 的 ddNTP，讓合成停在每一個位置（鏈終止法）。Sanger 法較常用，也是人類基因體計畫使用的方法；現在已發展到次世代定序（NGS）。</div>
+  <p class="core">兩種方法讓 <b>Maxam、Gilbert、Sanger</b> 獲得 <b>1980 年</b>諾貝爾化學獎。<b>Sanger</b> 一生兩次諾貝爾獎：第一次是定出<b>胰島素</b>的胺基酸序列（1958 年），第二次是 DNA 定序。</p>
+
+  <h3 id="s4a">a) Maxam–Gilbert 化學斷裂法 <span class="src">S20–S22</span></h3>
+  <p>先把雙股 DNA 變性成單股，在 <b>5′ 端</b>以放射性 ³²P 標記；分成四管，每管用一種化學藥劑只修飾、切斷某一種鹼基，得到一系列長度不同、但都帶有 5′ 標記的片段；四管並排電泳，依片段大小就能讀出序列。現在已很少使用（需要有毒化學品與放射性）<span class="add">補充</span>。</p>
+
+  <h3 id="s4b">b) Sanger 酵素合成法（鏈終止法）<span class="src">S23–S27</span></h3>
+  <p class="core">以待測 DNA 為模板、加引子與 DNA 聚合酶在試管中合成新股；除了正常的 dNTP，再加入少量<b>雙去氧核苷酸 ddNTP</b>。ddNTP 的 <b>3′ 位置沒有 –OH</b>，被接上後下一個核苷酸接不上去，合成就<b>終止</b>。結果得到在每一個 A、T、C、G 位置停下來的各種長度片段，電泳排序即可讀出序列。</p>
+  <figure class="pic"><svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12">
+      <text x="10" y="20" font-weight="bold">dNTP 與 ddNTP 差在 3′</text>
+      <text x="10" y="42">dNTP：3′–<tspan fill="#15803d" font-weight="bold">OH</tspan> → 下一個可以接上</text>
+      <text x="10" y="62">ddNTP：3′–<tspan fill="#dc2626" font-weight="bold">H</tspan> → 接上後就停（鏈終止）</text>
+      <text x="10" y="95" font-weight="bold">模板 3′-TACGTA…-5′，合成出的片段：</text>
+      <g font-family="monospace" font-size="13">
+        <text x="20" y="118">5′-A<tspan fill="#dc2626">T</tspan></text><text x="20" y="138">5′-AT<tspan fill="#2563eb">G</tspan></text>
+        <text x="20" y="158">5′-ATG<tspan fill="#16a34a">C</tspan></text><text x="20" y="178">5′-ATGC<tspan fill="#f59e0b">A</tspan></text><text x="20" y="198">5′-ATGCA<tspan fill="#dc2626">T</tspan></text>
+      </g>
+      <text x="20" y="228" fill="#6b7280">（引子後第一個 A 省略；每條停在一個 dd 核苷酸）</text>
+      <rect x="290" y="30" width="170" height="200" fill="#f8fafc" stroke="#94a3b8" rx="6"/>
+      <text x="375" y="48" text-anchor="middle" font-weight="bold">毛細管電泳讀螢光</text>
+      <g text-anchor="middle"><text x="375" y="78">短 ↓ 先到</text>
+      <rect x="350" y="90" width="50" height="10" fill="#dc2626"/><text x="430" y="99">T</text>
+      <rect x="350" y="115" width="50" height="10" fill="#2563eb"/><text x="430" y="124">G</text>
+      <rect x="350" y="140" width="50" height="10" fill="#16a34a"/><text x="430" y="149">C</text>
+      <rect x="350" y="165" width="50" height="10" fill="#f59e0b"/><text x="430" y="174">A</text>
+      <rect x="350" y="190" width="50" height="10" fill="#dc2626"/><text x="430" y="199">T</text>
+      <text x="375" y="222">由短到長讀：TGCAT</text></g>
+    </g>
+  </svg><figcaption>圖 10-5　Sanger 鏈終止法（螢光 ddNTP 版本）<span class="src">S23–S26</span>。</figcaption></figure>
+  <p>早期是做四管反應（每管加一種 ddNTP），跑四條電泳道；講義 <span class="src">S26</span> 的<b>螢光雙去氧法</b>把四種 ddNTP 各標上不同顏色的螢光，一管反應、一條毛細管電泳，由偵測器依序讀出顏色就是序列，這也是人類基因體計畫採用的自動定序。</p>
+  <div class="bridge">Sanger 法的核心觀念其實是第 2 講的一句話：「新核苷酸只能接在前一個核苷酸的 <b>3′–OH</b> 上」。拿掉 3′–OH，合成就停——科學家把這個「缺點」變成定序的工具。同樣的原理也用在抗病毒藥：AZT 等核苷類似物缺少 3′–OH，讓 HIV 的反轉錄停下來 <span class="add">補充</span>。</div>
+  <div class="exam"><b class="t">考點</b>加入 ddNTP 的主要目的是<b>終止反應</b>；Sanger 用 <b>dideoxynucleotides</b> 定序 DNA；Sanger 定序時峰值高度<b>不適合</b>作為鹼基比例的依據、應<b>雙向</b>定序確認、變異位點<b>不宜太靠近</b>引子（最前面幾十個鹼基讀不清楚）。</div>
+
+  <h3 id="s4c">c) 次世代定序 NGS <span class="src">S29–S30</span></h3>
+  <p class="core">2000 年後發展，結合奈米技術與高通量螢光影像分析，<b>一次平行定序數百萬條片段</b>。優點：解析度高、誤差小、可自動化、能發現新的等位基因、可區分同型合子與異型合子。缺點：各家技術不同、資料量大、需要強大的分析設備與軟體。</p>
+  <p>NGS 的基本流程 <span class="add">補充</span>：把 DNA 打斷成小片段（fragmentation）→ 兩端接上<b>轉接子</b>（adaptor）→ PCR 放大成簇 → 邊合成邊拍照讀取 → 用電腦把幾百萬條短序列拼回基因體。<b>第三代定序</b>（如奈米孔、單分子即時定序）最大的差別是<b>不需要 PCR 增幅</b>、直接讀單一分子，而且讀得更長。</p>
+  <div class="nut"><b class="t">精準醫療連結：</b>講義 <span class="src">S29</span> 標語「在正確的時間提供正確的治療」。NGS 用在癌症基因檢測（選擇標靶藥，例如第 9 講的 EGFR 抑制劑）、遺傳疾病、產前診斷；「毒物鑑定」不屬於它的醫學應用。ELISA 是偵測蛋白質的免疫方法，<b>不屬於</b>基因分子檢驗。人類基因體計畫用 Sanger 法花了約 15 年，現在 NGS 幾天就能完成一個人的全基因體重定序。</div>
+</section>
+
+<!-- ============ 墨點法 ============ -->
+<section class="sec det" id="s5a">
+  <h2><span class="no">(4)</span>墨點法技術</h2>
+  <div class="en">Blotting Techniques <span class="src">S31–S36</span></div>
+  <div class="bridge">定序告訴我們「完整的序列」，但很多時候我們只想問更簡單的問題：這個病人<b>有沒有</b>某段 DNA？這個組織<b>有沒有表現</b>某個 RNA 或蛋白質？墨點法的做法是：先用電泳把混合物依大小分開，再<b>轉印</b>到膜上固定，最後用「探針」（核酸）或「抗體」（蛋白質）去找目標。三種墨點法流程幾乎一樣，差別只在找的是什麼。</div>
+  <div class="oneline">南方墨點法找 DNA、北方墨點法找 RNA、西方墨點法找蛋白質。前兩者用標記的核酸探針靠鹼基互補辨認（核酸雜交），西方墨點法用抗體辨認。</div>
+  <p class="core">1975 年英國的 <b>E. M. Southern</b> 首先建立 DNA 墨點法，所以叫 <b>Southern blot</b>（南方墨點法）；後來偵測 RNA 的就戲稱為 <b>Northern</b>（北方），偵測蛋白質的叫 <b>Western</b>（西方）。</p>
+  <div class="mn"><b class="t">記法「SNoW DRoP」</b><b>S</b>outhern–<b>D</b>NA、<b>No</b>rthern–<b>R</b>NA、<b>W</b>estern–<b>P</b>rotein。只有「南方」是人名，其他都是方向雙關。</div>
+  <h3>南方墨點法 Southern blot <span class="src">S32–S33</span></h3>
+  <p class="core">順序：<b>限制酶切割 DNA → 瓊脂糖凝膠電泳 → 鹼液使 DNA 變性 → 轉印到硝酸纖維素（NC）膜 → 以標記探針雜交 → 顯影</b>。</p>
+  <p>電泳後 DNA 還是雙股、而且藏在凝膠裡，探針碰不到。所以要用鹼液讓 DNA 變成單股（第 1 講變性），再像吸墨水一樣轉到 NC 膜上，形狀與相對位置保持不變。接著加入用<b>放射性同位素或冷光</b>標記的單股探針，探針只會和互補的那一條帶配對（雜交），洗掉沒配上的，顯影後就知道目標在哪個大小。</p>
+  <figure class="pic"><svg viewBox="0 0 480 170" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <rect x="10" y="40" width="70" height="60" rx="6" fill="#e0f2fe" stroke="#0284c7"/><text x="45" y="66">限制酶</text><text x="45" y="84">切 DNA</text>
+      <text x="92" y="74">→</text>
+      <rect x="105" y="40" width="70" height="60" rx="6" fill="#1e293b"/><g fill="#fbbf24"><rect x="118" y="55" width="44" height="3"/><rect x="118" y="65" width="44" height="3"/><rect x="118" y="78" width="44" height="3"/><rect x="118" y="88" width="44" height="3"/></g>
+      <text x="140" y="115">電泳</text>
+      <text x="187" y="74">→</text>
+      <rect x="200" y="40" width="70" height="60" rx="6" fill="#fff" stroke="#6b7280"/><text x="235" y="66">鹼變性</text><text x="235" y="84">轉印 NC 膜</text>
+      <text x="282" y="74">→</text>
+      <rect x="295" y="40" width="70" height="60" rx="6" fill="#fef3c7" stroke="#b45309"/><text x="330" y="66">標記探針</text><text x="330" y="84">雜交</text>
+      <text x="377" y="74">→</text>
+      <rect x="390" y="40" width="70" height="60" rx="6" fill="#fff" stroke="#6b7280"/><rect x="403" y="72" width="44" height="5" fill="#111827"/><text x="425" y="115">只有目標帶</text>
+      <text x="240" y="140" fill="#374151">北方墨點法：起點改成萃取 RNA（不需限制酶）</text><text x="240" y="160" fill="#374151">西方墨點法：SDS-PAGE → 轉印 → 一次抗體 → 二次抗體 → 呈色</text>
+    </g>
+  </svg><figcaption>圖 10-6　南方墨點法流程 <span class="src">S32–S33</span>。</figcaption></figure>
+  <h3>北方墨點法 Northern blot <span class="src">S34</span></h3>
+  <p>流程和南方墨點法相同，但材料是從細胞或組織萃取的 <b>RNA</b>：電泳 → 轉印到可結合 RNA 的膜 → 用標記的單股 DNA 探針雜交 → 放射顯影。因為看的是 mRNA，可以知道某個基因在某組織<b>有沒有轉錄、表現量多少</b>。</p>
+  <h3>西方墨點法 Western blot（免疫墨點法）<span class="src">S35–S36</span></h3>
+  <p class="core"><b>SDS-PAGE</b> 依分子量分離蛋白質 → 電轉印到 NC 膜 → 加<b>一次抗體</b>（認目標蛋白）→ 加帶有酵素或螢光的<b>二次抗體</b>（認一次抗體）→ 呈色。用來看某蛋白質在細胞或組織中的<b>表現狀況</b>。</p>
+  <div class="eg"><b class="t">為什麼要加 SDS？</b>SDS 是帶負電的清潔劑，會把蛋白質拉直（變性），並讓每個蛋白都帶上與長度成比例的負電。這樣電泳時移動速度只取決於<b>分子量大小</b>，不受原本形狀和電荷影響 <span class="add">補充</span>。</div>
+  <div class="tblwrap"><table>
+    <tr><th></th><th>南方 Southern</th><th>北方 Northern</th><th>西方 Western</th></tr>
+    <tr><td>偵測對象</td><td>DNA</td><td>RNA</td><td>蛋白質</td></tr>
+    <tr><td>分離方法</td><td>瓊脂糖電泳（先限制酶切）</td><td>瓊脂糖電泳（變性膠）</td><td>SDS-PAGE</td></tr>
+    <tr><td>辨認工具</td><td>標記核酸探針</td><td>標記核酸探針</td><td>一次＋二次抗體</td></tr>
+    <tr><td>回答的問題</td><td>基因在不在、有沒有缺失或放大</td><td>基因有沒有轉錄、量多少</td><td>蛋白有沒有做出來、量多少</td></tr>
+  </table></div>
+  <div class="exam"><b class="t">考點（墨點法約 20 題）</b>南方＝DNA、北方＝RNA、西方＝蛋白質；南方墨點法的探針用<b>放射線同位素或冷光</b>標記；西方墨點法前要把蛋白轉移到 <b>nitrocellulose filter</b>；偵測某基因<b>放大</b>（gene amplification）時，<b>Western blot 無法直接檢測</b>（它看蛋白）——Southern、PCR、FISH 可以；核酸分子雜交包括原位雜交、Southern、Northern、Dot blot，<b>Western 不算</b>。</div>
+</section>
+
+<!-- ============ 基因晶片 ============ -->
+<section class="sec det" id="s6a">
+  <h2><span class="no">(5)</span>基因晶片</h2>
+  <div class="en">Gene Chip / DNA Microarray <span class="src">S37–S47</span></div>
+  <div class="bridge">北方墨點法一次只能看一個基因的表現。如果想同時比較「正常細胞 vs. 處理過的細胞」裡<b>幾千、幾萬個基因</b>的表現差異，就要把墨點法「縮小並排成陣列」——這就是基因晶片。原理一樣是鹼基互補雜交，只是探針固定在晶片上、樣本帶螢光。</div>
+  <div class="oneline">把成千上萬個單股 DNA 探針排在拇指大的玻片上；把兩組細胞的 mRNA 反轉錄成 cDNA，分別標上綠色（Cy3）與紅色（Cy5）螢光後混合雜交；每個點的顏色就告訴我們該基因在哪一組表現較多。</div>
+  <p class="core">生物晶片結合分子生物學、電子學、微機械與生物資訊；載體可用玻璃、矽片、塑膠、尼龍膜。<b>探針</b>是單股 DNA（寡核苷酸或 cDNA），以高密度點在晶片上；也可以放蛋白質、抗原、抗體。四大類：<b>基因晶片、蛋白質晶片、微流體晶片、實驗室晶片</b>。基因晶片又分<b>寡核苷酸陣列</b>與 <b>cDNA 陣列</b>；探針可用 PCR 合成後點上，或用<b>光蝕刻法</b>直接在晶片上合成。</p>
+  <h3>cDNA 晶片怎麼做 <span class="src">S39, S43–S46</span></h3>
+  <ol class="steps">
+    <li>分別萃取對照組（如正常、充分澆水）與實驗組（如處理過、乾旱逆境）細胞的 <b>mRNA</b>。</li>
+    <li>用<b>反轉錄酶</b>做成 cDNA，同時摻入螢光：對照組標 <b>Cy3（綠）</b>，實驗組標 <b>Cy5（紅）</b>。</li>
+    <li>用 RNase 分解剩下的 mRNA，兩組 cDNA 等量混合，加到晶片上雜交。</li>
+    <li>洗掉沒配上的，用雷射掃描每個點的兩種螢光，電腦（生物資訊）分析。</li>
+  </ol>
+  <figure class="pic"><svg viewBox="0 0 480 160" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <rect x="20" y="20" width="200" height="120" rx="8" fill="#111827"/>
+      <g><circle cx="55" cy="50" r="12" fill="#ef4444"/><circle cx="95" cy="50" r="12" fill="#22c55e"/><circle cx="135" cy="50" r="12" fill="#facc15"/><circle cx="175" cy="50" r="12" fill="#1f2937" stroke="#4b5563"/>
+      <circle cx="55" cy="95" r="12" fill="#facc15"/><circle cx="95" cy="95" r="12" fill="#ef4444"/><circle cx="135" cy="95" r="12" fill="#22c55e"/><circle cx="175" cy="95" r="12" fill="#facc15"/></g>
+      <g text-anchor="start"><circle cx="250" cy="30" r="8" fill="#ef4444"/><text x="265" y="34">紅：實驗組（Cy5）表現較多</text>
+      <circle cx="250" cy="60" r="8" fill="#22c55e"/><text x="265" y="64">綠：對照組（Cy3）表現較多</text>
+      <circle cx="250" cy="90" r="8" fill="#facc15"/><text x="265" y="94">黃：兩組都多、差不多</text>
+      <circle cx="250" cy="120" r="8" fill="#1f2937" stroke="#4b5563"/><text x="265" y="124">黑：兩組都沒表現</text></g>
+    </g>
+  </svg><figcaption>圖 10-7　雙色晶片的判讀（紅＋綠＝黃）。</figcaption></figure>
+  <div class="warn"><b class="t">易錯：</b>(1) 晶片上的探針是<b>單股</b>（雙股無法和樣本配對）。(2) 要看「基因表現」，雜交的是由 <b>mRNA</b> 反轉錄的 cDNA，不是細胞的 DNA（DNA 每個細胞都一樣，看不出表現差異）。(3) 晶片可以「同時分析數千基因的相對表現量」，<b>不適合</b>測疫苗注射後的抗體效價（那是蛋白質，用免疫方法）。</div>
+  <p>應用 <span class="src">S47</span>：研究、醫療檢驗、法醫鑑定、新藥開發與藥效評估、食品檢驗、動物檢疫、植物品種與病蟲害鑑定、環保與國防。例如用晶片比較癌細胞與正常細胞，找出適合的標靶藥或判斷預後；檢測結核菌的抗藥基因。</p>
+  <div class="exam"><b class="t">考點</b>晶片最常用的螢光是 <b>Cy3 和 Cy5</b>；實驗組紅、對照組綠，兩組都大量表現且無差異 → <b>黃色</b>。</div>
+</section>
+
+<!-- ============ 重組 DNA ============ -->
+<section class="sec det" id="s7a">
+  <h2><span class="no">(6)</span>重組 DNA 技術與基因改造</h2>
+  <div class="en">Recombinant DNA Technology <span class="src">S48–S56</span></div>
+  <div class="bridge">前面五種技術都是「分析」：放大、讀取、偵測。最後這一節是「改造」：把一個生物的基因剪下來，接到載體上，送進另一個生物，讓它表現新的性狀。用到的工具全部是前面學過的分子：<b>限制酶</b>（細菌防禦病毒的天然剪刀）、<b>連接酶</b>（第 2 講接岡崎片段的那個）、<b>質體</b>（第 1、4 講細菌的環狀 DNA、轉位子帶抗藥性）、<b>轉形作用</b>（第 1 講格里夫茲）。</div>
+  <div class="oneline">用同一種限制酶切開目標基因和質體載體，產生可互補的黏性末端，再用連接酶接起來成為重組 DNA；送進宿主細胞（細菌、植物、動物）後隨細胞分裂複製並表現，例如讓大腸桿菌製造人類胰島素、讓水稻做出 β-胡蘿蔔素。</div>
+
+  <h3 id="s7b">限制酶、載體與重組 DNA <span class="src">S48–S49</span></h3>
+  <p class="core"><b>限制酶</b>：細菌用來對抗噬菌體的酵素，能在特定序列（常是<b>迴文序列</b>）把外來 DNA 切斷；細菌自己的 DNA 因為被甲基化而受保護 <span class="add">補充</span>。流程：<b>同一種限制酶</b>切目標基因與載體 → 產生互補的<b>黏性末端</b> → <b>DNA 連接酶</b>接合 → 重組 DNA 送入宿主（轉形）→ 宿主分裂時大量複製 → 用載體上的<b>抗藥基因</b>篩選。</p>
+  <figure class="pic"><svg viewBox="0 0 480 230" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <text x="240" y="18" font-weight="bold">EcoRI 認 5′-GAATTC-3′（迴文），在 G 與 A 之間切</text>
+      <g font-family="monospace" font-size="14">
+        <text x="70" y="50">5′…G AATTC…3′</text><text x="70" y="70">3′…CTTAA G…5′</text>
+      </g>
+      <path d="M58 40 v8 h14 v20" stroke="#dc2626" stroke-width="2" fill="none"/>
+      <text x="70" y="95" fill="#dc2626">錯開切 → 黏性末端 AATT</text>
+      <circle cx="330" cy="70" r="40" fill="none" stroke="#7c3aed" stroke-width="5"/><text x="330" y="66" fill="#7c3aed" font-weight="bold">質體</text><text x="330" y="82" font-size="11">抗藥基因</text>
+      <path d="M365 50 l15 -10" stroke="#dc2626" stroke-width="3"/><text x="410" y="40" fill="#dc2626">同一酶切開</text>
+      <rect x="140" y="140" width="80" height="14" fill="#f97316"/><text x="180" y="172">目標基因（同酶切下）</text>
+      <text x="245" y="152">＋</text>
+      <path d="M290 150 a30 30 0 1 0 60 0" fill="none" stroke="#7c3aed" stroke-width="5"/>
+      <text x="385" y="135">連接酶 →</text>
+      <circle cx="440" cy="190" r="26" fill="none" stroke="#7c3aed" stroke-width="5"/><path d="M425 168 a26 26 0 0 1 30 0" stroke="#f97316" stroke-width="6" fill="none"/>
+      <text x="440" y="228">重組質體</text>
+      <text x="200" y="210" fill="#374151">送入大腸桿菌 → 加抗生素篩選 → 大量繁殖並表現</text>
+    </g>
+  </svg><figcaption>圖 10-8　重組 DNA：限制酶剪、連接酶貼、質體載運 <span class="add">示意，EcoRI 為補充例子</span>。</figcaption></figure>
+  <div class="eg"><b class="t">經典應用：人類胰島素</b>　把人類胰島素基因（用 cDNA，因為細菌不會剪內含子——第 7 講）接到質體上送進大腸桿菌，細菌就成了生產胰島素的工廠。這也是「科學家把人類細胞的某物質植入大腸桿菌、細菌就做出人類蛋白質」題目的答案：那個物質是 <b>DNA</b>。</div>
+  <div class="warn"><b class="t">易錯：</b>(1) 是用<b>相同</b>的限制酶切質體與目標 DNA，切出的末端才互補。(2) 限制酶負責<b>切割</b>、連接酶負責<b>連接</b>、聚合酶負責<b>複製</b>——選項常把功能對調。(3) 兩段 DNA <b>不需要</b>有血緣關係。(4) 重組 DNA 多利用<b>細菌</b>大量獲得，不是植物細胞。(5) 質體的主要用途是<b>把重組 DNA 送入細菌的載體</b>。(6) 輸血、飲食控制、激素處理無籽水果、餵抗生素都<b>不是</b>基因轉殖。</div>
+
+  <h3 id="s7c">基因改造作物：Bt 玉米、黃金米 <span class="src">S49–S52</span></h3>
+  <p class="core"><b>基因改造（GM）</b>：以現代基因工程（基因重組、轉移、轉殖）而非傳統育種改變生物。<b>Bt 抗蟲玉米</b>：轉入蘇力菌（<i>Bacillus thuringiensis</i>）的殺蟲蛋白基因。<b>黃金米</b>：在胚乳表現 <b>β-胡蘿蔔素</b>（維生素 A 前驅物），用來改善貧困地區維生素 A 缺乏，屬<b>第二代</b>基因改造（改善營養品質）。</p>
+  <p>黃金米用了兩個 β-胡蘿蔔素合成基因 <span class="src">S52</span>：來自<b>水仙花</b>的八氫番茄紅素合成酶（PSY），和來自<b>土壤細菌</b>（噬夏孢歐文氏菌）的胡蘿蔔素去飽和酶。米粒因含胡蘿蔔素而呈金黃色。2016 年百餘位諾貝爾獎得主曾連署支持。講義也提到台灣民眾對黃金米的接受度較高。</p>
+  <div class="tblwrap"><table>
+    <tr><th>世代 <span class="add">一般分類</span></th><th>目的</th><th>例子</th></tr>
+    <tr><td>第一代</td><td>農藝性狀：抗蟲、抗除草劑</td><td>Bt 玉米、抗嘉磷塞大豆</td></tr>
+    <tr><td><b>第二代</b></td><td><b>改善營養或品質</b></td><td><b>黃金米</b></td></tr>
+    <tr><td>第三代</td><td>生產藥物、工業原料</td><td>植物生產疫苗、抗體</td></tr>
+  </table></div>
+  <div class="nut"><b class="t">營養觀點：</b>維生素 A 缺乏是開發中國家兒童失明與感染死亡的重要原因。β-胡蘿蔔素在小腸被切成視網醇，且吸收需要脂肪；所以黃金米要搭配含油脂的飲食效果較好。從食物多樣化、補充劑到生物強化（biofortification），黃金米是其中一種策略 <span class="add">補充</span>。</div>
+  <div class="exam"><b class="t">考點</b>黃金米：<b>維生素 A（β-胡蘿蔔素）含量較多</b>、屬<b>第二代</b>；製造過程<b>不需要</b>加入 β-胡蘿蔔素本身（需要的是外來基因、限制酶、連接酶）。基改作物的優點：增產、減少病蟲害與農藥；<b>不能</b>說「增加生物多樣性」或「不會影響演化與生態」。抗蟲植物不會因此成為光合超級植物，反而可能促使昆蟲演化出抗性。</div>
+
+  <h3 id="s7d">植物基因轉殖方法：農桿菌 <span class="src">S53–S55</span></h3>
+  <p class="core">轉殖方法：基因槍（講義譯「電擊」，particle bombardment）、顯微注射、巨量注射、微膠囊法、<b>農桿菌法</b>（最常用）。<b>根瘤農桿菌</b>（<i>Agrobacterium tumefaciens</i>，土壤中的<b>革蘭氏陰性</b>菌）帶有 <b>Ti 質體</b>（tumor-inducing），其中一段 <b>T-DNA</b> 會從植物傷口進入細胞核、嵌入染色體，使植物長出冠癭瘤。把 T-DNA 中致瘤的基因換成想轉入的基因，就成為植物的天然載體。</p>
+  <figure class="pic"><svg viewBox="0 0 480 170" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <ellipse cx="70" cy="75" rx="55" ry="35" fill="#fef3c7" stroke="#b45309"/><text x="70" y="55" font-weight="bold">農桿菌</text>
+      <circle cx="80" cy="85" r="16" fill="none" stroke="#7c3aed" stroke-width="3"/><path d="M68 75 a16 16 0 0 1 22 0" stroke="#f97316" stroke-width="5" fill="none"/><text x="80" y="124" font-size="11">Ti 質體</text><text x="80" y="139" font-size="11">（T-DNA 換成目標基因）</text>
+      <path d="M130 75 L190 75" stroke="#374151" stroke-width="2"/><path d="M185 70 l8 5 l-8 5" fill="#374151"/>
+      <rect x="200" y="30" width="120" height="90" rx="10" fill="#dcfce7" stroke="#15803d"/><text x="260" y="48" font-weight="bold">植物細胞</text>
+      <circle cx="260" cy="85" r="26" fill="#fff" stroke="#15803d"/><path d="M245 85 h30" stroke="#f97316" stroke-width="5"/><text x="260" y="128" font-size="11">T-DNA 嵌入核內染色體</text>
+      <path d="M325 75 L375 75" stroke="#374151" stroke-width="2"/><path d="M370 70 l8 5 l-8 5" fill="#374151"/>
+      <text x="425" y="65" font-weight="bold">組織培養</text><text x="425" y="83">再生成</text><text x="425" y="101">轉殖植株</text>
+      <text x="240" y="160" fill="#374151">講義 S55：轉殖外來基因的菸草植株</text>
+    </g>
+  </svg><figcaption>圖 10-9　農桿菌 Ti 質體轉殖 <span class="src">S54–S55</span>。</figcaption></figure>
+  <div class="bridge">農桿菌把 T-DNA 嵌入植物染色體，和第 4 講 λ 噬菌體把自己嵌入大腸桿菌染色體很像，都是病原體「把自己的 DNA 塞進宿主基因體」的天然能力。科學家做的，只是把裡面致病的基因換掉、放入想要的基因。</div>
+  <div class="exam"><b class="t">考點（農桿菌約 8 題）</b>產生轉殖植物常用的載體是 <b>Ti plasmid</b>；當載體的是農桿菌的<b>質體</b>（不是染色體）；農桿菌是<b>革蘭氏陰性</b>菌；野生型可感染多種植物，不一定都形成冠癭；它<b>不能</b>用於動物轉殖。植物較易轉殖成功，是因為植物細胞有<b>全能性</b>，單一細胞就能再生成整株 <span class="add">補充</span>。基因治療最常用的載體是<b>腺病毒</b>（第 6 講 HBV 例子）；把正常基因送入細胞彌補缺陷＝<b>基因治療</b>；複製長毛象用的是<b>體細胞核轉殖</b>；動物轉殖<b>不</b>用農桿菌。</div>
+
+  <h3 id="s7e">篩選標記基因 <span class="src">S56</span></h3>
+  <p class="core">轉殖後只有少數細胞成功，所以載體上會同時放<b>篩選標記</b>：加入抗生素或除草劑，只有成功轉殖的細胞能存活。常用：<b>nptII</b>（抗 kanamycin、neomycin 等胺基糖苷類）、<b>hpt</b>（抗 hygromycin）、<b>bar</b>（產生 PAT，抗除草劑 glufosinate／PPT）、改造過的 <b>epsps</b>（抗嘉磷塞 glyphosate／Roundup）。</p>
+  <div class="eg"><b class="t">嘉磷塞為什麼能殺草、卻不毒人？</b>嘉磷塞抑制植物 shikimate 路徑的 EPSPS 酵素，使植物無法合成<b>芳香族胺基酸</b>（Phe、Tyr、Trp）而死亡。人類沒有這條路徑——這也是為什麼 Phe、Trp 對人類是<b>必需胺基酸</b>（第 9 講口訣「假離色戒輸一百笨」裡的「色」和「笨」）<span class="add">補充連結</span>。</div>
+  <div class="sum"><b class="t">本節重點</b><ul>
+    <li>同一限制酶切目標與載體 → 黏性末端 → 連接酶接 → 轉形 → 抗藥篩選。</li>
+    <li>Bt 玉米（蘇力菌殺蟲蛋白）；黃金米（β-胡蘿蔔素，第二代，水仙花 PSY＋細菌去飽和酶）。</li>
+    <li>農桿菌（革蘭氏陰性）Ti 質體的 T-DNA 嵌入植物染色體；最常用。</li>
+    <li>篩選：nptII、hpt、bar、epsps。</li>
+  </ul></div>
+</section>
+
+<!-- ============ 補充 ============ -->
+<section class="sec det" id="s8">
+  <h2>補充：蛋白質分析技術</h2>
+  <div class="en">Protein analysis（講義沒有，習作約 10 題）<span class="add">補充</span></div>
+  <div class="oneline">凝膠過濾依大小分離（大分子先出來）；SDS-PAGE 依分子量分離；Edman 降解從 N 端一個個切下胺基酸來定一級結構；質譜可直接測分子量。</div>
+  <div class="tblwrap"><table>
+    <tr><th>方法</th><th>原理</th><th>常考</th></tr>
+    <tr><td>凝膠過濾層析 gel filtration</td><td>依<b>大小</b>分離；小分子鑽進膠珠孔洞、繞遠路</td><td><b>分子量最大的最先流出</b></td></tr>
+    <tr><td>SDS-PAGE</td><td>SDS 使蛋白變性、帶均勻負電，只依分子量移動</td><td>加 SDS 是為了依<b>分子量</b>分離</td></tr>
+    <tr><td>Edman 降解</td><td>每次從 <b>N 端</b>切下一個胺基酸辨認</td><td>決定<b>一級結構</b>；Ser-Pro-Gly-Ala-Arg 做兩次 → 剩 <b>Gly-Ala-Arg</b></td></tr>
+    <tr><td>質譜、電灑游離（ESI）</td><td>測質量</td><td>可估分子量；<b>Western blot 不用來估純化蛋白的分子量</b>（習作答案）</td></tr>
+  </table></div>
+  <div class="warn"><b class="t">易混淆：</b>凝膠過濾（大的先出）和電泳（小的跑得遠）看起來相反，其實都是「小分子在網狀結構中走比較遠的路」：在層析管柱裡，小分子鑽進孔洞所以<b>晚</b>出來；在電泳膠裡，小分子穿過網孔比較容易所以跑得<b>遠</b>。</div>
+</section>
+
+<section class="sec" id="s5">
+  <h2>習作出題分析（單元 10，共 99 題）</h2>
+  <div class="en">Where the questions come from</div>
+  <div class="tblwrap"><table class="freq">
+    <tr><th>主題</th><th>約題數</th><th>常考的說法</th></tr>
+    <tr><td>PCR</td><td><span class="stars">★★★★★</span> 約 30</td><td>步驟與溫度；DNA 引子；Taq 合成 DNA；Mg²⁺；2ⁿ 計算；prion 不能 PCR</td></tr>
+    <tr><td>基因轉殖、GMO、農桿菌、黃金米</td><td><span class="stars">★★★★★</span> 約 27</td><td>Ti 質體；革蘭氏陰性；黃金米 β-胡蘿蔔素、第二代；限制酶切、連接酶接</td></tr>
+    <tr><td>墨點法</td><td><span class="stars">★★★★</span> 約 18</td><td>SNoW DRoP；Southern 順序；Western 不能測基因放大</td></tr>
+    <tr><td>定序（Sanger、NGS）</td><td><span class="stars">★★★</span> 約 10</td><td>ddNTP 終止；第三代不需 PCR；ELISA 不是基因檢驗</td></tr>
+    <tr><td>Real-time PCR</td><td><span class="stars">★★★</span> 約 6</td><td>螢光；TaqMan 5′→3′ 外切；10 倍差 Ct 3.3</td></tr>
+    <tr><td>基因晶片</td><td><span class="stars">★★</span> 約 4</td><td>Cy3/Cy5；紅＋綠＝黃</td></tr>
+    <tr><td>電泳、蛋白質分析</td><td><span class="stars">★★</span> 約 8</td><td>小片段跑最遠；凝膠過濾大分子先出；Edman</td></tr>
+  </table></div>
+</section>
+
+<section class="sec" id="s6">
+  <h2>本講重點整理</h2>
+  <div class="en">Summary</div>
+  <div class="tblwrap"><table>
+    <tr><th>技術</th><th>一定要記</th><th>用到哪一講的原理</th></tr>
+    <tr><td>PCR</td><td>94 ℃ 變性 → 50–58 ℃ 黏合 → 72 ℃ 延伸；2ⁿ；Taq、DNA 引子、dNTP、Mg²⁺</td><td>第 1 講變性／復性、第 2 講複製</td></tr>
+    <tr><td>電泳</td><td>負→正；小片段遠；EtBr／UV</td><td>第 1 講磷酸骨架帶負電</td></tr>
+    <tr><td>Real-time PCR</td><td>螢光即時定量；SYBR（非探針）、TaqMan（探針，5′→3′ 外切）；Ct 低＝量多；10 倍＝3.3 Ct</td><td>第 2 講 Pol I 外切酶</td></tr>
+    <tr><td>定序</td><td>Maxam–Gilbert 化學切；Sanger ddNTP（無 3′–OH）鏈終止；1980 諾貝爾；NGS 大量平行；第三代不需 PCR</td><td>第 2 講 3′–OH</td></tr>
+    <tr><td>墨點法</td><td>Southern DNA（Southern 1975）、Northern RNA、Western 蛋白（SDS-PAGE、一次／二次抗體）</td><td>第 1 講互補雜交</td></tr>
+    <tr><td>基因晶片</td><td>單股探針；mRNA→cDNA；Cy3 綠、Cy5 紅；黃＝都多</td><td>第 1 講互補、反轉錄</td></tr>
+    <tr><td>重組 DNA</td><td>同一限制酶、黏性末端、連接酶、質體、抗藥篩選</td><td>第 1 講轉形、第 2 講連接酶</td></tr>
+    <tr><td>GMO</td><td>Bt 玉米；黃金米（β-胡蘿蔔素、第二代）；農桿菌 Ti 質體、革蘭氏陰性；nptII、hpt、bar、epsps</td><td>第 4 講 DNA 嵌入宿主</td></tr>
+  </table></div>
+  <h3>讀完請自我檢查：我能不能……</h3>
+  <ul class="dots">
+    <li>□ 說出 PCR 三步驟的溫度與每一步在做什麼？</li>
+    <li>□ 計算 10 個分子放大到一萬個要幾個循環？</li>
+    <li>□ 解釋 Ct 值的意義，以及 10 倍差異為什麼是 3.3 個循環？</li>
+    <li>□ 說明 ddNTP 為什麼能讓 DNA 合成停下來？</li>
+    <li>□ 不看表說出三種墨點法各偵測什麼、用什麼辨認？</li>
+    <li>□ 判讀雙色晶片的紅、綠、黃、黑點？</li>
+    <li>□ 描述用農桿菌做出黃金米的步驟？</li>
+  </ul>
+</section>
+
+<section class="sec" id="s7">
+  <h2>自我檢測</h2>
+  <div class="en">Self-check — 題目選自習作單元 10</div>
+  <div id="quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+</main>
+<a class="top" href="#top" aria-label="回到頂端">↑</a>
+<footer>營養分子生物學 第 10 講導讀｜依葉景生老師講義整理，標「補充」者為一般知識；如有出入以講義與老師上課內容為準</footer>
+<script>
+const Q = [
+ {q:"PCR 三個步驟的正確順序是？",o:["延伸 → 黏合 → 變性","黏合 → 變性 → 延伸","變性 → 黏合 → 延伸","變性 → 延伸 → 黏合"],a:2,
+  e:"先<b>加熱拆開</b>雙股（變性），再降溫讓引子<b>黏合</b>，最後 72 ℃ <b>延伸</b>。"},
+ {q:"進行 PCR 時，哪一步驟的溫度最高？",o:["引子黏合","變性","引子延伸","三者相同"],a:1,
+  e:"<b>變性</b>約 94 ℃；延伸 72 ℃；黏合 50–58 ℃ 最低。"},
+ {q:"進行 PCR 時，除了 Taq 聚合酶、dNTP 外，還須加入？",o:["DNA 引子","RNA 引子","RNA 聚合酶","解旋酶"],a:0,
+  e:"PCR 使用人工合成的 <b>DNA 引子</b>；雙股靠加熱分開，不需解旋酶。"},
+ {q:"PCR 需要何種二價金屬離子以促進反應？",o:["Ca²⁺","Zn²⁺","Mg²⁺","Fe²⁺"],a:2,
+  e:"<b>Mg²⁺</b> 是 DNA 聚合酶的輔因子；太低時產物量會減少。"},
+ {q:"10 個目標分子進行 PCR，約第幾次循環時會被放大到一萬個分子？",o:["5","10","20","30"],a:1,
+  e:"需放大 1,000 倍，2¹⁰＝1,024 → 約 <b>10 個循環</b>。"},
+ {q:"下列何者<b>無法</b>利用 PCR 複製？",o:["化石","病毒","普利昂 prion","細菌"],a:2,
+  e:"PCR 只能放大核酸；<b>普利昂</b>是只有蛋白質的致病因子。"},
+ {q:"兩個檢體 RNA 起始濃度差 10 倍，經 Real-time PCR 後 Ct 值理論上差多少？",o:["1","2","3.3","10"],a:2,
+  e:"每循環加倍，2³·³ ≈ 10，所以差 <b>3.3</b> 個循環。"},
+ {q:"Real-time PCR 所用的 DNA 聚合酶具有何種活性，可分解 TaqMan 探針而發出螢光？",o:["5′→3′ 外切酶","3′→5′ 外切酶","內切酶","反轉錄酶"],a:0,
+  e:"Taq 和 Pol I 一樣有 <b>5′→3′ 外切酶</b>，延伸時切斷前方探針，使報告螢光與淬滅基團分開。"},
+ {q:"DNA 定序反應中加入 ddNTP 最主要的目的是？",o:["增進反應速率","催化反應起始","終止反應","穩定酵素活性"],a:2,
+  e:"ddNTP 缺少 <b>3′–OH</b>，接上後無法再延伸 → 鏈<b>終止</b>。"},
+ {q:"北方墨點法主要用來檢測？",o:["粒線體","DNA","RNA","蛋白質"],a:2,
+  e:"SNoW DRoP：Southern–DNA、<b>Northern–RNA</b>、Western–Protein。"},
+ {q:"某腫瘤是由致癌基因放大所致，下列何種技術<b>無法直接</b>檢測此基因放大？",o:["Southern blot","PCR","Western blot","FISH"],a:2,
+  e:"基因放大是 DNA 拷貝數增加；<b>Western blot</b> 看的是蛋白質。"},
+ {q:"微陣列晶片：實驗組標紅色螢光、對照組標綠色，某基因兩組都大量表現且無差異，會呈現？",o:["白色","藍色","黃色","黑色"],a:2,
+  e:"紅＋綠＝<b>黃</b>；兩組都不表現則是黑色。"},
+ {q:"下列 DNA 片段經電泳後，距起始位置最遠的是？",o:["100 bp","250 bp","500 bp","1,000 bp"],a:0,
+  e:"DNA 由負極往正極跑，<b>越小跑越遠</b>。"},
+ {q:"常用於產生轉殖植物的載體是？",o:["Ti plasmid","Lentiviral vector","BAC","噬菌體"],a:0,
+  e:"農桿菌的 <b>Ti 質體</b>，其 T-DNA 能嵌入植物染色體。"},
+ {q:"關於農桿菌在植物基因轉殖的應用，何者錯誤？",o:["外源基因可置入改造過的農桿菌質體","農桿菌為革蘭氏陽性菌","可感染植物形成冠癭瘤","是土壤細菌"],a:1,
+  e:"根瘤農桿菌是<b>革蘭氏陰性</b>菌。"},
+ {q:"含有 β-胡蘿蔔素的黃金米屬於第幾代基因改造作物？",o:["第一代","第二代","第三代","第四代"],a:1,
+  e:"以<b>改善營養品質</b>為目的的屬第二代；第一代是抗蟲、抗除草劑。"},
+ {q:"製造黃金米的過程中，<b>不需要</b>下列何者？",o:["β-胡蘿蔔素","連接酶","外來基因的 DNA 片段","限制酶"],a:0,
+  e:"轉入的是<b>合成 β-胡蘿蔔素的基因</b>，讓稻米自己做；不需要加入 β-胡蘿蔔素本身。"},
+ {q:"使用凝膠過濾層析分離球狀蛋白質時，哪種分子通過管柱最快？",o:["分子量最小","分子量最大","帶負電","帶正電"],a:1,
+  e:"大分子進不了膠珠孔洞、走最短的路 → <b>最先流出</b>。"}
+];
+</script>
+<script src="mb_core.js"></script>
+</body>
+</html>

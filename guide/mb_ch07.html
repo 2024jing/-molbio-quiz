@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>營養分子生物學導讀｜第 7 講 傳訊 RNA 的轉錄後修飾</title>
+<link rel="stylesheet" href="mb.css">
+</head>
+<body id="top" data-ch="7">
+<header>
+  <div class="book">營養分子生物學（葉景生老師講義）・逐講導讀</div>
+  <h1>第 7 講　傳訊 RNA 的轉錄後修飾</h1>
+  <div class="en">Lecture 7 Post-transcriptional Processing of mRNA（講義 43 頁）</div>
+</header>
+<div class="modebar"><span>閱讀模式</span>
+  <button id="mBrief" onclick="setMode('brief')">精簡（核心路線）</button>
+  <button id="mFull" onclick="setMode('full')">完整</button>
+</div>
+<main>
+<div class="briefhint">精簡模式只顯示每段的灰框重點；想看說明、例子與圖，按各節的「展開本節詳細內文」，或切到「完整」。</div>
+<div class="note"><span class="src">S13</span> 表示講義第 13 張投影片；<span class="add">補充</span> 是一般知識。ApoB-48／ApoB-100 是營養系必考。📝 方框依「習作練習 單元 7」（51 題）整理。</div>
+<nav class="toc">
+  <b>本講目錄</b>
+  <a href="#s0">本講地圖</a>
+  <a href="#s1">一、5′ 端帽化</a>
+  <a href="#s2">二、3′ 端處理：切割與加 poly(A)</a>
+  <a href="#s3">三、剪接體的插入子剪接</a>
+  <a class="sub" href="#s3a">插入子的發現與三群插入子</a>
+  <a class="sub" href="#s3b">hnRNP、snRNP 與剪接體</a>
+  <a class="sub" href="#s3c">剪接訊號：GU…AG 與分支點 A</a>
+  <a href="#s4">四、自我剪接的插入子（核糖酶）</a>
+  <a href="#s5a">五、另類剪接：選擇性剪接、反式剪接、紅斑性狼瘡</a>
+  <a href="#s6a">六、細胞質 RNA 的修飾與分解：RNA 編輯與 ApoB</a>
+  <a href="#s5">習作出題分析</a>
+  <a href="#s6">本講重點整理</a>
+  <a href="#s7">自我檢測（互動）</a>
+</nav>
+
+<section class="sec" id="s0">
+  <h2>本講地圖：為什麼這樣排？</h2>
+  <div class="en">Big picture</div>
+  <div class="lead"><b>破題</b>　pol II 剛做出的 mRNA 只是「毛胚」（pre-mRNA／hnRNA），要經過三道加工才能出核、被轉譯：<span class="key">戴帽子（5′ cap）、接尾巴（3′ poly(A)）、剪掉內含子（splicing）。</span>之後在細胞質還可能被編輯或分解。</div>
+  <figure class="pic"><svg viewBox="0 0 480 190" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <text x="10" y="22" text-anchor="start" font-weight="bold">pre-mRNA</text>
+      <rect x="20" y="32" width="60" height="22" fill="#bfdbfe" stroke="#1d4ed8"/><text x="50" y="48">外顯子 1</text>
+      <rect x="80" y="38" width="70" height="10" fill="#e5e7eb"/><text x="115" y="70" font-size="11">內含子</text>
+      <rect x="150" y="32" width="60" height="22" fill="#bfdbfe" stroke="#1d4ed8"/><text x="180" y="48">外顯子 2</text>
+      <rect x="210" y="38" width="70" height="10" fill="#e5e7eb"/><text x="245" y="70" font-size="11">內含子</text>
+      <rect x="280" y="32" width="60" height="22" fill="#bfdbfe" stroke="#1d4ed8"/><text x="310" y="48">外顯子 3</text>
+      <text x="360" y="48" text-anchor="start" fill="#6b7280">3′</text>
+      <path d="M240 80 v18" stroke="#374151" stroke-width="2"/>
+      <text x="240" y="112" fill="#7c3aed">① 5′ 加帽　② 3′ 切割＋加 poly(A)　③ 剪接</text>
+      <path d="M240 120 v14" stroke="#374151" stroke-width="2"/>
+      <text x="10" y="160" text-anchor="start" font-weight="bold">成熟 mRNA</text>
+      <circle cx="110" cy="166" r="11" fill="#fde68a" stroke="#b45309"/><text x="110" y="170" font-size="10">m⁷G</text>
+      <rect x="125" y="155" width="60" height="22" fill="#bfdbfe" stroke="#1d4ed8"/><rect x="185" y="155" width="60" height="22" fill="#bfdbfe" stroke="#1d4ed8"/><rect x="245" y="155" width="60" height="22" fill="#bfdbfe" stroke="#1d4ed8"/>
+      <text x="215" y="171">1 ‧ 2 ‧ 3</text>
+      <text x="370" y="171" fill="#15803d" font-weight="bold">AAAAA…（50–250）</text>
+    </g>
+  </svg><figcaption>圖 7-1　mRNA 的三道加工。</figcaption></figure>
+</section>
+
+<!-- ============ 一 ============ -->
+<section class="sec det" id="s1">
+  <h2><span class="no">一</span>5′ 端帽化作用</h2>
+  <div class="en">5′ Capping <span class="src">S4–S10</span></div>
+  <div class="oneline">只有 pol II 的轉錄物會加帽，在 RNA 長到 25–30 nt 時就開始：三磷酸酶拿掉一個磷酸 → 鳥苷轉移酶用 GTP 加上 GMP，形成 5′-5′ 三磷酸鍵 → 甲基轉移酶在鳥嘌呤 N7 加甲基，得到 7-甲基鳥苷帽（m⁷G）。</div>
+<div class="bridge">第 5 講最後提到：pol II 延伸時，CTD 尾巴上已經坐著加帽酵素和剪接因子，RNA 一邊被做出來就一邊被加工。第 7 講把這些加工逐一拆開，依「發生的先後」排列：最先開始的是 5′ 帽（RNA 才 25–30 nt 就加上），接著是轉錄末端的 3′ 處理，剪接則貫穿整個過程。為什麼一定要加工？因為真核 mRNA 要<b>離開細胞核</b>、在細胞質存活好幾小時並被核糖體認得，原核 mRNA 不需要出核，所以幾乎不加工 <span class="add">補充</span>。</div>
+  <p class="core">帽化只發生在 <b>RNA pol II</b> 產物上，約合成 <b>25–30 nt</b> 時就開始。沒戴帽的 mRNA 很快在核內被分解。三步驟：① <b>RNA 三磷酸酶</b>移除第一個核苷酸的 γ-磷酸；② <b>鳥苷轉移酶</b>（帽化酵素）以 GTP 為受質、接上 GMP，形成 <b>5′–5′ 三磷酸鍵</b>；③ <b>鳥嘌呤-7-甲基轉移酶</b>在 G 的 <b>N7</b> 加甲基（cap 0），2′-O-甲基轉移酶再甲基化第一、第二個核苷酸的 2′ 位置（cap 1、cap 2）。</p>
+  <figure class="pic"><svg viewBox="0 0 480 120" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <circle cx="50" cy="60" r="26" fill="#fde68a" stroke="#b45309"/><text x="50" y="56" font-weight="bold">G</text><text x="50" y="72" font-size="10">N7–CH₃</text>
+      <text x="100" y="64">5′</text>
+      <circle cx="140" cy="60" r="12" fill="#fef3c7" stroke="#b45309"/><text x="140" y="64" font-size="11">P</text>
+      <circle cx="170" cy="60" r="12" fill="#fef3c7" stroke="#b45309"/><text x="170" y="64" font-size="11">P</text>
+      <circle cx="200" cy="60" r="12" fill="#fef3c7" stroke="#b45309"/><text x="200" y="64" font-size="11">P</text>
+      <text x="235" y="64">5′</text>
+      <rect x="255" y="45" width="40" height="30" fill="#bfdbfe" stroke="#1d4ed8"/><text x="275" y="64">N₁</text>
+      <rect x="295" y="45" width="40" height="30" fill="#bfdbfe" stroke="#1d4ed8"/><text x="315" y="64">N₂</text>
+      <line x1="335" y1="60" x2="460" y2="60" stroke="#1d4ed8" stroke-width="3"/><text x="440" y="50">… 3′</text>
+      <text x="170" y="100">5′–5′ 三磷酸鍵（兩端都是 5′，頭對頭）</text>
+      <text x="295" y="35" font-size="11" fill="#7c3aed">2′-O-甲基（cap 1、2）</text>
+    </g>
+  </svg><figcaption>圖 7-2　5′ 帽的結構：7-甲基鳥苷以「頭對頭」的 5′–5′ 三磷酸鍵接在 mRNA 前端。</figcaption></figure>
+  <div class="eg"><b class="t">帽子的功能：</b>保護 5′ 端不被外切酶分解、幫助出核、讓核糖體在轉譯時認得 mRNA 的開頭（第 8 講）。</div>
+  <div class="exam"><b class="t">考點</b>真核 mRNA 帽子＝<b>7-甲基鳥嘌呤核苷三磷酸</b>；最靠近核糖的磷酸是 <b>α</b>；rRNA、tRNA <b>沒有</b> 5′ cap（但有鹼基甲基化等修飾）。</div>
+</section>
+
+<!-- ============ 二 ============ -->
+<section class="sec det" id="s2">
+  <h2><span class="no">二</span>3′ 端的轉錄後處理</h2>
+  <div class="en">3′ End Processing <span class="src">S11–S14</span></div>
+  <div class="oneline">轉錄經過 AAUAAA（聚腺苷化訊號）後，核酸內切酶在其下游切斷 RNA，聚腺苷聚合酶（PAP）再不靠模板加上 50–250 個 A，形成 poly(A) 尾——這也是 pol II 轉錄終止的訊號。</div>
+<div class="bridge">5′ 端戴好帽子，3′ 端也要有保護。第 5 講說 pol II 的終止和 3′ 端處理綁在一起——這裡就是細節：先切、再加尾巴。</div>
+  <p class="core">兩步驟：<b>核酸內切酶切割</b> → <b>聚腺苷聚合酶（poly(A) polymerase）</b>加上 <b>50–250 個腺苷</b>。訊號序列是 <b>AAUAAA</b>（DNA 上是 AATAAA），切點在其下游。poly(A) 尾保護 mRNA 免受外切酶攻擊，並幫助轉錄終止、出核與轉譯。</p>
+  <div class="warn"><b class="t">易錯：</b>(1) poly(A) <b>不是</b>由 DNA 模板上的 poly(T) 轉錄來的，是 PAP <b>不需模板</b>加上去的。(2) <b>組蛋白 mRNA 沒有</b> poly(A)（以莖環結構取代）<span class="add">補充</span>。(3) 加 poly(A) 與剪接是同時進行的，不是「poly(A) 修飾完才能剪接」。(4) 真核 mRNA 尾巴是 poly(A)，不是 poly(U)。</div>
+  <div class="exam"><b class="t">考點</b>調控核內多聚腺苷化的序列＝<b>AAUAAA</b>；若 3′ UTR 的 AATAAA 突變成 AAGAAA，影響的是<b>多聚腺苷化</b>。真核如何終止轉錄：<b>由酵素辨識 RNA 上的 polyadenylation 訊號</b>（第 5 講 pol II 終止）。幫助 mRNA 穩定、避免分解＝<b>5′ cap 與 poly-A tail</b>。</div>
+</section>
+
+<!-- ============ 三 ============ -->
+<section class="sec det" id="s3">
+  <h2><span class="no">三</span>剪接體的插入子剪接作用</h2>
+  <div class="en">Spliceosomal Splicing <span class="src">S15–S25</span></div>
+  <div class="lead"><div><span class="lt">這節要說明什麼？</span>內含子是什麼、怎麼被認出來、誰來剪。</div><div><span class="lt lt2">記憶鉤子</span>「<b>GU 開頭、AG 結尾、中間有個分支點 A</b>」。</div></div>
+  <div class="oneline">內含子（intron）會被轉錄但不被轉譯，要在核內剪掉。核基因的內含子由剪接體（U1、U2、U4、U5、U6 snRNP）辨認 5′ 端 GU、3′ 端 AG 與分支點 A，把內含子剪成套索狀移除，再把外顯子接起來。</div>
+<div class="bridge">頭尾保護好之後，最大的工程是中間的剪接。第 1 講的習作題提過「真核基因的編碼區會被內含子打斷」，第 5 講的基因結構圖 <span class="src">S3</span> 也畫了外顯子與內含子；這裡正式說明內含子是怎麼被發現、又是怎麼被剪掉的。</div>
+
+  <h3 id="s3a">插入子的發現與三群插入子 <span class="src">S15–S19</span></h3>
+  <p class="core">1977 年 <b>Sharp 與 Roberts</b> 用電子顯微鏡觀察腺病毒 2 型的 DNA–mRNA 雜合體：內含子在 mRNA 中找不到互補片段，被擠出成<b>套環（looping-out）</b>，證實有內含子與 RNA 剪接（1993 年諾貝爾獎 <span class="add">補充</span>）。原核的非編碼 DNA 幾乎都在<b>基因之間</b>；真核基因本身也被內含子打斷。</p>
+  <p>內含子的發現在當時很令人意外：大家原本以為基因和 mRNA 是連續一對一對應（細菌就是這樣），沒想到真核基因中間夾著大段不編碼的序列，而且常常比外顯子還長；人類基因平均有約 8 個內含子 <span class="add">補充</span>。三群內含子的差別在「誰負責剪」：第一、二群的 RNA 自己就能剪（下一節），核基因的則交給剪接體。</p>
+  <div class="tblwrap"><table>
+    <tr><th>類別</th><th>位置</th><th>剪接方式</th></tr>
+    <tr><td>第一群 Group I</td><td>葉綠體、粒線體（也見於原生生物、類病毒）</td><td><b>自我剪接</b>（核糖酶），需要鳥苷／GTP</td></tr>
+    <tr><td>第二群 Group II</td><td>葉綠體、粒線體、真菌</td><td><b>自我剪接</b>（核糖酶），不需輔助因子</td></tr>
+    <tr><td>第三群（核 pre-mRNA）</td><td>大多數真核細胞核基因</td><td>由<b>剪接體</b>負責</td></tr>
+  </table></div>
+  <div class="eg"><b class="t">實驗示意：</b>把 mRNA（已剪好）和原本的 DNA 單股配對：外顯子一一配上，內含子在 mRNA 裡找不到對象，只好在 DNA 上鼓成一個個環——環的數目就是內含子數。</div>
+
+  <div class="bridge">知道內含子有三群、核基因由剪接體負責之後，簡報接著介紹剪接體是由什麼組成的。這裡會用到第 1 講的 snRNA——它就是剪接體的核心。</div>
+<h3 id="s3b">hnRNP、snRNP 與剪接體 <span class="src">S20–S22</span></h3>
+  <p class="core">新生 mRNA 不斷與<b>異質性核糖核酸蛋白顆粒 hnRNP</b> 結合，所以這時叫 <b>hnRNA</b>。其中的小 RNA＝<b>snRNA</b>，蛋白＋snRNA＝<b>snRNP</b>（snurps）。snRNP 與 pre-mRNA 結合可<b>防止 RNA 自我配對形成錯誤的二級結構</b>；snRNP 的催化能力來自其中的 <b>RNA</b>。<b>剪接體</b>＝<b>U1、U2、U4、U5、U6</b> 五種 snRNP（各含一條同名 snRNA，共有 7 種 Sm 核心蛋白）＋其他蛋白。</p>
+  <p>名稱很多，但關係很簡單：剛轉錄出來、還沒加工好的 mRNA＝hnRNA（異質性核 RNA，因長短不一而得名）；它一出來就被很多蛋白包住，合稱 hnRNP。剪接用的小 RNA＝snRNA，每條 snRNA 和幾個蛋白組成一個 snRNP；五種 snRNP（U1、U2、U4、U5、U6）加上其他蛋白，在內含子上組裝成一部大機器＝剪接體。snRNA 的工作是用鹼基配對認出內含子的記號，並親自催化切斷與連接。</p>
+
+  <div class="bridge">剪接體要剪得精準，差一個鹼基就會造成移碼（第 3 講）。所以內含子兩端和中間都有固定的「記號」讓剪接體辨認。</div>
+<h3 id="s3c">剪接訊號 <span class="src">S23–S25</span></h3>
+  <p class="core">內含子 <b>5′ 端</b>：5′-AG<b>GU</b>RAGU-3′（<b>GU</b> 是共識）；<b>3′ 端</b>：5′-Y<b>AG</b>N-3′（<b>AG</b> 是共識）；<b>分支點</b>：5′-YNYUR<b>A</b>C-3′，其中 <b>A 的 2′-OH</b> 攻擊內含子 5′ 端的磷酸，形成套索。R＝嘌呤、Y＝嘧啶、N＝任意。</p>
+  <figure class="pic"><svg viewBox="0 0 480 210" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <rect x="10" y="30" width="80" height="24" fill="#bfdbfe" stroke="#1d4ed8"/><text x="50" y="47">外顯子 1</text>
+      <line x1="90" y1="42" x2="380" y2="42" stroke="#9ca3af" stroke-width="6"/>
+      <rect x="380" y="30" width="80" height="24" fill="#bfdbfe" stroke="#1d4ed8"/><text x="420" y="47">外顯子 2</text>
+      <text x="105" y="25" font-weight="bold" fill="#dc2626">GU</text><text x="300" y="25" font-weight="bold" fill="#7c3aed">A</text><text x="365" y="25" font-weight="bold" fill="#dc2626">AG</text>
+      <text x="105" y="72" font-size="11">5′ 剪接位（U1 認）</text><text x="300" y="72" font-size="11">分支點（U2 認）</text><text x="365" y="88" font-size="11">3′ 剪接位</text>
+      <text x="240" y="110">① 分支點 A 的 2′-OH 攻擊 5′ 剪接位（GU 前）→ 內含子 5′ 端接到 A 上</text>
+      <text x="240" y="128">② 外顯子 1 游離的 3′-OH 攻擊 3′ 剪接位（AG 後）→ 外顯子 1＋2 接起來</text>
+      <rect x="120" y="150" width="70" height="22" fill="#bfdbfe" stroke="#1d4ed8"/><rect x="190" y="150" width="70" height="22" fill="#bfdbfe" stroke="#1d4ed8"/><text x="190" y="166">外顯子 1 ‧ 2</text>
+      <circle cx="360" cy="160" r="22" fill="none" stroke="#9ca3af" stroke-width="5"/><path d="M382 160 h40" stroke="#9ca3af" stroke-width="5"/><text x="360" y="200" font-size="11">套索狀內含子（lariat）被分解</text>
+    </g>
+  </svg><figcaption>圖 7-3　剪接的兩次轉酯反應與套索結構 <span class="add">反應細節為補充說明</span>。</figcaption></figure>
+  <div class="mn"><b class="t">口訣</b>「<b>GU</b> 開門、<b>AG</b> 關門」——內含子永遠以 <b>GU</b> 開頭、<b>AG</b> 結尾（DNA 上是 GT…AG）。</div>
+  <div class="exam"><b class="t">考點</b>高等真核 pre-mRNA 剪接訊號＝<b>5′-GU-intron-AG-3′</b>；pre-mRNA 由<b>剪接體</b>剪接（不是自己剪、不是聚合酶或解旋酶）；剪接體含 <b>snRNA</b>；防止 pre-mRNA 自我配對的是 <b>snRNP</b>；<b>U2 snRNP 結合分支點</b>；剪接在<b>細胞核</b>內完成。內含子：會被轉錄、<b>不</b>被轉譯、一個基因可有多個、在轉錄<b>之後</b>才剪掉、通常不在原核基因中。</div>
+  <div class="sum"><b class="t">本節重點</b><ul>
+    <li>內含子：Sharp 與 Roberts 1977，looping-out。</li>
+    <li>Group I、II 自我剪接（胞器）；核基因由剪接體剪。</li>
+    <li>剪接體＝U1、U2、U4、U5、U6 snRNP；催化靠 RNA。</li>
+    <li>GU…分支點 A…AG；套索狀內含子。</li>
+  </ul></div>
+</section>
+
+<!-- ============ 四 ============ -->
+<section class="sec det" id="s4">
+  <h2><span class="no">四</span>自我剪接的插入子</h2>
+  <div class="en">Self-splicing Introns (Ribozymes) <span class="src">S26–S29</span></div>
+  <div class="oneline">第一、二群內含子的 RNA 本身就是酵素（核糖酶 ribozyme），不靠蛋白就能把自己剪掉：第一群要外來的鳥苷／GTP 當輔因子，第二群靠自己的二級結構、不需輔因子。</div>
+<div class="bridge">前一節說 snRNP 的催化能力其實來自它的 RNA。這一節更進一步：有些內含子連剪接體都不用，<b>自己就能把自己剪掉</b>。這是簡報在三群內含子分類（第三節開頭）預告過的第一、二群。</div>
+  <div class="tblwrap"><table>
+    <tr><th></th><th>第一群（Group I ribozyme）</th><th>第二群（Group II ribozyme）</th></tr>
+    <tr><td>分布</td><td>類病毒、酵母粒線體、原生生物、高等生物粒線體與葉綠體</td><td>真菌基因、葉綠體、粒線體</td></tr>
+    <tr><td>輔因子</td><td>需要<b>鳥苷或 GTP</b></td><td><b>不需要</b></td></tr>
+    <tr><td>關鍵</td><td>外顯子 1 的 3′ 端有<b>內在引導序列 IGS</b>，與內含子 5′ 端部分互補，固定位置</td><td>特殊二級結構使內含子兩端靠近；機制與剪接體相似（也形成套索）<span class="add">補充</span></td></tr>
+  </table></div>
+  <div class="eg"><b class="t">意義：</b>核糖酶證明 RNA 不只能攜帶訊息，也能催化反應（Cech 與 Altman，1989 年諾貝爾化學獎 <span class="add">補充</span>）。這支持「RNA 世界」假說——生命早期可能由 RNA 同時擔任遺傳物質與酵素。第 1 講的 rRNA 催化胜肽鍵也是一例。</div>
+  <div class="exam"><b class="t">考點</b>Ribozyme 的本質是 <b>RNA</b>；最適合稱為核糖酶的剪接是 <b>group I</b>（自我剪接的代表）。</div>
+</section>
+
+<!-- ============ 五 ============ -->
+<section class="sec det" id="s5a">
+  <h2><span class="no">五</span>另類的剪接模式</h2>
+  <div class="en">Alternative Splicing <span class="src">S30–S34</span></div>
+  <div class="oneline">同一個基因的外顯子可以用不同組合接起來（選擇性剪接），做出多種蛋白質——這就是人類只有約兩三萬個基因，卻能做出九萬多種蛋白質的原因。剪接出錯會致病，紅斑性狼瘡患者還會產生對抗 U1 snRNP 的自體抗體。</div>
+<div class="bridge">既然剪接要「選」哪些片段留下，就有機會選得不一樣。這一節說明剪接不只是清除內含子，也是增加蛋白質種類的工具；最後再談剪接出錯時造成的疾病。</div>
+  <p class="core"><b>選擇性剪接</b>：一個基因 → 多種 mRNA → 多種蛋白質（不同長度、結構、功能），隨時間、組織、環境而不同。<b>順式剪接</b>（cis）：同一條 RNA 內剪接（一般情況）；<b>反式剪接</b>（trans）：把<b>不同條</b> RNA 的外顯子接在一起。</p>
+  <figure class="pic"><svg viewBox="0 0 480 170" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <text x="10" y="22" text-anchor="start" font-weight="bold">基因</text>
+      <g><rect x="60" y="10" width="50" height="20" fill="#bfdbfe" stroke="#1d4ed8"/><text x="85" y="25">1</text>
+      <rect x="150" y="10" width="50" height="20" fill="#fde68a" stroke="#b45309"/><text x="175" y="25">2</text>
+      <rect x="240" y="10" width="50" height="20" fill="#bbf7d0" stroke="#15803d"/><text x="265" y="25">3</text>
+      <rect x="330" y="10" width="50" height="20" fill="#bfdbfe" stroke="#1d4ed8"/><text x="355" y="25">4</text>
+      <line x1="110" y1="20" x2="150" y2="20" stroke="#9ca3af" stroke-width="3"/><line x1="200" y1="20" x2="240" y2="20" stroke="#9ca3af" stroke-width="3"/><line x1="290" y1="20" x2="330" y2="20" stroke="#9ca3af" stroke-width="3"/></g>
+      <text x="10" y="80" text-anchor="start">組織 A</text>
+      <rect x="80" y="65" width="50" height="20" fill="#bfdbfe" stroke="#1d4ed8"/><rect x="130" y="65" width="50" height="20" fill="#fde68a" stroke="#b45309"/><rect x="180" y="65" width="50" height="20" fill="#bfdbfe" stroke="#1d4ed8"/>
+      <text x="300" y="80">1‧2‧4 → 蛋白 A</text>
+      <text x="10" y="130" text-anchor="start">組織 B</text>
+      <rect x="80" y="115" width="50" height="20" fill="#bfdbfe" stroke="#1d4ed8"/><rect x="130" y="115" width="50" height="20" fill="#bbf7d0" stroke="#15803d"/><rect x="180" y="115" width="50" height="20" fill="#bfdbfe" stroke="#1d4ed8"/>
+      <text x="300" y="130">1‧3‧4 → 蛋白 B</text>
+      <text x="240" y="162" fill="#6b7280">同一基因、不同外顯子組合（例：降鈣素基因在甲狀腺與神經做出不同產物 <tspan fill="#b45309">補充</tspan>）</text>
+    </g>
+  </svg><figcaption>圖 7-4　選擇性剪接。</figcaption></figure>
+  <h4>RNA 剪接與疾病 <span class="src">S33–S34</span></h4>
+  <p>突變若發生在剪接位置（例如把 GU 改掉），會造成錯誤剪接、做出失去功能或有害的蛋白；許多遺傳病與癌細胞轉移都與此有關。<b>全身性紅斑性狼瘡（SLE）</b>：多發生於女性的自體免疫疾病，臉頰出現<b>蝴蝶斑</b>，有發燒、虛弱、體重減輕；患者體內有抗核抗體（ANA）、抗雙股 DNA 抗體等，以及<b>抗 U1-snRNP 抗體</b>（U1 snRNA 富含尿嘧啶，負責辨認 5′ 剪接位）。</p>
+  <div class="exam"><b class="t">考點</b>RNA processing 可能的結果：<b>單一基因產生兩種不同蛋白質</b>。選擇性剪接可增加基因多樣性。</div>
+</section>
+
+<!-- ============ 六 ============ -->
+<section class="sec det" id="s6a">
+  <h2><span class="no">六</span>細胞質 RNA 的修飾與分解</h2>
+  <div class="en">RNA Editing and Degradation <span class="src">S35–S42</span></div>
+  <div class="lead"><div><span class="lt">這節要說明什麼？</span>mRNA 序列還能被「改字」（RNA 編輯），以及 mRNA 怎麼被分解。</div><div><span class="lt lt2">營養系必考</span>ApoB-100（肝、VLDL/LDL）與 ApoB-48（小腸、乳糜微粒）來自同一個基因。</div></div>
+  <div class="oneline">RNA 編輯直接改 mRNA 的鹼基（如 C→U）。小腸細胞把 ApoB mRNA 第 2,153 個密碼子 CAA 編輯成 UAA（終止碼），只做出前 48%，就是 ApoB-48；肝臟沒有編輯，做出完整的 ApoB-100。</div>
+<div class="bridge">選擇性剪接是用「剪法不同」讓一個基因做出不同蛋白；RNA 編輯則是直接「改字」，達到類似效果——簡報的 <span class="src">S39</span> 就把兩者放在一起比較。最後再講 mRNA 的終點：分解。前面加的帽子和尾巴，到這裡會看到它們在分解時扮演的角色。</div>
+  <h3>RNA 編輯 RNA Editing <span class="src">S36–S39</span></h3>
+  <p class="core">轉錄後改變 RNA 序列（插入、刪除、取代核苷酸，如 <b>C→U</b>），增加基因產物的複雜性。<b>ApoB</b> 基因：<b>肝臟</b>不編輯 → 4,563 個胺基酸、512 kDa 的 <b>ApoB-100</b>；<b>腸壁細胞</b>把第 <b>2,153</b> 個密碼子 <b>CAA</b>（Gln）編輯成 <b>UAA</b>（終止）→ 2,152 個胺基酸、約 250 kDa 的 <b>ApoB-48</b>（約為 100 的 48%）。</p>
+  <p>ApoB 的例子說明一個基因怎麼滿足兩種組織的需求：小腸負責把飲食中的脂肪包成<b>乳糜微粒</b>，只需要 ApoB 的前半段當結構骨架；肝臟負責輸出 VLDL（之後變成 LDL），需要完整的 ApoB-100，因為它的後半段才有與 LDL 受體結合的區域，讓組織能回收 LDL。小腸細胞有一種去胺酶（APOBEC-1），專門把 ApoB mRNA 上那一個 C 改成 U，CAA（麩醯胺酸）就變成 UAA（終止），轉譯在一半停下，得到 ApoB-48 <span class="add">酵素名稱為補充</span>。</p>
+  <figure class="pic"><svg viewBox="0 0 480 190" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12">
+      <text x="10" y="20" font-weight="bold">ApoB 基因 → 同一條 mRNA</text>
+      <rect x="20" y="30" width="420" height="20" fill="#bfdbfe" stroke="#1d4ed8"/><text x="215" y="45" text-anchor="middle" font-family="monospace">…C A A…</text><text x="215" y="66" text-anchor="middle" font-size="11">密碼子 2153</text>
+      <text x="10" y="95" font-weight="bold" fill="#1d4ed8">肝臟：不編輯</text>
+      <rect x="20" y="105" width="420" height="16" fill="#1d4ed8"/><text x="230" y="140" text-anchor="middle">ApoB-100（4,563 aa）→ VLDL、LDL；與 LDL 受體結合</text>
+      <text x="10" y="162" font-weight="bold" fill="#c2410c">小腸：C→U 編輯（CAA→UAA 終止）</text>
+      <rect x="20" y="170" width="200" height="16" fill="#f97316"/><text x="330" y="183" text-anchor="middle">ApoB-48 → 乳糜微粒</text>
+    </g>
+  </svg><figcaption>圖 7-5　ApoB 的 RNA 編輯 <span class="src">S37–S38</span>。</figcaption></figure>
+  <div class="tblwrap"><table>
+    <tr><th></th><th>ApoB-100</th><th>ApoB-48</th></tr>
+    <tr><td>製造部位</td><td>肝臟</td><td>小腸</td></tr>
+    <tr><td>機制</td><td>完整轉譯</td><td>mRNA 編輯產生提早終止碼</td></tr>
+    <tr><td>脂蛋白</td><td>VLDL、IDL、LDL</td><td>乳糜微粒（chylomicron）</td></tr>
+    <tr><td>LDL 受體結合</td><td><b>有</b>（第 3500 位 Arg 是關鍵）</td><td>沒有（缺後半段）</td></tr>
+  </table></div>
+  <div class="warn"><b class="t">易錯：</b>(1) ApoB-48 不是選擇性剪接、也不是轉譯後修飾造成，是 <b>RNA 編輯</b>。(2) 兩者 mRNA 長度<b>一樣</b>（只改一個鹼基），差的是蛋白質長度。(3) 兩者前 2,152 個胺基酸相同，不是「48 個胺基酸一樣」。(4) 講義 <span class="src">S35</span> 把 RNA 編輯放在「細胞質」標題下，但 ApoB 的 C→U 編輯（由 APOBEC-1 進行）實際發生在<b>細胞核</b>；習作「選擇性剪接與 RNA 編輯發生在哪裡」答<b>細胞核</b> <span class="add">補充說明</span>。(5) RNA 編輯的定義是<b>核苷酸的插入、刪除和取代</b>；鹼基甲基化、剪接不算。</div>
+  <div class="nut"><b class="t">臨床營養連結：</b><b>ApoB-100</b> 第 3500 位精胺酸（R）若突變成色胺酸（R3500W）或麩醯胺酸（R3500Q），LDL 就無法和 LDL 受體結合 → <b>家族性 ApoB-100 缺陷</b>，造成<b>高膽固醇血症</b>（習作題）。與膽固醇調控直接相關的基因還有 LDLR、PCSK9 等。</div>
+
+  <h3>mRNA 的半衰期與分解 <span class="src">S35, S40–S41</span></h3>
+  <div class="tblwrap"><table>
+    <tr><th>物種</th><th>平均半衰期</th><th>範圍</th></tr>
+    <tr><td>大腸桿菌</td><td>3–5 分鐘</td><td>2–10 分鐘</td></tr>
+    <tr><td>酵母菌</td><td>22 分鐘</td><td>1–60 分鐘</td></tr>
+    <tr><td>人類細胞</td><td><b>10 小時</b></td><td>4–24 小時</td></tr>
+  </table></div>
+  <p class="core"><b>原核</b>：核酸內切酶 <b>RNase E</b> 先切；聚腺苷聚合酶（PAP）在 3′ 端加 10–40 個 A 的短尾，反而是分解酵素的「把手」。<b>真核</b>：先<b>縮短 poly(A) 尾</b> → <b>移除 5′ 帽</b> → 核酸酶從 <b>5′ 端</b>迅速分解。所以 <b>3′ UTR</b> 決定 mRNA 分解速率。</p>
+  <p>細菌 mRNA 只活幾分鐘，因為細菌要快速改變基因表現來適應環境——舊指令很快清掉，新指令才有效。人類 mRNA 平均可活約 10 小時，而且差異很大：需要快速調控的基因（如發炎因子）的 mRNA 在 3′ UTR 帶有不穩定序列，很快被分解；結構蛋白的 mRNA 則可存活很久。第 6 講的 miRNA 也多半結合在 3′ UTR，所以 3′ UTR 可說是 mRNA 壽命的「控制面板」。</p>
+  <div class="eg"><b class="t">比喻：</b>poly(A) 尾像保險絲，用一點少一點；燒完了，帽子就被拿掉，整條 mRNA 很快被吃掉。細菌則相反，加上短 poly(A) 反而加速分解。</div>
+  <div class="sum"><b class="t">本節重點</b><ul>
+    <li>RNA 編輯：C→U；ApoB-100（肝、4,563 aa）vs ApoB-48（腸、2153 號 CAA→UAA）。</li>
+    <li>ApoB-100 R3500 突變 → LDL 接不上受體 → 高膽固醇。</li>
+    <li>mRNA 半衰期：細菌幾分鐘、人類約 10 小時。</li>
+    <li>真核分解：去 poly(A) → 去帽 → 5′→3′ 分解。</li>
+  </ul></div>
+  <details class="terms"><summary>本講名詞中英對照</summary><div class="tblwrap"><table>
+    <tr><td>原型 mRNA</td><td>pre-mRNA / hnRNA</td><td>5′ 帽化</td><td>5′ capping</td></tr>
+    <tr><td>7-甲基鳥苷</td><td>7-methylguanosine (m⁷G)</td><td>聚腺苷化</td><td>polyadenylation</td></tr>
+    <tr><td>聚腺苷聚合酶</td><td>poly(A) polymerase</td><td>剪接體</td><td>spliceosome</td></tr>
+    <tr><td>內含子／外顯子</td><td>intron / exon</td><td>分支點</td><td>branch point</td></tr>
+    <tr><td>套索</td><td>lariat</td><td>核糖酶</td><td>ribozyme</td></tr>
+    <tr><td>選擇性剪接</td><td>alternative splicing</td><td>RNA 編輯</td><td>RNA editing</td></tr>
+    <tr><td>內在引導序列</td><td>internal guide sequence (IGS)</td><td>非轉譯區</td><td>untranslated region (UTR)</td></tr>
+  </table></div></details>
+</section>
+
+<section class="sec" id="s5">
+  <h2>習作出題分析（單元 7，共 51 題）</h2>
+  <div class="en">Where the questions come from</div>
+  <div class="tblwrap"><table class="freq">
+    <tr><th>主題</th><th>約題數</th><th>常考的說法</th></tr>
+    <tr><td>5′ cap 與 poly(A)</td><td><span class="stars">★★★★★</span> 約 14</td><td>m⁷G 三磷酸；AAUAAA；poly(A) 聚合酶；不靠模板；組蛋白 mRNA 無 poly(A)</td></tr>
+    <tr><td>內含子、剪接、剪接體</td><td><span class="stars">★★★★★</span> 約 15</td><td>GU…AG；剪接體含 snRNA；snRNP 防自我配對；U2 接分支點；ribozyme＝RNA</td></tr>
+    <tr><td>轉錄／轉譯定義</td><td><span class="stars">★★★</span> 約 8</td><td>轉錄＝DNA→RNA；轉譯＝依 mRNA 密碼子合成蛋白質（在細胞質）</td></tr>
+    <tr><td>ApoB 與 RNA 編輯</td><td><span class="stars">★★★</span> 約 6</td><td>ApoB-100 突變 → 無法攝取 LDL；RNA 編輯＝核苷酸插入、刪除、取代</td></tr>
+    <tr><td>選擇性剪接</td><td><span class="stars">★★</span> 約 3</td><td>一個基因產生兩種蛋白質</td></tr>
+  </table></div>
+</section>
+
+<section class="sec" id="s6">
+  <h2>本講重點整理</h2>
+  <div class="en">Summary</div>
+  <div class="tblwrap"><table>
+    <tr><th>主題</th><th>一定要記</th></tr>
+    <tr><td>5′ 帽</td><td>只有 pol II 產物；25–30 nt 開始；三磷酸酶 → 鳥苷轉移酶（GTP，5′–5′ 三磷酸）→ N7 甲基；cap 0/1/2</td></tr>
+    <tr><td>3′ 端</td><td>AAUAAA；內切酶切 → PAP 加 50–250 A（不靠模板）</td></tr>
+    <tr><td>內含子</td><td>Sharp &amp; Roberts 1977；Group I（需 G）、II（不需）自我剪接；核基因用剪接體</td></tr>
+    <tr><td>剪接體</td><td>U1、U2、U4、U5、U6 snRNP；GU…A（分支點）…AG；套索</td></tr>
+    <tr><td>選擇性剪接</td><td>一基因多蛋白；cis／trans；SLE 抗 U1-snRNP 抗體</td></tr>
+    <tr><td>RNA 編輯</td><td>C→U；ApoB-100 肝 vs ApoB-48 腸（2153 號 CAA→UAA）</td></tr>
+    <tr><td>分解</td><td>細菌數分鐘、人類約 10 小時；真核：去尾 → 去帽 → 5′ 分解；原核 RNase E</td></tr>
+  </table></div>
+  <h3>讀完請自我檢查：我能不能……</h3>
+  <ul class="dots">
+    <li>□ 依序說出帽化的三個酵素與產物？</li>
+    <li>□ 說出 poly(A) 的訊號序列、加的酵素與長度？</li>
+    <li>□ 畫出內含子的 GU、分支點 A、AG，並說明套索怎麼形成？</li>
+    <li>□ 比較第一群與第二群自我剪接內含子？</li>
+    <li>□ 解釋 ApoB-48 與 ApoB-100 怎麼從同一基因產生，各在哪種脂蛋白？</li>
+    <li>□ 說出真核 mRNA 分解的順序？</li>
+  </ul>
+</section>
+
+<section class="sec" id="s7">
+  <h2>自我檢測</h2>
+  <div class="en">Self-check — 題目選自習作單元 7</div>
+  <div id="quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+</main>
+<a class="top" href="#top" aria-label="回到頂端">↑</a>
+<footer>營養分子生物學 第 7 講導讀｜依葉景生老師講義整理，標「補充」者為一般知識；如有出入以講義與老師上課內容為準</footer>
+<script>
+const Q = [
+ {q:"真核細胞 mRNA 的帽子結構是？",o:["7-甲基鳥嘌呤核苷三磷酸","7-甲基尿嘧啶核苷三磷酸","7-甲基腺嘌呤核苷三磷酸","7-甲基胞嘧啶核苷三磷酸"],a:0,
+  e:"帽子是 <b>m⁷G</b>，以 5′–5′ 三磷酸鍵接在 mRNA 5′ 端。"},
+ {q:"下列哪一序列會調控真核 mRNA 進行核內多聚腺苷酸化？",o:["UUAUUU","UUUUUAU","UAUUUUU","AAUAAA"],a:3,
+  e:"聚腺苷化訊號是 <b>AAUAAA</b>，切點在其下游。"},
+ {q:"下列關於真核生物 RNA 的敘述，何者錯誤？",o:["5′-cap 可保護 mRNA 端點","rRNA 及 tRNA 均無 5′-cap","mRNA 的 3′ poly-A 依循 DNA 模板上的 poly(T) 而來","組蛋白 mRNA 沒有 3′ poly(A)"],a:2,
+  e:"poly(A) 由 poly(A) 聚合酶<b>不依模板</b>加上去。"},
+ {q:"催化 mRNA 3′ 端 polyA 尾生成的酶是？",o:["限制性內切酶","鳥苷酸轉移酶","RNase P","多聚 A 聚合酶"],a:3,
+  e:"<b>poly(A) polymerase</b>；鳥苷酸轉移酶負責加帽。"},
+ {q:"高等真核細胞中，mRNA 前驅物的剪接訊號為？",o:["5′-GU-intron-AA-3′","5′-CG-intron-CG-3′","5′-GU-intron-AG-3′","5′-GC-intron-AC-3′"],a:2,
+  e:"「<b>GU 開門、AG 關門</b>」。"},
+ {q:"有關 intron 的敘述，何者正確？",o:["通常存在於原核基因中","在轉錄發生之前會被剪除","可被轉譯但不被轉錄","單一基因可含有多個 intron"],a:3,
+  e:"內含子會被<b>轉錄</b>、在轉錄後才剪掉、不被轉譯；一個基因可有很多個。"},
+ {q:"下列何種分子與 pre-mRNA 接合，可防止 mRNA 分子內自我配對產生錯誤二級結構？",o:["DNA","28S RNA","18S RNA","snRNP"],a:3,
+  e:"講義 S21：<b>snRNP</b> 與 pre-mRNA 結合可防止錯誤配對。"},
+ {q:"關於 RNA splicing 的敘述，何者正確？",o:["在細胞核開始、細胞質完成","U2 snRNP 可與 branch site 結合","U5 與 U6 都與 5′ 剪接位結合","RNA 本身不可能催化剪接"],a:1,
+  e:"<b>U2</b> 結合分支點；剪接在<b>核內</b>完成；核糖酶證明 RNA 能催化。"},
+ {q:"Ribozyme 為何種物質？",o:["磷脂質","醣脂質","DNA","RNA"],a:3,
+  e:"<b>核糖酶</b>＝有催化能力的 <b>RNA</b>（如 Group I／II 內含子、rRNA）。"},
+ {q:"下列有關 ApoB-100 及 ApoB-48 的敘述，何者正確？",o:["兩者都是 apoB 基因產物，且部分序列相同","兩者 mRNA 長度差一倍","兩者因轉譯後修飾造成差異","由選擇性剪接產生 ApoB-48"],a:0,
+  e:"同一基因；小腸的 <b>RNA 編輯</b>（CAA→UAA）使轉譯提早終止，ApoB-48 與 ApoB-100 前段相同，mRNA 長度一樣。"},
+ {q:"下列哪一個 apolipoprotein 突變，會造成細胞無法攝取 LDL、導致高膽固醇血症？",o:["apoA-1","apoB-48","apoB-100","apoE"],a:2,
+  e:"LDL 靠 <b>ApoB-100</b>（第 3500 位 Arg 附近）與 LDL 受體結合。"},
+ {q:"以下反應屬於 RNA 編輯的是？",o:["轉錄後鹼基的甲基化","轉錄後產物的剪接","轉錄後產物的剪切","轉錄產物中核苷酸的插入、刪除和取代"],a:3,
+  e:"RNA 編輯＝直接改變 RNA 的<b>鹼基序列</b>。"},
+ {q:"有關真核 mRNA 轉錄後修飾，何者錯誤？",o:["5′-capping 保護 5′ 端","3′-poly A 影響 RNA 穩定度","splicing 需要 snRNA","3′-poly A 完成後 mRNA 才能進行 splicing"],a:3,
+  e:"加帽、加尾與剪接在轉錄過程中<b>同步</b>進行，沒有「先加尾才能剪接」的規定。"},
+ {q:"RNA 經 processing 過程，可能出現下列何種結果？",o:["5′ 端附著 poly(A)","內含子被保留並轉譯成蛋白質","單一基因產生兩種不同蛋白質","兩個不同基因生成相同蛋白質"],a:2,
+  e:"<b>選擇性剪接</b>讓一個基因做出多種蛋白質。"}
+];
+</script>
+<script src="mb_core.js"></script>
+</body>
+</html>

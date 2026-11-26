@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>營養分子生物學導讀｜第 4 講 DNA 的重組與轉位</title>
+<link rel="stylesheet" href="mb.css">
+</head>
+<body id="top" data-ch="4">
+<header>
+  <div class="book">營養分子生物學（葉景生老師講義）・逐講導讀</div>
+  <h1>第 4 講　DNA 的重組與轉位</h1>
+  <div class="en">Lecture 4 DNA Recombination and Transposition（講義 49 頁）</div>
+</header>
+<div class="modebar"><span>閱讀模式</span>
+  <button id="mBrief" onclick="setMode('brief')">精簡（核心路線）</button>
+  <button id="mFull" onclick="setMode('full')">完整</button>
+</div>
+<main>
+<div class="briefhint">精簡模式只顯示每段的灰框重點；想看說明、例子與圖，按各節的「展開本節詳細內文」，或切到「完整」。</div>
+<div class="note"><span class="src">S12</span> 表示講義第 12 張投影片；<span class="add">補充</span> 是一般知識。📝 方框依「習作練習 單元 4」（32 題）整理。</div>
+<nav class="toc">
+  <b>本講目錄</b>
+  <a href="#s0">本講地圖</a>
+  <a href="#s1">DNA 重組的三種類型</a>
+  <a href="#s2">一、同源性重組</a>
+  <a class="sub" href="#s2a">Holliday 模式</a>
+  <a class="sub" href="#s2b">Meselson–Radding 模式</a>
+  <a class="sub" href="#s2c">雙股斷裂修補與 BRCA1／2</a>
+  <a class="sub" href="#s2d">致癌基因與抑癌基因</a>
+  <a class="sub" href="#s2e">重組複合體：RecA、RecBCD、Ruv</a>
+  <a href="#s3">二、位置專一性重組：λ 噬菌體</a>
+  <a href="#s4">三、轉位子</a>
+  <a class="sub" href="#s4a">崁入序列 IS 與剪貼模式</a>
+  <a class="sub" href="#s4b">原核第一類、第二類轉位子</a>
+  <a class="sub" href="#s4c">玉米轉位子 Ac／Ds</a>
+  <a class="sub" href="#s4d">反轉錄轉位子與人類基因體</a>
+  <a href="#s5">習作出題分析</a>
+  <a href="#s6">本講重點整理</a>
+  <a href="#s7">自我檢測（互動）</a>
+</nav>
+
+<section class="sec" id="s0">
+  <h2>本講地圖：為什麼這樣排？</h2>
+  <div class="en">Big picture</div>
+  <div class="lead"><b>破題</b>　第 3 講的突變是 DNA「出錯」；這一講的重組與轉位是 DNA「重新排列」——它既是<b>修補雙股斷裂</b>的工具，也是<b>生物多樣性與演化</b>的來源。<span class="key">三種重組的差別，在於需不需要相似序列。</span></div>
+  <div class="path">
+    <div class="step"><span class="sn">一</span><div><b>同源性重組：需要高度相似的序列</b><br><span class="sq">減數分裂互換、雙股斷裂正確修補；Holliday 結構是核心；BRCA1/2 壞了易得乳癌。</span></div></div>
+    <div class="arr">↓ 只需要一小段特定序列就能重組</div>
+    <div class="step"><span class="sn">二</span><div><b>位置專一性重組</b><br><span class="sq">λ 噬菌體在 att 位置嵌入大腸桿菌；抗體基因重組。</span></div></div>
+    <div class="arr">↓ 完全不需要相似序列，自己會跳</div>
+    <div class="step"><span class="sn">三</span><div><b>轉位子（跳躍基因）</b><br><span class="sq">IS、Tn 帶抗藥性；玉米 Ac/Ds；人類 LINE、Alu 佔基因體三成。</span></div></div>
+  </div>
+</section>
+
+<section class="sec det" id="s1">
+  <h2>DNA 重組的三種類型</h2>
+  <div class="en">Three classes of recombination <span class="src">S3–S7</span></div>
+  <div class="oneline">同源性重組（序列高度相似）、位置專一性重組（只在特定位置）、轉位性重組（不需相似，又稱不合規則重組 illegitimate recombination）。</div>
+  <div class="tblwrap"><table>
+    <tr><th>類型</th><th>需要的序列</th><th>代表例子</th></tr>
+    <tr><td>同源性重組 homologous</td><td>兩段 DNA 高度相似（不一定是同源染色體）</td><td>減數分裂互換；雙股斷裂修補；大腸桿菌 RecBCD 路徑</td></tr>
+    <tr><td>位置專一性重組 site-specific</td><td>只限特定短序列</td><td>λ 噬菌體嵌入細菌染色體；抗體輕、重鏈基因重組</td></tr>
+    <tr><td>轉位性重組 transpositional</td><td>不需同源或相似</td><td>玉米 Ac/Ds；細菌 IS、Tn；酵母 Ty；果蠅 P 元素、copia；人類 Alu</td></tr>
+  </table></div>
+  <p class="core">重組的功能：產生<b>基因變異</b>（演化與多樣性）、減數分裂時<b>互換</b>、<b>修補</b>DNA 損傷；細菌也能因重組獲得抗藥性（如四環黴素）。</p>
+  <div class="exam"><b class="t">考點</b>同種生物間性狀多樣化，主要來自<b>減數分裂時同源染色體互換造成的基因重組</b>（出現 2 次）。同源重組的生物功能：幫助減數分裂時染色體分離、增加多樣性、DNA 修復；「促進轉錄作用」<b>不是</b>。轉位作用（transposition）<b>不屬於</b>同源重組。</div>
+</section>
+
+<!-- ============ 一 ============ -->
+<section class="sec det" id="s2">
+  <h2><span class="no">一</span>同源性重組</h2>
+  <div class="en">Homologous Recombination <span class="src">S8–S26</span></div>
+  <div class="lead"><div><span class="lt">這節要說明什麼？</span>兩條相似的 DNA 怎麼交換片段：三個模型＋負責的蛋白。</div><div><span class="lt lt2">怎麼讀比較快</span>三個模型共用同一套流程：<b>聯會 → 侵入 → 交叉點遷移 → 旋轉形成 Holliday 結構 → 解套</b>；差別只在「一開始怎麼斷」。</div></div>
+  <div class="oneline">一股斷開的末端在 RecA 帶領下「侵入」另一條相似的雙股、找到配對處，形成十字形的 Holliday 連接體；交叉點滑動後再被剪開接回，兩條 DNA 就交換了片段。</div>
+<div class="bridge">第 3 講最後提到，雙股斷裂有一種修法是「找另一條相同的 DNA 當模板」——那就是同源性重組。簡報先用「染色體互換」的角度介紹它（減數分裂的基因交換），再給出三個分子模型。三個模型一個比一個貼近真實：Holliday 模型（1964）最早、最對稱；Meselson–Radding 修正成不對稱；雙股斷裂修補模型則說明重組最主要的用途其實是<b>修補</b>。</div>
+
+  <h3 id="s2a">(A) Holliday 模式 <span class="src">S10–S13</span></h3>
+  <p class="core">Robin Holliday 1964 年提出，是第一個被廣泛接受的重組模型。兩條 DNA 在同一部位各斷<b>一股</b> → 游離端互換 → 形成<b>異源雙鏈</b>與 <b>Holliday 連接體</b>（所有重組模型的核心）→ 解套方式決定是否發生重組。</p>
+  <p>關鍵是第 2 步：一條 DNA 斷開的單股，鑽進另一條 DNA 的雙股之間，和裡面那條「相同序列的互補股」配對——這只有在兩條 DNA 序列高度相似時才做得到，所以叫「同源」重組。兩股交錯形成的十字交叉點就是 Holliday 連接體。它可以像拉鍊一樣往兩邊滑動（交叉點遷移），滑過的區域就成為一股來自 A、一股來自 B 的<b>異源雙鏈</b>。最後切開的方向不同，結果也不同：一種切法讓兩條染色體的後半段整個交換（真正的互換），另一種只留下一小段異源雙鏈、兩側基因不交換。</p>
+  <figure class="pic"><svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12">
+      <text x="10" y="18" font-weight="bold">① 聯會＋單股切口</text>
+      <line x1="20" y1="35" x2="220" y2="35" stroke="#1d4ed8" stroke-width="4"/><line x1="20" y1="45" x2="110" y2="45" stroke="#1d4ed8" stroke-width="4"/><line x1="120" y1="45" x2="220" y2="45" stroke="#1d4ed8" stroke-width="4"/>
+      <line x1="20" y1="70" x2="110" y2="70" stroke="#dc2626" stroke-width="4"/><line x1="120" y1="70" x2="220" y2="70" stroke="#dc2626" stroke-width="4"/><line x1="20" y1="80" x2="220" y2="80" stroke="#dc2626" stroke-width="4"/>
+      <text x="260" y="18" font-weight="bold">② 侵入＋接合 → 交叉</text>
+      <line x1="270" y1="35" x2="470" y2="35" stroke="#1d4ed8" stroke-width="4"/>
+      <path d="M270 45 L360 45 L375 70 L470 70" stroke="#1d4ed8" stroke-width="4" fill="none"/>
+      <path d="M270 70 L360 70 L375 45 L470 45" stroke="#dc2626" stroke-width="4" fill="none"/>
+      <line x1="270" y1="80" x2="470" y2="80" stroke="#dc2626" stroke-width="4"/>
+      <text x="10" y="120" font-weight="bold">③ 交叉點遷移（branch migration）→ 異源雙鏈變長</text>
+      <line x1="20" y1="137" x2="470" y2="137" stroke="#1d4ed8" stroke-width="4"/>
+      <path d="M20 147 L250 147 L265 172 L470 172" stroke="#1d4ed8" stroke-width="4" fill="none"/>
+      <path d="M20 172 L250 172 L265 147 L470 147" stroke="#dc2626" stroke-width="4" fill="none"/>
+      <line x1="20" y1="182" x2="470" y2="182" stroke="#dc2626" stroke-width="4"/>
+      <path d="M200 125 h80" stroke="#7c3aed" stroke-width="2" marker-end="url(#a4)"/>
+      <text x="10" y="215" font-weight="bold">④ 旋轉 180°：十字形 Holliday 結構</text>
+      <path d="M140 230 L200 262 L140 294" stroke="#1d4ed8" stroke-width="4" fill="none"/><path d="M150 230 L210 262" stroke="#dc2626" stroke-width="4"/>
+      <path d="M260 230 L210 262 L260 294" stroke="#dc2626" stroke-width="4" fill="none"/><path d="M210 262 L150 294" stroke="#1d4ed8" stroke-width="4"/>
+      <text x="290" y="240" font-weight="bold">⑤ 解套（resolution）</text>
+      <text x="290" y="260">內切酶從上下或左右剪開</text>
+      <text x="290" y="278">→ 片段交換（重組）</text>
+      <text x="290" y="296">或只留一小段異源雙鏈</text>
+    </g>
+    <defs><marker id="a4" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker></defs>
+  </svg><figcaption>圖 4-1　Holliday 模式五步驟（藍、紅代表兩條相似的 DNA）。</figcaption></figure>
+  <ol class="steps">
+    <li><b>聯會</b> synapsis：兩條相似的 DNA 並排，核酸內切酶各切出一個單股斷口。</li>
+    <li><b>侵入</b> invasion：解旋酶分開 DNA，斷端在<b>類 RecA 蛋白</b>帶領下侵入對方的雙股，接合酶接起來形成交叉點。</li>
+    <li><b>交叉點遷移</b> branch migration：前方解旋、後方重新纏繞，交叉點往前滑。</li>
+    <li>結構旋轉 180°，形成 <b>Holliday 交叉結構</b>。</li>
+    <li><b>解套</b> resolution：核酸內切酶在對稱位置切開，接合酶接合，完成重組。</li>
+  </ol>
+  <div class="warn"><b class="t">講義用詞提醒：</b><span class="src">S8</span> 寫「染色體互換發生於姊妹染色分體」，但減數分裂的互換是發生在<b>同源染色體的非姊妹染色分體</b>之間（習作第 20 題答案）；姊妹染色分體之間的交換主要用於修補雙股斷裂。考題請選「同源染色體之非姊妹染色分體」。</div>
+
+  <div class="bridge">Holliday 模型假設兩條 DNA「剛好在同一個位置各斷一股」，但這種巧合不太可能經常發生。Meselson 與 Radding 的改良是：只需要<b>一條</b> DNA 先斷，由它主動去侵入另一條。</div>
+<h3 id="s2b">(B) Meselson–Radding 模式 <span class="src">S14–S17</span></h3>
+  <p class="core">改良 Holliday：只有<b>一條</b> DNA 先斷一股（不對稱）；邊修補合成、邊把游離單股推進鄰近雙股，被擠出的那股形成越來越大的 <b>D-loop</b>；之後 D-loop 斷開、末端交叉侵入，形成 Holliday 結構。<b>首次把 DNA 合成與重組連在一起</b>，較能解釋非對稱重組。</p>
+  <p>想像只有染色體 a 被切開一個缺口。DNA 聚合酶從缺口開始修補合成，新合成的鏈把原本的舊鏈往外推，被推出的單股就去侵入旁邊的染色體 A，把 A 的一股擠開成一個 D 字形的環（D-loop）。環越來越大，最後 D-loop 被切開、兩邊接回，就形成和 Holliday 模型一樣的十字結構。這個模型的意義是把「DNA 合成」和「重組」連在一起：重組時會順便合成一段 DNA，所以兩條染色體交換的片段不一定等長，能解釋實驗看到的不對稱結果。</p>
+  <div class="exam"><b class="t">國考題（108 年，講義 S15）</b>同源重組過程中 <b>RecA</b> 參與的是：<b>Holliday 中間體與交叉點遷移的形成</b>。（產生切口是 RecBCD；解開 Holliday 中間體的是 RuvC。）</div>
+
+  <div class="bridge">前兩個模型都從「單股斷口」開始。但第 3 講說過，真正危險的是<b>雙股同時斷裂</b>。這個模型說明：雙股斷裂時，細胞先把斷端修出 3′ 單股尾巴，再拿這條尾巴去侵入同源 DNA 借模板——這是最正確的修補方式，而 BRCA1／2 就是負責這條路的關鍵蛋白，所以簡報緊接著介紹它們。</div>
+<h3 id="s2c">(C) 雙股斷裂修補與 BRCA1／2 <span class="src">S18–S22</span></h3>
+  <p class="core">一條 DNA <b>兩股都斷</b>：外切酶把斷端從 5′→3′ 方向修掉、露出 <b>3′ 單股尾巴</b> → 3′ 端在類 RecA 蛋白引導下侵入另一條相似的完整 DNA、形成 loop → 以對方為模板補回缺口 → 形成<b>雙 Holliday 結構</b> → 解套。因為有完整模板，修補<b>正確無誤</b>（相對於第 3 講的 NHEJ）。</p>
+  <p><b>BRCA1</b>（17q21，1,863 個胺基酸，1994 年發現）與 <b>BRCA2</b>（13q12.3，3,418 個胺基酸，1997 年）是<b>抑癌基因</b>，負責以同源重組修補雙股斷裂。帶 BRCA1/2 突變的女性一生乳癌風險可高達約 72%（一般女性 12–13%），美國乳癌病例中約 5–10% 有 BRCA 異常 <span class="src">S22</span>。安潔莉娜裘莉因 BRCA1 突變，2013 年接受預防性雙乳切除。</p>
+  <div class="exam"><b class="t">考點</b>同源重組修復針對的是<b>雙股斷裂</b>；BRCA1/2 被認為是腫瘤抑制基因，是因為其產物<b>參與 DNA 修復</b>；評估乳癌家族高危險群最常用 <b>BRCA1</b>。BRCA1 敘述中「<b>不會影響組蛋白乙醯化</b>」是錯的——BRCA1 含<b>鋅指</b>結構，也會與 RNA 聚合酶 II、組蛋白修飾酵素合作影響轉錄 <span class="add">補充</span>。</div>
+  <div class="nut"><b class="t">健康連結：</b>BRCA 突變也增加卵巢癌、男性乳癌、攝護腺癌風險；帶因者可透過基因諮詢決定篩檢頻率或預防性手術。BRCA 缺陷的癌細胞仰賴其他修補路徑，PARP 抑制劑正是利用這點來治療 <span class="add">補充</span>。</div>
+
+  <div class="bridge">簡報在 BRCA 之後插入兩頁致癌基因／抑癌基因清單，再回到 RecBCD 複合體，看起來像離題。串連的邏輯是：BRCA1／2 是<b>抑癌基因</b>——它們負責修補，壞掉後突變越積越多、細胞就容易癌化。老師藉這個機會把「抑癌基因」和它的對照組「致癌基因」一起整理。可以這樣記兩者的差別：<b>致癌基因</b>像油門，正常版本（原致癌基因）促進細胞分裂，突變後「卡住油門」，只要一個副本壞掉就會出事（顯性作用）；<b>抑癌基因</b>像煞車或修車廠，通常兩個副本<b>都</b>壞掉才失去功能（隱性作用，帶因者已經先壞一個，所以 BRCA 突變帶因者風險特別高）<span class="add">補充</span>。看完清單後，簡報再回到同源重組，講負責執行的蛋白質。</div>
+<h3 id="s2d">致癌基因與抑癌基因 <span class="src">S23–S24</span></h3>
+  <p class="core"><b>致癌基因</b>：控制細胞增殖與分化，正常的<b>原致癌基因</b>突變後變成癌基因（踩油門卡住）。<b>抑癌基因</b>：抑制細胞異常生長與惡性轉化（煞車失靈才致癌）。</p>
+  <div class="tblwrap"><table>
+    <tr><th>致癌基因（講義）</th><th>相關癌症</th><th>抑癌基因（講義）</th><th>相關癌症</th></tr>
+    <tr><td>INT-1、INT-2</td><td>乳癌</td><td>p53（TP53）</td><td>前列腺癌、神經瘤（多種癌）</td></tr>
+    <tr><td>HST</td><td>胃癌</td><td>APC</td><td>家族性結腸息肉（FAP）、結腸癌</td></tr>
+    <tr><td>EGFR</td><td>鱗狀細胞癌</td><td>BRCA1、BRCA2</td><td>遺傳性乳癌、卵巢癌</td></tr>
+    <tr><td>BCR/ABL</td><td>CML</td><td>PTEN</td><td>乳腺、前列腺、甲狀腺濾泡癌</td></tr>
+    <tr><td>H-RAS／K-RAS／N-RAS</td><td>胰、結腸、肺癌；AML；黑色素瘤</td><td>MSH2、MLH1、PMS1/2、MSH6</td><td>遺傳性非息肉型結腸癌</td></tr>
+    <tr><td>N-MYC、L-MYC</td><td>肺癌、神經母細胞瘤</td><td></td><td></td></tr>
+  </table></div>
+  <div class="mn"><b class="t">記法</b>致癌基因是「油門」（RAS、MYC、EGFR、ABL）；抑癌基因是「煞車與修車廠」（p53、APC、BRCA、PTEN、MMR 基因）。MSH2、MLH1 就是第 3 講錯誤配對修補 MutS、MutL 的人類版本。</div>
+
+  <div class="bridge">回到同源重組本身：前面三個模型裡反覆出現「類 RecA 蛋白」「核酸內切酶」「解旋酶」，這一段把它們對應到大腸桿菌真正的蛋白名稱。</div>
+<h3 id="s2e">同源性重組複合體 <span class="src">S25–S26</span></h3>
+  <p class="core">大腸桿菌 rec 基因：<b>RecBCD</b>＝<b>雙股 DNA 解旋酶＋核酸外切酶</b>（在斷端解旋並分解，產生 3′ 單股）；<b>RecA</b>＝多功能單股 DNA 結合蛋白，負責<b>股的侵入與交換</b>。RecBCD 遇到 <b>Chi 位</b>（重組熱點）時由 RecC 辨認，RecD 活性被抑制，留下 3′ 單股「重組生成端」。</p>
+  <p>串成一個流程來看 <span class="src">S25–S26</span>：雙股斷裂後，<b>RecBCD</b> 夾住斷端，一邊解旋、一邊把 DNA 吃掉；走到 Chi 位（一段 8 個鹼基的特定序列）時，RecD 停止分解，留下一條長長的 3′ 單股尾巴；<b>RecA</b> 一個接一個包在這條單股上形成纖維，帶著它到另一條 DNA 上搜尋相同序列，找到後侵入、配對、形成 Holliday 結構；<b>RuvA、RuvB</b> 推動交叉點滑動；最後 <b>RuvC</b> 切開十字結構，完成重組。</p>
+  <ul class="dots">
+    <li>RecB：3′→5′ 方向解旋；RecD：5′→3′ 方向解旋並分解 <span class="src">S26</span>。</li>
+    <li>Ruv 蛋白 <span class="src">S4</span>：<span class="add">補充</span> RuvA、RuvB 推動交叉點遷移；<b>RuvC</b> 是解套酶 resolvase，切開 Holliday 結構。</li>
+  </ul>
+  <div class="tblwrap"><table>
+    <tr><th>蛋白</th><th>工作</th><th>考法</th></tr>
+    <tr><td>RecBCD</td><td>解旋＋外切，產生 3′ 單股</td><td>「具解旋與形成單股功能」「位於雙股上去螺旋並水解」</td></tr>
+    <tr><td>RecA</td><td>帶單股侵入、尋找同源、股交換</td><td>「直接參與股與股間的交換」；也是 SOS 感應器（第 3 講）</td></tr>
+    <tr><td>RuvAB</td><td>交叉點遷移</td><td>—</td></tr>
+    <tr><td>RuvC</td><td>解套 Holliday 結構</td><td>resolvase</td></tr>
+  </table></div>
+  <div class="mn"><b class="t">記法</b>RecBCD 先「<b>B</b>reak & <b>C</b>hew」開出單股；Rec<b>A</b> 帶著單股去「<b>A</b>ttack」侵入；Ruv<b>C</b> 最後「<b>C</b>ut」解套。</div>
+  <div class="sum"><b class="t">本節重點</b><ul>
+    <li>流程：聯會 → 侵入 → 交叉點遷移 → Holliday 結構 → 解套。</li>
+    <li>Holliday（兩條各斷一股）；Meselson–Radding（一條先斷、D-loop、連結合成與重組）；雙股斷裂修補（3′ 尾巴侵入、雙 Holliday）。</li>
+    <li>BRCA1（17 號）、BRCA2（13 號）：同源重組修補雙股斷裂的抑癌基因。</li>
+    <li>RecBCD 解旋外切、RecA 股交換、RuvC 解套。</li>
+  </ul></div>
+</section>
+
+<!-- ============ 二 ============ -->
+<section class="sec det" id="s3">
+  <h2><span class="no">二</span>位置專一性重組：λ 噬菌體</h2>
+  <div class="en">Site-specific Recombination <span class="src">S27–S29</span></div>
+  <div class="oneline">λ 噬菌體用整合酶在特定附著點（attP 與細菌的 attB）重組，把自己的 DNA 嵌進大腸桿菌染色體（溶源）；要回到裂解狀態時再從原處切出來。</div>
+  <div class="bridge">同源重組需要「一長段相似序列」；但有些重組只發生在固定的一小段序列上，由專門的酵素（整合酶）辨認——這就是位置專一性重組。簡報用 λ 噬菌體當代表，因為它的生活史正好需要「嵌進去」和「切出來」兩種動作。</div>
+<p class="core">λ 噬菌體 DNA 兩種狀態：<b>裂解</b>（lytic，在細菌內以獨立環狀分子存在、大量複製後裂解細菌）與<b>溶源</b>（lysogenic，整合到細菌染色體成為原噬菌體）。整合 integrate 與切離 excise 都靠<b>位置專一性重組</b>，發生在<b>附著點 att</b>：細菌的 <b>attB</b>（約 25 bp，B-O-B′，位於 bio 與 gal 基因之間）與噬菌體的 <b>attP</b>（240 bp，P-O-P′），由<b>整合酶</b>催化。</p>
+  <figure class="pic"><svg viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12">
+      <circle cx="90" cy="75" r="45" fill="none" stroke="#7c3aed" stroke-width="4"/><text x="90" y="80" text-anchor="middle" fill="#7c3aed" font-weight="bold">λ DNA</text>
+      <rect x="120" y="100" width="30" height="14" fill="#fde68a" stroke="#b45309"/><text x="160" y="112">attP（POP′）</text>
+      <line x1="20" y1="170" x2="460" y2="170" stroke="#1d4ed8" stroke-width="4"/><text x="20" y="160" fill="#1d4ed8">細菌染色體</text>
+      <rect x="130" y="163" width="40" height="14" fill="#e5e7eb"/><text x="150" y="194" text-anchor="middle">gal</text>
+      <rect x="215" y="163" width="30" height="14" fill="#fde68a" stroke="#b45309"/><text x="230" y="194" text-anchor="middle">attB</text>
+      <rect x="290" y="163" width="40" height="14" fill="#e5e7eb"/><text x="310" y="194" text-anchor="middle">bio</text>
+      <path d="M135 115 Q190 140 225 160" stroke="#374151" stroke-width="2" fill="none" stroke-dasharray="5 3"/>
+      <text x="260" y="60" font-weight="bold">整合酶 integrase</text><text x="260" y="78">在 O 區（兩邊相同的核心）交換</text>
+      <text x="260" y="100">→ 溶源：原噬菌體夾在 gal 與 bio 之間</text><text x="260" y="118">→ 誘導時切離，回到裂解</text>
+    </g>
+  </svg><figcaption>圖 4-2　λ 噬菌體在 attP 與 attB 之間進行位置專一性重組。</figcaption></figure>
+  <div class="exam"><b class="t">考點</b>λ 噬菌體 DNA 嵌入大腸桿菌基因體靠的是<b>特定點（位置專一性）重組</b>，不是同源重組、轉位或 NHEJ。細菌被噬菌體感染後開始製造以前不會做的蛋白，最可能是<b>噬菌體帶入外來基因</b>（溶源轉換）。</div>
+  <div class="nut"><b class="t">另一個例子：</b>脊椎動物的 B 細胞把抗體（免疫球蛋白）輕鏈、重鏈的 V、D、J 片段重新組合，用有限的基因做出上億種抗體，也是位置專一性重組 <span class="src">S5</span>。</div>
+</section>
+
+<!-- ============ 三 ============ -->
+<section class="sec det" id="s4">
+  <h2><span class="no">三</span>轉位子</h2>
+  <div class="en">Transposons <span class="src">S30–S48</span></div>
+  <div class="lead"><div><span class="lt">這節要說明什麼？</span>會自己「跳」的 DNA：原核的 IS、Tn，真核的玉米 Ac/Ds，以及人類基因體裡的 LINE、Alu。</div><div><span class="lt lt2">和健康的關係</span>細菌靠轉位子傳遞抗藥性；人類 Alu 插入可能打斷基因造成疾病。</div></div>
+  <div class="oneline">轉位子＝跳躍基因，自帶轉位酶基因，兩端有反轉重複序列；跳的方式有「剪貼」（原位消失）與「複製」（原位保留、新位置多一份）；需要經過 RNA 再反轉錄回 DNA 的叫反轉錄轉位子。</div>
+
+  <div class="bridge">同源重組需要「長段相似序列」，位置專一性重組需要「一小段特定序列」，轉位子則什麼都不需要——它自己帶著轉位酶，幾乎可以跳到任何地方。簡報從最簡單的轉位子（IS，只有轉位酶基因）開始，再講帶有額外基因（抗藥基因）的複合轉位子，最後講真核與人類。</div>
+<h3 id="s4a">1. 崁入序列 IS 與剪貼模式 <span class="src">S30–S32</span></h3>
+  <p class="core">IS（如 IS5、IS10）兩端各有一段<b>反轉重複序列</b>（IR，左 IRL、右 IRR），中間是<b>轉位酶</b>基因。剪貼模式：轉位酶辨認 IR 與目標位置，在目標序列上錯開切口、IS 插進去，DNA 聚合酶補缺口 → IS 兩側出現一小段<b>正向重複序列</b>（DR）。</p>
+  <p>IS 是最小、最簡單的轉位子，長度約 1–2 kb，裡面只有一個轉位酶基因，兩端是方向相反的重複序列（IR），讓轉位酶認得「從哪裡剪」。剪貼時，轉位酶在目標 DNA 的兩股上錯開幾個鹼基各切一刀（像黏性末端），把 IS 插進去後，兩邊各留下一小段單股缺口，由 DNA 聚合酶補齊——補出來的這兩小段序列相同、方向一致，就是 IS 兩側的<b>正向重複</b>，可以當作「這裡曾有轉位子插入」的痕跡。</p>
+  <figure class="pic"><svg viewBox="0 0 480 130" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <rect x="20" y="40" width="60" height="28" fill="#bbf7d0" stroke="#15803d"/><text x="50" y="58">ATGCC</text>
+      <rect x="80" y="40" width="40" height="28" fill="#fde68a" stroke="#b45309"/><text x="100" y="58">IR→</text>
+      <rect x="120" y="40" width="240" height="28" fill="#fecaca" stroke="#dc2626"/><text x="240" y="58" font-weight="bold">轉位酶基因</text>
+      <rect x="360" y="40" width="40" height="28" fill="#fde68a" stroke="#b45309"/><text x="380" y="58">←IR</text>
+      <rect x="400" y="40" width="60" height="28" fill="#bbf7d0" stroke="#15803d"/><text x="430" y="58">ATGCC</text>
+      <text x="50" y="90" fill="#15803d">正向重複 DR</text><text x="430" y="90" fill="#15803d">正向重複 DR</text>
+      <text x="240" y="90">兩端 IR 方向相反（反轉重複）；外側 DR 方向相同</text>
+      <text x="240" y="118" fill="#6b7280">DR 是插入時把目標序列切成錯開切口、補齊後多出來的複本</text>
+    </g>
+  </svg><figcaption>圖 4-3　崁入序列的結構 <span class="src">S31–S32</span>。</figcaption></figure>
+  <div class="warn"><b class="t">易錯：</b>轉位子本身兩端是<b>反轉重複</b>（inverted repeat）；「正向重複」（direct repeat）是插入後<b>目標位置</b>被複製出來的那一小段。習作有一題寫「轉位子兩端含直接重複序列」，那是錯的選項。IS 元素的結構＝<b>轉位酶基因＋兩端反向重複序列</b>。</div>
+
+  <div class="bridge">IS 本身只帶轉位酶，對細菌沒什麼好處。但如果兩個 IS 把一段抗藥基因夾在中間，整段就能一起跳——抗藥性因此能從質體跳到染色體、再傳給別的細菌。</div>
+<h3 id="s4b">2. 原核細胞轉位子 <span class="src">S33–S37</span></h3>
+  <p class="core"><b>第一類（複合型）</b>：兩端各有一個 <b>IS1</b>，中間夾抗藥基因（如抗氯黴素），靠 IS 轉位；採<b>剪貼（非複製）</b>模式，原本的 R 質體失去轉位子後就不再抗藥。<b>第二類（如 Tn3）</b>：兩端是自己的 38 bp IR，不含 IS；中間有 <b>TnpA</b>（轉位酶）、<b>TnpR</b>（抑制子／鬆解酶 resolvase）、<b>Amp^r</b>（抗安比西林）；採<b>複製</b>模式，原位保留、目標位置多一份。</p>
+  <p>兩類的關鍵差別在「原本那份還在不在」：第一類用剪貼，轉位子從 R 質體搬到別處，原來的質體就失去抗藥性；第二類（Tn3）用複製，轉位酶 TnpA 先讓兩個 DNA 分子暫時融合成一個帶有兩份轉位子的「共合體」，再由 TnpR（鬆解酶）在 res 位點把它分開，結果原處和新處各有一份轉位子 <span class="src">S36–S37</span>。後者等於是「複製一份抗藥性」，擴散得更快。</p>
+  <div class="tblwrap"><table>
+    <tr><th>項目</th><th>第一類</th><th>第二類（Tn3）</th></tr>
+    <tr><td>兩端</td><td>IS1 模組</td><td>自己的 38 bp IR</td></tr>
+    <tr><td>轉位模式</td><td>剪貼（非複製）</td><td>複製（先形成共合體，再由鬆解酶分開）</td></tr>
+    <tr><td>原位置</td><td>轉位子離開</td><td>轉位子保留</td></tr>
+    <tr><td>例子</td><td>抗氯黴素</td><td>抗安比西林（Amp^r）</td></tr>
+  </table></div>
+  <div class="nut"><b class="t">公衛連結：</b>轉位子可在<b>染色體與質體之間</b>移動，廣見於<b>革蘭氏陽性與陰性菌</b>，是抗藥基因在細菌間快速擴散的原因之一——這也是要正確使用抗生素的理由。</div>
+
+  <div class="bridge">轉位子最早其實不是在細菌、而是在<b>玉米</b>被發現的。簡報這裡從原核跳回真核，順便交代歷史：麥克林托克在 1940 年代就提出「會移動的基因」，比細菌 IS 的發現還早，但當時不被接受，直到幾十年後才獲得諾貝爾獎。</div>
+<h3 id="s4c">3. 玉米轉位子 Ac／Ds <span class="src">S38–S43</span></h3>
+  <p class="core">芭芭拉·麥克林托克（Barbara McClintock）在<b>玉米</b>籽粒顏色研究中發現「控制元素」——最早發現的真核轉位子（1983 年諾貝爾獎 <span class="add">補充</span>）。<b>Ac（活化元素）</b>是完整、可自行轉位的<b>自主型元素</b>；<b>Ds（解離元素）</b>是刪除了部分外顯子的不完整 Ac，<b>非自主型</b>，要 Ac 存在才能轉位。Ds 以剪貼模式跳走後常造成染色體斷裂、缺失、重複、倒位 → 玉米顆粒出現斑點。</p>
+  <p>野生型玉米顆粒是紫色，基因被 Ds 插入打斷就變白；若在發育中某些細胞裡 Ds 又跳走，那群細胞恢復紫色，顆粒上就出現紫色斑點。講義表 <span class="src">S41</span> 的自主／非自主配對：Ac／Ds、Spm／dSpm、En／I、Mu。Ds 的幾種缺陷型：DS9 缺外顯子 III、DS2d1 缺外顯子 II、DS6 缺外顯子 II–IV <span class="src">S42</span>。</p>
+  <div class="warn"><b class="t">講義年份提醒：</b><span class="src">S6</span> 寫「1904 年」，麥克林托克的轉位子研究是在 <b>1940 年代</b>（習作題目也寫 1940 年）。另外，轉位子<b>不是</b>玉米特有，細菌、酵母、果蠅、人類都有。講義 <span class="src">S39</span> 也提到：秘魯紫玉米是雜交育種的結果，不是基因改造食品。</div>
+
+  <div class="bridge">前面的轉位子都是 DNA 直接「剪下貼上」或「複製貼上」。真核還有另一類：先<b>轉錄成 RNA</b>，再用反轉錄酶變回 DNA 插入新位置——和第 2 講的端粒酶、第 10 講的 RT-PCR 一樣都用到反轉錄。人類基因體裡最多的轉位子正是這一類。</div>
+<h3 id="s4d">4. 反轉錄轉位子與人類基因體 <span class="src">S44–S48</span></h3>
+  <p class="core">反轉錄轉位子 retrotransposon：轉位過程中有一段時期是 <b>RNA</b>，再以<b>反轉錄</b>變回 DNA 插入新位置（複製－貼上）。人類基因體的轉位子序列：<b>LINEs</b>（長散佈元素，約佔 <b>20%</b>，帶有轉位所需酵素）、<b>Alu</b>（約 300 bp，約 <b>10%</b>，自己不能轉位，借用 LINE 的機制）、<b>LTR</b> 反轉錄轉位子（結構像反轉錄病毒）、<b>DNA 型轉位子</b>、<b>缺陷型</b>轉位子。</p>
+  <p>LINE 是「自主型」反轉錄轉位子，自己編碼反轉錄酶與內切酶，可以把自己的 RNA 反轉錄回 DNA 並插入新位置；Alu（屬於 SINE）很短、沒有任何酵素基因，必須借用 LINE 的酵素才能移動，所以是「非自主型」——這和玉米的 Ac（自主）／Ds（非自主）是同樣的關係。多數這些序列已經突變失去活性，但少數仍會跳動；Alu 插入某個基因中造成遺傳疾病的案例已有報告 <span class="add">補充</span>。</p>
+  <ul class="dots">
+    <li><b>Alu</b>：寄居在 LINEs 序列中；5′ 端單體有兩個 <b>RNA 聚合酶 III</b> 的啟動子；插入基因中可造成基因訊息中斷、嚴重變異 <span class="src">S46</span>。</li>
+    <li><b>LTR</b>：結構與反轉錄病毒相似，可能是病毒進入人類基因體的遺跡 <span class="src">S47</span>。</li>
+    <li>SINEs（短散佈元素，Alu 屬之）和 LINEs 都是反轉錄轉位子 <span class="src">S48</span>。</li>
+  </ul>
+  <div class="eg"><b class="t">呼應第 1 講：</b>人類基因體超過一半是重複序列；光 LINE＋Alu 就約三成。真正編碼蛋白質的序列只佔很小比例。</div>
+  <div class="sum"><b class="t">本節重點</b><ul>
+    <li>IS＝轉位酶基因＋兩端反轉重複；插入後兩側產生正向重複。</li>
+    <li>第一類（IS1 夾抗藥基因、剪貼）；第二類 Tn3（TnpA、TnpR、Amp^r，複製）。</li>
+    <li>McClintock 玉米：Ac 自主、Ds 非自主（缺外顯子）。</li>
+    <li>反轉錄轉位子經 RNA；人類 LINE 約 20%、Alu 約 10%。</li>
+  </ul></div>
+  <details class="terms"><summary>本講名詞中英對照</summary><div class="tblwrap"><table>
+    <tr><td>同源性重組</td><td>homologous recombination</td><td>位置專一性重組</td><td>site-specific recombination</td></tr>
+    <tr><td>交叉點遷移</td><td>branch migration</td><td>解套</td><td>resolution</td></tr>
+    <tr><td>異源雙鏈</td><td>heteroduplex</td><td>D 環</td><td>D-loop</td></tr>
+    <tr><td>附著點</td><td>attachment site (att)</td><td>整合酶</td><td>integrase</td></tr>
+    <tr><td>裂解／溶源</td><td>lytic / lysogenic</td><td>轉位酶</td><td>transposase</td></tr>
+    <tr><td>崁入序列</td><td>insertion sequence (IS)</td><td>反轉重複／正向重複</td><td>inverted / direct repeat</td></tr>
+    <tr><td>鬆解酶</td><td>resolvase</td><td>反轉錄轉位子</td><td>retrotransposon</td></tr>
+    <tr><td>致癌基因</td><td>oncogene</td><td>抑癌基因</td><td>tumor-suppressor gene</td></tr>
+  </table></div></details>
+</section>
+
+<section class="sec" id="s5">
+  <h2>習作出題分析（單元 4，共 32 題）</h2>
+  <div class="en">Where the questions come from</div>
+  <div class="tblwrap"><table class="freq">
+    <tr><th>主題</th><th>約題數</th><th>常考的說法</th></tr>
+    <tr><td>重組 DNA 技術（與第 10 講重疊）</td><td><span class="stars">★★★</span> 約 5</td><td>載體帶抗藥基因用來篩選；限制酶多來自細菌；連接酶黏合 DNA；送入大腸桿菌量產</td></tr>
+    <tr><td>同源重組功能、Rec 蛋白、Holliday</td><td><span class="stars">★★★★</span> 約 10</td><td>RecBCD 解旋＋水解；RecA 股交換；Holliday 出現在同源重組；修補雙股斷裂</td></tr>
+    <tr><td>BRCA1／2</td><td><span class="stars">★★★</span> 約 5</td><td>參與 DNA 修補的抑癌基因；BRCA1 會影響組蛋白乙醯化</td></tr>
+    <tr><td>轉位子與 McClintock</td><td><span class="stars">★★★</span> 約 6</td><td>跳躍基因；IS＝轉位酶＋反向重複；可在染色體與質體間移動</td></tr>
+    <tr><td>λ 噬菌體</td><td><span class="stars">★</span> 約 2</td><td>位置專一性重組</td></tr>
+    <tr><td>啟動子（其實屬第 5 講）</td><td><span class="stars">★</span> 2</td><td>原核 −10＝Pribnow box；真核啟動子沒有 Pribnow box</td></tr>
+  </table></div>
+</section>
+
+<section class="sec" id="s6">
+  <h2>本講重點整理</h2>
+  <div class="en">Summary</div>
+  <div class="tblwrap"><table>
+    <tr><th>主題</th><th>一定要記</th></tr>
+    <tr><td>三類重組</td><td>同源（相似序列）、位置專一（att、抗體）、轉位（不需相似，illegitimate）</td></tr>
+    <tr><td>共同流程</td><td>聯會 → 侵入（類 RecA）→ 交叉點遷移 → Holliday 結構 → 解套</td></tr>
+    <tr><td>三模型</td><td>Holliday 1964；Meselson–Radding（D-loop、合成＋重組）；雙股斷裂修補（3′ 尾、雙交叉）</td></tr>
+    <tr><td>蛋白</td><td>RecBCD 解旋＋外切、Chi 位；RecA 單股結合、股交換；RuvC 解套</td></tr>
+    <tr><td>BRCA</td><td>BRCA1 17q21、BRCA2 13q12.3；同源重組修補雙股斷裂；乳癌風險可達約 72%</td></tr>
+    <tr><td>λ 噬菌體</td><td>裂解／溶源；attP（POP′，240 bp）× attB（BOB′，25 bp，gal 與 bio 之間）；整合酶</td></tr>
+    <tr><td>轉位子</td><td>IS：轉位酶＋IR，插入後產生 DR；第一類 IS1 剪貼；第二類 Tn3 複製（TnpA、TnpR、Amp^r）</td></tr>
+    <tr><td>真核</td><td>玉米 Ac（自主）／Ds（非自主）；人類 LINE 20%、Alu 10%（RNA pol III 啟動子）、LTR</td></tr>
+  </table></div>
+  <h3>讀完請自我檢查：我能不能……</h3>
+  <ul class="dots">
+    <li>□ 說出三類重組的差別，各舉一個例子？</li>
+    <li>□ 依序說出 Holliday 模式五步驟？</li>
+    <li>□ 說出 RecBCD、RecA、RuvC 各做什麼？</li>
+    <li>□ 解釋 BRCA1/2 為什麼算抑癌基因？</li>
+    <li>□ 比較剪貼與複製兩種轉位模式？</li>
+    <li>□ 說明 Ac 和 Ds 的關係？</li>
+  </ul>
+</section>
+
+<section class="sec" id="s7">
+  <h2>自我檢測</h2>
+  <div class="en">Self-check — 題目選自習作單元 4 與講義國考題</div>
+  <div id="quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+</main>
+<a class="top" href="#top" aria-label="回到頂端">↑</a>
+<footer>營養分子生物學 第 4 講導讀｜依葉景生老師講義整理，標「補充」者為一般知識；如有出入以講義與老師上課內容為準</footer>
+<script>
+const Q = [
+ {q:"同種生物間多樣化的性狀變異，主要來自下列何項機制？",o:["染色體多倍體化","DNA 點突變","減數分裂時同源染色體互換，產生基因重組","染色體某段重複"],a:2,
+  e:"每次減數分裂的<b>互換＋獨立分配</b>都會產生新的基因組合，是同種個體差異的主要來源。"},
+ {q:"同源重組修復（homologous recombination repair）是針對何種 DNA 傷害？",o:["鹼基傷害","單股斷裂","雙股斷裂","DNA–蛋白質交聯"],a:2,
+  e:"同源重組以另一條完整 DNA 為模板，正確修補<b>雙股斷裂</b>。鹼基傷害用 BER。"},
+ {q:"在同源重組過程中，RecA 蛋白參與下列何種反應？（108 年國考）",o:["Holliday 中間體與交叉點遷移的形成","重組產物負超螺旋的形成","兩條雙股 DNA 切口的形成","Holliday 中間體的解套"],a:0,
+  e:"<b>RecA</b> 帶單股侵入並促成股交換、形成 Holliday 中間體；切口由 RecBCD、解套由 RuvC。"},
+ {q:"在大腸桿菌同源重組中，位於雙股 DNA 上、將 DNA 去螺旋並水解的是？",o:["DNA ligase","RecA","RecBCD","RuvC"],a:2,
+  e:"<b>RecBCD</b> 兼具解旋酶與核酸外切酶活性，產生 3′ 單股。"},
+ {q:"Holliday 中間體會在下列何種反應中出現？",o:["轉錄","轉譯","轉位","同源基因重組"],a:3,
+  e:"Holliday 連接體是<b>同源重組</b>（包括雙股斷裂的同源重組修補）的核心結構，NHEJ 不會產生。"},
+ {q:"染色體互換（crossing over）發生於？",o:["姊妹染色分體","非同源染色體","同源染色體的非姊妹染色分體","非同源基因座"],a:2,
+  e:"減數分裂聯會時，<b>同源染色體的非姊妹染色分體</b>交換片段。非同源染色體之間交換是易位（異常）。"},
+ {q:"BRCA1 及 BRCA2 被認為是腫瘤抑制基因，是因為？",o:["DNA 受損時其產物參與修復","可抑制化學致癌物入侵","可阻止病毒感染","突變後就不會得乳癌"],a:0,
+  e:"BRCA1/2 以<b>同源重組修補雙股斷裂</b>；失去功能後突變累積、易癌化。"},
+ {q:"下列關於 BRCA1 蛋白的敘述，何者有誤？",o:["是一種 DNA 修復蛋白","含有鋅指結構","不會影響組蛋白乙醯化","會與 RNA 聚合酶 II 合作影響轉錄"],a:2,
+  e:"BRCA1 也參與轉錄與染色質調控，<b>會</b>影響組蛋白乙醯化。"},
+ {q:"λ 噬菌體 DNA 藉由何種作用嵌入大腸桿菌基因體？",o:["同源重組","轉位作用","特定點（位置專一性）重組","非同源末端接合"],a:2,
+  e:"整合酶在 attP 與 attB 之間進行<b>位置專一性重組</b>。"},
+ {q:"插入序列（insertion sequence）與轉位子（transposon）都是？",o:["毒素","跳躍基因","噬菌體","質體"],a:1,
+  e:"兩者都能在基因體中移動位置，俗稱<b>跳躍基因</b>。"},
+ {q:"插入序列元素（IS element）的結構包含？",o:["轉位酶以外的其他基因","轉位酶基因和其他基因","只有轉位酶基因","轉位酶基因和兩端的反向重複序列"],a:3,
+  e:"IS 是最簡單的轉位子：<b>轉位酶基因＋兩端反轉重複（IR）</b>；夾帶其他基因（如抗藥基因）的才叫複合轉位子。"},
+ {q:"有關轉位子的敘述，何者正確？",o:["與細菌抗藥性無關","廣見於革蘭氏陽性及陰性菌","無法在染色體與質體間移動","只見於革蘭氏陰性菌"],a:1,
+  e:"轉位子<b>廣見於兩類細菌</b>，可在染色體與質體間移動，是抗藥基因傳播的重要途徑。"},
+ {q:"麥克林托克在玉米觀察到會移動位置、使某些細胞基因開啟或關閉的「調控單元」是？",o:["活化子 activator","轉位子 transposable element","加強子 enhancer","誘導子 inducer"],a:1,
+  e:"她稱為控制元素，就是<b>轉位子</b>（Ac/Ds）。Ac 雖叫「活化元素」，但題目問的是這類單元的總稱。"},
+ {q:"人類基因體中約 300 bp、本身不能轉位、借用 LINE 機制移動的重複序列是？",o:["LTR","Alu","IS10","Tn3"],a:1,
+  e:"<b>Alu</b> 約佔基因體 10%，含 RNA 聚合酶 III 啟動子；LINE 約 20%。"}
+];
+</script>
+<script src="mb_core.js"></script>
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>營養分子生物學導讀｜第 3 講 DNA 的突變與修補</title>
+<link rel="stylesheet" href="mb.css">
+</head>
+<body id="top" data-ch="3">
+<header>
+  <div class="book">營養分子生物學（葉景生老師講義）・逐講導讀</div>
+  <h1>第 3 講　DNA 的突變與修補</h1>
+  <div class="en">Lecture 3 DNA Mutation and Repair（講義 50 頁）</div>
+</header>
+<div class="modebar"><span>閱讀模式</span>
+  <button id="mBrief" onclick="setMode('brief')">精簡（核心路線）</button>
+  <button id="mFull" onclick="setMode('full')">完整</button>
+</div>
+<main>
+<div class="briefhint">精簡模式只顯示每段的灰框重點；想看說明、例子與圖，按各節的「展開本節詳細內文」，或切到「完整」。</div>
+<div class="note"><span class="src">S11</span> 表示講義第 11 張投影片；<span class="add">補充</span> 是一般知識。講義裡放了好幾題營養師國考題，本講是國考熱區。📝 方框依「習作練習 單元 3」（52 題）整理。</div>
+<nav class="toc">
+  <b>本講目錄</b>
+  <a href="#s0">本講地圖</a>
+  <a href="#s1">一、DNA 突變與損傷</a>
+  <a class="sub" href="#s1a">突變的分類總表</a>
+  <a class="sub" href="#s1b">DNA 損害的五種類型</a>
+  <a class="sub" href="#s1c">誘變劑：紫外線、化學物、病毒</a>
+  <a class="sub" href="#s1d">依效應分：錯意、無意義、移碼、無功能、沉默</a>
+  <a class="sub" href="#s1e">點突變：轉換與倒換，及三種突變劑</a>
+  <a class="sub" href="#s1f">染色體結構改變與疾病案例</a>
+  <a href="#s2">二、點突變的修補機制</a>
+  <a class="sub" href="#s2a">複製校正</a>
+  <a class="sub" href="#s2b">錯誤配對修補 MMR</a>
+  <a class="sub" href="#s2c">單一核苷酸修補（鹼基切除）</a>
+  <a href="#s3">三、結構損傷的修補機制</a>
+  <a class="sub" href="#s3a">核苷酸切除修補 NER 與色素性乾皮症</a>
+  <a class="sub" href="#s3b">轉錄協同修補 TCR</a>
+  <a class="sub" href="#s3c">雙股斷裂：NHEJ</a>
+  <a class="sub" href="#s3d">SOS 修補：LexA 與 RecA</a>
+  <a href="#s4">修補機制總比較</a>
+  <a href="#s5">習作出題分析</a>
+  <a href="#s6">本講重點整理</a>
+  <a href="#s7">自我檢測（互動）</a>
+</nav>
+
+<section class="sec" id="s0">
+  <h2>本講地圖：為什麼這樣排？</h2>
+  <div class="en">Big picture</div>
+  <div class="lead"><b>破題</b>　第 2 講說複製很精準，但 DNA 每個細胞每天仍有 <b>10³–10⁶ 處</b>損傷 <span class="src">S37</span>。這一講回答：<span class="key">DNA 會怎麼壞掉？壞掉會造成什麼病？細胞怎麼修？</span>2015 年諾貝爾化學獎（Lindahl、Modrich、Sancar）就是頒給解開 DNA 修補機制的人 <span class="src">S3</span>。</div>
+  <div class="path">
+    <div class="step"><span class="sn">一</span><div><b>怎麼壞</b><br><span class="sq">從小（一個鹼基）到大（整段染色體）；誰造成（UV、亞硝酸、黃麴毒素、病毒）；造成什麼病（鐮刀型貧血、地中海型貧血、血友病、CML）。</span></div></div>
+    <div class="arr">↓ 小傷口用小工具修</div>
+    <div class="step"><span class="sn">二</span><div><b>點突變的修補</b><br><span class="sq">校正 → 錯誤配對修補 → 單一鹼基切除。</span></div></div>
+    <div class="arr">↓ 大傷口要大範圍切掉重補</div>
+    <div class="step"><span class="sn">三</span><div><b>結構損傷的修補</b><br><span class="sq">核苷酸切除（UV 二聚體）、轉錄協同、雙股斷裂接合、緊急的 SOS。</span></div></div>
+  </div>
+</section>
+
+<!-- ============ 一 ============ -->
+<section class="sec det" id="s1">
+  <h2><span class="no">一</span>DNA 突變與損傷</h2>
+  <div class="en">DNA Mutation and Damage <span class="src">S4–S36</span></div>
+  <div class="lead"><div><span class="lt">這節要說明什麼？</span>突變的分類方法、原因與代表疾病。</div><div><span class="lt lt2">考試重心</span>鐮刀型貧血（錯意）、地中海型貧血（無意義、移碼）、紫外線（T-T 二聚體）、費城染色體（轉位）是必考四大題。</div></div>
+  <div class="oneline">突變可分三層：染色體數目、染色體結構（缺失、重複、倒位、易位）、基因（點突變）；原因可以是自發或誘變劑（物理、化學、生物）；依對蛋白質的效應分錯意、無意義、移碼、無功能、沉默。</div>
+
+  <div class="bridge">第 2 講強調複製「非常精準」，但精準不等於零錯誤；而且 DNA 平常就會被環境和代謝產物破壞。簡報一開頭用 2015 年諾貝爾化學獎 <span class="src">S3</span> 點出主題：DNA 會一直受損，細胞也一直在修。先把<b>「突變」和「損傷」</b>分清楚 <span class="add">補充</span>：損傷是 DNA 化學結構被破壞（例如鹼基被氧化），還沒變成序列改變；如果損傷沒修好、複製時又被當成模板讀錯，才會固定成<b>突變</b>，並傳給子細胞。所以這一講的順序是：先看有哪些變化（分類），再看原因，最後看修補。</div>
+<h3 id="s1a">突變的分類總表 <span class="src">S5</span></h3>
+  <p class="core">依「規模」：<b>染色體數目</b>（整倍體／非整倍體，如 XYY）→ <b>染色體結構</b>（缺失、重複、倒位、易位）→ <b>基因突變</b>（點突變：取代、插入、缺失）。依「來源」：<b>自發性</b>（複製錯誤，機率極低）與<b>誘導突變</b>（誘變劑：物理、化學、生物）。</p>
+  <div class="tblwrap"><table>
+    <tr><th>層次</th><th>類型</th><th>例子</th></tr>
+    <tr><td>染色體數目</td><td>整倍體 euploidy（整套多或少）；非整倍體 aneuploidy（多或少一兩條）</td><td>XYY、唐氏症（21 三體）</td></tr>
+    <tr><td>染色體結構</td><td>缺失、重複、倒位、易位</td><td>A 型血友病（倒位）、CML（易位）</td></tr>
+    <tr><td>基因（點突變）</td><td>取代、插入、缺失（少數鹼基）</td><td>鐮刀型貧血（取代）</td></tr>
+  </table></div>
+  <div class="warn"><b class="t">觀念題：</b>「突變對個體都是有害的」「突變完全無益於演化」都<b>錯</b>——有些突變中性甚至有利，是演化的原料。自然突變機率<b>極低</b>；X 光、紫外線、防腐劑、漂白劑可能提高突變率；導致突變的理化因素可能致癌。</div>
+
+  <div class="bridge">分類總表說的是「結果」；接下來簡報轉到「DNA 在化學上是怎麼被破壞的」。第 1 講學過的核苷酸結構在這裡用上了：鹼基上的胺基可以被拿掉（去胺）、可以被加上甲基（烷化）、可以被氧化；連接鹼基和糖的糖苷鍵可以斷掉（去嘌呤）。</div>
+<h3 id="s1b">DNA 損害的五種類型 <span class="src">S6–S7</span></h3>
+  <p class="core">內生性損害多影響<b>一級結構</b>：① <b>氧化</b>（ROS、游離輻射 → 8-oxoG、胸腺嘧啶乙二醇）② <b>烷化（甲基化）</b>（O⁶-甲基鳥嘌呤等）③ <b>去胺</b>（C → U；甲基化 C 去胺 → T）④ <b>水解</b>（去嘌呤、去嘧啶）⑤ <b>錯誤配對</b>（複製時放錯）。嚴重的外生性損害（如 UV 造成的嘧啶二聚體）才會破壞二級結構。</p>
+  <p>這些損害每天都在發生：粒線體產生能量時漏出的活性氧（ROS）會氧化鹼基，最常見的是 G 變成 8-oxoG，它會錯配到 A，最後造成 G·C→T·A 的突變；體內的甲基化劑會把甲基加到鹼基上；C 在體溫下也會自然去胺變成 U；糖苷鍵受熱會斷，每個細胞每天自然失去約一萬個嘌呤 <span class="add">補充</span>。這也是為什麼細胞必須擁有多種、隨時待命的修補系統。</p>
+  <div class="nut"><b class="t">營養連結：</b>8-oxoG（8-氧代鳥嘌呤）是 DNA 氧化傷害的經典指標，常在尿液中測量。細胞代謝本來就會產生 ROS，所以抗氧化系統（維生素 C、E、硒參與的麩胱甘肽過氧化酶、鋅銅 SOD 等）對保護 DNA 很重要 <span class="add">補充</span>。</div>
+
+  <div class="bridge">前面五種是細胞「內部」自然發生的損害；誘變劑則是「外來」的破壞者。分類總表把誘變劑分成物理、化學、生物三類，簡報依序舉例。</div>
+<h3 id="s1c">誘變劑 Mutagens <span class="src">S8–S10, S23</span></h3>
+  <p class="core"><b>物理</b>：紫外線使<b>相鄰兩個嘧啶</b>（最常見 T-T）形成共價鍵 → <b>嘧啶二聚體</b>；γ 射線直接打斷 DNA 股。<b>化學</b>：亞硝酸使 C 去胺成 U。<b>生物</b>：病毒活化致癌基因或抑制腫瘤抑制基因（B 肝→肝癌、HPV→生殖器官癌、皰疹病毒（EB 病毒）→鼻咽癌、HTLV→血癌）。</p>
+  <p>紫外線波長 100–400 nm：UVC 100–280、UVB 280–315、UVA 315–400 nm <span class="src">S9</span>。DNA 吸收最強在 UVC 範圍（講義寫約 200 nm；一般書寫約 260 nm），所以醫院用 UVC 燈殺菌，原理就是讓細菌 DNA 形成<b>胸腺嘧啶二聚體</b>、無法複製。</p>
+  <figure class="pic"><svg viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="13">
+      <line x1="40" y1="40" x2="40" y2="170" stroke="#1d4ed8" stroke-width="5"/>
+      <g text-anchor="middle" font-weight="bold"><rect x="45" y="50" width="50" height="24" fill="#dbeafe"/><text x="70" y="67">A</text>
+      <rect x="45" y="85" width="50" height="24" fill="#fde68a"/><text x="70" y="102">T</text>
+      <rect x="45" y="120" width="50" height="24" fill="#fde68a"/><text x="70" y="137">T</text>
+      <rect x="45" y="155" width="50" height="24" fill="#dbeafe"/><text x="70" y="172">G</text></g>
+      <path d="M100 97 q18 20 0 40" stroke="#dc2626" stroke-width="3" fill="none"/><text x="125" y="122" fill="#dc2626" font-weight="bold">共價鍵</text>
+      <text x="200" y="40" font-weight="bold" fill="#7c3aed">UV（UVC/UVB）</text>
+      <path d="M190 45 l-30 25 l12 0 l-30 25" stroke="#7c3aed" stroke-width="2.5" fill="none"/>
+      <text x="200" y="85">同一股上相鄰的兩個 T</text>
+      <text x="200" y="103">連在一起＝胸腺嘧啶二聚體</text>
+      <text x="200" y="121">→ DNA 扭曲，無法與 A 正常配對</text>
+      <text x="200" y="139">→ 阻擋複製與轉錄</text>
+      <text x="200" y="165" fill="#15803d">修補：NER（UvrABC）、光解酶</text>
+      <text x="200" y="183" fill="#15803d">修不好：色素性乾皮症 → 皮膚癌</text>
+    </g>
+  </svg><figcaption>圖 3-1　紫外線造成的嘧啶二聚體：發生在<b>同一股相鄰</b>的嘧啶之間，不是兩股之間。</figcaption></figure>
+  <div class="exam"><b class="t">國考題（講義 S9、S23）</b>導致嘧啶二聚體的是<b>紫外線</b>，不是烷化、去胺、去嘌呤、甲基化（111 年）。「烷基轉移酶可直接修復紫外線損傷」是<b>錯</b>的（108 年）——烷基轉移酶修的是烷化傷害（O⁶-甲基鳥嘌呤）。另外，「有色人種有黑色素，所以皮膚癌較易治療」是錯的敘述。</div>
+
+  <div class="bridge">知道原因之後，簡報換一個角度問：同樣是一個鹼基改變，<b>對蛋白質的影響</b>可以差很多。這裡要用到第 8 講的密碼子觀念（三個鹼基決定一個胺基酸、UAA/UAG/UGA 是終止碼）——如果還沒讀到，先記住「三個一組讀」就夠了。下面五種突變，就是從「換一個胺基酸」到「完全沒有蛋白」的不同嚴重程度。</div>
+<h3 id="s1d">依效應分類的突變 <span class="src">S11–S17</span></h3>
+  <p class="core"><b>錯意</b>（換成另一個胺基酸：鐮刀型貧血）、<b>無意義</b>（變成終止密碼，蛋白質提早結束：部分地中海型貧血；UAG＝琥珀型）、<b>移碼</b>（插入或缺失非 3 的倍數，後面全部讀錯：地中海型貧血 41/42 密碼子缺 4 個鹼基）、<b>無功能</b>（基因功能完全消失：H1299 肺癌細胞 p53 缺失）、<b>沉默</b>（不影響表型）。</p>
+  <figure class="pic"><svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="13" font-family="monospace,Noto Sans TC">
+      <text x="10" y="25" font-weight="bold" font-family="Noto Sans TC">正常</text><text x="80" y="25">CTG ACT <tspan fill="#1d4ed8" font-weight="bold">GAG</tspan> GAG AAG</text><text x="300" y="25" font-family="Noto Sans TC">… Thr Glu Glu Lys</text>
+      <text x="10" y="65" font-weight="bold" font-family="Noto Sans TC" fill="#b45309">錯意</text><text x="80" y="65">CTG ACT <tspan fill="#dc2626" font-weight="bold">GTG</tspan> GAG AAG</text><text x="300" y="65" font-family="Noto Sans TC">… Thr <tspan fill="#dc2626" font-weight="bold">Val</tspan> Glu Lys</text>
+      <text x="10" y="105" font-weight="bold" font-family="Noto Sans TC" fill="#b45309">無意義</text><text x="80" y="105">CTG ACT <tspan fill="#dc2626" font-weight="bold">TAG</tspan></text><text x="300" y="105" font-family="Noto Sans TC">… Thr <tspan fill="#dc2626" font-weight="bold">終止</tspan>（蛋白太短）</text>
+      <text x="10" y="145" font-weight="bold" font-family="Noto Sans TC" fill="#b45309">移碼</text><text x="80" y="145">CTG ACT G<tspan fill="#dc2626">‸</tspan>G GAG AAG…</text><text x="300" y="145" font-family="Noto Sans TC">缺一個 A，之後三個一組全錯</text>
+      <text x="10" y="185" font-weight="bold" font-family="Noto Sans TC" fill="#b45309">沉默</text><text x="80" y="185">CTG ACT <tspan fill="#15803d" font-weight="bold">GAA</tspan> GAG AAG</text><text x="300" y="185" font-family="Noto Sans TC">… Thr <tspan fill="#15803d" font-weight="bold">Glu</tspan> Glu Lys（不變）</text>
+      <text x="10" y="222" font-family="Noto Sans TC" fill="#6b7280" font-size="12">以 DNA 編碼股表示（與 mRNA 相同，T 換成 U）；</text><text x="10" y="240" font-family="Noto Sans TC" fill="#6b7280" font-size="12">β-球蛋白第 6 個密碼子 GAG→GTG 即鐮刀型貧血</text>
+    </g>
+  </svg><figcaption>圖 3-2　同一段序列發生不同突變的結果（示意）。</figcaption></figure>
+
+  <h4>1. 錯意突變 missense：鐮刀型貧血 <span class="src">S11–S12</span></h4>
+  <p>β-球蛋白基因點突變：CCT<b>GAG</b> → CCT<b>GTG</b>，第 6 個胺基酸由<b>麩胺酸（Glu）變成纈胺酸（Val）</b>。親水的 Glu 換成疏水的 Val，缺氧時（登高山、劇烈運動）血紅素黏成長條纖維，紅血球扭成鐮刀形：較硬、不易變形 → 阻塞微血管、局部缺血；細胞膜受傷 → 溶血，壽命由 120 天縮到 10–20 天 → 嚴重貧血。一個基因影響許多性狀，稱為<b>基因多效性</b> pleiotropy。</p>
+  <div class="exam"><b class="t">考點（習作出現 9 題！）</b>異常的蛋白質是<b>血紅素</b>（111 年國考）；突變在 <b>β 次單元</b>；類型是<b>錯意突變</b>、屬於<b>點突變</b>；病人的 DNA 與 mRNA 密碼子都和正常人不同，但 tRNA 和核糖體是正常的。「單一鹼基缺失」「胺基酸插入」「凝血因子問題」「G6PD 缺陷」都是錯的選項。</div>
+
+  <h4>2. 無意義突變 nonsense <span class="src">S13</span></h4>
+  <p>密碼子變成終止碼（UAA、UAG、UGA），蛋白質提早中止，做出不完整、無功能的多肽。UAG 又叫<b>琥珀密碼子</b>，所以這種突變也叫<b>琥珀型突變</b> amber mutation。例：某些地中海型貧血 β-球蛋白第 37 號密碼子 TGG（Trp）→ TAG。</p>
+  <h4>3. 移碼突變 frame-shift <span class="src">S15</span></h4>
+  <p>插入或缺失 1 或 2 個（非 3 的倍數）核苷酸，讀框整個位移，突變點之後的胺基酸全部改變，常很快撞到異常的終止碼。例：亞洲人的地中海型貧血常見第 41/42 號密碼子缺 4 個核苷酸（TTCTTT → TT）。</p>
+  <div class="eg"><b class="t">比喻：</b>句子「THE CAT ATE THE RAT」，刪掉第一個 E 變成「THC ATA TET HER AT」——後面全部讀不通。若剛好刪 3 個字母（一個字），只少一個字，後面還讀得懂。</div>
+  <h4>4. 無功能突變 null <span class="src">S16</span></h4>
+  <p>基因功能完全消失或根本不產生 mRNA，常因整段 DNA 缺失。例：肺癌細胞株 H1299 的 <b>p53</b> 腫瘤抑制基因片段缺失，完全不表現 p53。</p>
+  <h4>5. 沉默突變 silent <span class="src">S17</span></h4>
+  <p>不影響表現型，可能因為：密碼子改了但仍編碼同一胺基酸（簡併性）；換掉的胺基酸不影響功能；發生<b>反突變</b> revertant 回到原本；或 tRNA 反密碼子也突變，形成<b>抑制性 tRNA</b>（負負得正）。最常見的定義是「<b>胺基酸序列沒有改變</b>」（但 mRNA 序列有變）。</p>
+
+  <div class="tblwrap"><table>
+    <tr><th>疾病</th><th>基因</th><th>突變類型</th><th>結果</th></tr>
+    <tr><td>鐮刀型貧血</td><td>β-球蛋白</td><td>點突變（錯意）</td><td>血紅素<b>品質</b>異常</td></tr>
+    <tr><td>β 型地中海型貧血</td><td>β-球蛋白</td><td>多為<b>點突變</b>（含無意義），也有短片段缺失／插入造成的移碼</td><td>血紅素<b>數量</b>不足、小球性貧血</td></tr>
+    <tr><td>α 型地中海型貧血</td><td>α-球蛋白</td><td>多為<b>大片段缺失</b> <span class="add">補充</span></td><td>同上</td></tr>
+  </table></div>
+  <div class="exam"><b class="t">國考題（112 年，講義 S14）</b>「地中海型貧血的紅血球變得較長、較薄、呈鐮刀型」是<b>錯</b>的——那是鐮刀型貧血。國人乙型海洋性貧血最主要的基因缺陷是<b>點突變</b>；「三核苷酸重複」不是乙型海洋性貧血的機制（那是亨丁頓舞蹈症）。</div>
+  <div class="nut"><b class="t">營養照護連結：</b>地中海型貧血帶因者 MCV 也很低，常被誤認為缺鐵；長期補鐵反而造成鐵過多。要先驗鐵蛋白（ferritin）確認是否缺鐵 <span class="add">補充</span>。</div>
+
+  <div class="bridge">前一段看的是突變「造成什麼結果」，簡報接著回到「突變是怎麼形成的」，並且只聚焦在單一鹼基改變（點突變）。先用轉換、倒換為點突變分類，再用三個化學突變劑說明鹼基是怎麼被「騙」成配錯對的。</div>
+<h3 id="s1e">點突變的機制：轉換與倒換 <span class="src">S18–S22</span></h3>
+  <p class="core"><b>轉換 transition</b>：嘌呤換嘌呤（A↔G）或嘧啶換嘧啶（C↔T）。<b>倒換（顛換）transversion</b>：嘌呤與嘧啶互換。三種講義舉的突變劑：<b>亞硝酸</b>（C 去胺成 U → 最後 C·G 變 T·A）、<b>BrdU</b>（取代 T，烯醇式改配 G → A·T 變 G·C）、<b>黃麴毒素 B1</b>（與 G 形成 DNA 加成物 → 肝癌）。</p>
+  <div class="mn"><b class="t">記法</b>「轉換是<b>同類</b>換（換個同家族的人），倒換是<b>跨類</b>換（一大換一小，要倒過來）」。</div>
+  <h4>亞硝酸 HNO₂ <span class="src">S19</span></h4>
+  <p>使鹼基<b>去胺</b>：胞嘧啶 C 的胺基（–NH₂）被 =O 取代，變成尿嘧啶 U。第一輪複製時 U 配到 A（原本 C 配 G）；第二輪 A 再配 T。結果原本的 <b>C·G 變成 T·A</b>（轉換）。如果這發生在 CAG 密碼子，就變成 TAG → mRNA 出現 UAG 終止碼 → 無意義突變。</p>
+  <figure class="pic"><svg viewBox="0 0 480 140" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="15" font-weight="bold" text-anchor="middle">
+      <rect x="10" y="40" width="70" height="56" rx="8" fill="#dbeafe" stroke="#1d4ed8"/><text x="45" y="64">C</text><text x="45" y="86">G</text>
+      <text x="105" y="72" font-size="12" font-weight="normal">HNO₂</text><text x="105" y="88">→</text>
+      <rect x="130" y="40" width="70" height="56" rx="8" fill="#fef3c7" stroke="#b45309"/><text x="165" y="64" fill="#dc2626">U</text><text x="165" y="86">G</text>
+      <text x="225" y="72" font-size="12" font-weight="normal">複製 1</text><text x="225" y="88">→</text>
+      <rect x="250" y="40" width="70" height="56" rx="8" fill="#fef3c7" stroke="#b45309"/><text x="285" y="64" fill="#dc2626">U</text><text x="285" y="86">A</text>
+      <text x="345" y="72" font-size="12" font-weight="normal">複製 2</text><text x="345" y="88">→</text>
+      <rect x="370" y="40" width="70" height="56" rx="8" fill="#fee2e2" stroke="#dc2626"/><text x="405" y="64">T</text><text x="405" y="86">A</text>
+      <text x="240" y="125" font-size="13" font-weight="normal" fill="#374151">C·G 變成 T·A（轉換突變）</text>
+    </g>
+  </svg><figcaption>圖 3-3　亞硝酸去胺造成的轉換突變。</figcaption></figure>
+  <h4>5-溴去氧尿苷 BrdU <span class="src">S20</span></h4>
+  <p>結構像胸腺嘧啶，複製時被當成 T 嵌入、與 A 配對；但它容易發生<b>酮式–烯醇式互變</b>，烯醇式改和 G 配對，於是下一輪 <b>A·T 變成 G·C</b>。</p>
+  <h4>黃麴毒素 B1 Aflatoxin B1 <span class="src">S21–S22</span></h4>
+  <p>由黃麴黴菌（<i>Aspergillus flavus</i>）、寄生麴黴菌在發霉的穀物、花生、豆類中產生，是目前<b>最強的致癌物</b>之一；有 B1、B2、G1、G2 四種，<b>B1 毒性最強</b>。在肝臟代謝成活性環氧化物，嵌入 DNA 與鳥嘌呤共價結合形成 <b>DNA 加成物</b>（adduct）→ 突變 → 肝癌。要<b>加熱到 280 ℃ 以上</b>才開始分解，一般烹調破壞不了。1960 年英國火雞吃了含黃麴毒素的花生粕大量暴斃（火雞 X 病）。芳香族胺、<b>異環胺</b>也是類似的加成物致癌物。</p>
+  <div class="nut"><b class="t">食品安全連結：</b>黃麴毒素是團膳與食品業的重點危害：花生、玉米、米要乾燥低溫保存，外觀發霉、變黃的整批丟棄，不能只挑掉壞的。與 B 型肝炎合併時肝癌風險加乘。肉類高溫燒烤產生的<b>異環胺</b>也是加成物致癌物，可用醃漬、降低溫度、避免焦黑來減少 <span class="add">補充</span>。</div>
+
+  <div class="bridge">簡報在點突變之後，把尺度一下子拉大到「整段染色體」。這裡看起來跳，其實是回到開頭分類總表的第二層：前面講的是一兩個鹼基（基因突變），這裡講的是動輒數百萬鹼基、包含很多基因的改變。物理因子（如高能輻射）造成的斷裂，或減數分裂時配錯對，都會引起這種大規模重排 <span class="src">S24</span>。之後簡報再回到點突變的修補，所以可以把這一段看成「突變的另一種尺度」。</div>
+<h3 id="s1f">染色體結構改變 <span class="src">S24–S36</span></h3>
+  <p class="core"><b>缺失</b>（片段消失；常因輻射斷裂或減數分裂不平均互換）、<b>重複與插入</b>（不平均互換；轉位子插入）、<b>倒位</b>（片段轉 180° 接回，基因量不變：<b>A 型血友病</b>第 8 凝血因子基因）、<b>易位（轉位）</b>（兩條不同染色體交換片段：<b>CML</b> t(9;22) 費城染色體、<b>勃奇氏淋巴瘤</b> t(8;14)）。</p>
+  <div class="mn"><b class="t">口訣「少、多、反、搬」</b>缺失＝撕掉幾頁、重複＝印了兩次、倒位＝倒著裝訂、易位＝跟別本書換頁。前兩個改變基因的「量」，後兩個改變「位置」。</div>
+  <h4>缺失與重複：不平均互換 <span class="src">S25–S29</span></h4>
+  <p>減數分裂前期，同源染色體<b>聯會</b> synapsis，可能發生<b>互換</b> crossover（顯微鏡下看到交叉體 chiasmata）。如果配對錯位，就發生<b>不平均互換</b> unequal crossing-over：一條多了一段（重複），另一條少了一段（缺失）。插入則常由<b>轉位子</b>造成，演化上形成 Ig 類家族、EGFR 家族等蛋白質家族 <span class="src">S30</span>。</p>
+  <h4>倒位：A 型血友病 <span class="src">S31–S33</span></h4>
+  <p>染色體斷兩處，中間片段倒轉 180° 接回。人群中約 2% 的人帶有倒位染色體，因為基因沒有流失，多半不影響本人。<b>A 型血友病</b>：X 染色體上<b>第 8 凝血因子</b>基因發生倒位（非等位基因同質重組造成），屬 X 性聯隱性遺傳：女性帶因者的兒子 50% 患病、女兒 50% 帶因；男性患者的女兒<b>全部</b>帶因。<b>B 型血友病</b>則是第 9 凝血因子（F9）缺乏，同樣是 X 性聯隱性。</p>
+  <h4>易位：CML 與勃奇氏淋巴瘤 <span class="src">S34–S36</span></h4>
+  <figure class="pic"><svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12">
+      <rect x="40" y="20" width="26" height="150" rx="12" fill="#bfdbfe" stroke="#1d4ed8"/><rect x="40" y="130" width="26" height="40" rx="10" fill="#f9a8d4" stroke="#be185d"/>
+      <text x="53" y="190" text-anchor="middle" font-weight="bold">9 號</text><text x="80" y="150" fill="#be185d">ABL</text>
+      <rect x="140" y="50" width="26" height="100" rx="12" fill="#fde68a" stroke="#b45309"/><rect x="140" y="110" width="26" height="40" rx="10" fill="#86efac" stroke="#15803d"/>
+      <text x="153" y="190" text-anchor="middle" font-weight="bold">22 號</text><text x="172" y="105" fill="#b45309">BCR</text>
+      <text x="225" y="105" font-size="22">→</text>
+      <rect x="290" y="20" width="26" height="150" rx="12" fill="#bfdbfe" stroke="#1d4ed8"/><rect x="290" y="130" width="26" height="40" rx="10" fill="#86efac" stroke="#15803d"/>
+      <text x="303" y="190" text-anchor="middle">9q+</text>
+      <rect x="390" y="50" width="26" height="100" rx="12" fill="#fde68a" stroke="#b45309"/><rect x="390" y="110" width="26" height="40" rx="10" fill="#f9a8d4" stroke="#be185d"/>
+      <text x="403" y="190" text-anchor="middle" font-weight="bold" fill="#dc2626">費城染色體</text><text x="403" y="206" text-anchor="middle">22q−</text>
+      <text x="422" y="108" fill="#dc2626" font-weight="bold">BCR-ABL</text><text x="422" y="124" fill="#dc2626">融合基因</text>
+    </g>
+  </svg><figcaption>圖 3-4　t(9;22)：ABL 接到 BCR 後面，形成永遠開著的酪胺酸激酶 → 白血球失控增生（CML）。</figcaption></figure>
+  <ul class="dots">
+    <li><b>慢性骨髓性白血病 CML</b>：第 9 與 22 號染色體轉位 <b>t(9;22)</b>，產生的短 22 號叫<b>費城染色體</b>。9 號上的原致癌基因 <b>ABL</b> 接到 22 號的 <b>BCR</b> 上，形成 BCR-ABL 融合基因 → <b>酪胺酸激酶</b>失去調控而過度活化。<span class="add">補充</span> 標靶藥 imatinib（基利克）就是抑制這個激酶。</li>
+    <li><b>勃奇氏淋巴瘤</b> Burkitt's lymphoma：<b>t(8;14)</b>，8 號上的 <b>c-myc</b> 致癌基因移到 14 號免疫球蛋白重鏈（IgH）基因旁，受到 IgH 的<b>強化子</b>驅動而大量表現 → B 淋巴球癌化。</li>
+  </ul>
+  <div class="exam"><b class="t">考點</b>費城染色體＝<b>第 9 對部分轉位到第 22 對</b>、屬於<b>轉位</b>（出現 4 題）；血液腫瘤的<b>融合基因</b>主要來自<b>染色體轉位</b>；勃奇氏淋巴瘤是 <b>t(8;14)</b>。原致癌基因活化的原因：基因放大、點突變、染色體轉位；「<b>失異合性 LOH</b>」是腫瘤<b>抑制</b>基因失去功能的機制，不是活化原致癌基因。</div>
+  <div class="warn"><b class="t">易混淆：</b><b>易位</b>發生在<b>非同源</b>染色體之間，是異常；<b>互換</b>發生在<b>同源</b>染色體之間，是減數分裂的正常過程。</div>
+  <div class="sum"><b class="t">本節重點</b><ul>
+    <li>損害五型：氧化、烷化、去胺、水解、錯配；UV → 相鄰嘧啶（T-T）二聚體。</li>
+    <li>錯意＝鐮刀型（Glu→Val，β 鏈第 6）；無意義＝終止碼（UAG 琥珀）；移碼＝插入／缺失非 3 倍數。</li>
+    <li>轉換＝同類換，倒換＝跨類換；亞硝酸 C→U、BrdU 取代 T、黃麴毒素 B1 與 G 形成加成物。</li>
+    <li>A 型血友病＝F8 倒位；CML＝t(9;22) BCR-ABL；Burkitt＝t(8;14) c-myc。</li>
+  </ul></div>
+</section>
+
+<!-- ============ 二 ============ -->
+<section class="sec det" id="s2">
+  <h2><span class="no">二</span>點突變的修補機制</h2>
+  <div class="en">Repair of Point Mutations <span class="src">S37–S41</span></div>
+  <div class="lead"><div><span class="lt">這節要說明什麼？</span>只錯一兩個鹼基時，細胞的三道防線。</div><div><span class="lt lt2">和第 2 講的關係</span>第一道防線就是第 2 講學的 3′→5′ 外切酶校正。</div></div>
+  <div class="oneline">第一道：聚合酶邊合成邊校正（3′→5′ 外切）；第二道：錯誤配對修補（MutS 認錯、MutL 連接、MutH 在未甲基化新股的 GATC 切口）；第三道：鹼基切除（糖苷酶拿掉壞鹼基 → AP 內切酶切開 → 聚合酶補、連接酶接）。</div>
+<div class="bridge">講完各種壞法，下半講換成修法。所有修補機制都利用同一個優勢：<b>DNA 是雙股</b>，一股壞了，另一股還保有正確資訊可當模板（第 1 講互補配對）。修補的範圍從小到大排：先講只錯一兩個鹼基的（點突變），再講結構被扭曲或整個斷掉的。這也呼應前面「損傷要在變成突變之前修好」。</div>
+
+  <h3 id="s2a">(1) 複製時的校正 Proofreading <span class="src">S38</span></h3>
+  <p class="core">大腸桿菌 Pol I 本身有 3′→5′ 外切酶；Pol III 的 3′→5′ 外切酶在 <b>ε 次單元</b>。發現錯配就倒退切掉再重新合成。</p>
+  <p>聚合酶在加入新核苷酸前，會檢查它和模板是否形成正確的配對形狀；一旦加錯，新股的 3′ 端就和模板配不好、微微翹起，這個翹起的末端會被轉到聚合酶的 3′→5′ 外切酶活性位上切掉，再重新合成。單靠鹼基配對，錯誤率約十萬分之一；加上校正，可降到約千萬分之一；再加上下一段的錯誤配對修補，最終約十億分之一 <span class="add">補充</span>。</p>
+
+  <div class="bridge">校正是「當下」就修，但總有漏網之魚。複製完成後，第二道防線要掃描整條新 DNA 找錯配。困難在於：錯配是兩條股不合，修補系統要怎麼知道哪一條是錯的？</div>
+<h3 id="s2b">(2) 錯誤配對修補 Mismatch Repair, MMR <span class="src">S39</span></h3>
+  <p class="core">校正漏掉的錯配，靠 <b>GATC</b> 序列與三個蛋白：<b>MutS</b> 辨認並結合錯配處；<b>MutL</b> 連接 MutS 與 MutH；<b>MutH</b>（內切酶）在<b>未甲基化</b>的新股 GATC 的 G 旁切一刀 → 解旋酶 II 解開、外切酶切掉含錯誤的一段 → Pol III 補、連接酶接。</p>
+  <p>關鍵問題：兩股之間一個 G 配上一個 T，到底哪個才是錯的？細胞用「舊股有甲基、新股還沒有」來判斷。大腸桿菌的 Dam 甲基化酶會在 GATC 的 A 上加甲基，但新合成的股要過一陣子才會被甲基化——這段空窗期，修補系統就知道<b>沒有甲基的是新股</b>，錯的一定在新股上 <span class="add">補充說明</span>。</p>
+  <figure class="pic"><svg viewBox="0 0 480 170" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12">
+      <line x1="20" y1="60" x2="460" y2="60" stroke="#1d4ed8" stroke-width="5"/><text x="20" y="45" fill="#1d4ed8">舊股（模板）</text>
+      <line x1="20" y1="100" x2="460" y2="100" stroke="#16a34a" stroke-width="5"/><text x="20" y="125" fill="#16a34a">新股</text>
+      <text x="90" y="55" font-weight="bold">GATC</text><text x="100" y="40" fill="#b45309">CH₃</text>
+      <text x="90" y="118" font-weight="bold">CTAG</text><text x="96" y="140" fill="#6b7280">（尚未甲基化）</text>
+      <text x="300" y="55" font-weight="bold">G</text><text x="300" y="118" font-weight="bold" fill="#dc2626">T</text>
+      <ellipse cx="305" cy="80" rx="26" ry="14" fill="#fde68a" stroke="#b45309"/><text x="305" y="84" text-anchor="middle">MutS</text>
+      <ellipse cx="205" cy="80" rx="26" ry="14" fill="#e9d5ff" stroke="#7c3aed"/><text x="205" y="84" text-anchor="middle">MutL</text>
+      <ellipse cx="110" cy="80" rx="26" ry="14" fill="#fecaca" stroke="#dc2626"/><text x="110" y="84" text-anchor="middle">MutH</text>
+      <path d="M78 105 l10 10 l-10 10" stroke="#dc2626" stroke-width="3" fill="none"/><text x="50" y="160" fill="#dc2626">在新股 GATC 切口</text>
+      <text x="250" y="160" fill="#374151">→ 從切口到錯配處的新股被移除、重補</text>
+    </g>
+  </svg><figcaption>圖 3-5　大腸桿菌錯誤配對修補：用「有沒有甲基」分辨新舊股。</figcaption></figure>
+  <div class="mn"><b class="t">記法</b><b>S</b>＝<b>S</b>ee（看到錯配）、<b>L</b>＝<b>L</b>ink（連接）、<b>H</b>＝<b>H</b>it（切一刀）。</div>
+  <div class="nut"><b class="t">臨床連結 <span class="add">補充</span>：</b>人類 MMR 基因（MLH1、MSH2 等，就是 MutL、MutS 的同源物）先天缺陷 → <b>遺傳性非息肉症大腸直腸癌</b>（林奇症候群 Lynch syndrome）。</div>
+
+  <div class="bridge">前兩道防線處理的是「複製時放錯」；第三道處理的是「放對了、但後來壞掉」的鹼基，例如前面提到的 C 自然去胺變成 U、鹼基掉落（去嘌呤）。</div>
+<h3 id="s2c">(3) 單一核苷酸異常的修補（鹼基切除修補 BER）<span class="src">S40–S41</span></h3>
+  <p class="core">C 去胺成 U → 形成 G·U 錯配 → <b>尿嘧啶-N-糖苷酶</b>切斷 U 與糖之間的糖苷鍵，留下<b>無鹼基位置（AP site）</b> → <b>AP 內切酶</b>切開骨架 → 外切酶擴大缺口 → DNA 聚合酶補、連接酶接。去嘌呤、去嘧啶（糖苷鍵自然斷裂）也用 AP 內切酶這條路修。</p>
+  <div class="eg"><b class="t">為什麼 DNA 用 T 而不用 U？</b>因為 C 很容易自然去胺變成 U。如果 DNA 本來就有 U，細胞就分不出「這個 U 是原本的，還是 C 壞掉變的」。DNA 用 T（U 加個甲基），任何出現在 DNA 裡的 U 都可以放心當成錯誤移除 <span class="add">補充</span>。</div>
+  <div class="exam"><b class="t">考點</b>習作描述「glycosylase 移除突變鹼基 → AP 內切酶 → <b>DNA 聚合酶 β</b> 補上 → DNA ligase III–XRCC1 連接」，這是哺乳動物的<b>鹼基切除修補</b>（BER）。DNA N-醣苷酶切的是<b>鹼基與去氧核糖之間</b>的鍵。</div>
+  <div class="sum"><b class="t">本節重點</b><ul>
+    <li>校正：3′→5′ 外切（Pol III 在 ε 次單元）。</li>
+    <li>MMR：MutS 認、MutL 連、MutH 切未甲基化新股的 GATC。</li>
+    <li>BER：糖苷酶 → AP 內切酶 → 聚合酶 → 連接酶；修去胺（U）、去嘌呤、氧化鹼基。</li>
+  </ul></div>
+</section>
+
+<!-- ============ 三 ============ -->
+<section class="sec det" id="s3">
+  <h2><span class="no">三</span>結構損傷的修補機制</h2>
+  <div class="en">Repair of Structural Damage <span class="src">S42–S49</span></div>
+  <div class="lead"><div><span class="lt">這節要說明什麼？</span>大範圍損傷（二聚體、雙股斷裂、大量損害）怎麼修。</div><div><span class="lt lt2">考試重心</span>UvrABC＝NER（ABC 切除核酸酶）、XP、LexA／RecA 是高頻題。</div></div>
+  <div class="oneline">單股的大傷（如 T-T 二聚體）用核苷酸切除修補：UvrABC 在傷口兩側切開、UvrD 解旋拿掉約 12 nt，再補回；正在轉錄的基因可優先修（TCR）；雙股斷了用 NHEJ 修剪後直接接；損害太多時啟動 SOS：RecA 讓 LexA 自我分解，打開幾十個修補基因，但錯誤較多。</div>
+<div class="bridge">第二部分修的都是「單一鹼基」層次的問題；但像紫外線造成的二聚體，會讓 DNA 螺旋整個扭曲，單換一個鹼基修不好，要把一整段切掉重做。簡報依「傷口大小」與「緊急程度」排列：先講單股的大範圍切除，再講雙股都斷的接合，最後講細胞已經危急時的緊急修補。</div>
+  <p>修補長度分級 <span class="src">S42</span>：點突變與錯配＝<b>極短補丁</b>（very short patch）；約 10–12 nt＝<b>短補丁</b>；平均約 1,500 nt＝<b>長補丁</b>。</p>
+
+  <h3 id="s3a">1. 核苷酸切除修補 NER <span class="src">S42–S45</span></h3>
+  <p class="core">修單股上會扭曲 DNA 的傷害，代表是<b>紫外線造成的 T-T 二聚體</b>。大腸桿菌用 <b>uvrA、B、C、D</b> 基因：UvrA 偵測損傷、UvrB 耗能讓 DNA 彎折、<b>UvrC 在損傷兩側各切一刀</b>（內切酶）、UvrD（解旋酶）把中間片段拿走；<b>Pol I</b> 補、<b>連接酶</b>接。UvrABC 合稱 <b>ABC 切除核酸酶（excinuclease）</b>。</p>
+  <ol class="steps">
+    <li>UvrA（與 UvrB 一起）沿 DNA 巡邏，找到二聚體造成的扭曲。<span class="src">S44</span> 寫「使雙倍體脫離 DNA」，一般教科書描述為辨認損傷後交給 UvrB 再離開 <span class="add">補充</span>。</li>
+    <li>UvrB 消耗 ATP 讓 DNA 彎折、局部解開。</li>
+    <li>UvrC 在損傷兩端的同一股上各切一刀。</li>
+    <li>UvrD（解旋酶 II）把兩切口間的寡核苷酸（含二聚體）拉掉。</li>
+    <li>DNA 聚合酶 I 以另一股為模板補齊，DNA 連接酶封口。</li>
+  </ol>
+  <div class="exam"><b class="t">國考題（104 年，講義 S42）</b><b>ABC exonuclease（excinuclease）參與核苷酸切除修復</b>（習作出現 3 次）。原核 NER 的主要成分是 <b>Uvr A、B、C、D</b>（不是 Ruv、Rec）。</div>
+  <h4>色素性乾皮症 Xeroderma Pigmentosum, XP <span class="src">S45</span></h4>
+  <p>人類 NER 酵素的先天缺陷，<b>體染色體隱性遺傳</b>。患者無法修補紫外線造成的損傷，對陽光極度敏感，很容易得皮膚癌。XP 的幾個致病基因產物與早期在哺乳動物細胞發現的 NER 因子 <b>ERCC</b> 有的是同一種蛋白，有的互相結合成複合體。</p>
+  <div class="eg"><b class="t">光解酶（直接修復）<span class="add">補充，習作有考</span>：</b>細菌、植物有<b>光解酶</b> photolyase，吸收可見光的能量後直接把二聚體之間的共價鍵切開，不必切掉任何核苷酸；人類沒有這個酵素。另一種直接修復是 <b>O⁶-甲基鳥嘌呤甲基轉移酶</b>（烷基轉移酶），把甲基直接搬走（修烷化，不是修 UV）。光解酶<b>不能</b>修氧化傷害。</div>
+
+  <div class="bridge">NER 是「全面巡查」整個基因體，速度較慢。但細胞最急著修的，是<b>正在使用的基因</b>——因為損傷會卡住 RNA 聚合酶，基因就無法表現。所以真核細胞發展出一條「優先通道」。</div>
+<h3 id="s3b">2. 轉錄協同修補 TCR <span class="src">S46</span></h3>
+  <p class="core">RNA 聚合酶轉錄時卡在損傷處停住 → 立刻招來 NER 蛋白優先修補。又稱 TC-NER，比全面性的 GG-NER 快，但只修<b>正在轉錄的基因</b>。</p>
+  <p>RNA 聚合酶沿著 DNA 前進時，若碰到二聚體這類大型損傷會卡住不動。卡住的聚合酶本身就是一個「警報器」，會招來 NER 的修補蛋白（以及第 5 講介紹的 TFIIH），先把這個位置修好，轉錄才能繼續。柯凱因氏症候群（第 5 講）的病人就是 TCR 這條路有缺陷。</p>
+  <div class="eg"><b class="t">比喻：</b>全面性修補像道路局定期巡查整個城市；TCR 像公車司機一撞到坑洞就立刻叫修補隊——最常走的路先修好。</div>
+
+  <div class="bridge">前面的機制都是一股壞、另一股完好，可以照著修。如果<b>兩股同一處都斷了</b>，就沒有現成的模板，這是最危險的損傷。細胞有兩個選擇：找另一條相同的 DNA 當模板（同質性重組，下一講第 4 講的主題），或者乾脆把斷端修齊後直接接起來（NHEJ）。</div>
+<h3 id="s3c">3. 非同質性末端接合 NHEJ <span class="src">S47</span></h3>
+  <p class="core">DNA <b>雙股斷裂</b>的修補有兩大類：<b>同質性重組</b>（用姊妹染色分體當模板，正確，見第 4 講）與 <b>NHEJ</b>（辨識 → 解旋 → 把斷端<b>修剪整齊</b> → 連接酶直接接起來）。高等真核細胞以 <b>NHEJ</b> 居多；因為修剪會丟掉幾個鹼基，容易出錯 <span class="add">補充</span>。</p>
+  <p>NHEJ 的步驟是：Ku 蛋白（一種環狀蛋白）套住兩個斷端並把它們拉近（辨識），必要時解開一點點雙股，用核酸酶把參差不齊的末端修齊，最後由 DNA 連接酶 IV 直接接起來 <span class="add">補充細節</span>。它的優點是隨時可用、不需要模板；缺點是修剪時會丟掉或多出幾個鹼基，所以容易留下小缺失。人體大多數細胞處在 G1 期，沒有姊妹染色分體可當模板，因此以 NHEJ 為主。</p>
+
+  <div class="bridge">如果損傷多到正常修補來不及，細胞就面臨「死亡」或「帶著錯誤活下去」的抉擇。SOS 系統選擇後者：大量啟動修補與跨越損傷的酵素，讓複製能繼續，代價是錯誤很多。這也是為什麼它放在最後——它是細菌的最後手段。</div>
+<h3 id="s3d">4. SOS 修補系統 <span class="src">S48–S49</span></h3>
+  <p class="core">DNA 嚴重損傷、細胞危急時才啟動的緊急修補；能讓細胞活下來，但錯誤多（<b>錯誤傾向修復</b> error-prone），突變率高。平時 <b>LexA</b>（抑制子）壓住幾十個 <b>din</b> 損傷誘導基因；DNA 受損出現大量單股時，<b>RecA</b> 結合單股並被活化，促使 <b>LexA 自我分解</b> → SOS 基因表現。修好後 RecA 離開，LexA 重新累積、關閉系統。</p>
+  <p>之所以「容易出錯」，是因為 SOS 反應會開啟一些特殊的 DNA 聚合酶（如 Pol V），它們能硬著頭皮在損傷處對面隨便放一個核苷酸、讓複製繼續（跨損傷合成），代價就是常常放錯 <span class="add">補充</span>。對細菌來說，帶著幾個突變活下去，總比複製卡死、整個細胞死亡好；但這也讓細菌在抗生素壓力下更容易產生抗藥突變。</p>
+  <figure class="pic"><svg viewBox="0 0 480 190" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12">
+      <text x="10" y="20" font-weight="bold">平常</text>
+      <line x1="10" y1="50" x2="230" y2="50" stroke="#374151" stroke-width="4"/>
+      <rect x="40" y="30" width="60" height="20" rx="6" fill="#fecaca" stroke="#dc2626"/><text x="70" y="45" text-anchor="middle">LexA</text>
+      <rect x="110" y="52" width="110" height="16" fill="#e5e7eb"/><text x="165" y="64" text-anchor="middle">din（SOS）基因：關</text>
+      <text x="250" y="20" font-weight="bold">DNA 嚴重受損</text>
+      <line x1="250" y1="50" x2="470" y2="50" stroke="#374151" stroke-width="4"/>
+      <rect x="280" y="30" width="26" height="20" rx="6" fill="#fecaca" stroke="#dc2626" opacity=".5"/><rect x="310" y="30" width="26" height="20" rx="6" fill="#fecaca" stroke="#dc2626" opacity=".5" transform="rotate(20 323 40)"/><text x="345" y="40" fill="#dc2626">← LexA 被分解</text>
+      <rect x="350" y="52" width="110" height="16" fill="#bbf7d0"/><text x="405" y="64" text-anchor="middle">SOS 基因：開</text>
+      <path d="M250 110 q30 -12 60 0 t60 0" fill="none" stroke="#1d4ed8" stroke-width="3"/><text x="250" y="135" fill="#1d4ed8">單股 DNA 外露</text>
+      <g fill="#fde68a" stroke="#b45309"><circle cx="275" cy="102" r="8"/><circle cx="295" cy="98" r="8"/><circle cx="315" cy="102" r="8"/></g><text x="330" y="96" fill="#b45309" font-weight="bold">RecA 結合並活化</text>
+      <path d="M310 88 L300 60" stroke="#b45309" stroke-width="2" stroke-dasharray="4"/>
+      <text x="10" y="175" fill="#374151">修好後：RecA 離開 → LexA 不再被分解 → 重新壓住 SOS 基因</text>
+    </g>
+  </svg><figcaption>圖 3-6　SOS 反應的開關：LexA 是抑制子，RecA 是感應器。</figcaption></figure>
+  <div class="exam"><b class="t">考點</b>原核 DNA 大量損害時，被<b>分解</b>以啟動修補基因轉錄的是 <b>LexA</b>（不是 RecA）。</div>
+  <div class="sum"><b class="t">本節重點</b><ul>
+    <li>NER：UvrA 認、UvrB 彎、UvrC 兩側切、UvrD 拉走；Pol I＋連接酶補；ABC excinuclease。</li>
+    <li>XP＝人類 NER 缺陷，體染色體隱性，易皮膚癌。</li>
+    <li>TCR：轉錄停滯觸發，優先修轉錄中的基因。</li>
+    <li>雙股斷裂：同質性重組或 NHEJ（高等真核主要）。</li>
+    <li>SOS：LexA 抑制、RecA 活化 → LexA 分解；錯誤傾向。</li>
+  </ul></div>
+</section>
+
+<section class="sec" id="s4">
+  <h2>修補機制總比較</h2>
+  <div class="en">Repair pathways at a glance</div>
+  <div class="tblwrap"><table>
+    <tr><th>機制</th><th>修什麼</th><th>關鍵分子</th><th>相關疾病／備註</th></tr>
+    <tr><td>校正 proofreading</td><td>複製當下放錯</td><td>3′→5′ 外切酶（Pol III ε）</td><td>—</td></tr>
+    <tr><td>錯誤配對修補 MMR</td><td>校正漏掉的錯配</td><td>MutS、MutL、MutH、GATC 甲基化</td><td>林奇症候群 <span class="add">補充</span></td></tr>
+    <tr><td>鹼基切除 BER</td><td>單一鹼基受損（去胺 U、氧化、去嘌呤）</td><td>糖苷酶、AP 內切酶、Pol β</td><td>—</td></tr>
+    <tr><td>直接修復 <span class="add">補充</span></td><td>二聚體；O⁶-甲基 G</td><td>光解酶；烷基轉移酶</td><td>人類沒有光解酶</td></tr>
+    <tr><td>核苷酸切除 NER</td><td>扭曲結構的大傷（T-T 二聚體、加成物）</td><td>UvrA、B、C、D（ABC excinuclease）</td><td>色素性乾皮症 XP</td></tr>
+    <tr><td>轉錄協同 TCR</td><td>轉錄中基因的損傷</td><td>停滯的 RNA 聚合酶＋NER 蛋白</td><td>—</td></tr>
+    <tr><td>NHEJ</td><td>雙股斷裂</td><td>修剪＋連接酶</td><td>高等真核主要方式；易出錯</td></tr>
+    <tr><td>SOS</td><td>大量損傷的緊急應變</td><td>LexA（抑制子）、RecA</td><td>錯誤傾向、突變率高</td></tr>
+  </table></div>
+</section>
+
+<section class="sec" id="s5">
+  <h2>習作出題分析（單元 3，共 52 題）</h2>
+  <div class="en">Where the questions come from</div>
+  <div class="tblwrap"><table class="freq">
+    <tr><th>主題</th><th>約題數</th><th>常考的說法</th></tr>
+    <tr><td>鐮刀型貧血</td><td><span class="stars">★★★★★</span> 約 9</td><td>血紅素 β 鏈、Glu→Val、錯意、點突變</td></tr>
+    <tr><td>紫外線與嘧啶二聚體</td><td><span class="stars">★★★★</span> 約 7</td><td>T-T 二聚體；UV 殺菌原理；NER 或光解酶修補</td></tr>
+    <tr><td>DNA 修補機制</td><td><span class="stars">★★★★</span> 約 12</td><td>ABC excinuclease＝NER；UvrABCD；LexA 被分解；MutS/L/H；BER 流程；光解酶不修氧化</td></tr>
+    <tr><td>地中海型貧血</td><td><span class="stars">★★★</span> 約 4</td><td>β 型多為點突變；不是鐮刀形</td></tr>
+    <tr><td>染色體結構（費城、Burkitt、缺失）</td><td><span class="stars">★★★</span> 約 7</td><td>t(9;22) 轉位；t(8;14)；融合基因來自轉位</td></tr>
+    <tr><td>突變分類與觀念</td><td><span class="stars">★★★</span> 約 10</td><td>無意義突變＝新終止碼；琥珀突變＝無義；沉默＝胺基酸不變；亞硝酸是強誘變劑</td></tr>
+  </table></div>
+</section>
+
+<section class="sec" id="s6">
+  <h2>本講重點整理</h2>
+  <div class="en">Summary</div>
+  <div class="tblwrap"><table>
+    <tr><th>主題</th><th>一定要記</th></tr>
+    <tr><td>損害類型</td><td>氧化（8-oxoG）、烷化、去胺（C→U）、水解（去嘌呤）、錯配</td></tr>
+    <tr><td>紫外線</td><td>UVC 100–280、UVB 280–315、UVA 315–400；相鄰嘧啶二聚體（T-T）</td></tr>
+    <tr><td>病毒致癌</td><td>HBV 肝癌、HPV 生殖器官癌、皰疹病毒鼻咽癌、HTLV 血癌</td></tr>
+    <tr><td>效應分類</td><td>錯意（鐮刀）、無意義（UAG 琥珀；地貧 37 號）、移碼（地貧 41/42 缺 4 nt）、無功能（p53）、沉默</td></tr>
+    <tr><td>突變劑</td><td>亞硝酸 C→U（C·G→T·A）；BrdU 似 T 會配 G（A·T→G·C）；黃麴毒素 B1 加成物、280 ℃ 才分解</td></tr>
+    <tr><td>結構</td><td>缺失、重複（不平均互換）、倒位（A 型血友病 F8）、易位（CML t(9;22)、Burkitt t(8;14)）</td></tr>
+    <tr><td>修補</td><td>校正 → MMR（MutSLH、GATC）→ BER（糖苷酶、AP 內切酶）→ NER（UvrABCD、XP）→ TCR → NHEJ → SOS（LexA、RecA）</td></tr>
+  </table></div>
+  <h3>讀完請自我檢查：我能不能……</h3>
+  <ul class="dots">
+    <li>□ 用一段序列分別寫出錯意、無意義、移碼、沉默突變的例子？</li>
+    <li>□ 說明鐮刀型貧血從 DNA 到症狀的整條因果鏈？</li>
+    <li>□ 說明亞硝酸如何在兩輪複製後把 C·G 變成 T·A？</li>
+    <li>□ 說出費城染色體與勃奇氏淋巴瘤各是哪兩條染色體、哪個基因被活化？</li>
+    <li>□ 說出 MMR 如何分辨新舊股？</li>
+    <li>□ 依序說出 UvrA、B、C、D 的工作，以及缺陷會得什麼病？</li>
+    <li>□ 說明 LexA 與 RecA 如何開關 SOS 反應？</li>
+  </ul>
+</section>
+
+<section class="sec" id="s7">
+  <h2>自我檢測</h2>
+  <div class="en">Self-check — 題目選自習作單元 3 與講義中的國考題</div>
+  <div id="quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+</main>
+<a class="top" href="#top" aria-label="回到頂端">↑</a>
+<footer>營養分子生物學 第 3 講導讀｜依葉景生老師講義整理，標「補充」者為一般知識；如有出入以講義與老師上課內容為準</footer>
+<script>
+const Q = [
+ {q:"下列何者會導致嘧啶二聚體（pyrimidine dimer）形式的 DNA 損傷？（111 年國考題選項改寫）",o:["烷化作用","去胺作用","紫外線照射","去嘌呤作用"],a:2,
+  e:"<b>紫外線</b>讓同一股上相鄰的兩個嘧啶（最常見 T-T）形成共價鍵。其他選項都是內生性的一級結構損傷。"},
+ {q:"醫院用紫外線殺菌，其抑制細菌的機轉最可能是？",o:["重要官能基烴基化","生成胸腺嘧啶二聚體使 DNA 無法複製","使蛋白質凝固變性","抑制細菌酵素活性"],a:1,
+  e:"UVC 被 DNA 強烈吸收，形成 <b>T-T 二聚體</b>，阻擋複製與轉錄。"},
+ {q:"有關紫外線造成 DNA 損傷的敘述，何者錯誤？（108 年國考）",o:["可能經由自由基造成損傷","易使相鄰嘧啶鍵結成二聚體","胸腺嘧啶二聚體是最常見類型之一","烷基轉移酶可直接修復紫外線造成的損傷"],a:3,
+  e:"烷基轉移酶修的是<b>烷化</b>傷害（如 O⁶-甲基鳥嘌呤）；UV 二聚體由 NER 或光解酶修。"},
+ {q:"鐮刀型貧血是因 DNA 單一鹼基改變，使一個胺基酸被另一個置換，這種突變稱為？",o:["錯義突變","移碼突變","沉默突變","插入突變"],a:0,
+  e:"β-球蛋白第 6 個密碼子 GAG→GTG，Glu→Val，屬<b>錯義（missense）</b>點突變。"},
+ {q:"關於地中海型貧血的敘述，何者錯誤？（112 年國考）",o:["主要因血紅素基因變異","可能導致血紅素製造量不足","紅血球變得較長、較薄且呈鐮刀型","可分為 α 型與 β 型"],a:2,
+  e:"鐮刀形是<b>鐮刀型貧血</b>的特徵。地中海型貧血是球蛋白鏈<b>量</b>不足，紅血球小而淡。"},
+ {q:"最主要引起國人乙型海洋性貧血的基因缺陷為何？",o:["大片段缺失","大片段插入","DNA 甲基化","點突變"],a:3,
+  e:"β 型多為<b>點突變</b>（含無意義、移碼等小突變）；α 型則多為大片段缺失。"},
+ {q:"DNA 序列鹼基取代後形成新的終止密碼，這種突變稱為？",o:["轉換（transition）","錯義突變","無意義突變","沉默突變"],a:2,
+  e:"產生終止碼使蛋白提早結束＝<b>無意義（nonsense）突變</b>；琥珀突變（UAG）也屬此類。"},
+ {q:"一個基因產生沉默突變（silent mutation）後會造成？",o:["mRNA 序列沒有改變","轉譯出的胺基酸序列沒有改變","蛋白不表現","一個胺基酸改變導致功能喪失"],a:1,
+  e:"沉默突變多半是密碼子改變但仍編碼<b>同一胺基酸</b>，所以 mRNA 有變、胺基酸序列不變。"},
+ {q:"費城染色體（Philadelphia chromosome）主要由何種染色體結構變化產生？",o:["缺失","重複","倒位","轉位"],a:3,
+  e:"第 9 與 22 號染色體<b>相互轉位</b> t(9;22)，形成 BCR-ABL 融合基因。"},
+ {q:"勃奇氏淋巴瘤最常出現的染色體異常為何？",o:["t(9;22)","t(15;17)","t(8;14)","inv(16)"],a:2,
+  e:"<b>t(8;14)</b>：c-myc 移到免疫球蛋白重鏈基因旁，被其強化子驅動。"},
+ {q:"ABC 切除核酸酶（ABC excinuclease）參與哪一種 DNA 修復？（104 年國考）",o:["鹼基切除修復","錯誤配對修復","核苷酸切除修復","SOS 修復"],a:2,
+  e:"UvrA、B、C 組成 ABC excinuclease，在損傷兩側切開＝<b>核苷酸切除修復（NER）</b>。"},
+ {q:"原核生物 DNA 大量損害時，下列何種蛋白會被分解，以啟動修補基因的轉錄？",o:["RecA","LexA","UvrA","Lac repressor"],a:1,
+  e:"<b>LexA</b> 是 SOS 基因的抑制子；RecA 被單股 DNA 活化後促使 LexA 自我分解。"},
+ {q:"下列何種修補作用<b>不能</b>修復紫外光造成的嘧啶二聚體？",o:["核苷酸切除修復","DNA 光解酶","錯誤配對修復","以上都能"],a:2,
+  e:"MMR 只修複製產生的<b>錯配</b>；二聚體由 NER 或光解酶（直接修復）處理。"},
+ {q:"有關 DNA 損傷與修復，下列何者錯誤？",o:["DNA 光解酶可修復 DNA 氧化傷害","DNA N-醣苷酶切除錯誤鹼基與去氧核糖間的鍵","直接修復可修化學或光化學造成的損傷","NER 可切除一段含損傷的核苷酸"],a:0,
+  e:"光解酶只修<b>嘧啶二聚體</b>；氧化傷害（如 8-oxoG）主要由 BER 修。"},
+ {q:"大腸桿菌錯誤配對修補中，在未甲基化新股 GATC 處切出缺口的是？",o:["MutS","MutL","MutH","UvrC"],a:2,
+  e:"<b>MutH</b> 有內切酶活性；MutS 認錯配，MutL 連接兩者。"},
+ {q:"色素性乾皮症（XP）是哪一種修補機制的遺傳缺陷？",o:["錯誤配對修補","核苷酸切除修補","非同質性末端接合","SOS 修補"],a:1,
+  e:"XP 患者 <b>NER</b> 有缺陷，無法修 UV 損傷，對陽光極敏感、易得皮膚癌，屬體染色體隱性遺傳。"}
+];
+</script>
+<script src="mb_core.js"></script>
+</body>
+</html>

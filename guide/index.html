@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>營養分子生物學 逐講導讀</title><link rel="stylesheet" href="mb.css">
+<style>.chl a{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:12px 14px;margin:10px 0;color:#1f2937;text-decoration:none}
+.chl .n{background:#0f5e8c;color:#fff;border-radius:8px;min-width:36px;text-align:center;font-weight:700}.chl .p{margin-left:auto;color:#6b7280;font-size:14px;white-space:nowrap}
+.chl a.todo{opacity:.45;pointer-events:none}</style></head>
+<body><header><div class="book">營養分子生物學（葉景生老師講義）</div><h1>逐講導讀</h1><div class="en">Nutritional Molecular Biology — Study Guide</div><p style="margin-top:12px"><a href="../" style="color:inherit">⌂ 首頁</a>　<a href="../quiz/" style="color:inherit;font-weight:700">✎ 前往習作練習（539 題逐題詳解）→</a></p></header>
+<main>
+<div class="note">依老師 10 份講義的順序整理，每講包含：本講地圖、逐節說明（附講義頁碼 <span class="src">S12</span>）、🔗 銜接說明（簡報跳躍處的前後關係）、例子與圖解、易混淆提醒、📝 習作出題分析、重點總表與互動自我檢測。標 <span class="add">補充</span> 的是講義以外的一般知識。上方可切換「精簡／完整」閱讀模式。</div>
+<div class="chl" id="chl"></div>
+<div class="sum"><b class="t">十講怎麼串起來</b><ul>
+<li><b>第 1 講</b>認識分子（DNA、RNA、染色質）→ <b>第 2 講</b>複製 → <b>第 3、4 講</b>DNA 出錯、修補與重組。</li>
+<li><b>第 5、6 講</b>DNA → RNA（轉錄與調控）→ <b>第 7 講</b>RNA 加工 → <b>第 8 講</b>RNA → 蛋白質 → <b>第 9 講</b>蛋白質修飾與運送。</li>
+<li><b>第 10 講</b>把上面學到的分子工具拿來做實驗（PCR、限制酶、選殖、定序等）。</li>
+</ul></div>
+</main>
+<script src="mb_core.js"></script>
+<script>
+const counts=[80,56,50,49,63,55,43,43,59,57];
+document.getElementById('chl').innerHTML=FOX_CH.map((t,i)=>{const k=i+1,f=`mb_ch${String(k).padStart(2,'0')}.html`,d=FOX_DONE.includes(k);
+ return `<a href="${f}" class="${d?'':'todo'}"><span class="n">${k}</span><span>${t}</span><span class="p">${counts[i]} 頁${d?'':'・製作中'}</span></a>`}).join('');
+</script></body></html>

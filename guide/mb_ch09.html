@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>營養分子生物學導讀｜第 9 講 轉譯後修飾與蛋白質運送</title>
+<link rel="stylesheet" href="mb.css">
+</head>
+<body id="top" data-ch="9">
+<header>
+  <div class="book">營養分子生物學（葉景生老師講義）・逐講導讀</div>
+  <h1>第 9 講　轉譯後修飾與蛋白質運送</h1>
+  <div class="en">Lecture 9 Post-translational Modification and Protein Targeting（講義 59 頁）</div>
+</header>
+<div class="modebar"><span>閱讀模式</span>
+  <button id="mBrief" onclick="setMode('brief')">精簡（核心路線）</button>
+  <button id="mFull" onclick="setMode('full')">完整</button>
+</div>
+<main>
+<div class="briefhint">精簡模式只顯示每段的灰框重點；想看說明、例子與圖，按各節的「展開本節詳細內文」，或切到「完整」。</div>
+<div class="note"><span class="src">S22</span> 表示講義第 22 張投影片；<span class="add">補充</span> 是一般知識。本講和生化課的蛋白質結構重疊，可一起複習。📝 方框依「習作練習 單元 9」（30 題）整理。</div>
+<nav class="toc">
+  <b>本講目錄</b>
+  <a href="#s0">本講地圖</a>
+  <a href="#s1">預備：胺基酸與蛋白質四級結構</a>
+  <a href="#s2">一、蛋白質的修飾</a>
+  <a class="sub" href="#s2a">胰島素的加工</a>
+  <a class="sub" href="#s2b">摺疊與伴護子</a>
+  <a class="sub" href="#s2c">化學基修飾：乙醯化、脂基化、磷酸化、糖基化</a>
+  <a class="sub" href="#s2d">泛素化與蛋白酶體分解</a>
+  <a href="#s3">二、游離核糖體的轉譯與運送</a>
+  <a href="#s4">三、內質網固著核糖體途徑（分泌途徑）</a>
+  <a class="sub" href="#s4a">SRP 與蛋白質進入內質網</a>
+  <a class="sub" href="#s4b">內質網與高爾基體的糖化</a>
+  <a class="sub" href="#s4c">溶小體酵素：甘露糖-6-磷酸</a>
+  <a href="#s5">習作出題分析</a>
+  <a href="#s6">本講重點整理</a>
+  <a href="#s7">自我檢測（互動）</a>
+</nav>
+
+<section class="sec" id="s0">
+  <h2>本講地圖：為什麼這樣排？</h2>
+  <div class="en">Big picture</div>
+  <div class="lead"><b>破題</b>　核糖體做出來的只是一條胺基酸鏈（一級結構）。要變成有功能的蛋白質還需要：<span class="key">摺好形狀、加上化學標籤、送到正確地點；不要了就貼上泛素銷毀。</span>蛋白質要去哪裡，取決於它在哪種核糖體上被做出來。</div>
+  <figure class="pic"><svg viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <rect x="180" y="10" width="120" height="30" rx="8" fill="#e0e7ff" stroke="#4338ca"/><text x="240" y="30" font-weight="bold">新合成的多胜肽</text>
+      <path d="M220 40 L120 70 M260 40 L360 70" stroke="#374151" stroke-width="2"/>
+      <rect x="20" y="70" width="200" height="30" rx="8" fill="#dbeafe" stroke="#1d4ed8"/><text x="120" y="90">細胞質<tspan font-weight="bold">游離</tspan>核糖體</text>
+      <rect x="260" y="70" width="200" height="30" rx="8" fill="#fde68a" stroke="#b45309"/><text x="360" y="90"><tspan font-weight="bold">粗糙內質網</tspan>上的核糖體（有訊號）</text>
+      <text x="120" y="125">→ 細胞質（留下）</text><text x="120" y="143">→ 粒線體（MTS）</text><text x="120" y="161">→ 過氧化體（PTS）</text><text x="120" y="179">→ 細胞核（NLS）</text>
+      <text x="360" y="125">→ 內質網腔 → 高爾基體</text><text x="360" y="143">→ 分泌到細胞外（澱粉酶、胰島素）</text><text x="360" y="161">→ 細胞膜蛋白</text><text x="360" y="179">→ 溶小體（M6P 標籤）</text>
+    </g>
+  </svg><figcaption>圖 9-1　蛋白質運送的兩大途徑 <span class="src">S43</span>。</figcaption></figure>
+</section>
+
+<!-- ============ 預備 ============ -->
+<section class="sec det" id="s1">
+  <h2>預備：胺基酸與蛋白質四級結構</h2>
+  <div class="en">Amino acids and protein structure <span class="src">S3–S21</span></div>
+  <div class="oneline">一級＝胺基酸序列（胜肽鍵）；二級＝主鏈氫鍵形成 α 螺旋、β 摺板、β 轉角；三級＝側鏈間疏水作用、鹽橋、氫鍵、雙硫鍵形成的立體形狀；四級＝兩條以上多胜肽（次單元）的組合。</div>
+<div class="bridge">第 9 講開頭先放了二十種胺基酸表和蛋白質四級結構，看起來像生化課複習、和「轉譯後修飾」沒有直接關係。老師這樣排的用意是：第 8 講做出來的只是<b>一級結構</b>（胺基酸序列）；要理解後面的「摺疊」「修飾」「運送」，必須先知道一條鏈要經過哪些層次才會變成有功能的形狀，以及哪些胺基酸的側鏈可以被修飾（例如有 –OH 的才能磷酸化）。所以這段是後面所有內容的地基。</div>
+  <h3>必需胺基酸 <span class="src">S3–S4</span></h3>
+  <p class="core">8 種必需胺基酸：<b>甲硫、離、色、纈、酥、異白、白、苯丙</b>；9 種版本再加<b>組胺酸</b>（1975 年臨床試驗認為成人也需要）。</p>
+  <div class="mn"><b class="t">老師的口訣</b>「<b>假離色戒輸一百，笨！</b>」＝<b>甲</b>（Met）<b>離</b>（Lys）<b>色</b>（Trp）<b>戒</b>（纈 Val）<b>輸</b>（酥 Thr）<b>一</b>（異白 Ile）<b>百</b>（白 Leu）<b>笨</b>（苯丙 Phe）。</div>
+  <h3>四級結構 <span class="src">S5–S20</span></h3>
+  <div class="tblwrap"><table>
+    <tr><th>層級</th><th>是什麼</th><th>靠什麼維持</th><th>例子</th></tr>
+    <tr><td>一級</td><td>胺基酸序列（基因訊息的直接表現）</td><td><b>胜肽鍵</b>（脫水形成；部分雙鍵性質，C–N 不能自由轉動）</td><td>鐮刀型貧血：β 鏈第 6 個 Glu→Val</td></tr>
+    <tr><td>二級</td><td>α 螺旋、β 摺板、β 轉角</td><td>主鏈 C=O 與 N–H 之間的<b>氫鍵</b></td><td>頭髮（α 角蛋白）</td></tr>
+    <tr><td>三級</td><td>一條鏈的整體立體形狀</td><td>疏水作用、靜電作用（鹽橋）、氫鍵、<b>雙硫鍵</b>（共價）</td><td>肌紅蛋白</td></tr>
+    <tr><td>四級</td><td>兩條以上多胜肽（次單元）的排列</td><td>同三級的非共價作用，有時加雙硫鍵</td><td>血紅素（α₂β₂）</td></tr>
+  </table></div>
+  <ul class="dots">
+    <li><b>α 螺旋</b>：右旋，每個 N–H 與往前第 4 個胺基酸的 C=O 形成氫鍵；<b>3.6 個胺基酸一圈</b>，每圈約 0.54 nm（講義 <span class="src">S12</span> 寫 54 nm，應為 0.54 nm／5.4 Å）；R 基朝外。</li>
+    <li><b>β 摺板</b>：兩段以上的鏈平行或反平行排列，像手風琴；氫鍵在<b>股與股之間</b>；R 基在片層上下。</li>
+  </ul>
+  <div class="warn"><b class="t">易錯：</b>(1) 講義 <span class="src">S11</span> 寫「氫鍵等共價鍵」，氫鍵<b>不是共價鍵</b>。(2) 二級結構是<b>主鏈</b>間的氫鍵，不是 R 基間。(3) HTH（螺旋－彎摺－螺旋）屬於<b>超二級結構／模組</b>，題目若說它是二級結構要小心。(4) <b>Cys</b> 有硫醇基（–SH），兩個 Cys 形成雙硫鍵（胱胺酸）。(5) –CH₂COO⁻（Asp）與 –(CH₂)₄NH₃⁺（Lys）之間形成<b>鹽橋</b>。(6) 變性破壞二、三、四級，<b>一級結構（胜肽鍵）不受影響</b>。</div>
+  <p>導致蛋白質<b>變性</b>的因素 <span class="src">S20</span>：強酸強鹼、有機溶劑（乙醇、丙酮、尿素）、清潔劑、還原劑、鹽濃度、重金屬、溫度、機械力（攪拌、研磨）。</p>
+  <div class="nut"><b class="t">營養連結：</b>烹調加熱、打蛋白、醃漬（酸）都會讓蛋白質變性，通常反而更好消化；變性不會降低胺基酸的營養價值，因為一級序列沒變。</div>
+</section>
+
+<!-- ============ 一 ============ -->
+<section class="sec det" id="s2">
+  <h2><span class="no">一</span>蛋白質的修飾</h2>
+  <div class="en">Protein Modification <span class="src">S22–S41</span></div>
+  <div class="lead"><div><span class="lt">這節要說明什麼？</span>蛋白質合成後的四類加工：切割活化（胰島素）、摺疊（伴護子）、加化學基、泛素化分解。</div></div>
+  <div class="oneline">新生胺基酸鏈在伴護子幫忙下摺疊；再加上磷酸（開關活性）、糖鏈（導向與穩定）、脂質（錨定在膜上）、乙醯基等標籤；完成任務或摺錯的蛋白被貼上泛素，送進蛋白酶體分解。</div>
+<div class="bridge">看完四級結構之後，簡報先舉胰島素當例子，說明「剛做好的鏈」和「有功能的蛋白」可以差很多（要切掉一大段才會活化）。接著依蛋白質的一生排列：<b>摺疊 → 加上化學標籤 → 用完分解</b>。</div>
+
+  <h3 id="s2a">轉譯後修飾的例子：胰島素 <span class="src">S22</span></h3>
+  <p class="core"><b>前胰島素原</b>（preproinsulin）→ 切掉 N 端訊號序列 → <b>胰島素原</b>（proinsulin，形成 3 個雙硫鍵）→ 切掉中間的 <b>C 胜肽</b> → <b>胰島素</b>：A 鏈 21 個＋B 鏈 30 個＝<b>51 個胺基酸</b>，以雙硫鍵相連。</p>
+  <p>為什麼不直接做出 51 個胺基酸的成品？因為兩條短鏈分開做，很難準確地用雙硫鍵對接。做成一條長鏈（胰島素原）時，中間的 C 胜肽像一條繩子，把 A、B 兩段拉在正確的相對位置，三個雙硫鍵就能自然形成；接好之後再把繩子剪掉 <span class="add">補充說明</span>。最前面的訊號序列則是讓它進入內質網、走分泌途徑的通行證（本講第三節）。</p>
+  <figure class="pic"><svg viewBox="0 0 480 160" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <text x="10" y="25" text-anchor="start" font-weight="bold">前胰島素原</text>
+      <rect x="100" y="12" width="40" height="18" fill="#fecaca" stroke="#dc2626"/><text x="120" y="25" font-size="10">訊號</text>
+      <rect x="140" y="12" width="90" height="18" fill="#bfdbfe" stroke="#1d4ed8"/><text x="185" y="25">B 鏈</text>
+      <rect x="230" y="12" width="110" height="18" fill="#e5e7eb" stroke="#6b7280"/><text x="285" y="25">C 胜肽</text>
+      <rect x="340" y="12" width="70" height="18" fill="#bbf7d0" stroke="#15803d"/><text x="375" y="25">A 鏈</text>
+      <text x="10" y="75" text-anchor="start" font-weight="bold">胰島素原</text>
+      <rect x="140" y="62" width="90" height="16" fill="#bfdbfe" stroke="#1d4ed8"/><text x="185" y="74" font-size="11">B 鏈</text>
+      <path d="M230 70 Q300 40 330 92" fill="none" stroke="#6b7280" stroke-width="4"/><text x="300" y="50" fill="#6b7280">C 胜肽（之後切掉）</text>
+      <rect x="160" y="88" width="70" height="16" fill="#bbf7d0" stroke="#15803d"/><text x="195" y="100" font-size="11">A 鏈</text>
+      <path d="M260 96 L230 96" stroke="#6b7280" stroke-width="4"/>
+      <line x1="175" y1="78" x2="175" y2="88" stroke="#b45309" stroke-width="2"/><line x1="210" y1="78" x2="210" y2="88" stroke="#b45309" stroke-width="2"/>
+      <text x="100" y="100" fill="#b45309" font-size="11">–S–S–</text>
+      <text x="10" y="140" text-anchor="start" font-weight="bold">胰島素</text>
+      <rect x="140" y="125" width="90" height="14" fill="#bfdbfe" stroke="#1d4ed8"/><text x="250" y="137" text-anchor="start">B 鏈 30 aa</text>
+      <rect x="140" y="143" width="63" height="14" fill="#bbf7d0" stroke="#15803d"/><text x="250" y="155" text-anchor="start">A 鏈 21 aa（共 51 aa）</text>
+    </g>
+  </svg><figcaption>圖 9-2　胰島素的切割活化（示意）。</figcaption></figure>
+  <div class="nut"><b class="t">臨床營養連結 <span class="add">補充</span>：</b>C 胜肽和胰島素等量分泌，且不受外來胰島素干擾，所以測<b>血中 C 胜肽</b>可評估糖尿病人自己的 β 細胞還剩多少功能。</div>
+  <div class="exam"><b class="t">考點</b>「由前胰島素原轉變為胰島素原、胰島素的過程」是<b>轉譯後修飾</b>的例子。轉譯後修飾包括甲基化、磷酸化、醣基化、乙醯化、脂基化、泛素化、切割等。</div>
+
+  <div class="bridge">胰島素的例子提到它要先形成三個雙硫鍵——也就是要先摺對形狀，切割才會正確。但一條剛冒出核糖體的鏈，疏水的部分會到處亂黏，很難自己摺好，所以需要幫手。</div>
+<h3 id="s2b">摺疊與伴護子 Chaperones <span class="src">S23–S27</span></h3>
+  <p class="core">許多蛋白質剛合成一小段時無法正確摺疊，需要<b>伴護子</b>（屬於<b>熱休克蛋白 Hsp</b>，溫度升高時增加）。伴護子<b>不改變</b>摺疊的最終結果，只防止未完成前聚集或形成無功能中間物；多數<b>需要 ATP</b>。<b>Hsp70</b>：在新生鏈還在核糖體上時就結合、遮住疏水區。<b>Hsp60／伴護素</b>（細菌 <b>GroEL–GroES</b>）：桶狀結構，把蛋白關進去摺好再放出。摺不好的送去分解。</p>
+  <p>摺疊的主要驅動力是疏水作用：疏水的胺基酸要躲進分子內部、親水的留在表面。問題是新生鏈從核糖體一點一點冒出來，前半段的疏水區在後半段出來之前沒有「夥伴」可以包，很容易和別的蛋白黏在一起（聚集）。Hsp70 先暫時蓋住這些疏水區；還是摺不好的，就送進 Hsp60 類的桶子（伴護素），在隔離的空間裡慢慢摺。高溫會使蛋白變性，所以細胞受熱時大量製造這些蛋白來救援——「熱休克蛋白」名稱由此而來。</p>
+  <ul class="dots">
+    <li>四種伴護子 <span class="src">S27</span>：摺疊伴護子、支托伴護子（先夾住等待）、防聚集伴護子（錯摺時協助重摺）、分泌伴護子（護送分泌蛋白穿膜）。</li>
+    <li>工作：防止新生鏈錯摺、協助變性的鏈恢復、協助多胜肽通過核膜、內質網膜等內膜。</li>
+  </ul>
+  <div class="eg"><b class="t">比喻：</b>伴護素像一間安靜的「摺紙小房間」：剛做好的鏈在外面容易和別人黏成一團，關進房間就能專心摺好。若怎麼摺都失敗，就被送到長得很像的另一個桶子——蛋白酶體——拆成胺基酸回收。</div>
+  <div class="exam"><b class="t">國考題（108 年，講義 S27）</b>分子伴護蛋白又稱<b>熱休克蛋白</b>。習作：「大部分伴護蛋白作用時<b>無須消耗 ATP</b>」是<b>錯</b>的；蛋白 A 摺疊需要 B 幫忙、B 不需要 A，則 B 是<b>分子伴護子</b>。</div>
+  <div class="nut"><b class="t">健康連結 <span class="add">補充</span>：</b>蛋白質錯誤摺疊並聚集與阿茲海默症（β-類澱粉）、帕金森氏症、狂牛症（普利昂）有關。</div>
+
+  <div class="bridge">摺好之後，很多蛋白還要再加上「化學標籤」，用來調整活性（磷酸化像開關）、決定位置（脂質錨在膜上、糖鏈當地址）或穩定性（乙醯化）。這些修飾都接在特定胺基酸的側鏈上——這就是開頭要先看胺基酸表的原因。</div>
+<h3 id="s2c">化學基修飾 <span class="src">S28–S38</span></h3>
+  <p class="core"><b>乙醯化</b>（組蛋白、p53 的 Lys，可逆）、<b>脂基化</b>（接上脂質長鏈錨在膜上，如 GPI 錨）、<b>磷酸化</b>（最普遍；激酶以 ATP 的 γ-磷酸接到 <b>Ser、Thr、Tyr</b> 的 –OH）、<b>糖基化</b>（內質網、高爾基體；<b>N-連接</b>接 <b>Asn</b>、<b>O-連接</b>接 <b>Ser／Thr</b>）、泛素化、雙硫鍵。</p>
+  <div class="tblwrap"><table>
+    <tr><th>修飾</th><th>接在哪</th><th>酵素</th><th>功能／例子</th></tr>
+    <tr><td>乙醯化</td><td>Lys</td><td>乙醯轉移酶</td><td>組蛋白（第 6 講）；p53 C 端 Lys 乙醯化 → 更穩定</td></tr>
+    <tr><td>脂基化</td><td>接上脂質鏈</td><td>—</td><td>把蛋白「下錨」在膜上；<b>GPI 錨</b>（如促衰變因子 DAF）</td></tr>
+    <tr><td>磷酸化</td><td><b>Ser、Thr、Tyr</b> 的 –OH</td><td><b>激酶</b>（用 ATP）；去磷酸由磷酸酶</td><td>開關酵素活性；EGFR 等受體酪胺酸激酶</td></tr>
+    <tr><td>糖基化</td><td>N-連接：<b>Asn</b> 的 –NH₂；O-連接：<b>Ser／Thr</b> 的 –OH</td><td>糖基轉移酶</td><td>膜蛋白、分泌蛋白；導向（溶小體 M6P）</td></tr>
+    <tr><td>泛素化</td><td>Lys</td><td>E1、E2、E3</td><td>標記分解</td></tr>
+  </table></div>
+  <div class="mn"><b class="t">記法</b>磷酸要接在有「–OH」的胺基酸：<b>絲、酥、酪</b>（S、T、Y），苯丙胺酸沒有 –OH 所以不會被磷酸化。N-糖化接 <b>N</b>（Asn），O-糖化接有 <b>O</b>H 的 Ser／Thr。</div>
+  <h4>磷酸化與癌症標靶藥 <span class="src">S33–S34</span></h4>
+  <p><b>EGFR</b>（表皮生長因子受體）本身是<b>酪胺酸激酶</b>：生長因子結合後受體互相磷酸化，啟動一連串細胞內訊息。<b>酪胺酸激酶抑制劑（TKI）</b>：Iressa（艾瑞莎）、Tarceva（得舒緩）。單株抗體：針對 HER2 的 trastuzumab（賀癌平）、抑制 HER2 結合的 pertuzumab、針對 EGFR 的 panitumumab。許多激酶的「活化唇（activation lip）」本身也要被<b>磷酸化</b>才會活化。</p>
+
+  <div class="bridge">蛋白質完成任務、或摺錯修不好，就要被清掉；不然會堆積造成傷害。泛素本身也是一種「轉譯後修飾」（接在 Lys 上），只是它代表的訊息是「請銷毀」。</div>
+<h3 id="s2d">泛素化與蛋白酶體分解 <span class="src">S39–S41</span></h3>
+  <p class="core">胞器內的蛋白隨胞器由<b>溶小體</b>分解；<b>細胞質</b>蛋白多經<b>泛素–蛋白酶體</b>路徑。<b>泛素</b>：76 個胺基酸、約 8.5 kDa、高度保守的小蛋白，接在目標蛋白的 <b>Lys</b> 上當「銷毀標籤」。三個酵素：<b>E1</b> 活化酶（耗 ATP）→ <b>E2</b> 結合酶 → <b>E3</b> 連接酶（決定受質）；接上一串泛素後送進桶狀的<b>蛋白酶體</b>切成小片段。</p>
+  <figure class="pic"><svg viewBox="0 0 480 140" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <circle cx="40" cy="60" r="16" fill="#fde68a" stroke="#b45309"/><text x="40" y="64">Ub</text>
+      <text x="80" y="64">→</text>
+      <rect x="95" y="45" width="50" height="30" rx="8" fill="#e0e7ff" stroke="#4338ca"/><text x="120" y="65">E1</text><text x="120" y="92" font-size="10">ATP</text>
+      <text x="160" y="64">→</text>
+      <rect x="175" y="45" width="50" height="30" rx="8" fill="#e0e7ff" stroke="#4338ca"/><text x="200" y="65">E2</text>
+      <text x="240" y="64">→</text>
+      <rect x="255" y="45" width="50" height="30" rx="8" fill="#c7d2fe" stroke="#4338ca"/><text x="280" y="65">E3</text><text x="280" y="92" font-size="10">認受質</text>
+      <text x="320" y="64">→</text>
+      <rect x="335" y="30" width="60" height="60" rx="8" fill="#fee2e2" stroke="#dc2626"/><text x="365" y="56">目標</text><text x="365" y="72">蛋白</text>
+      <g fill="#fde68a" stroke="#b45309"><circle cx="405" cy="28" r="9"/><circle cx="420" cy="16" r="9"/><circle cx="435" cy="6" r="6"/></g>
+      <text x="240" y="125" fill="#374151">多泛素鏈 → 蛋白酶體（proteasome）辨認 → 切成小片段，泛素回收</text>
+    </g>
+  </svg><figcaption>圖 9-3　泛素–蛋白酶體路徑（2004 年諾貝爾化學獎 <span class="add">補充</span>）。</figcaption></figure>
+  <p><b>N 端法則</b> <span class="src">S41</span>：N 端是酸性胺基酸（Asp、Glu）的蛋白，會由胺醯 tRNA–蛋白質轉移酶把 <b>Arg</b>（從 Arg-tRNA^Arg 來）接到 N 端，成為降解辨認訊號——這是 tRNA 參與蛋白分解的特例。</p>
+  <div class="exam"><b class="t">考點（泛素 5 題）</b>在真核細胞標記蛋白質以便降解的是 <b>ubiquitin</b>（不是 chaperonin、caspase、溶菌酶、穀胱甘肽）；泛素具高度遺傳保留性，也與胞吞作用及運送有關；功能是<b>促進蛋白質降解</b>。</div>
+  <div class="nut"><b class="t">營養連結 <span class="add">補充</span>：</b>禁食、敗血症、癌症惡病質時，肌肉的泛素–蛋白酶體路徑被大量活化，肌肉蛋白快速分解——這是住院病人肌少、需要積極營養支持的分子原因之一。</div>
+  <div class="sum"><b class="t">本節重點</b><ul>
+    <li>胰島素：前胰島素原 → 胰島素原 → 切 C 胜肽 → 51 aa（A 21＋B 30）。</li>
+    <li>伴護子＝熱休克蛋白；Hsp70 遮疏水區、Hsp60／GroEL-GroES 桶子；需 ATP。</li>
+    <li>磷酸化 Ser/Thr/Tyr（激酶、ATP）；N-糖化 Asn、O-糖化 Ser/Thr；GPI 錨；p53 乙醯化。</li>
+    <li>泛素 76 aa；E1→E2→E3；蛋白酶體分解。</li>
+  </ul></div>
+</section>
+
+<!-- ============ 二 ============ -->
+<section class="sec det" id="s3">
+  <h2><span class="no">二</span>游離核糖體的轉譯與運送</h2>
+  <div class="en">Free Ribosome Pathway <span class="src">S42–S48</span></div>
+  <div class="oneline">在細胞質游離核糖體上做完的蛋白，靠自己身上的「地址標籤」去粒線體（N 端 MTS）、過氧化體（PTS1、PTS2）、細胞核（NLS，富含正電胺基酸），沒標籤的就留在細胞質。</div>
+<div class="bridge">蛋白質要有正確的形狀與修飾，還要到<b>正確的地點</b>才能工作：粒線體的酵素在細胞質裡沒用、消化酵素留在細胞裡反而危險。簡報把運送分成兩大系統（本講開頭的圖 9-1），這一節先講比較簡單的：在細胞質游離核糖體上做完的蛋白，靠自己序列上的「地址」去各個胞器。</div>
+  <div class="tblwrap"><table>
+    <tr><th>目的地</th><th>標籤</th><th>特徵</th></tr>
+    <tr><td>粒線體</td><td>N 端先導序列：<b>基質導向序列 MTS</b>（約 25 aa），後面可接<b>膜間區導向序列</b></td><td>疏水胺基酸（Leu、Phe）＋<b>正電</b>胺基酸（Lys、Arg）；例：細胞色素 C1（32＋19 aa）</td></tr>
+    <tr><td>過氧化體</td><td>PTS1、PTS2 及各自的護送受體</td><td>含觸酶 catalase、過氧化酶；肝細胞多，參與酒精代謝成醛</td></tr>
+    <tr><td>細胞核（輸入）</td><td><b>核區位訊號 NLS</b></td><td>富含<b>正電</b>（鹼性）胺基酸：Pro-Lys-Lys-Lys-Arg-Lys-Val</td></tr>
+    <tr><td>細胞核（輸出）</td><td><b>核輸出訊號 NES</b></td><td>富含 <b>Leu</b> 的疏水段</td></tr>
+  </table></div>
+  <p class="core">粒線體只能自己做約 <b>10%</b> 的蛋白，<b>90%</b> 要從細胞質輸入。細胞核是雙層膜，大分子經<b>核孔複合體</b>（NPC：細胞質纖維、中央栓、輻條、核籃等）進出。</p>
+  <div class="exam"><b class="t">考點</b>肝細胞內具有<b>觸酶</b>活性的胞器是<b>過氧化體</b>；細胞質蛋白質<b>不需要</b> targeting 序列（分泌蛋白、膜蛋白、粒線體蛋白都需要）。溶小體內是<b>酸性</b>（不是高鹼性）液體。</div>
+</section>
+
+<!-- ============ 三 ============ -->
+<section class="sec det" id="s4">
+  <h2><span class="no">三</span>內質網固著核糖體途徑（分泌途徑）</h2>
+  <div class="en">ER-bound Ribosome / Secretory Pathway <span class="src">S49–S57</span></div>
+  <div class="lead"><div><span class="lt">這節要說明什麼？</span>分泌蛋白、膜蛋白、溶小體蛋白怎麼進入內質網、在高爾基體加糖、最後被送到對的地方。</div><div><span class="lt lt2">例子</span>唾腺澱粉酶、胰島素、消化酵素都走這條路。</div></div>
+  <div class="oneline">蛋白一開始在游離核糖體上合成，N 端的訊號序列一冒出來就被 SRP（訊號辨識顆粒）抓住、轉譯暫停；SRP 把整個核糖體帶到內質網上的 SRP 受體，GTP 水解後 SRP 離開，鏈穿過 Sec61 通道進入內質網腔繼續合成。之後在內質網與高爾基體逐步加工糖鏈，溶小體酵素被貼上甘露糖-6-磷酸標籤。</div>
+<div class="bridge">另一大系統是要「離開細胞質」的蛋白：分泌到細胞外、嵌在細胞膜上、或送進溶小體。它們必須一邊合成、一邊穿進內質網，所以從一開始就要被帶到內質網上。前面「化學基修飾」介紹的<b>糖基化</b>，就是在這條路上完成的——這一節會把它的細節補齊。</div>
+
+  <h3 id="s4a">SRP 與蛋白質進入內質網 <span class="src">S49–S50</span></h3>
+  <p>為什麼要「暫停轉譯」？因為分泌蛋白必須一邊合成一邊穿進內質網；如果先在細胞質整條做完、摺好，就穿不過狹窄的通道了。所以 SRP 抓住訊號序列後先讓核糖體踩煞車，等核糖體停靠到內質網、對準 Sec61 通道，再放開煞車繼續合成，新生鏈直接被送進內質網腔。進去之後，訊號序列通常會被訊號胜肽酶切掉 <span class="add">補充</span>——前胰島素原的「前」（pre）就是指這段。</p>
+  <figure class="pic"><svg viewBox="0 0 480 210" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <rect x="10" y="150" width="460" height="22" fill="#fde68a" stroke="#b45309"/><text x="60" y="166">內質網膜</text><text x="240" y="200" fill="#b45309">內質網腔</text>
+      <ellipse cx="70" cy="55" rx="34" ry="22" fill="#e0e7ff" stroke="#4338ca"/><text x="70" y="59">核糖體</text>
+      <path d="M70 77 q10 15 25 20" stroke="#dc2626" stroke-width="4" fill="none"/><text x="110" y="105" fill="#dc2626">訊號序列</text>
+      <circle cx="105" cy="88" r="10" fill="#bbf7d0" stroke="#15803d"/><text x="105" y="92" font-size="10">SRP</text>
+      <text x="70" y="20">① SRP 抓訊號、暫停轉譯</text>
+      <path d="M140 60 L190 90" stroke="#374151" stroke-width="2"/>
+      <ellipse cx="230" cy="105" rx="34" ry="22" fill="#e0e7ff" stroke="#4338ca"/><circle cx="262" cy="135" r="10" fill="#bbf7d0" stroke="#15803d"/>
+      <rect x="250" y="146" width="28" height="8" fill="#93c5fd" stroke="#1d4ed8"/><text x="230" y="20">② 停靠 SRP 受體</text><text x="230" y="36" font-size="11">（SRα、SRβ，GTP 水解）</text>
+      <path d="M290 80 L330 90" stroke="#374151" stroke-width="2"/>
+      <ellipse cx="390" cy="118" rx="34" ry="22" fill="#e0e7ff" stroke="#4338ca"/>
+      <rect x="378" y="140" width="24" height="34" fill="#c4b5fd" stroke="#7c3aed"/><text x="430" y="166" font-size="11">Sec61</text>
+      <path d="M390 140 v45 q0 10 15 12" stroke="#dc2626" stroke-width="3" fill="none"/>
+      <text x="390" y="20">③ SRP 離開，繼續轉譯</text><text x="390" y="36" font-size="11">鏈穿過 Sec61 進入腔內</text>
+    </g>
+  </svg><figcaption>圖 9-4　共轉譯運送（co-translational translocation）<span class="src">S50</span>。</figcaption></figure>
+  <div class="warn"><b class="t">講義用詞提醒：</b><span class="src">S49</span> 寫「這種訊號……稱為訊號辨識顆粒（SRP）」。比較清楚的說法是：N 端的<b>訊號序列</b>（signal sequence）是標籤，<b>SRP</b> 是辨認這個標籤的小型核糖核蛋白顆粒（含 7SL RNA）<span class="add">補充說明</span>。</div>
+  <div class="exam"><b class="t">考點</b>以唾腺澱粉酶為例：「由<b>游離型</b>核糖體進行轉譯合成多胜肽」是<b>錯</b>的敘述——分泌蛋白在<b>粗糙內質網上的核糖體</b>完成轉譯（雖然一開始在游離狀態起頭）。其他步驟：轉錄與 RNA 加工在核內、mRNA 經核孔出核、蛋白經內質網 → 高爾基體 → 分泌小泡 → 胞吐。</div>
+
+  <div class="bridge">進入內質網腔之後，分泌蛋白和膜蛋白最重要的加工就是糖化。前面只說 N-連接接在 Asn、O-連接接在 Ser/Thr；這裡依「內質網 → 高爾基體順面 → 中間 → 反面」的路線，看糖鏈怎麼一站站被修改。</div>
+<h3 id="s4b">內質網與高爾基體的糖化 <span class="src">S51–S55</span></h3>
+  <p class="core"><b>N-連接</b>糖化從<b>內質網</b>開始、在<b>高爾基體</b>完成；<b>O-連接</b>糖化在<b>高爾基體</b>進行。內質網：前驅寡糖接到 Asn 上 → 葡萄糖苷酶 I、II 切掉 3 個葡萄糖、甘露糖苷酶切掉甘露糖 → <b>高甘露糖寡糖鏈</b>。高爾基體由順面（cis）→ 中間（medial）→ 反面（trans）逐層修剪甘露糖，加上 N-乙醯葡萄糖胺（GlcNAc）、岩藻糖、半乳糖、<b>唾液酸</b>，完成複合型糖鏈。</p>
+  <p>整個過程像流水線：內質網先把一整塊預先做好的寡糖（14 個糖）一次接到 Asn 上，再修剪掉幾個葡萄糖與甘露糖；剪葡萄糖的步驟同時是品質檢查——還沒摺好的蛋白會被重新加回葡萄糖、留在內質網繼續摺 <span class="add">補充</span>。通過檢查的蛋白包進小泡送到高爾基體，從順面往反面移動，每一層的酵素再剪掉一些甘露糖、加上 GlcNAc、半乳糖、唾液酸，最後成為各式各樣的複合型糖鏈。</p>
+  <div class="tblwrap"><table>
+    <tr><th>位置</th><th>主要動作</th></tr>
+    <tr><td>內質網</td><td>Asn 上接前驅寡糖；切 3 個 Glc 與部分 Man → 高甘露糖型</td></tr>
+    <tr><td>順面小池 cis</td><td>甘露糖苷酶 I 再切 Man；GlcNAc 轉移酶 I 接 1 個 GlcNAc；<b>溶小體酵素在此加上磷酸標籤</b></td></tr>
+    <tr><td>中間小池 medial</td><td>甘露糖苷酶 II 切 2 個 Man；GlcNAc 轉移酶 II、IV 加 GlcNAc；海藻（岩藻）糖轉移酶加 1 個糖</td></tr>
+    <tr><td>反面小池 trans／TGN</td><td>半乳糖轉移酶接 3 個半乳糖；唾液酸轉移酶接 3 個唾液酸 → 完成</td></tr>
+  </table></div>
+  <div class="eg"><b class="t">比喻：</b>內質網先做出「標準款」高甘露糖骨架，高爾基體像流水線上的客製化部門，一站一站剪掉、再加上不同的糖，最後在反面打包出貨。</div>
+
+  <div class="bridge">糖化流程裡有一站很特別：在高爾基體順面，溶小體酵素的糖鏈會被加上一個磷酸，成為「送往溶小體」的地址標籤。這正好說明前面講的「糖化與蛋白質導向有關」。</div>
+<h3 id="s4c">溶小體酵素的導向：甘露糖-6-磷酸 <span class="src">S56–S57</span></h3>
+  <p class="core">在高爾基體<b>順面</b>，<b>N-乙醯葡萄糖胺磷酸轉移酶</b>（GlcNAc-P-transferase）辨認溶小體酵素，把 GlcNAc-P 接到甘露糖 6 號位置 → 移除 GlcNAc 後露出 <b>甘露糖-6-磷酸（M6P）</b> → 在反面被 <b>M6P 受體</b>抓住、包進小泡送到溶小體。</p>
+  <p>一般分泌蛋白走到高爾基體反面就被包裝送往細胞膜分泌；溶小體酵素若也被送出去，就到不了溶小體。所以它們需要額外的「地址」：在順面時，磷酸轉移酶認出溶小體酵素特有的表面區域，把磷酸接到糖鏈的甘露糖上；到了反面，M6P 受體抓住帶標籤的酵素，包進專門送往溶小體的小泡。溶小體內是酸性，酵素在那裡和受體分開，受體再回收到高爾基體重複使用 <span class="add">補充</span>。</p>
+  <div class="nut"><b class="t">臨床連結 <span class="add">補充</span>：</b>GlcNAc 磷酸轉移酶先天缺陷 → <b>I 細胞病</b>（inclusion-cell disease）：溶小體酵素沒貼標籤，被誤送出細胞、跑到血中，細胞內溶小體塞滿未分解的物質。</div>
+  <div class="exam"><b class="t">考點</b>蛋白質最常經<b>糖基化</b>修飾再送到溶小體（M6P 標籤）。糖化作用與<b>蛋白質導向</b>（targeting）相關。</div>
+  <div class="sum"><b class="t">本節重點</b><ul>
+    <li>訊號序列 → SRP 暫停 → SRP 受體（GTP）→ Sec61 → 內質網腔。</li>
+    <li>N-糖化：內質網開始（高甘露糖）、高爾基體完成；O-糖化：高爾基體。</li>
+    <li>溶小體酵素：順面加 M6P → M6P 受體 → 溶小體；缺陷＝I 細胞病。</li>
+  </ul></div>
+  <details class="terms"><summary>本講名詞中英對照</summary><div class="tblwrap"><table>
+    <tr><td>伴護子</td><td>chaperone</td><td>熱休克蛋白</td><td>heat shock protein (Hsp)</td></tr>
+    <tr><td>伴護素</td><td>chaperonin (GroEL/GroES)</td><td>胰島素原</td><td>proinsulin</td></tr>
+    <tr><td>磷酸化／激酶</td><td>phosphorylation / kinase</td><td>糖基化</td><td>glycosylation</td></tr>
+    <tr><td>醣肌醇磷脂錨</td><td>GPI anchor</td><td>泛素／蛋白酶體</td><td>ubiquitin / proteasome</td></tr>
+    <tr><td>基質導向序列</td><td>matrix-targeting sequence (MTS)</td><td>核區位訊號</td><td>nuclear localization signal (NLS)</td></tr>
+    <tr><td>訊號辨識顆粒</td><td>signal recognition particle (SRP)</td><td>甘露糖-6-磷酸</td><td>mannose-6-phosphate (M6P)</td></tr>
+  </table></div></details>
+</section>
+
+<section class="sec" id="s5">
+  <h2>習作出題分析（單元 9，共 30 題）</h2>
+  <div class="en">Where the questions come from</div>
+  <div class="tblwrap"><table class="freq">
+    <tr><th>主題</th><th>約題數</th><th>常考的說法</th></tr>
+    <tr><td>蛋白質一～四級結構</td><td><span class="stars">★★★★</span> 約 10</td><td>一級＝胜肽鍵；二級 α/β；四級需至少兩條鏈；Cys 雙硫鍵；鹽橋</td></tr>
+    <tr><td>泛素</td><td><span class="stars">★★★★</span> 5</td><td>標記降解；高度保守；與胞吞有關</td></tr>
+    <tr><td>轉譯後修飾、磷酸化、激酶</td><td><span class="stars">★★★</span> 約 7</td><td>胰島素原；Phe 不被磷酸化；activation lip 需磷酸化；激酶與磷酸酶作用相反</td></tr>
+    <tr><td>伴護子</td><td><span class="stars">★★★</span> 3</td><td>熱休克蛋白；需 ATP</td></tr>
+    <tr><td>胞器與運送</td><td><span class="stars">★★</span> 約 4</td><td>過氧化體有觸酶；溶小體是酸性；澱粉酶在 rER 核糖體合成</td></tr>
+  </table></div>
+</section>
+
+<section class="sec" id="s6">
+  <h2>本講重點整理</h2>
+  <div class="en">Summary</div>
+  <div class="tblwrap"><table>
+    <tr><th>主題</th><th>一定要記</th></tr>
+    <tr><td>必需胺基酸</td><td>假離色戒輸一百笨（＋組胺酸＝9 種）</td></tr>
+    <tr><td>結構</td><td>一級胜肽鍵；二級主鏈氫鍵（α 3.6 aa／圈）；三級疏水、鹽橋、氫鍵、雙硫鍵；四級多條鏈</td></tr>
+    <tr><td>胰島素</td><td>前胰島素原 → 胰島素原 → 胰島素（A21＋B30＝51），切 C 胜肽</td></tr>
+    <tr><td>伴護子</td><td>Hsp；Hsp70、Hsp60（GroEL/ES）；耗 ATP</td></tr>
+    <tr><td>修飾</td><td>磷酸化 S/T/Y；N-糖化 Asn、O-糖化 S/T；GPI 錨；p53 乙醯化</td></tr>
+    <tr><td>分解</td><td>泛素 76 aa、E1/E2/E3、蛋白酶體；N 端法則（Arg-tRNA）</td></tr>
+    <tr><td>游離核糖體</td><td>粒線體 MTS（正電＋疏水，90% 蛋白要輸入）；過氧化體 PTS1/2；核 NLS（正電）、NES（Leu）</td></tr>
+    <tr><td>分泌途徑</td><td>訊號序列、SRP、SRP 受體（GTP）、Sec61；N-糖化 ER→Golgi；M6P → 溶小體</td></tr>
+  </table></div>
+  <h3>讀完請自我檢查：我能不能……</h3>
+  <ul class="dots">
+    <li>□ 說出四級結構各靠什麼作用力？</li>
+    <li>□ 畫出胰島素的加工步驟？</li>
+    <li>□ 說明伴護子的功能與為什麼叫熱休克蛋白？</li>
+    <li>□ 說出磷酸化、N-糖化、O-糖化各接在哪些胺基酸？</li>
+    <li>□ 依序說出泛素化的三個酵素？</li>
+    <li>□ 說明分泌蛋白從核糖體到細胞外的整條路徑？</li>
+    <li>□ 解釋溶小體酵素怎麼被送到溶小體？</li>
+  </ul>
+</section>
+
+<section class="sec" id="s7">
+  <h2>自我檢測</h2>
+  <div class="en">Self-check — 題目選自習作單元 9 與講義國考題</div>
+  <div id="quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+</main>
+<a class="top" href="#top" aria-label="回到頂端">↑</a>
+<footer>營養分子生物學 第 9 講導讀｜依葉景生老師講義整理，標「補充」者為一般知識；如有出入以講義與老師上課內容為準</footer>
+<script>
+const Q = [
+ {q:"下列關於蛋白質結構的敘述，何者正確？",o:["二級結構主要藉 R 基間的氫鍵形成","α-helix-turn-α-helix 是一種二級結構","四級結構包含至少二條多胜肽","一級結構藉雙硫鍵及離子鍵形成"],a:2,
+  e:"<b>四級結構</b>＝兩條以上多胜肽（次單元）。二級是主鏈氫鍵；一級是胜肽鍵；HTH 是超二級結構（模組）。"},
+ {q:"下列何種胺基酸具有硫醇基，可形成雙硫鍵？",o:["絲胺酸","半胱胺酸","酪胺酸","蘇胺酸"],a:1,
+  e:"<b>Cys</b> 的 –SH；兩個 Cys 氧化成雙硫鍵（胱胺酸）。"},
+ {q:"三級結構中，–CH₂COO⁻ 與 –CH₂CH₂CH₂CH₂NH₃⁺ 之間可能形成？",o:["肽鍵","鹽橋","酯鍵","疏水作用"],a:1,
+  e:"Asp 的負電與 Lys 的正電之間形成<b>鹽橋</b>（離子鍵）。"},
+ {q:"下列何者是蛋白質轉譯後修飾的例子？",o:["胜肽合成後自核糖體脫離","由前胰島素原轉變為胰島素原、胰島素","多胜肽形成四級結構","胜肽自高基氏體分泌"],a:1,
+  e:"胰島素的<b>切割活化</b>是典型轉譯後修飾。"},
+ {q:"下列何種蛋白質又稱分子伴護蛋白，可防止不當摺疊？（108 年國考）",o:["彈力蛋白","胰蛋白酶","膠原蛋白","熱休克蛋白"],a:3,
+  e:"伴護子屬於<b>熱休克蛋白</b>（Hsp70、Hsp60 等），高溫時表現增加。"},
+ {q:"關於分子伴護蛋白，何者錯誤？",o:["大部分作用時無須消耗 ATP","可協助錯摺蛋白走向正確摺疊","細胞處於高溫時含量上升","可協助多肽鏈通過內膜"],a:0,
+  e:"多數伴護子（Hsp70、GroEL）作用時<b>需要水解 ATP</b>。"},
+ {q:"在真核細胞中，標記蛋白質以便降解的是？",o:["chaperonin","ubiquitin","proteasomin","apoptosin"],a:1,
+  e:"<b>泛素</b>（76 aa）接在目標蛋白 Lys 上，送進蛋白酶體。"},
+ {q:"蛋白質磷酸化影響酵素功能，下列哪一種胺基酸<b>不會</b>被磷酸化？",o:["絲胺酸","酥胺酸","苯丙胺酸","酪胺酸"],a:2,
+  e:"磷酸接在 –OH 上；<b>苯丙胺酸</b>沒有 –OH。"},
+ {q:"蛋白質最常經下列何種修飾後再送到溶小體？",o:["糖基化","磷酸化","蘇素化","乙醯化"],a:0,
+  e:"溶小體酵素的糖鏈在高爾基體加上 <b>M6P</b> 標籤（糖基化＋磷酸化甘露糖），由 M6P 受體導向。"},
+ {q:"肝細胞內具有觸酶（catalase）活性的胞器是？",o:["粗糙內質網","平滑內質網","過氧化體","高爾基氏體"],a:2,
+  e:"<b>過氧化體</b>含觸酶與過氧化酶，分解 H₂O₂。"},
+ {q:"有關溶小體的敘述，何者錯誤？",o:["一個細胞可含數百個","內含高鹼性液體","含數種消化酶","具分解細菌功能"],a:1,
+  e:"溶小體內是<b>酸性</b>（約 pH 5），酵素是酸性水解酶。"},
+ {q:"以唾腺澱粉酶為例，其分泌步驟何者錯誤？",o:["轉錄與 RNA 加工在核內完成","由游離型核糖體完成轉譯","mRNA 經核孔離開細胞核","經內質網、高爾基體分泌"],a:1,
+  e:"分泌蛋白的訊號序列被 SRP 抓住後，在<b>粗糙內質網上的核糖體</b>完成轉譯。"},
+ {q:"將分泌蛋白的核糖體帶到內質網膜上的是？",o:["泛素","訊號辨識顆粒 SRP","伴護素 GroEL","核孔複合體"],a:1,
+  e:"<b>SRP</b> 辨認 N 端訊號序列、暫停轉譯，帶核糖體停靠 SRP 受體。"},
+ {q:"N-連接型糖化的糖鏈接在哪種胺基酸上？",o:["絲胺酸","天門冬醯胺酸","酪胺酸","半胱胺酸"],a:1,
+  e:"N-連接接 <b>Asn</b> 的醯胺氮；O-連接接 Ser／Thr 的 –OH。"}
+];
+</script>
+<script src="mb_core.js"></script>
+</body>
+</html>

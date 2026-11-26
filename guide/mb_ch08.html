@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>營養分子生物學導讀｜第 8 講 轉譯：合成蛋白質</title>
+<link rel="stylesheet" href="mb.css">
+<style>
+table.codon td,table.codon th{text-align:center;font-size:13.5px;padding:4px 3px}
+table.codon td.stop{background:#fee2e2;color:#b91c1c;font-weight:700}
+table.codon td.start{background:#dcfce7;color:#15803d;font-weight:700}
+</style>
+</head>
+<body id="top" data-ch="8">
+<header>
+  <div class="book">營養分子生物學（葉景生老師講義）・逐講導讀</div>
+  <h1>第 8 講　轉譯：合成蛋白質</h1>
+  <div class="en">Lecture 8 Translation — Protein Synthesis（講義 43 頁）</div>
+</header>
+<div class="modebar"><span>閱讀模式</span>
+  <button id="mBrief" onclick="setMode('brief')">精簡（核心路線）</button>
+  <button id="mFull" onclick="setMode('full')">完整</button>
+</div>
+<main>
+<div class="briefhint">精簡模式只顯示每段的灰框重點；想看說明、例子與圖，按各節的「展開本節詳細內文」，或切到「完整」。</div>
+<div class="note"><span class="src">S10</span> 表示講義第 10 張投影片；<span class="add">補充</span> 是一般知識。本講計算題（密碼子、反密碼子、胺基酸數）很多，建議動手算。📝 方框依「習作練習 單元 8」（49 題）整理。</div>
+<nav class="toc">
+  <b>本講目錄</b>
+  <a href="#s0">本講地圖</a>
+  <a href="#s1">一、轉送 RNA（tRNA）</a>
+  <a class="sub" href="#s1a">密碼子與密碼表</a>
+  <a class="sub" href="#s1b">反密碼子與搖擺配對</a>
+  <a class="sub" href="#s1c">tRNA 的結構與加工</a>
+  <a href="#s2">二、胺醯 tRNA 的合成</a>
+  <a href="#s3">三、核糖體</a>
+  <a href="#s4">四、轉譯：起始、延伸、終止</a>
+  <a href="#s4b">五、轉譯的調節與抗生素</a>
+  <a href="#s5">習作出題分析</a>
+  <a href="#s6">本講重點整理</a>
+  <a href="#s7">自我檢測（互動）</a>
+</nav>
+
+<section class="sec" id="s0">
+  <h2>本講地圖：為什麼這樣排？</h2>
+  <div class="en">Big picture</div>
+  <div class="lead"><b>破題</b>　轉譯＝把「核苷酸語言」翻成「胺基酸語言」<span class="src">S3</span>。需要三樣東西：<span class="key">字典（密碼子）、翻譯員（tRNA，一端讀密碼、一端帶胺基酸）、工廠（核糖體）。</span>翻完之後還要摺疊、修飾、送到正確位置（第 9 講）。</div>
+  <div class="path">
+    <div class="step"><span class="sn">一</span><div><b>tRNA 與密碼</b><br><span class="sq">64 個密碼子、3 個終止碼、AUG 起始；反密碼子第 1 個鹼基可以「搖擺」。</span></div></div>
+    <div class="arr">↓ tRNA 要先裝上正確的胺基酸</div>
+    <div class="step"><span class="sn">二</span><div><b>胺醯 tRNA 合成酶</b>：耗 ATP 把胺基酸接到 tRNA 的 3′ CCA 端。</div></div>
+    <div class="arr">↓ 在哪裡組裝？</div>
+    <div class="step"><span class="sn">三、四</span><div><b>核糖體與轉譯三階段</b><br><span class="sq">起始（找 AUG）→ 延伸（A、P、E 位，23S/28S rRNA 接胜肽鍵）→ 終止（釋放因子）。</span></div></div>
+    <div class="arr">↓ 這套機器正好是很多抗生素的靶</div>
+    <div class="step"><span class="sn">五</span><div><b>多核糖體、抗生素與毒素</b></div></div>
+  </div>
+</section>
+
+<!-- ============ 一 ============ -->
+<section class="sec det" id="s1">
+  <h2><span class="no">一</span>轉送 RNA（tRNA）</h2>
+  <div class="en">Transfer RNA <span class="src">S4–S15</span></div>
+  <div class="oneline">每 3 個核苷酸一個密碼子，共 4³＝64 種：61 種編碼 20 種胺基酸，UAA、UAG、UGA 是終止碼，AUG（Met）是起始碼。tRNA 的反密碼子與密碼子反向互補，第三位可以搖擺配對，所以一種 tRNA 能讀好幾個同義密碼子。</div>
+
+  <div class="bridge">第 7 講做好的成熟 mRNA 已經出核，進入細胞質。接下來要把它的鹼基序列「翻譯」成胺基酸序列。問題是：4 種鹼基要怎麼表示 20 種胺基酸？一個鹼基只能代表 4 種，兩個一組也只有 16 種，不夠；三個一組有 64 種，足夠——這就是三聯體密碼。</div>
+<h3 id="s1a">密碼子與密碼表 <span class="src">S5–S7</span></h3>
+  <p class="core">1950 年代證實<b>每 3 個核苷酸決定一個胺基酸</b>＝密碼子 codon；4×4×4＝<b>64</b> 種。<b>終止碼</b>（無意義密碼子）：<b>UAA、UAG、UGA</b>。<b>起始碼</b>：<b>AUG</b>（甲硫胺酸 Met）。多數胺基酸有不只一個密碼子（<b>簡併性</b>），前兩個鹼基比第三個重要。</p>
+  <p>密碼有三個重要性質 <span class="add">補充整理</span>：<b>① 連續不重疊</b>——從 AUG 開始三個三個往下讀，中間沒有間隔，所以插入或缺失一個鹼基就會移碼（第 3 講）；<b>② 簡併性</b>——多數胺基酸有 2–6 個密碼子（Leu、Ser、Arg 各 6 個），只有 Met 和 Trp 各只有一個；<b>③ 幾乎通用</b>——從細菌到人類用同一套密碼表，這是第 10 講能讓大腸桿菌製造人類胰島素的基礎（粒線體有少數例外）。</p>
+  <div class="tblwrap"><table class="codon">
+    <tr><th>1st＼2nd</th><th>U</th><th>C</th><th>A</th><th>G</th><th>3rd</th></tr>
+    <tr><th rowspan="4">U</th><td>Phe</td><td>Ser</td><td>Tyr</td><td>Cys</td><td>U</td></tr>
+    <tr><td>Phe</td><td>Ser</td><td>Tyr</td><td>Cys</td><td>C</td></tr>
+    <tr><td>Leu</td><td>Ser</td><td class="stop">UAA 終止</td><td class="stop">UGA 終止</td><td>A</td></tr>
+    <tr><td>Leu</td><td>Ser</td><td class="stop">UAG 終止</td><td>Trp</td><td>G</td></tr>
+    <tr><th rowspan="4">C</th><td>Leu</td><td>Pro</td><td>His</td><td>Arg</td><td>U</td></tr>
+    <tr><td>Leu</td><td>Pro</td><td>His</td><td>Arg</td><td>C</td></tr>
+    <tr><td>Leu</td><td>Pro</td><td>Gln</td><td>Arg</td><td>A</td></tr>
+    <tr><td>Leu</td><td>Pro</td><td>Gln</td><td>Arg</td><td>G</td></tr>
+    <tr><th rowspan="4">A</th><td>Ile</td><td>Thr</td><td>Asn</td><td>Ser</td><td>U</td></tr>
+    <tr><td>Ile</td><td>Thr</td><td>Asn</td><td>Ser</td><td>C</td></tr>
+    <tr><td>Ile</td><td>Thr</td><td>Lys</td><td>Arg</td><td>A</td></tr>
+    <tr><td class="start">Met 起始</td><td>Thr</td><td>Lys</td><td>Arg</td><td>G</td></tr>
+    <tr><th rowspan="4">G</th><td>Val</td><td>Ala</td><td>Asp</td><td>Gly</td><td>U</td></tr>
+    <tr><td>Val</td><td>Ala</td><td>Asp</td><td>Gly</td><td>C</td></tr>
+    <tr><td>Val</td><td>Ala</td><td>Glu</td><td>Gly</td><td>A</td></tr>
+    <tr><td>Val</td><td>Ala</td><td>Glu</td><td>Gly</td><td>G</td></tr>
+  </table></div>
+  <div class="mn"><b class="t">口訣</b>終止碼「<b>U A A、U A G、U G A</b>」＝「<b>U</b> <b>A</b>re <b>A</b>way、<b>U</b> <b>A</b>re <b>G</b>one、<b>U</b> <b>G</b>o <b>A</b>way」；起始碼 <b>AUG</b>。小心 <b>UGG（Trp）</b>不是終止碼——習作出現 3 次。</div>
+  <div class="calc"><b>胺基酸數計算</b>：mRNA 從起始碼到終止碼共 336 nt → 336÷3＝112 個密碼子，最後一個是終止碼不編碼 → <b>111 個胺基酸</b>。<br>
+  <b>重複序列題</b>：UAUC 重複的人工 mRNA，讀成 UAU‧CUA‧UCU‧AUC‧UAU…→ Tyr、Leu、Ser、Ile 循環 → 最多 <b>4 種</b>胺基酸。</div>
+  <div class="eg"><b class="t">密碼表的規律：</b>第二個鹼基是 U 的幾乎都是疏水性胺基酸（Phe、Leu、Ile、Met、Val）；所以同義或相近的密碼子突變，常換成性質相近的胺基酸，降低傷害 <span class="add">補充</span>。另外，粒線體的密碼略有不同（例如 UGA 在粒線體編碼 Trp）。</div>
+
+  <div class="bridge">有了密碼表，誰來讀它？簡報的標題是「轉送 RNA」，因為讀密碼子的正是 tRNA：它的一端是讀密碼的反密碼子，另一端帶著對應的胺基酸。tRNA 用的是第 1 講的鹼基互補配對規則——只是第三個位置允許一點彈性。</div>
+<h3 id="s1b">反密碼子與搖擺配對 <span class="src">S8–S10</span></h3>
+  <p class="core">tRNA 上與密碼子互補的 3 個核苷酸＝<b>反密碼子</b>，方向<b>相反</b>（反向平行）。例：mRNA 5′-AUG-3′ ↔ tRNA 3′-UAC-5′。反密碼子<b>第 1 個鹼基</b>（5′ 端）對應密碼子<b>第 3 個鹼基</b>時配對較鬆，可不遵守華生－克立克規則＝<b>搖擺配對</b>（wobble），「三中二」法則。</p>
+  <p>搖擺配對解決了數量問題：61 個有意義的密碼子，如果每個都要專屬的 tRNA，細胞就得準備 61 種；有了搖擺，一種 tRNA 能讀 2–3 個只差第三位的同義密碼子，細胞只需約 40 多種 tRNA <span class="add">補充</span>。這也解釋了為什麼同義密碼子幾乎都是「前兩個相同、第三個不同」。tRNA 上的肌苷（I）是腺苷去胺後的修飾鹼基，配對能力最廣。</p>
+  <div class="tblwrap"><table>
+    <tr><th>反密碼子第 1 鹼基（5′）</th><th>可配對的密碼子第 3 鹼基（3′）</th></tr>
+    <tr><td>C</td><td>G</td></tr>
+    <tr><td>A</td><td>U</td></tr>
+    <tr><td>U</td><td>A 或 G</td></tr>
+    <tr><td>G</td><td>C 或 U</td></tr>
+    <tr><td><b>I</b>（肌苷 inosine）</td><td><b>U、C 或 A</b></td></tr>
+  </table></div>
+  <figure class="pic"><svg viewBox="0 0 480 150" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="15" font-family="monospace,Noto Sans TC" text-anchor="middle">
+      <text x="60" y="40" font-size="12" font-family="Noto Sans TC">tRNA 反密碼子</text>
+      <text x="140" y="40">3′-</text><text x="180" y="40">G</text><text x="210" y="40">C</text><text x="240" y="40" fill="#dc2626" font-weight="bold">I</text><text x="275" y="40">-5′</text>
+      <text x="180" y="65" fill="#9ca3af">|</text><text x="210" y="65" fill="#9ca3af">|</text><text x="240" y="65" fill="#dc2626">⋮</text>
+      <text x="60" y="95" font-size="12" font-family="Noto Sans TC">mRNA 密碼子</text>
+      <text x="140" y="95">5′-</text><text x="180" y="95">C</text><text x="210" y="95">G</text><text x="252" y="95" fill="#dc2626" font-weight="bold">U/C/A</text><text x="305" y="95">-3′</text>
+      <text x="380" y="40" font-size="12" font-family="Noto Sans TC" fill="#374151">反密碼子 5′-ICG-3′</text>
+      <text x="380" y="60" font-size="12" font-family="Noto Sans TC" fill="#374151">可讀 CGU、CGC、CGA</text>
+      <text x="380" y="80" font-size="12" font-family="Noto Sans TC" fill="#dc2626">不能讀 CGG</text>
+      <text x="240" y="135" font-size="12" font-family="Noto Sans TC" fill="#6b7280">兩條都由 5′ 往 3′ 數：反密碼子第 1 個 ↔ 密碼子第 3 個（搖擺位）</text>
+    </g>
+  </svg><figcaption>圖 8-1　搖擺配對：I 能配 U、C、A。</figcaption></figure>
+  <div class="calc"><b>寫反密碼子的步驟</b>：① 寫出密碼子 5′→3′；② 每個鹼基寫互補（RNA 用 U 不用 T）；③ 互補後的序列是 3′→5′，若要寫成 5′→3′ 就倒過來。<br>
+  例：密碼子 5′-ACU-3′ → 互補 3′-UGA-5′ → 寫成 <b>5′-AGU-3′</b>。<br>
+  例：密碼子 UGA → 反密碼子 3′-ACU-5′（選項常直接寫「ACU」，代表逐字對齊）。</div>
+  <div class="exam"><b class="t">考點</b>密碼與反密碼之間以<b>氫鍵</b>結合。搖擺假說的最佳詮釋：<b>反密碼子上第一個鹼基</b>具有較彈性的配對能力（可與多種密碼子的<b>第三</b>鹼基配對）。一種胺基酸可由兩種以上 tRNA 攜帶，是因為<b>一種胺基酸可由兩種以上密碼子決定</b>。「每一種 tRNA 只能辨認一種 codon」「64 個密碼都有對應 tRNA」都是錯的（終止碼沒有 tRNA）。</div>
+
+  <div class="bridge">知道 tRNA「怎麼讀」之後，再看它長什麼樣子。tRNA 是單股 RNA，卻摺成有好幾段雙股的結構——講義在這裡附了一題 108 年國考題，就是在考「RNA 也能在同一條分子內形成雙股」。</div>
+<h3 id="s1c">tRNA 的結構與加工 <span class="src">S11–S15</span></h3>
+  <p class="core">一個 tRNA 約 <b>70–80 nt</b>，四段分子內互補形成<b>三葉草</b>二級結構（三級結構是倒 L 形）：<b>3′ 端 CCA</b>（胺基酸臂，接胺基酸）、<b>D 環</b>（含二氫尿苷）、<b>反密碼子環</b>、<b>TψC 環</b>（含 T 與偽尿苷 ψ）。tRNA 基因由 <b>pol III</b> 轉錄成 pre-tRNA，需修剪 5′、3′ 端、剪掉內含子、修飾鹼基、加上 CCA。</p>
+  <p>三葉草是把 tRNA「攤平」畫出的二級結構；實際在細胞中它會再摺成倒 L 形的三級結構：L 的一端是接胺基酸的 3′ CCA，另一端是反密碼子，兩端相距約 7 nm——剛好橫跨核糖體上「讀 mRNA 的小次單元」和「接胜肽的大次單元」<span class="add">補充</span>。所有 tRNA 的 3′ 端都是 CCA，有些是基因本身就有，有些是轉錄後才由酵素加上。</p>
+  <figure class="pic"><svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <rect x="225" y="20" width="12" height="70" fill="#bfdbfe" stroke="#1d4ed8"/><rect x="243" y="20" width="12" height="70" fill="#bfdbfe" stroke="#1d4ed8"/>
+      <text x="270" y="18" text-anchor="start" fill="#15803d" font-weight="bold">3′ –ACC（CCA 端）＋胺基酸</text><text x="215" y="30" text-anchor="end">5′</text>
+      <circle cx="160" cy="125" r="34" fill="#fef3c7" stroke="#b45309"/><text x="160" y="122">D 環</text><text x="160" y="138" font-size="10">二氫尿苷</text>
+      <circle cx="320" cy="125" r="34" fill="#ede9fe" stroke="#7c3aed"/><text x="320" y="122">TψC 環</text><text x="320" y="138" font-size="10">偽尿苷 ψ</text>
+      <rect x="215" y="95" width="50" height="60" fill="#e0f2fe" stroke="#0284c7"/>
+      <line x1="194" y1="125" x2="215" y2="125" stroke="#374151" stroke-width="3"/><line x1="265" y1="125" x2="286" y2="125" stroke="#374151" stroke-width="3"/>
+      <rect x="225" y="155" width="12" height="40" fill="#bfdbfe" stroke="#1d4ed8"/><rect x="243" y="155" width="12" height="40" fill="#bfdbfe" stroke="#1d4ed8"/>
+      <circle cx="240" cy="220" r="28" fill="#fee2e2" stroke="#dc2626"/><text x="240" y="217">反密碼子環</text><text x="240" y="233" font-weight="bold" fill="#dc2626">反密碼子</text>
+      <text x="80" y="60" text-anchor="start" fill="#374151">① 胺基酸臂（3′ CCA）</text>
+      <text x="360" y="200" text-anchor="start" fill="#374151">② 讀 mRNA 密碼子</text>
+    </g>
+  </svg><figcaption>圖 8-2　tRNA 三葉草結構 <span class="src">S11–S12</span>。</figcaption></figure>
+  <div class="warn"><b class="t">易錯：</b>(1) 胺基酸接在 <b>3′ 端</b>（CCA 的 A），反密碼子在另一端的環上。(2) tRNA 攜帶哪種胺基酸，取決於<b>胺醯 tRNA 合成酶</b>認得這條 tRNA 的哪些部位（多數合成酶會認反密碼子，也會認胺基酸臂附近的鹼基）<span class="add">補充</span>；習作有一題問「決定特異性的關鍵部位」，題目選項不只一個說得通，請以老師公布答案為準。(3) 二級結構是三葉草，<b>三級</b>結構是倒 L 形。(4) tRNA 含非典型鹼基（偽尿嘧啶、二氫尿嘧啶、肌苷）。(5) 原核起始 tRNA 攜帶 <b>N-甲醯甲硫胺酸</b>（tRNA^fMet），真核攜帶 Met（tRNA^iMet）。tRNA 的內含子屬可自我剪接型 <span class="src">S14</span>。</div>
+  <div class="exam"><b class="t">國考題（108 年，講義 S12）</b>RNA 形成雙股區域：是<b>同一條單股 RNA 的自我互補區域</b>所形成（例如 tRNA 的莖）。RNA 雙股比 DNA 雙股<b>更</b>穩定（第 1 講），且存在於所有生物。</div>
+</section>
+
+<!-- ============ 二 ============ -->
+<section class="sec det" id="s2">
+  <h2><span class="no">二</span>胺醯 tRNA 的合成</h2>
+  <div class="en">Aminoacyl-tRNA Synthesis <span class="src">S16–S18</span></div>
+  <div class="oneline">20 種胺醯 tRNA 合成酶各自認得一種胺基酸和它的 tRNA：先用 ATP 活化胺基酸（胺醯-AMP），再把胺基酸以酯鍵接到 tRNA 3′ 端核糖上，得到「充電」的胺醯 tRNA。</div>
+<div class="bridge">tRNA 只是「空的搬運車」。轉譯能不能正確，關鍵在於：<b>哪個胺基酸被裝到哪一台車上</b>——因為之後核糖體只檢查反密碼子對不對，不會檢查車上載的胺基酸。所以負責裝貨的合成酶是整個轉譯正確性的第一道關卡。</div>
+  <p class="core">沒接胺基酸的叫 uncharged tRNA；以<b>酯鍵</b>接上胺基酸的叫<b>胺醯 tRNA</b>（aminoacyl-tRNA，講義譯「胺基酸乙醯 tRNA」）。由 <b>20 種胺醯 tRNA 合成酶</b>（aaRS）催化：① 胺基酸 COOH ＋ ATP → <b>胺醯-AMP</b>（＋PPi）；② 胺醯-AMP ＋ tRNA → 胺基酸接到 tRNA <b>3′ 端核糖</b>的 –OH 上（酯鍵）。合成酶分兩類（講義圖：10 種、11 種）。</p>
+  <div class="eg"><b class="t">比喻：</b>合成酶像嚴格的配對員：一手抓胺基酸、一手抓 tRNA，確認兩者都對才接起來。後面的核糖體只看反密碼子、不看胺基酸——所以這一步是轉譯正確性的關鍵關卡。</div>
+  <div class="warn"><b class="t">補充說明：</b>講義 <span class="src">S18</span> 寫接在 3′ 端核糖的 <b>2′</b>-OH；實際上第 I 類合成酶接 2′-OH、第 II 類接 3′-OH（之後可互轉）。考題常寫「接在 tRNA 的 <b>3′ 羥基端／CCA 端</b>」，選這個即可 <span class="add">補充</span>。</div>
+  <div class="exam"><b class="t">考點</b>幫助胺基酸接上 tRNA 的是 <b>aminoacyl tRNA synthetase</b>（不是轉胺酶、不是 ligase）；能與胺基酸形成酯鍵的是 <b>3′ 羥基端</b>；此步驟消耗 <b>ATP</b>（不是兩個 GTP）。fMet-tRNA 是先把 Met 接到起始 tRNA 上，<b>再</b>把甲醯基加在 Met 上 <span class="add">補充</span>。</div>
+</section>
+
+<!-- ============ 三 ============ -->
+<section class="sec det" id="s3">
+  <h2><span class="no">三</span>核糖體</h2>
+  <div class="en">Ribosome <span class="src">S19–S22</span></div>
+  <div class="oneline">核糖體＝rRNA＋蛋白質的大型核糖核蛋白。原核 70S（30S＋50S），真核 80S（40S＋60S）；小次單元認 mRNA，大次單元接 tRNA 並催化胜肽鍵。</div>
+<div class="bridge">mRNA（劇本）和裝好胺基酸的 tRNA（演員）都準備好了，還缺一個舞台——核糖體。它的組成在第 5 講 RNA pol I 那段已經看過，這裡把重點放在兩個次單元的<b>分工</b>。</div>
+  <div class="tblwrap"><table>
+    <tr><th></th><th>原核 70S（2.5 MDa）</th><th>真核 80S（4.2 MDa）</th></tr>
+    <tr><td>小次單元：辨認並接合 mRNA</td><td>30S：<b>16S</b> rRNA＋21 個蛋白</td><td>40S：<b>18S</b> rRNA＋33 個蛋白</td></tr>
+    <tr><td>大次單元：接合胺醯 tRNA、執行轉譯</td><td>50S：<b>23S＋5S</b>＋34 個蛋白</td><td>60S：<b>28S＋5.8S＋5S</b>＋47 個蛋白</td></tr>
+    <tr><td>胜肽醯轉移酶</td><td>23S rRNA</td><td>28S rRNA</td></tr>
+  </table></div>
+  <div class="exam"><b class="t">考點</b>真核生物轉譯<b>不會</b>用到 <b>50S</b> 核糖體（那是原核的）；轉譯在<b>細胞質</b>（游離或粗糙內質網上的核糖體）進行，不是細胞核。</div>
+</section>
+
+<!-- ============ 四 ============ -->
+<section class="sec det" id="s4">
+  <h2><span class="no">四</span>轉譯：起始、延伸、終止</h2>
+  <div class="en">Initiation, Elongation, Termination <span class="src">S23–S32</span></div>
+  <div class="lead"><div><span class="lt">這節要說明什麼？</span>核糖體怎麼找到起點、一個個接上胺基酸、最後放出蛋白質。</div><div><span class="lt lt2">原核 vs 真核</span>原核：轉錄還沒完就開始轉譯，靠 Shine-Dalgarno 序列找起點；真核：轉錄、轉譯被核膜隔開，靠 5′ 帽找起點。</div></div>
+  <div class="oneline">起始：小次單元＋起始 tRNA（Met／fMet）找到 AUG，再接上大次單元。延伸：新的胺醯 tRNA 進 A 位 → rRNA 催化胜肽鍵把鏈轉到 A 位的 tRNA 上 → 核糖體移位（耗 GTP），空 tRNA 經 E 位離開。終止：A 位遇到終止碼，釋放因子進來，放出多胜肽。</div>
+<div class="bridge">零件介紹完，簡報開始組裝。轉譯和轉錄一樣分<b>起始、延伸、終止</b>三階段，而且每一階段都有專屬的輔助蛋白：起始因子（IF／eIF）、延伸因子（EF／eEF）、釋放因子（RF）。原核和真核最大的差別在「起始」：怎麼找到正確的 AUG。</div>
+
+  <h3>起始 Initiation <span class="src">S24–S27</span></h3>
+  <p class="core"><b>原核</b>：30S＋<b>IF1、IF3、IF2</b> → 30S 的 <b>16S rRNA</b> 與 mRNA 上的 <b>Shine-Dalgarno 序列</b>配對（30S 起始複合體，帶 fMet-tRNA）→ 50S 加入成 70S，形成 A、P、E 三個位。<b>真核</b>：40S＋Met-tRNA^iMet 靠 <b>eIF2、eIF3</b> 組合；<b>帽結合蛋白 eIF4</b> 抓住 mRNA 的 5′ 帽，帶到 40S；再接 60S，eIF2、eIF3 離開。</p>
+  <p>起始的核心問題是「從哪個 AUG 開始」，因為 mRNA 上可能有很多 AUG，從錯的開始整條就讀錯。原核的辦法是在起始 AUG 上游約 8 個鹼基處有一段 <b>Shine-Dalgarno 序列</b>，與小次單元 16S rRNA 的 3′ 端互補配對，直接把核糖體定位在正確的 AUG 上，所以細菌一條 mRNA 可以有好幾個起點。真核則由 eIF4 抓住 5′ 帽，帶著 40S 小次單元從 5′ 端往下掃描，遇到第一個合適的 AUG 才停 <span class="add">掃描機制為補充</span>——這說明了第 7 講的 5′ 帽為什麼會影響轉譯效率。</p>
+  <div class="tblwrap"><table>
+    <tr><th></th><th>原核</th><th>真核</th></tr>
+    <tr><td>起始胺基酸</td><td>N-甲醯甲硫胺酸 fMet</td><td>甲硫胺酸 Met</td></tr>
+    <tr><td>找起點</td><td>16S rRNA 配 Shine-Dalgarno 序列</td><td>eIF4 抓 5′ 帽，往下掃描找第一個 AUG <span class="add">補充</span></td></tr>
+    <tr><td>起始因子</td><td>IF1、IF2、IF3</td><td>eIF1、eIF2、eIF3、eIF4…</td></tr>
+    <tr><td>延伸因子</td><td>EF-Tu、EF-G <span class="add">補充</span></td><td>eEF-1、eEF-2、eEF-3</td></tr>
+    <tr><td>轉錄與轉譯</td><td>同時進行（mRNA 3′ 還沒完成，5′ 就開始轉譯）</td><td>被核膜隔開，不同時</td></tr>
+  </table></div>
+
+  <h3>延伸 Elongation <span class="src">S28–S30</span></h3>
+  <p class="core">三要素：核糖體的三個位、<b>rRNA 的胜肽醯轉移酶</b>活性、攜帶 <b>GTP</b> 的延伸因子。<b>A 位</b>（aminoacyl／acceptor）：新進的胺醯 tRNA；<b>P 位</b>（peptidyl）：帶著已合成多胜肽的 tRNA；<b>E 位</b>（exit）：空 tRNA 離開。</p>
+  <p>每加一個胺基酸都重複三拍子：<b>① 進場</b>：帶著 GTP 的延伸因子（原核 EF-Tu、真核 eEF-1）把胺醯 tRNA 送進 A 位，確認反密碼子配對正確才水解 GTP 放手；<b>② 接合</b>：大次單元 rRNA 的胜肽醯轉移酶把 P 位 tRNA 上的整條胜肽鏈「搬」到 A 位 tRNA 的胺基酸上，形成新的胜肽鍵；<b>③ 移位</b>：另一個延伸因子（EF-G、eEF-2）水解 GTP，推動核糖體往 3′ 前進一個密碼子，A 位的 tRNA 移到 P 位、P 位的空 tRNA 移到 E 位後離開，A 位空出來迎接下一個。每加一個胺基酸約消耗 2 個 GTP（另加胺醯化時的 ATP）<span class="add">補充</span>。</p>
+  <figure class="pic"><svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <path d="M70 120 Q70 40 240 40 Q410 40 410 120 Z" fill="#e0e7ff" stroke="#4338ca"/><text x="240" y="60" fill="#4338ca" font-weight="bold">大次單元（50S／60S）</text>
+      <rect x="70" y="135" width="340" height="40" rx="20" fill="#dbeafe" stroke="#1d4ed8"/><text x="240" y="160" fill="#1d4ed8">小次單元（30S／40S）</text>
+      <line x1="20" y1="128" x2="460" y2="128" stroke="#f97316" stroke-width="4"/><text x="35" y="122" fill="#c2410c">5′</text><text x="450" y="122" fill="#c2410c">3′</text>
+      <rect x="110" y="75" width="80" height="50" fill="#fff" stroke="#6b7280" stroke-dasharray="4"/><text x="150" y="95" font-weight="bold">E</text><text x="150" y="112" font-size="11">空 tRNA 離開</text>
+      <rect x="200" y="75" width="80" height="50" fill="#fff" stroke="#15803d"/><text x="240" y="95" font-weight="bold" fill="#15803d">P</text><text x="240" y="112" font-size="11">帶胜肽鏈</text>
+      <rect x="290" y="75" width="80" height="50" fill="#fff" stroke="#dc2626"/><text x="330" y="95" font-weight="bold" fill="#dc2626">A</text><text x="330" y="112" font-size="11">新胺醯 tRNA</text>
+      <g fill="#fde68a" stroke="#b45309"><circle cx="225" cy="25" r="9"/><circle cx="205" cy="18" r="9"/><circle cx="185" cy="14" r="9"/></g><text x="150" y="16" fill="#b45309">胜肽鏈</text>
+      <text x="240" y="200" fill="#374151">① 胺醯 tRNA 進 A（EF-Tu/eEF-1＋GTP） ② 胜肽醯轉移酶（23S/28S rRNA）</text>
+      <text x="240" y="216" fill="#374151">把 P 位的鏈接到 A 位胺基酸上 ③ 移位（EF-G/eEF-2＋GTP）：A→P、P→E</text>
+    </g>
+  </svg><figcaption>圖 8-3　核糖體的 E、P、A 三個位（由左到右對應 mRNA 5′→3′）。</figcaption></figure>
+  <div class="mn"><b class="t">口訣</b>進場順序「<b>A</b>→<b>P</b>→<b>E</b>」＝「<b>A</b>rrive、<b>P</b>eptide、<b>E</b>xit」；從左到右看是 E-P-A。</div>
+  <div class="warn"><b class="t">易錯：</b>新進的胺醯 tRNA 結合在 <b>A 位</b>（不是 P 位）；催化胜肽鍵的是 <b>rRNA</b>（胜肽醯轉移酶，一種核糖酶），不是「ribosyltransferase」；新生多胜肽鏈附著在 tRNA 的 <b>3′ 端</b>。蛋白質 N 端先合成、C 端最後；mRNA 從 5′ 讀到 3′ <span class="add">補充</span>。</div>
+
+  <h3>終止 Termination <span class="src">S32</span></h3>
+  <p class="core">A 位遇到 <b>UAA、UAG、UGA</b>，沒有 tRNA 能讀，<b>釋放因子</b>（RF）進入：<b>RF1</b> 認 UAA、UAG；<b>RF2</b> 認 UAA、UGA。多胜肽被水解放出，核糖體解離成次單元。</p>
+  <p>終止碼沒有對應的 tRNA，所以 A 位停在終止碼時沒有 tRNA 能進來；取而代之的是形狀很像 tRNA 的<b>釋放因子</b>。它進入 A 位後，讓胜肽醯轉移酶不是把鏈接到胺基酸上，而是接到<b>水分子</b>上——也就是把多胜肽從 tRNA 上水解下來 <span class="add">補充</span>。之後核糖體解離成大小次單元，可再用於下一輪轉譯。</p>
+  <div class="mn"><b class="t">記法</b>兩個因子都認 UAA；<b>RF1</b> 另認 UA<b>G</b>（<b>1</b> 配 G 不配 GA）、<b>RF2</b> 另認 U<b>GA</b>。</div>
+  <div class="exam"><b class="t">考點</b>能結合終止密碼、使胜肽鏈從核糖體釋出的是<b>釋放因子</b>（不是 tRNA、不是 ρ 因子——ρ 是原核<b>轉錄</b>終止因子）。</div>
+</section>
+
+<!-- ============ 五 ============ -->
+<section class="sec det" id="s4b">
+  <h2><span class="no">五</span>轉譯的調節與抑制劑</h2>
+  <div class="en">Polysomes, Antibiotics and Toxins <span class="src">S33–S42</span></div>
+  <div class="oneline">一條 mRNA 上可以同時有很多核糖體（多核糖體），越靠近 3′ 端的鏈越長。轉譯機器是許多抗生素與毒素的靶：細菌 70S 與人類 80S 不同，所以抗生素能選擇性殺菌。</div>
+<div class="bridge">最後一節從兩個角度談「轉譯的效率與弱點」：多核糖體讓一條 mRNA 同時被多次轉譯，提高產量；而轉譯機器的每一個步驟（起始、進 A 位、接胜肽、移位）都可以被藥物卡住——細菌和人類的核糖體大小不同（70S vs 80S），正是抗生素能「殺菌不傷人」的基礎。</div>
+  <p class="core"><b>多核糖體</b>（polysome）：同一條 mRNA 上附著數個核糖體，同方向前進；越靠 <b>3′ 端</b>的核糖體，鏈越長。</p>
+  <div class="tblwrap"><table>
+    <tr><th>藥物／毒素</th><th>對象</th><th>作用</th></tr>
+    <tr><td><b>鏈黴素</b> streptomycin</td><td>原核 30S</td><td>干擾 fMet-tRNA 進 P 位（起始），並使讀碼出錯</td></tr>
+    <tr><td><b>四環黴素</b> tetracycline</td><td>原核 <b>30S</b></td><td>阻止胺醯 tRNA 進入 <b>A 位</b></td></tr>
+    <tr><td><b>紅黴素</b> erythromycin</td><td>原核 <b>50S</b></td><td>抑制<b>移位</b>（延伸）</td></tr>
+    <tr><td><b>氯黴素</b> chloramphenicol</td><td>原核 <b>50S</b></td><td>抑制<b>胜肽醯轉移酶</b></td></tr>
+    <tr><td>黃黴素 kirromycin、梭鏈孢酸 fusidic acid</td><td>原核</td><td>使 EF-Tu-GDP（講義寫法）無法離開核糖體</td></tr>
+    <tr><td><b>放線菌酮</b> cycloheximide</td><td>真核 <b>60S</b></td><td>抑制胜肽醯轉移酶</td></tr>
+    <tr><td><b>白喉毒素</b> diphtheria toxin</td><td>真核</td><td>把 <b>eEF-2</b> ADP-核糖化 → 抑制<b>移位</b></td></tr>
+    <tr><td><b>嘌呤黴素</b> puromycin</td><td><b>原核＋真核</b></td><td>結構像胺醯 tRNA 的 3′ 端，進 A 位被接上鏈後鏈就掉下來 → 提早終止</td></tr>
+  </table></div>
+  <div class="mn"><b class="t">記法</b>「<b>四</b>（tetra）和<b>鏈</b>坐小的 30S」；「<b>紅</b>（移位）<b>氯</b>（接肽）坐大的 50S」；「<b>白</b>喉打 eEF-<b>2</b>」；「<b>嘌呤</b>黴素兩邊通吃，冒充 tRNA」。</div>
+  <div class="exam"><b class="t">國考題（108 年，講義 S35）</b>正確：<b>紅黴素可抑制細菌延伸過程</b>。錯誤：四環黴素結合 23S（應為 30S）、鏈黴素是胜肽醯轉移酶抑制物（那是氯黴素）。習作：可同時抑制原核與真核的是<b>嘌呤黴素</b>；白喉毒素抑制<b>核糖體移位</b>；四環黴素抑制原核<b>轉譯</b>；氯黴素直接干擾細菌<b>蛋白質合成</b>。</div>
+  <div class="nut"><b class="t">臨床連結 <span class="add">補充</span>：</b>人類粒線體核糖體類似細菌（55S），所以氯黴素等高劑量時可能影響骨髓細胞粒線體蛋白合成，造成骨髓抑制。另外，抑制「RNA 合成」的藥物（如放線菌素 D 抑制轉錄）最先影響的是 <b>RNA 轉錄</b>。</div>
+  <div class="sum"><b class="t">本節重點</b><ul>
+    <li>多核糖體：越靠 3′ 鏈越長。</li>
+    <li>30S：鏈黴素（起始）、四環黴素（A 位）；50S：紅黴素（移位）、氯黴素（胜肽醯轉移酶）。</li>
+    <li>真核：放線菌酮（60S 胜肽醯轉移酶）、白喉毒素（eEF-2）；兩者通吃：嘌呤黴素。</li>
+  </ul></div>
+  <details class="terms"><summary>本講名詞中英對照</summary><div class="tblwrap"><table>
+    <tr><td>密碼子</td><td>codon</td><td>反密碼子</td><td>anticodon</td></tr>
+    <tr><td>終止碼</td><td>stop codon</td><td>起始碼</td><td>start codon</td></tr>
+    <tr><td>搖擺配對</td><td>wobble base pair</td><td>肌苷</td><td>inosine</td></tr>
+    <tr><td>偽尿苷</td><td>pseudouridine (ψ)</td><td>二氫尿苷</td><td>dihydrouridine</td></tr>
+    <tr><td>胺醯 tRNA 合成酶</td><td>aminoacyl-tRNA synthetase</td><td>胜肽醯轉移酶</td><td>peptidyl transferase</td></tr>
+    <tr><td>起始／延伸／釋放因子</td><td>IF / EF / RF</td><td>多核糖體</td><td>polysome</td></tr>
+  </table></div></details>
+</section>
+
+<section class="sec" id="s5">
+  <h2>習作出題分析（單元 8，共 49 題）</h2>
+  <div class="en">Where the questions come from</div>
+  <div class="tblwrap"><table class="freq">
+    <tr><th>主題</th><th>約題數</th><th>常考的說法</th></tr>
+    <tr><td>密碼子、終止碼、起始碼、計算</td><td><span class="stars">★★★★★</span> 約 15</td><td>終止碼 UAA／UAG／UGA（UGG、AUG 不是）；336 nt → 111 aa；反密碼子書寫</td></tr>
+    <tr><td>tRNA 結構、搖擺、合成酶</td><td><span class="stars">★★★★</span> 約 12</td><td>反密碼子第 1 鹼基搖擺；I 配 U/C/A；3′ 端接胺基酸；aaRS</td></tr>
+    <tr><td>抗生素與毒素</td><td><span class="stars">★★★</span> 約 7</td><td>嘌呤黴素兩邊通吃；白喉毒素抑制移位；四環黴素</td></tr>
+    <tr><td>轉譯過程、釋放因子、核糖體</td><td><span class="stars">★★★</span> 約 8</td><td>新 tRNA 進 A 位；釋放因子；真核不用 50S</td></tr>
+    <tr><td>其他（第二傳訊者、蛋白質變性）</td><td><span class="stars">★</span> 約 4</td><td>酸鹼破壞鹽橋與氫鍵；變性不破壞一級結構；視網酸作用於荷爾蒙反應元件</td></tr>
+  </table></div>
+</section>
+
+<section class="sec" id="s6">
+  <h2>本講重點整理</h2>
+  <div class="en">Summary</div>
+  <div class="tblwrap"><table>
+    <tr><th>主題</th><th>一定要記</th></tr>
+    <tr><td>密碼</td><td>64 種；終止 UAA、UAG、UGA；起始 AUG（Met）；簡併性</td></tr>
+    <tr><td>反密碼子</td><td>反向互補；反密碼子第 1 位 ↔ 密碼子第 3 位搖擺；I 配 U/C/A；U 配 A/G；G 配 C/U</td></tr>
+    <tr><td>tRNA</td><td>70–80 nt；三葉草（倒 L）；3′ CCA 接胺基酸；D 環、反密碼子環、TψC 環；pol III 轉錄</td></tr>
+    <tr><td>胺醯化</td><td>aaRS（20 種）；ATP → 胺醯-AMP → 酯鍵接 3′ 端</td></tr>
+    <tr><td>核糖體</td><td>70S＝30S（16S）＋50S（23S、5S）；80S＝40S（18S）＋60S（28S、5.8S、5S）</td></tr>
+    <tr><td>起始</td><td>原核 IF1/2/3、Shine-Dalgarno、fMet；真核 eIF2、eIF3、eIF4（帽結合）、Met</td></tr>
+    <tr><td>延伸／終止</td><td>A 進、P 接、E 出；rRNA 胜肽醯轉移酶；GTP；RF1（UAA/UAG）、RF2（UAA/UGA）</td></tr>
+    <tr><td>抑制劑</td><td>鏈黴素、四環黴素（30S）；紅黴素、氯黴素（50S）；放線菌酮、白喉毒素（真核）；嘌呤黴素（兩者）</td></tr>
+  </table></div>
+  <h3>讀完請自我檢查：我能不能……</h3>
+  <ul class="dots">
+    <li>□ 不看表說出三個終止碼與起始碼？</li>
+    <li>□ 給一個密碼子寫出 5′→3′ 的反密碼子？</li>
+    <li>□ 判斷含 I 的反密碼子能讀哪些密碼子？</li>
+    <li>□ 由 mRNA 長度算出胺基酸數？</li>
+    <li>□ 說明 A、P、E 位各放什麼，胜肽鍵由誰催化？</li>
+    <li>□ 比較原核與真核轉譯起始？</li>
+    <li>□ 說出 8 種抗生素／毒素各打哪裡？</li>
+  </ul>
+</section>
+
+<section class="sec" id="s7">
+  <h2>自我檢測</h2>
+  <div class="en">Self-check — 題目選自習作單元 8 與講義國考題</div>
+  <div id="quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+</main>
+<a class="top" href="#top" aria-label="回到頂端">↑</a>
+<footer>營養分子生物學 第 8 講導讀｜依葉景生老師講義整理，標「補充」者為一般知識；如有出入以講義與老師上課內容為準</footer>
+<script>
+const Q = [
+ {q:"下列何者<b>不是</b>終止密碼子？",o:["UAA","UGA","UAG","UGG"],a:3,
+  e:"<b>UGG</b> 編碼色胺酸（Trp）。終止碼是 UAA、UAG、UGA。"},
+ {q:"蛋白質生合成時的起始密碼為？",o:["AUG","AGU","GUA","GAU"],a:0,
+  e:"<b>AUG</b>，編碼甲硫胺酸（原核為 fMet）。"},
+ {q:"mRNA 上密碼子為 5′-ACU-3′，與其配對的 tRNA 反密碼序列（5′→3′）為？",o:["5′-AGU-3′","5′-UGA-3′","5′-AGT-3′","5′-TGA-3′"],a:0,
+  e:"互補得 3′-UGA-5′，倒過來寫成 <b>5′-AGU-3′</b>；RNA 不含 T。"},
+ {q:"一條 mRNA 從起始密碼子到終止密碼子共 336 個核苷酸，轉譯出的蛋白質含多少個胺基酸？",o:["336","330","112","111"],a:3,
+  e:"336÷3＝112 個密碼子，最後一個是終止碼 → <b>111</b>。"},
+ {q:"tRNA 反密碼子 5′-ICG-3′ 不會與下列何種密碼子配對？",o:["5′-CGA-3′","5′-CGC-3′","5′-CGU-3′","5′-CGG-3′"],a:3,
+  e:"I 在反密碼子第 1 位，對應密碼子第 3 位，可配 U、C、A，<b>不能配 G</b>。"},
+ {q:"下列何者是擺動假說的最佳詮釋？",o:["每一 tRNA 只能辨認一個密碼子","某些 tRNA 能辨認不同胺基酸的密碼子","反密碼子上的第一個鹼基具有較彈性的配對能力","反密碼子第三個鹼基只能作華生－克立克配對"],a:2,
+  e:"反密碼子<b>第 1 個</b>（5′）鹼基與密碼子<b>第 3 個</b>鹼基配對較鬆。"},
+ {q:"人工 mRNA UAUCUAUCUAUC…（UAUC 重複）在試管轉譯，產物最多可能由幾種胺基酸組成？",o:["1 種","2 種","3 種","4 種"],a:3,
+  e:"讀框：UAU‧CUA‧UCU‧AUC 循環 → Tyr、Leu、Ser、Ile → <b>4 種</b>。"},
+ {q:"在 tRNA 構造中，哪一部分可與胺基酸形成酯鍵？",o:["TψC 環","3′ 羥基端","反密碼環","5′ 末端"],a:1,
+  e:"胺基酸接在 <b>3′ 端 CCA</b> 的 A 的核糖羥基上。"},
+ {q:"幫助胺基酸結合至 tRNA 的酵素是？",o:["charged tRNA synthetase","charged tRNA ligase","aminoacyl tRNA synthetase","aminoacyl tRNA ligase"],a:2,
+  e:"<b>胺醯 tRNA 合成酶</b>，耗 ATP，先形成胺醯-AMP。"},
+ {q:"能結合終止密碼、使胜肽鏈從核糖體釋出的是？",o:["延長因子-1","某些 tRNA","釋放因子","ρ 因子"],a:2,
+  e:"<b>釋放因子</b>（RF1、RF2）；ρ 因子是原核轉錄終止用的。"},
+ {q:"有關抗生素抑制細菌轉譯，何者正確？（108 年國考）",o:["四環黴素與 23S RNA 結合","紅黴素抑制延伸過程","鏈黴素為胜肽醯轉移酶抑制物","嘌呤黴素直接抑制胺醯 tRNA 與核糖體結合"],a:1,
+  e:"<b>紅黴素</b>結合 50S、抑制移位（延伸）。四環黴素在 30S；胜肽醯轉移酶抑制物是氯黴素；嘌呤黴素是冒充胺醯 tRNA 造成提早終止。"},
+ {q:"下列哪個藥物可以同時抑制原核及真核的蛋白質合成？",o:["白喉毒素","放線菌酮","嘌呤黴素","放線菌素 D"],a:2,
+  e:"<b>嘌呤黴素</b>結構像胺醯 tRNA 的 3′ 端，兩種核糖體都會誤用。"},
+ {q:"白喉毒素抑制哺乳動物蛋白質合成的哪一步？",o:["起始","胜肽醯轉移酶","核糖體移位","冒充胺醯 tRNA"],a:2,
+  e:"白喉毒素把 <b>eEF-2</b> ADP-核糖化，使<b>移位</b>停止。"},
+ {q:"關於真核蛋白質合成延伸階段，何者正確？",o:["新進胺醯 tRNA 結合在 P 位","胜肽鍵由 rRNA（胜肽醯轉移酶）催化","延伸不需要 GTP","空 tRNA 從 A 位離開"],a:1,
+  e:"新 tRNA 進 <b>A 位</b>，胜肽鍵由大次單元 <b>rRNA</b> 催化，延伸因子用 GTP，空 tRNA 從 <b>E 位</b>離開。"},
+ {q:"關於 RNA 形成雙股區域的敘述，何者正確？（108 年國考）",o:["穩定性較雙股 DNA 差","只在實驗室觀察到","是同一條單股 RNA 的自我互補區域","只存在原核生物"],a:2,
+  e:"如 tRNA 的莖：<b>同一條 RNA 自我互補</b>形成雙股。"}
+];
+</script>
+<script src="mb_core.js"></script>
+</body>
+</html>

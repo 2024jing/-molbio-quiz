@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>營養分子生物學導讀｜第 5 講 真核細胞基因的轉錄</title>
+<link rel="stylesheet" href="mb.css">
+</head>
+<body id="top" data-ch="5">
+<header>
+  <div class="book">營養分子生物學（葉景生老師講義）・逐講導讀</div>
+  <h1>第 5 講　真核細胞基因的轉錄</h1>
+  <div class="en">Lecture 5 Eukaryotic Transcription（講義 63 頁）</div>
+</header>
+<div class="modebar"><span>閱讀模式</span>
+  <button id="mBrief" onclick="setMode('brief')">精簡（核心路線）</button>
+  <button id="mFull" onclick="setMode('full')">完整</button>
+</div>
+<main>
+<div class="briefhint">精簡模式只顯示每段的灰框重點；想看說明、例子與圖，按各節的「展開本節詳細內文」，或切到「完整」。</div>
+<div class="note"><span class="src">S25</span> 表示講義第 25 張投影片；<span class="add">補充</span> 是一般知識。📝 方框依「習作練習 單元 5」（35 題）整理。</div>
+<nav class="toc">
+  <b>本講目錄</b>
+  <a href="#s0">本講地圖</a>
+  <a href="#s1">一、啟動子與順向調控元素</a>
+  <a class="sub" href="#s1a">啟動子的元件：TATA、CCAAT、GC、Octamer、起始子</a>
+  <a class="sub" href="#s1b">促進子（增強子）與靜止子</a>
+  <a class="sub" href="#s1c">原核 RNA 聚合酶與啟動子（對照）</a>
+  <a href="#s2">二、基因轉錄的起始</a>
+  <a class="sub" href="#s2a">三種 RNA 聚合酶與 α-瓢蕈素</a>
+  <a class="sub" href="#s2b">RNA pol II 起始前複合體：D→A→B→F→E→H</a>
+  <a class="sub" href="#s2c">TFIIH、色素性乾皮症與柯凱因氏症候群</a>
+  <a class="sub" href="#s2d">RNA pol I 與核糖體</a>
+  <a class="sub" href="#s2e">RNA pol III：內在啟動子</a>
+  <a href="#s3">三、轉錄的延伸與終止</a>
+  <a class="sub" href="#s3a">進入延伸期與 CTD 磷酸化</a>
+  <a class="sub" href="#s3b">延伸的調控與染色質重整</a>
+  <a class="sub" href="#s3c">三種聚合酶的終止</a>
+  <a href="#s5">習作出題分析</a>
+  <a href="#s6">本講重點整理</a>
+  <a href="#s7">自我檢測（互動）</a>
+</nav>
+
+<section class="sec" id="s0">
+  <h2>本講地圖：為什麼這樣排？</h2>
+  <div class="en">Big picture</div>
+  <div class="lead"><b>破題</b>　轉錄＝以 DNA 為模板做出 RNA。這一講回答：<span class="key">RNA 聚合酶怎麼知道從哪裡開始（啟動子）、需要哪些幫手才能坐上去（一般性轉錄因子）、怎麼跑完全程又在哪裡停（延伸與終止）。</span></div>
+  <div class="path">
+    <div class="step"><span class="sn">一</span><div><b>DNA 上的「路標」</b><br><span class="sq">啟動子告訴聚合酶起點；增強子、靜止子遠距離調大調小音量。</span></div></div>
+    <div class="arr">↓ 有了路標，誰來讀？</div>
+    <div class="step"><span class="sn">二</span><div><b>三種 RNA 聚合酶各自的起始方式</b><br><span class="sq">pol II（mRNA）最複雜：TFIID 先認 TATA，依序組成起始前複合體；pol I 做 rRNA；pol III 做 tRNA、5S，啟動子在基因裡面。</span></div></div>
+    <div class="arr">↓ 開跑之後</div>
+    <div class="step"><span class="sn">三</span><div><b>延伸與終止</b><br><span class="sq">CTD 被磷酸化是開跑訊號；核小體要讓路（染色質重整、組蛋白乙醯化）；三種聚合酶各有終止方式。</span></div></div>
+  </div>
+  <figure class="pic"><svg viewBox="0 0 480 120" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <line x1="10" y1="60" x2="470" y2="60" stroke="#374151" stroke-width="3"/>
+      <rect x="15" y="45" width="55" height="30" fill="#e9d5ff" stroke="#7c3aed"/><text x="42" y="64">增強子</text>
+      <rect x="90" y="45" width="45" height="30" fill="#fde68a" stroke="#b45309"/><text x="112" y="64">GC</text>
+      <rect x="140" y="45" width="50" height="30" fill="#fde68a" stroke="#b45309"/><text x="165" y="64">CCAAT</text>
+      <rect x="200" y="45" width="45" height="30" fill="#fecaca" stroke="#dc2626"/><text x="222" y="64">TATA</text>
+      <path d="M262 60 v-22 h22" stroke="#15803d" stroke-width="3" fill="none"/><path d="M280 32 l8 6 l-8 6" fill="#15803d"/>
+      <rect x="295" y="45" width="55" height="30" fill="#bfdbfe" stroke="#1d4ed8"/><text x="322" y="64">外顯子</text>
+      <rect x="350" y="52" width="40" height="16" fill="#e5e7eb"/><text x="370" y="64" font-size="10">內含子</text>
+      <rect x="390" y="45" width="55" height="30" fill="#bfdbfe" stroke="#1d4ed8"/><text x="417" y="64">外顯子</text>
+      <text x="112" y="95" fill="#6b7280">−50～−100</text><text x="165" y="95" fill="#6b7280">約 −75</text><text x="222" y="95" fill="#6b7280">−25～−35</text><text x="262" y="95" fill="#15803d" font-weight="bold">+1</text>
+      <text x="42" y="95" fill="#6b7280">遠近皆可</text>
+      <text x="140" y="20" fill="#374151">← 上游（5′）</text><text x="400" y="20" fill="#374151">下游（3′）→</text>
+    </g>
+  </svg><figcaption>圖 5-1　真核基因（RNA pol II）的調控序列示意 <span class="src">S3</span>。+1＝轉錄起點。</figcaption></figure>
+</section>
+
+<!-- ============ 一 ============ -->
+<section class="sec det" id="s1">
+  <h2><span class="no">一</span>啟動子與順向調控元素</h2>
+  <div class="en">Promoters and cis-regulatory Elements <span class="src">S3–S17</span></div>
+  <div class="lead"><div><span class="lt">這節要說明什麼？</span>DNA 上哪些序列決定「從哪裡開始」與「轉錄多強」。</div><div><span class="lt lt2">名詞先分清</span><b>順向（cis）調控元素</b>＝DNA 序列本身（啟動子、增強子、靜止子）；<b>反向（trans）調控元素</b>＝結合上去的蛋白質（轉錄因子）。</div></div>
+  <div class="oneline">啟動子是 RNA 聚合酶最初結合的 DNA 序列，真核 pol II 啟動子常見 TATA 盒（−25～−35）、CCAAT 盒（約 −75）、GC 盒；沒有 TATA 的管家基因靠起始子。增強子與靜止子不論方向、位置（上游、下游、內含子）都能作用。</div>
+
+  <div class="bridge">第 1 講的中心法則說 DNA 要先轉錄成 RNA。第 5 講開始講轉錄，但整條 DNA 有上萬個基因，RNA 聚合酶要怎麼知道<b>從哪裡開始讀、讀哪一股</b>？答案就寫在 DNA 序列上——基因前方有一段「起點標誌」，就是啟動子。簡報先用基因結構圖 <span class="src">S3</span> 交代各部位的位置，再逐一介紹每個元件。</div>
+<h3 id="s1a">啟動子 Promoter <span class="src">S4–S12</span></h3>
+  <p class="core">啟動子＝<b>RNA 聚合酶最初與 DNA 結合的那段序列</b>，位於基因 5′ 側翼。真核 RNA 聚合酶<b>無法辨識原核啟動子</b>；真核有三種 RNA 聚合酶，各有不同的啟動子。</p>
+  <p>「−25」這種寫法是以轉錄起點為 +1，往上游（5′ 方向）算是負數、往下游是正數；沒有 0 <span class="add">補充說明</span>。TATA 盒是最核心的元件，決定轉錄<b>從哪裡開始</b>：它被 TBP 結合後，聚合酶就固定在其下游約 25–30 個鹼基處開工。CCAAT 盒、GC 盒等上游元件則主要影響<b>轉錄的頻率</b>，就像加油站離起跑線不遠的補給點。不同基因的啟動子由這些元件以不同組合構成，所以每個基因的「基本音量」都不一樣。管家基因（所有細胞隨時都需要的基因，如代謝酵素）常沒有 TATA 盒，而是富含 GC 盒並用起始子定位起點。</p>
+  <div class="tblwrap"><table>
+    <tr><th>元件</th><th>共識序列</th><th>位置</th><th>結合的因子／特點</th></tr>
+    <tr><td><b>TATA 盒</b></td><td>TATAAA／TATATA</td><td><b>−25～−35</b></td><td>TBP（TFIID 的一部分）；大多數 pol II 基因有</td></tr>
+    <tr><td><b>CCAAT 盒</b></td><td>GGCCAATCT</td><td>約 <b>−75</b></td><td>典型上游元素；CTF、CP1、CP2、C/EBP</td></tr>
+    <tr><td><b>GC 盒</b></td><td>GGGCGG／CCGCCC</td><td>約 −50，或 −90～−100</td><td>兩個方向都能作用；SV40 病毒有 6 組（結合 Sp1 <span class="add">補充</span>）</td></tr>
+    <tr><td><b>Octamer 盒</b></td><td>ATTTGCAT（8 個核苷酸）</td><td>上游</td><td><b>Oct-1</b> 各組織普遍；<b>Oct-2</b> 組織專一，只認 B 淋巴球 κ 基因</td></tr>
+    <tr><td><b>起始子</b> initiator</td><td>5′-PyPy<b>A</b>₊₁N(T/A)PyPy-3′</td><td>+1 附近</td><td>無 TATA 的啟動子用它；常見於<b>管家基因</b>（constitutive gene）；需要 TBP</td></tr>
+    <tr><td>snRNA 啟動子</td><td>DSE（ATTGCAT，接 Oct-1）＋PSE</td><td>DSE 遠端；PSE −50～−55</td><td>小核 RNA 基因專用</td></tr>
+  </table></div>
+  <div class="eg"><b class="t">起始子的 Py 是什麼？</b>Py＝pyrimidine（嘧啶，C 或 T）。A 就是轉錄起點 +1。典型起始子要符合四個條件：能在無 TATA 的啟動子引導轉錄起始、符合標準序列、轉錄有方向性、能受一般性轉錄因子（如 TBP）刺激 <span class="src">S11</span>。</div>
+  <div class="exam"><b class="t">考點</b>啟動子＝「RNA 聚合酶最初與 DNA 結合的序列」＝「DNA 上啟動<b>轉錄</b>的位置」（不是複製、不是轉譯）。pol II 啟動子常見共同元件＝<b>TATA box</b>。真核啟動子<b>沒有</b> Pribnow box（那是原核的 −10 區）。講義也引了 91 年考題：請把 DNA 上的位置排序——<b>啟動子 → 轉錄起始點 → 起始密碼 → 終止密碼 → 轉錄終止點</b>（上游到下游）。</div>
+
+  <div class="bridge">啟動子決定「從哪裡開始」，但每個細胞需要的基因不同、需要的量也不同。增強子與靜止子負責「調大調小音量」，而且可以離啟動子很遠。它們本身只是 DNA 序列（順向元素），真正發揮作用的是結合上去的蛋白（轉錄因子，第 6 講）。</div>
+<h3 id="s1b">促進子（增強子）與靜止子 <span class="src">S13–S17</span></h3>
+  <p class="core"><b>增強子</b> enhancer：提高轉錄，<b>沒有方向性</b>（正反都行）、<b>沒有位置限制</b>（5′、3′、基因內都可，例如 SV40 的 72 bp 重複序列移到 2 kb 外仍有效）。<b>靜止子</b> silencer：同樣不受方向與位置限制，但讓基因<b>失去活性</b>——結合的因子使染色質高度緊縮，聚合酶進不去。</p>
+  <p>增強子離啟動子可能幾千個鹼基，怎麼還能作用？答案是 DNA 會<b>彎折成環</b>：結合在增強子上的活化蛋白，透過媒介子（mediator）和啟動子上的起始複合體直接接觸，等於把遠方的油門線拉到引擎旁邊（本講第三節的步驟三也會提到這個套環）。因為靠的是 DNA 繞回來，所以方向正反、放在上游下游都沒差。靜止子結合的抑制蛋白則會招來讓染色質緊縮的蛋白，把整區關掉。</p>
+  <div class="eg"><b class="t">酵母交配型的例子 <span class="src">S17</span>：</b>酵母有 α 與 a 兩種交配型，基因 HMLα、HMRa 兩側都有靜止子（E、I），平常是「沉默盒」。環境變差時，<b>HO</b> 基因產物（核酸內切酶）啟動重組，把其中一個交配型基因複製到中間的 <b>MAT</b> 基因座（活躍盒，不受靜止子影響）才能表現。</div>
+  <div class="exam"><b class="t">考點</b>增強子「<b>可在基因上游或下游移動而不失活性</b>」是最正確的敘述；「其序列需一定方向」錯。與增強子結合促進轉錄的是<b>轉錄活化子</b>（activator），輔活化子與媒介子（mediator）不直接結合 DNA。</div>
+
+  <div class="bridge">講義這一講只談真核，但習作有不少原核 RNA 聚合酶的題目，所以補充對照。原核的做法比較簡單：只有一種聚合酶，由 σ 因子直接認啟動子；真核則有三種聚合酶，而且自己認不得啟動子，需要一大群轉錄因子幫忙——這正是下一節的主題。</div>
+<h3 id="s1c">對照：原核 RNA 聚合酶與啟動子 <span class="add">補充（習作有 4 題）</span></h3>
+  <p class="core">大腸桿菌只有一種 RNA 聚合酶：<b>核心酶</b> α₂ββ′ω ＋ <b>σ 因子</b>＝<b>全酶</b>。<b>σ 因子負責辨認啟動子</b>（−10 的 <b>Pribnow box</b> TATAAT 與 −35 區 TTGACA），開始轉錄後就離開。</p>
+  <div class="warn"><b class="t">易錯：</b>全酶與核心酶的差別在於 <b>σ</b>，不是 β；與啟動子有特殊親和力、負責與 DNA 序列結合以起始的是 <b>σ</b>。講義 <span class="src">S22</span> 也提到真核 pol II 的 Rpb1、Rpb2、Rpb3 分別對應原核的 β′、β、α，演化上高度保守。</div>
+  <div class="sum"><b class="t">本節重點</b><ul>
+    <li>啟動子＝聚合酶最初結合處；TATA −25～−35、CCAAT −75、GC 盒、Octamer（Oct-1 普遍／Oct-2 B 細胞）。</li>
+    <li>無 TATA 的管家基因用起始子（+1 附近）。</li>
+    <li>增強子、靜止子：無方向、無位置限制；靜止子使染色質緊縮。</li>
+    <li>原核：σ 辨認 −10（Pribnow）與 −35。</li>
+  </ul></div>
+</section>
+
+<!-- ============ 二 ============ -->
+<section class="sec det" id="s2">
+  <h2><span class="no">二</span>基因轉錄的起始</h2>
+  <div class="en">Transcription Initiation <span class="src">S18–S46</span></div>
+  <div class="lead"><div><span class="lt">這節要說明什麼？</span>三種 RNA 聚合酶各做什麼 RNA，以及 pol II 起始前複合體的組裝順序。</div><div><span class="lt lt2">考試重心</span>三種聚合酶的產物與位置、α-瓢蕈素敏感度、TFIIH 同時管轉錄與修補。</div></div>
+  <div class="oneline">pol I（核仁）做 18S、28S、5.8S rRNA 前驅物；pol II（核質）做 mRNA 前驅物；pol III（核質）做 tRNA、5S rRNA、snRNA。pol II 的起始：TFIID（TBP）坐上 TATA → 加 TFIIA、TFIIB → TFIIF 帶聚合酶進來 → TFIIE、TFIIH 加入 → 起始前複合體完成。</div>
+<div class="bridge">有了路標（啟動子），接下來看「讀路標的人」。真核有三種 RNA 聚合酶，分別負責不同種類的 RNA；它們各自的起始方式不同，所以簡報依序講 pol II（最複雜、也最重要，因為 mRNA 編碼蛋白質）、pol I、pol III。中間穿插的疾病與核糖體內容，都是從某個轉錄因子或產物延伸出去的。</div>
+
+  <h3 id="s2a">三種 RNA 聚合酶 <span class="src">S18–S22</span></h3>
+  <p class="core">合成方向都是 <b>5′→3′</b>。對 <b>α-瓢蕈素</b>（α-amanitin，毒蕈「死神蕈」<i>Amanita phalloides</i> 的毒素）：<b>pol II 最敏感</b>、pol III 中等、pol I 不受影響。</p>
+  <p>為什麼真核要三種？因為三類 RNA 的需求很不一樣：rRNA 的需求量最大（細胞裡 RNA 有八成是 rRNA），所以由 pol I 在核仁裡專心大量生產；mRNA 種類最多、需要依細胞狀態精細調控，交給 pol II 搭配大量轉錄因子；tRNA、5S rRNA 這些小而穩定的 RNA 交給 pol III。三者的核心次單元其實和細菌 RNA 聚合酶同源，演化上非常保守 <span class="src">S22</span>。</p>
+  <div class="tblwrap"><table>
+    <tr><th>聚合酶</th><th>位置</th><th>產物</th><th>α-瓢蕈素</th></tr>
+    <tr><td><b>RNA pol I</b></td><td><b>核仁</b></td><td>大部分 rRNA 前驅物（45S → <b>18S、28S、5.8S</b>）</td><td>不敏感</td></tr>
+    <tr><td><b>RNA pol II</b></td><td>核質</td><td><b>mRNA 前驅物</b>（hnRNA）；多數 snRNA <span class="add">補充</span></td><td><b>最敏感</b></td></tr>
+    <tr><td><b>RNA pol III</b></td><td>核質</td><td><b>tRNA</b>、<b>5S rRNA</b>、U6 snRNA 等小分子 RNA</td><td>中等</td></tr>
+  </table></div>
+  <div class="mn"><b class="t">口訣</b>「<b>1</b> 是 <b>大</b> rRNA（核仁）、<b>2</b> 是 <b>m</b>RNA、<b>3</b> 是 <b>小</b>東西（tRNA、5S）」；毒性「<b>2</b> 最怕、<b>3</b> 有點怕、<b>1</b> 不怕」。</div>
+  <div class="exam"><b class="t">國考題（108 年，講義 S23）</b>正確的是「<b>RNA 聚合酶會受到轉錄因子的調控</b>」。錯誤選項：真核轉錄比原核簡單；pol I 轉錄小分子 RNA；pol III 轉錄主要的 rRNA。</div>
+  <div class="nut"><b class="t">食品安全連結：</b>α-瓢蕈素中毒（誤食鵝膏菌類）會抑制肝細胞的 mRNA 合成，初期腸胃症狀緩解後才出現嚴重肝衰竭，是致死率很高的毒菇中毒；加熱無法破壞 <span class="add">補充</span>。</div>
+
+  <div class="bridge">真核 RNA 聚合酶自己無法辨認啟動子，必須先有一群<b>一般性轉錄因子</b>在啟動子上組裝好「起跑台」，聚合酶才坐得上去。這就像原核 σ 因子的工作被拆給好幾個蛋白分工。</div>
+<h3 id="s2b">RNA pol II 的起始前複合體 PIC <span class="src">S23–S31</span></h3>
+  <p class="core">幫助聚合酶組成<b>轉錄起始前複合體</b>（PIC）的叫<b>一般性轉錄因子</b>，pol II 用的命名為 TFII-（pol III 用 TFIII-）。順序：<b>TFIID</b>（TBP＋TAFs）認 TATA → <b>TFIIA</b> 穩定 → <b>TFIIB</b> 當轉接器 → <b>TFIIF</b> 帶 pol II 到位 → <b>TFIIE</b> 引導 → <b>TFIIH</b> 加入（解旋、磷酸化 CTD）。</p>
+  <p>整個組裝的邏輯是「先定位、再搭橋、最後開門」：TFIID 的 TBP 坐上 TATA 盒並把 DNA 折彎 80° 左右，等於在 DNA 上豎起一個明顯的「標誌」<span class="add">角度為補充</span>；TFIIA、TFIIB 加強並擴大這個平台，TFIIB 還負責對準起點；TFIIF 帶著聚合酶入座；TFIIE、TFIIH 最後到場，TFIIH 一方面用解旋酶活性把起點附近的 DNA 撐開（形成開放複合體），一方面把聚合酶尾巴（CTD）磷酸化，讓聚合酶脫離這個平台開始前進。</p>
+  <figure class="pic"><svg viewBox="0 0 480 230" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12" text-anchor="middle">
+      <line x1="10" y1="190" x2="470" y2="190" stroke="#374151" stroke-width="4"/>
+      <rect x="70" y="183" width="50" height="14" fill="#fecaca"/><text x="95" y="215">TATA</text>
+      <path d="M250 190 v-12 h14" stroke="#15803d" stroke-width="2" fill="none"/><text x="250" y="215" fill="#15803d">+1</text>
+      <path d="M60 182 q35 -40 70 0" fill="#fca5a5" stroke="#dc2626"/><text x="95" y="172" font-weight="bold">TBP</text>
+      <rect x="55" y="120" width="80" height="26" rx="8" fill="#fde68a" stroke="#b45309"/><text x="95" y="138">TAFs（TFIID）</text>
+      <circle cx="40" cy="160" r="15" fill="#bbf7d0" stroke="#15803d"/><text x="40" y="164">A</text>
+      <circle cx="150" cy="168" r="15" fill="#bfdbfe" stroke="#1d4ed8"/><text x="150" y="172">B</text>
+      <ellipse cx="230" cy="140" rx="55" ry="36" fill="#e9d5ff" stroke="#7c3aed"/><text x="230" y="138" font-weight="bold">RNA pol II</text><text x="230" y="155">（CTD 尾巴→）</text>
+      <path d="M285 140 q30 10 25 40" stroke="#7c3aed" stroke-width="3" fill="none" stroke-dasharray="3 3"/>
+      <circle cx="175" cy="110" r="15" fill="#fbcfe8" stroke="#be185d"/><text x="175" y="114">F</text>
+      <circle cx="280" cy="98" r="15" fill="#fed7aa" stroke="#c2410c"/><text x="280" y="102">E</text>
+      <rect x="300" y="66" width="70" height="28" rx="8" fill="#99f6e4" stroke="#0f766e"/><text x="335" y="85" font-weight="bold">TFIIH</text>
+      <g text-anchor="start" fill="#374151" font-size="11.5"><text x="10" y="16">① D：TBP 認 TATA、使 DNA 彎折</text><text x="10" y="33">② A：穩定</text><text x="10" y="50">③ B：轉接頭</text><text x="235" y="16">④ F：帶聚合酶到位</text><text x="235" y="33">⑤ E：接 H 的轉接器</text><text x="235" y="50">⑥ H：解旋＋磷酸化 CTD → 開跑</text></g>
+    </g>
+  </svg><figcaption>圖 5-2　pol II 起始前複合體依序組裝：D → A → B → F（＋pol II）→ E → H。</figcaption></figure>
+  <ol class="steps">
+    <li><b>TFIID 辨識啟動子</b>：TBP（38 kDa）不單獨存在，與多個 <b>TAF</b>（TBP 附屬因子，30–250 kDa）組成 TFIID（約 750 kDa）。TBP 以<b>馬鞍狀</b>坐在 TATA 的<b>小凹溝</b>上，使 DNA <b>彎折</b> <span class="src">S25–S26</span>。</li>
+    <li><b>形成 DAB 複合體</b>：TFIIA（可視為一種 TAF）幫 TBP 抓穩；TFIIB（35 kDa，單股多肽）一端接 DNA 複合體、一端接 TFIIF–聚合酶，像<b>電源轉接頭</b> <span class="src">S27–S28</span>。</li>
+    <li><b>TFIIF 引導 RNA 聚合酶到位</b>：人類 TFIIF 是 RAP30＋RAP74 的異質雙體。RAP74 是 <b>ATP 依賴型解旋酶</b>，幫忙打開起點附近的 DNA；RAP30 功能類似原核的 <b>σ 因子</b>。TFIIF 也提高聚合酶活性、減少暫停 <span class="src">S29–S30</span>。</li>
+    <li><b>TFIIE、TFIIH 加入</b>：TFIIE（α₂β₂ 四聚體）一邊接聚合酶、一邊引導 TFIIH 進來。TFIIH 由 9 個次單元組成，最大的 p89＝<b>ERCC3</b>，有 DNA 依賴型 ATP 分解酶（解旋）活性 <span class="src">S31–S32</span>。</li>
+  </ol>
+  <div class="mn"><b class="t">口訣</b>「<b>D</b>A<b>B</b> <b>F</b>E<b>H</b>」——「<b>大</b>夥<b>報</b>到，<b>飛</b>鵝<b>好</b>」：D 先到、A 穩、B 接、F 帶車（聚合酶）、E 引、H 發車。</div>
+  <div class="exam"><b class="t">考點</b>起始事件依序：<b>轉錄因子結合 TATA → 形成起始複合體 → 打開 DNA 雙股 → pol II 開始轉錄</b>。起始前複合體中<b>不直接與 DNA 結合</b>的是<b>媒介子（mediator）</b>。</div>
+
+  <div class="bridge">簡報在 TFIIH 這裡岔出去介紹兩種疾病，看起來偏離轉錄主題。串連點在 TFIIH 的最大次單元 <b>ERCC3</b>：它是解旋酶，轉錄時用來打開 DNA；而 DNA 修補（第 3 講的核苷酸切除修補）同樣需要把 DNA 局部打開，所以 TFIIH 也被借去修補。因此 ERCC3 突變的病人，轉錄和修補都會出問題。這也解釋了第 3 講的「轉錄協同修補」為什麼存在。</div>
+<h3 id="s2c">TFIIH、色素性乾皮症與柯凱因氏症候群 <span class="src">S32–S35</span></h3>
+  <p class="core"><b>TFIIH 同時參與轉錄與 DNA 修補</b>。其次單元 <b>ERCC3</b> 突變 → 特殊型<b>色素性乾皮症</b>（XP）或<b>柯凱因氏症候群</b>，患者對紫外線特別敏感。UV（290–320 nm）損傷後，TFIIH 被啟動、結合到損傷點，招來修補蛋白，進行核苷酸切除修補（快的 TC-NER、慢的 GG-NER）。</p>
+  <p>兩個病都和「修補紫外線傷害」失靈有關，但症狀重點不同：XP 是全基因體的修補（GG-NER）出問題，突變不斷累積，所以以<b>皮膚癌</b>為主；柯凱因氏症候群是轉錄協同修補（TC-NER）出問題，正在使用的基因被卡住無法表現、細胞容易死亡，所以以<b>生長遲緩、早老</b>和神經退化為主，反而不太會得癌 <span class="add">補充說明</span>。</p>
+  <div class="tblwrap"><table>
+    <tr><th>疾病</th><th>遺傳</th><th>原因</th><th>特徵</th></tr>
+    <tr><td>色素性乾皮症 XP</td><td>體染色體隱性</td><td>NER 的核酸內切酶缺陷，嘧啶二聚體無法切除</td><td>對陽光極敏感、皮膚癌；部分病患有神經異常</td></tr>
+    <tr><td>柯凱因氏症候群</td><td>體染色體隱性</td><td>第 5 號染色體 <b>ERCC6 或 ERCC8</b> 缺陷（TC-NER）</td><td><b>早熟性老化</b>；2–3 歲後身高、體重、頭圍低於第 5 百分位</td></tr>
+  </table></div>
+  <div class="warn"><b class="t">易錯：</b>XP 缺的是<b>核苷酸切除修補</b>（修 T-T 二聚體），不是鹼基切除修補；「XP 是 DNA <b>非</b>依賴型 ATP 分解酶失去活性」錯（ERCC3 是 DNA <b>依賴型</b>）。「ERCC3 含 9 種次單元」也不精確——是 TFIIH 有 9 個次單元，ERCC3 是其中之一。同時參與轉錄與 DNA 修復的是 <b>TFIIH</b>。</div>
+
+  <div class="bridge">看完 pol II，簡報換到 pol I。pol I 只做一件事：轉錄 rRNA。為了說明這些 rRNA 最後去了哪裡，簡報順便列出整個<b>核糖體的組成</b>（真核與原核對照）——這部分在第 8 講轉譯會再用到，可以先記住結論：rRNA＋蛋白質＝核糖體。</div>
+<h3 id="s2d">RNA pol I 與核糖體 <span class="src">S36–S40</span></h3>
+  <p class="core">rRNA 基因在核仁區有 100 個以上拷貝，pol I 轉錄出 <b>45S 前驅 RNA</b>，切割成 <b>18S、5.8S、28S</b>。18S＋約 33 個蛋白＝小次單元（40S）；28S＋5.8S＋<b>5S</b>（由 pol III 在別處轉錄）＋約 49 個蛋白＝大次單元（60S）。pol I 啟動子簡單：核心啟動子（−45～+20）＋上游控制元素 UCE（−180～−107），由 <b>UBF</b> 與啟動子選擇因子（人類 <b>SL1</b>、老鼠 TIF-1B）辨認。</p>
+  <p>rRNA 基因有上百個拷貝，頭尾相連排在幾條染色體上，這些區域聚集在一起就形成顯微鏡下看得到的<b>核仁</b>——核仁其實就是「核糖體工廠」。pol I 一次轉錄出一長條 45S 前驅物，再切成 18S、5.8S、28S 三段；這樣三者的產量永遠是 1：1：1，剛好符合組裝需要。5S rRNA 由 pol III 在核仁外另外製造，再送進來一起組裝 <span class="src">S36</span>。</p>
+  <div class="tblwrap"><table>
+    <tr><th></th><th>原核（70S）</th><th>真核（80S）</th></tr>
+    <tr><td>小次單元</td><td>30S：<b>16S</b> rRNA（1,540 nt）＋21 個蛋白</td><td>40S：<b>18S</b> rRNA（1,900 nt）＋約 33 個蛋白</td></tr>
+    <tr><td>大次單元</td><td>50S：<b>23S</b>（2,900 nt）＋<b>5S</b>（120 nt）＋約 34 個蛋白</td><td>60S：<b>28S</b>（4,700 nt）＋<b>5.8S</b>（160 nt）＋<b>5S</b>（120 nt）＋49 個蛋白</td></tr>
+  </table></div>
+  <div class="warn"><b class="t">易錯：</b>S 是沉降係數，不能相加（30S＋50S＝70S，不是 80S）。兩個次單元<b>都含 rRNA</b>；rRNA 不只是結構，還有<b>催化</b>功能（胜肽醯轉移酶）；真核核糖體（80S）比原核（70S）大。UBF 帶有 <b>HMG 盒</b>，能結合 DNA 使其彎折，並移除 H1 組蛋白讓染色質鬆開 <span class="src">S40</span>。</div>
+
+  <div class="bridge">最後一種是 pol III。它的特別之處在於啟動子的位置——不在基因上游，而在基因<b>裡面</b>。另外，大核糖體次單元需要的 5S rRNA 正是由 pol III 做的，剛好接上前一段的核糖體組成。</div>
+<h3 id="s2e">RNA pol III：內在啟動子 <span class="src">S41–S46</span></h3>
+  <p class="core">pol III 的啟動子常在<b>基因內部</b>（+1 下游）。<b>第一型</b>（5S rRNA）：A 盒＋C 盒，<b>TFIIIA</b>（9 個 C2H2 鋅指）先結合 → TFIIIC → <b>TFIIIB</b> 帶 pol III 到位。<b>第二型</b>（tRNA、Alu、腺病毒 VA 基因）：A 盒＋B 盒，由 <b>TFIIIC</b> 辨認。</p>
+  <p>5S rRNA 基因的流程：TFIIIA 先用它的 9 個鋅指抓住基因內部的 A 盒與 C 盒 → TFIIIC 結合上來 → TFIIIC 再招來 TFIIIB，TFIIIB 坐到轉錄起點上游 → TFIIIB 把 pol III 帶到起點開始轉錄 <span class="src">S43–S44</span>。tRNA 基因（第二型）不需要 TFIIIA，由 TFIIIC 直接認 A 盒與 B 盒。共同點是：真正把聚合酶帶到起點的都是 TFIIIB。</p>
+  <div class="eg"><b class="t">為什麼啟動子可以在基因裡面？</b>因為轉錄因子是「先坐在基因內部，再把聚合酶拉到上游的起點」——就像先在車廂中段找到座位，再走到車頭發車。真正負責帶聚合酶到起點的是 TFIIIB。</div>
+  <div class="sum"><b class="t">本節重點</b><ul>
+    <li>pol I 核仁 rRNA（45S→18/5.8/28S）；pol II mRNA；pol III tRNA、5S、snRNA。α-瓢蕈素：II＞III＞I（不敏感）。</li>
+    <li>PIC：D（TBP＋TAF）→ A → B → F＋pol II → E → H。</li>
+    <li>TFIIH（ERCC3）兼管轉錄與 NER；XP、柯凱因氏症候群。</li>
+    <li>rRNA：原核 5/16/23S，真核 5/5.8/18/28S；5S 由 pol III 做。</li>
+    <li>pol III 內在啟動子：5S（A＋C，TFIIIA）、tRNA（A＋B，TFIIIC）。</li>
+  </ul></div>
+</section>
+
+<!-- ============ 三 ============ -->
+<section class="sec det" id="s3">
+  <h2><span class="no">三</span>轉錄的延伸與終止</h2>
+  <div class="en">Elongation and Termination <span class="src">S47–S62</span></div>
+  <div class="lead"><div><span class="lt">這節要說明什麼？</span>聚合酶從啟動子離開、穿過核小體、最後停下來的過程。</div><div><span class="lt lt2">和下一講的關係</span>染色質重整與組蛋白乙醯化是第 6 講基因調控的主角；CTD 上的加工酵素是第 7 講 mRNA 加工的伏筆。</div></div>
+  <div class="oneline">開跑三件事：啟動子淨空、聚合酶 CTD 由低度變高度磷酸化、RNA 長到約 23 nt 形成穩定的延伸複合體。高度磷酸化的 CTD 是加帽、剪接酵素的平台。核小體要靠染色質重整複合體與組蛋白乙醯化讓路。終止：pol I 靠終止因子、pol II 靠 3′ 切割與加 poly(A)、pol III 靠一串 T。</div>
+<div class="bridge">起始前複合體組好之後，聚合酶要「離開起跑線」往前跑。這一段回答三件事：怎麼從起始轉換到延伸？路上遇到纏在組蛋白上的 DNA 怎麼辦？在哪裡停下來？</div>
+
+  <h3 id="s3a">進入延伸期 <span class="src">S47–S48</span></h3>
+  <p class="core">① <b>啟動子淨空</b>：聚合酶離開啟動子、合成第一個磷酸二酯鍵；② <b>聚合酶磷酸化</b>，降低流產式起始（abortive initiation）；③ RNA 達約 <b>23 nt</b> 時形成穩定的<b>轉錄延伸複合體</b> TEC。pol II 的 <b>CTD</b>（羧基端功能區）在起始前複合體時是<b>低度磷酸化</b>，進入延伸期被 <b>TFIIH（CDK7）、CDK9（P-TEFb）、CDK8</b> 磷酸化成<b>高度磷酸化</b>；終止後由磷酸酶（Ssu72、FCP1）去除。</p>
+  <p>起始階段常出現「流產」：聚合酶做出幾個核苷酸的短 RNA 就掉下來，重新來過。要真正離開啟動子，聚合酶必須掙脫起始複合體的束縛——CTD 被磷酸化就是那個「放手」訊號。CTD 是 pol II 最大次單元尾端的一長串重複序列（人類 52 次重複的 7 個胺基酸）<span class="add">補充</span>，磷酸化後帶大量負電，改變形狀，一方面離開起始因子，另一方面變成加帽酵素、剪接因子、3′ 處理因子的停靠站，所以 RNA 一邊轉錄就一邊加工（第 7 講）。</p>
+  <figure class="pic"><svg viewBox="0 0 480 140" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC,PingFang TC,Microsoft JhengHei,sans-serif">
+    <g font-size="12">
+      <ellipse cx="90" cy="70" rx="55" ry="32" fill="#e9d5ff" stroke="#7c3aed"/><text x="90" y="75" text-anchor="middle" font-weight="bold">pol II</text>
+      <path d="M145 70 q15 0 20 10 t20 10 t20 10" stroke="#7c3aed" stroke-width="4" fill="none"/>
+      <text x="90" y="125" text-anchor="middle">起始：CTD 低度磷酸化</text>
+      <text x="230" y="75" font-size="20">→</text>
+      <ellipse cx="330" cy="70" rx="55" ry="32" fill="#e9d5ff" stroke="#7c3aed"/><text x="330" y="75" text-anchor="middle" font-weight="bold">pol II</text>
+      <path d="M385 70 q15 0 20 10 t20 10 t20 10" stroke="#7c3aed" stroke-width="4" fill="none"/>
+      <g fill="#f59e0b"><circle cx="395" cy="72" r="5"/><circle cx="410" cy="80" r="5"/><circle cx="425" cy="90" r="5"/><circle cx="440" cy="98" r="5"/></g>
+      <text x="440" y="118" text-anchor="middle" fill="#b45309">P P P P</text>
+      <text x="330" y="135" text-anchor="middle">延伸：CTD 高度磷酸化 → 加帽、剪接酵素的平台</text>
+      <text x="230" y="40" text-anchor="middle" fill="#0f766e">TFIIH、CDK9…</text>
+    </g>
+  </svg><figcaption>圖 5-3　CTD 磷酸化是「起始 → 延伸」的開關。</figcaption></figure>
+
+  <div class="bridge">聚合酶開跑後會遇到兩種阻礙：自己偶爾「倒退」卡住，以及前方纏得緊緊的核小體。簡報先列出三類幫助延伸的因子，中間插入一張酵素動力學（Km、Vmax）的投影片 <span class="src">S52</span>，是為了說明「直接增強聚合酶活性」是什麼意思——提高 Vmax 或降低 Km 就能加快反應，這是生化課的觀念在這裡的應用。接著再回到核小體的問題（染色質重整），這部分也是第 6 講基因調控的前奏。</div>
+<h3 id="s3b">延伸的調控與染色質重整 <span class="src">S50–S58</span></h3>
+  <p class="core">三類調控：① <b>減少停滯</b>：TFIIS（啟動 pol II 自身切割活性，處理倒退 backtracking）、延伸素 elongin（A、B、C）、ELL 家族；② <b>重整染色質</b>：<b>FACT</b> 暫時移除 H2A/H2B 雙體，讓聚合酶通過核小體；SET 家族甲基化組蛋白；③ 直接提高 pol II 酵素活性（改變 Km、Vmax）。</p>
+  <p>2 公尺長的 DNA 纏在數以萬計的核小體上、塞在不到 1 μm 的核裡，局部必須鬆開才能轉錄 <span class="src">S53</span>。講義把基因活化分四步 <span class="src">S54–S58</span>：</p>
+  <ol class="steps">
+    <li><b>染色質重整複合體</b>（CRC，具 ATP 分解酶活性）把局部 30 nm 纖維鬆成 10 nm（串珠）。</li>
+    <li><b>核小體移位</b>讓轉錄因子（Sp1、Oct-1）、一般性轉錄因子、聚合酶、媒介子碰得到啟動子；<b>組蛋白乙醯轉移酶 HAT</b> 乙醯化 <b>H3、H4</b>，使核小體鬆散。</li>
+    <li>起始前複合體一邊接上游調控元素、一邊接啟動子，DNA 形成<b>套環</b>；活化訊號經協同因子／<b>媒介子</b>傳給聚合酶，啟動子由閉鎖轉為開放。</li>
+    <li>延伸中 FACT、SET 讓核小體一路拆開又復原；CTD 上的<b>加帽酵素</b>與<b>剪接因子</b>已經同步開始加工新生 RNA。</li>
+  </ol>
+  <div class="eg"><b class="t">為什麼乙醯化會「打開」染色質？</b>組蛋白的 Lys 帶正電、吸住帶負電的 DNA；乙醯基蓋上去後中和了正電，吸力變小，DNA 就鬆開（第 1 講組蛋白的延伸）。</div>
+  <div class="exam"><b class="t">考點</b>轉錄活化的染色質區段：以<b>真（常）染色質</b> euchromatin 形式分散在核內（不是緊密核小體、不是異染色質、對 DNA 酶<b>敏感</b>而非抵抗）。</div>
+  <div class="nut"><b class="t">酵素動力學複習 <span class="src">S52</span>：</b>Km＝達到 ½ Vmax 時的受質濃度。<b>Km 越小，酵素與受質親和力越大</b>；雙倒數作圖（Lineweaver–Burk）可求 Km 與 Vmax。</div>
+
+  <div class="bridge">轉錄完要在正確的地方停。停得太晚，會產生不穩定的 RNA、甚至干擾下游基因。三種聚合酶停的方式不同，其中 pol II 的終止和 mRNA 的 3′ 加工綁在一起——下一講第 7 講會接著詳細講。</div>
+<h3 id="s3c">三種聚合酶的終止 <span class="src">S59–S62</span></h3>
+  <p class="core">轉錄若越過終點，會產生無法修飾的 3′ 端（RNA 不穩定、出不了核），還可能干擾下游基因或產生反義 RNA，所以終止很重要。<b>pol I</b>：終止因子辨認特定序列（酵母 Reb1p；人與鼠 <b>TTF-I</b>，GTCGAC）。<b>pol II</b>：mRNA 3′ 端<b>切割與加 poly(A)</b> 就是終止訊號。<b>pol III</b>：3′ 端一段<b>富含 T</b> 的序列＋合適的兩翼序列＋終止因子（TFIIIC 次單元、La 蛋白）。</p>
+  <p>三者的難易不同：pol I 和 pol III 的產物都是不需要複雜 3′ 加工的 RNA，所以只要碰到固定的終止序列就停；pol II 的 mRNA 需要 poly(A) 尾巴，所以它的終止和「切割＋加尾」連成一套：聚合酶轉錄過 AAUAAA 訊號後，RNA 在下游被切斷並加尾（第 7 講），聚合酶本身繼續往前跑一段，之後才被分解酶追上而脫落 <span class="add">補充</span>。</p>
+  <div class="tblwrap"><table>
+    <tr><th>聚合酶</th><th>終止方式</th></tr>
+    <tr><td>pol I</td><td>rRNA 基因成排重複、間隔近，靠終止因子（TTF-I）快速終止</td></tr>
+    <tr><td>pol II</td><td>轉錄到 3′ 端立即<b>切割＋聚腺苷化</b>，mRNA 脫離模板即終止</td></tr>
+    <tr><td>pol III</td><td>富含 T 的模組（如 GCTTTTGC）＋終止因子</td></tr>
+  </table></div>
+  <div class="sum"><b class="t">本節重點</b><ul>
+    <li>延伸三現象：啟動子淨空、聚合酶磷酸化、23 nt 穩定 TEC。</li>
+    <li>CTD 低度 → 高度磷酸化（TFIIH、CDK9）；高度磷酸化 CTD 是加工平台。</li>
+    <li>停滯：TFIIS、elongin、ELL；染色質：FACT（移 H2A/H2B）、SET（甲基化）；HAT 乙醯化 H3、H4。</li>
+    <li>終止：pol I TTF-I；pol II 切割＋poly(A)；pol III 富 T 序列。</li>
+  </ul></div>
+  <details class="terms"><summary>本講名詞中英對照</summary><div class="tblwrap"><table>
+    <tr><td>啟動子</td><td>promoter</td><td>增強子（促進子）</td><td>enhancer</td></tr>
+    <tr><td>靜止子</td><td>silencer</td><td>順向／反向調控元素</td><td>cis- / trans-regulatory element</td></tr>
+    <tr><td>一般性轉錄因子</td><td>general transcription factor</td><td>起始前複合體</td><td>pre-initiation complex (PIC)</td></tr>
+    <tr><td>TATA 盒結合蛋白</td><td>TBP</td><td>TBP 附屬因子</td><td>TAF</td></tr>
+    <tr><td>媒介子</td><td>mediator</td><td>羧基端功能區</td><td>carboxyl-terminal domain (CTD)</td></tr>
+    <tr><td>α-瓢蕈素</td><td>α-amanitin</td><td>染色質重整</td><td>chromatin remodeling</td></tr>
+    <tr><td>組蛋白乙醯轉移酶</td><td>histone acetyltransferase (HAT)</td><td>管家基因</td><td>housekeeping gene</td></tr>
+  </table></div></details>
+</section>
+
+<section class="sec" id="s5">
+  <h2>習作出題分析（單元 5，共 35 題）</h2>
+  <div class="en">Where the questions come from</div>
+  <div class="tblwrap"><table class="freq">
+    <tr><th>主題</th><th>約題數</th><th>常考的說法</th></tr>
+    <tr><td>三種 RNA 聚合酶產物</td><td><span class="stars">★★★★</span> 約 6</td><td>pol I 核仁 18S、28S；pol II hnRNA；pol III tRNA</td></tr>
+    <tr><td>啟動子定義與元件</td><td><span class="stars">★★★★</span> 約 6</td><td>聚合酶最初結合處；TATA box；真核無 Pribnow box</td></tr>
+    <tr><td>色素性乾皮症</td><td><span class="stars">★★★</span> 4</td><td>無法修 T-T 二聚體；陽光下易皮膚癌；不是 BER 缺陷</td></tr>
+    <tr><td>原核 RNA 聚合酶 σ 因子</td><td><span class="stars">★★★</span> 4</td><td>σ 辨認啟動子；全酶＝核心酶＋σ</td></tr>
+    <tr><td>核糖體與 rRNA</td><td><span class="stars">★★★</span> 4</td><td>細菌 5/16/23S；真核 5/5.8/18/28S；真核較大</td></tr>
+    <tr><td>增強子、起始複合體、TFIIH</td><td><span class="stars">★★★</span> 5</td><td>增強子可上下游移動；mediator 不直接結合 DNA；TFIIH 兼修補</td></tr>
+    <tr><td>其他（tRNA 結構、密碼子、footprinting、染色質）</td><td><span class="stars">★★</span> 約 6</td><td>footprinting 看蛋白與 DNA 結合；活化染色質＝常染色質</td></tr>
+  </table></div>
+</section>
+
+<section class="sec" id="s6">
+  <h2>本講重點整理</h2>
+  <div class="en">Summary</div>
+  <div class="tblwrap"><table>
+    <tr><th>主題</th><th>一定要記</th></tr>
+    <tr><td>啟動子元件</td><td>TATA −25～−35（TBP）；CCAAT −75；GC 盒；Octamer（Oct-1／Oct-2）；起始子（管家基因）</td></tr>
+    <tr><td>增強子／靜止子</td><td>無方向、無位置限制；靜止子使染色質緊縮；SV40 72 bp；酵母 HML/HMR/MAT</td></tr>
+    <tr><td>三種聚合酶</td><td>I 核仁 rRNA；II mRNA；III tRNA、5S、snRNA；α-瓢蕈素 II＞III＞I</td></tr>
+    <tr><td>PIC</td><td>D（TBP 馬鞍、小凹溝、DNA 彎折）→ A → B（轉接頭）→ F（RAP74 解旋、RAP30 類 σ）→ E → H（ERCC3）</td></tr>
+    <tr><td>疾病</td><td>XP（NER 缺陷、皮膚癌）；柯凱因氏症候群（ERCC6/8、早熟老化）</td></tr>
+    <tr><td>pol I／III</td><td>45S→18/5.8/28S；UBF＋SL1；pol III 內在啟動子 A＋C（5S，TFIIIA）、A＋B（tRNA，TFIIIC）</td></tr>
+    <tr><td>延伸</td><td>CTD 低→高度磷酸化；TFIIS、elongin、FACT、SET；HAT 乙醯化 H3/H4</td></tr>
+    <tr><td>終止</td><td>pol I TTF-I；pol II 切割＋poly(A)；pol III 富 T</td></tr>
+  </table></div>
+  <h3>讀完請自我檢查：我能不能……</h3>
+  <ul class="dots">
+    <li>□ 畫出 pol II 基因的上游元件並標出位置？</li>
+    <li>□ 說出增強子的兩個特徵？</li>
+    <li>□ 說出三種 RNA 聚合酶的位置、產物與對 α-瓢蕈素的敏感度？</li>
+    <li>□ 依序說出 pol II 起始前複合體的組裝，以及每個因子的工作？</li>
+    <li>□ 解釋為什麼 TFIIH 突變會造成 XP？</li>
+    <li>□ 說出 CTD 磷酸化在轉錄中的意義？</li>
+  </ul>
+</section>
+
+<section class="sec" id="s7">
+  <h2>自我檢測</h2>
+  <div class="en">Self-check — 題目選自習作單元 5 與講義國考題</div>
+  <div id="quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+</main>
+<a class="top" href="#top" aria-label="回到頂端">↑</a>
+<footer>營養分子生物學 第 5 講導讀｜依葉景生老師講義整理，標「補充」者為一般知識；如有出入以講義與老師上課內容為準</footer>
+<script>
+const Q = [
+ {q:"下列關於啟動子（promoter）的描述，何者正確？",o:["mRNA 開始被翻譯的 DNA 序列","開始轉錄生成 mRNA 的那段序列","RNA 聚合酶最初與 DNA 結合的那段序列","阻抑蛋白結合的部位"],a:2,
+  e:"啟動子是 <b>RNA 聚合酶最初結合</b>的 DNA 序列，位於轉錄起點上游；本身通常不被轉錄。"},
+ {q:"對 RNA polymerase II 而言，mRNA 起始點上游常見且共同的啟動子元件是？",o:["TRE","TATA box","CAAT box","GC box"],a:1,
+  e:"<b>TATA box</b>（−25～−35）是多數 pol II 基因的標記，由 TFIID 的 TBP 辨認。"},
+ {q:"有關真核生物基因啟動子的特性，何者錯誤？",o:["有些含 initiator element","有些含 GC box","有些含 Pribnow box","有些含 TATA box"],a:2,
+  e:"<b>Pribnow box</b>（TATAAT，−10）是<b>原核</b>啟動子元件。"},
+ {q:"增強子（enhancer）可調控基因表現，最正確的敘述是？",o:["位於 poly A tail","只位於 intron","可在基因上游或下游移動而不失活性","序列需固定方向才有效"],a:2,
+  e:"增強子<b>無方向、無位置限制</b>，上游、下游、內含子都可以。"},
+ {q:"真核細胞中經 RNA 聚合酶 III 催化轉錄的產物是？",o:["hnRNA","tRNA","mRNA","5.8S、18S、28S rRNA 前體"],a:1,
+  e:"pol III 做 <b>tRNA</b>、5S rRNA 等小分子 RNA；hnRNA／mRNA 是 pol II；18S、28S、5.8S 是 pol I。"},
+ {q:"位於核仁、主要合成大部分 rRNA 前驅物的是？",o:["RNA polymerase I","RNA polymerase II","RNA polymerase III","Ribosomal RNase"],a:0,
+  e:"<b>pol I</b> 在核仁轉錄 45S 前驅物，再切成 18S、5.8S、28S。"},
+ {q:"對 α-瓢蕈素（α-amanitin）最敏感的 RNA 聚合酶是？",o:["RNA pol I","RNA pol II","RNA pol III","三者相同"],a:1,
+  e:"<b>pol II 最敏感</b>、pol III 中等、pol I 不受影響。"},
+ {q:"有關真核細胞轉錄作用與其調節，何者正確？（108 年國考）",o:["真核轉錄比原核簡單","RNA 聚合酶會受到轉錄因子調控","pol I 負責轉錄小分子 RNA","pol III 負責轉錄主要 rRNA"],a:1,
+  e:"真核轉錄需要大量<b>轉錄因子</b>協助與調控；pol I 做主要 rRNA，pol III 做小分子 RNA。"},
+ {q:"下列哪一個真核蛋白複合物同時參與 RNA 轉錄及 DNA 修復？",o:["TFIIA","TFIID","TFIIF","TFIIH"],a:3,
+  e:"<b>TFIIH</b> 有解旋活性（次單元 ERCC3），也參與核苷酸切除修補。"},
+ {q:"基因轉錄起始前複合體中，何者<b>不會</b>直接與 DNA 結合？",o:["RNA polymerase","Mediator","Activator","TFIIB"],a:1,
+  e:"<b>媒介子</b>是活化子與聚合酶之間的橋樑，靠蛋白–蛋白交互作用，不直接結合 DNA。"},
+ {q:"色素性乾皮症病人易因紫外光照射罹患皮膚癌，是因細胞缺乏何種能力？",o:["DNA 複製","有絲分裂","與其他細胞交換 DNA","修復胸腺嘧啶雙體"],a:3,
+  e:"XP 是<b>核苷酸切除修補</b>缺陷，無法移除 UV 造成的 <b>T-T 二聚體</b>。"},
+ {q:"對 RNA 聚合酶的敘述，何者<b>不正確</b>？（原核）",o:["由核心酶和 σ 因子構成","核心酶由 α₂ββ′ 組成","全酶與核心酶的差別在於 β 亞單位","σ 因子僅與轉錄起動有關"],a:2,
+  e:"全酶＝核心酶＋<b>σ</b>；差別在 σ，不是 β。"},
+ {q:"真核細胞核糖體中 RNA 分子的大小分別是？",o:["5S、5.8S、18S、28S","5S、16S、23S","6S、18S、23S","5S、18S、23S"],a:0,
+  e:"真核：<b>5S、5.8S、18S、28S</b>；細菌：5S、16S、23S。"},
+ {q:"基因轉錄活化的染色質區段，結構特徵是？",o:["緊密包裝為核小體","以常染色質形式分散在核內","以異染色質形式在核周邊","對 DNA 酶有抵抗性"],a:1,
+  e:"正在轉錄的區域是鬆散的<b>常染色質</b>，對 DNase 敏感。"}
+];
+</script>
+<script src="mb_core.js"></script>
+</body>
+</html>
